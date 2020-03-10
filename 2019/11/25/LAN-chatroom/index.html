@@ -46,17 +46,18 @@
   };
 </script>
 
-  <meta name="description" content="Nice to meet you :-)">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Qianyue Zhang&#39;s Blog">
-<meta property="og:url" content="http://zhqyvvn.github.io/tags/html-css/index.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="LAN chatroom">
+<meta property="og:url" content="http://zhqyvvn.github.io/2019/11/25/LAN-chatroom/index.html">
 <meta property="og:site_name" content="Qianyue Zhang&#39;s Blog">
-<meta property="og:description" content="Nice to meet you :-)">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-11-25T20:38:00.000Z">
+<meta property="article:modified_time" content="2020-03-10T20:27:43.042Z">
 <meta property="article:author" content="Qianyue Zhang">
+<meta property="article:tag" content="c">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://zhqyvvn.github.io/tags/html-css/">
+<link rel="canonical" href="http://zhqyvvn.github.io/2019/11/25/LAN-chatroom/">
 
 
 <script id="page-configurations">
@@ -64,11 +65,11 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false
+    isPost: true
   };
 </script>
 
-  <title>Tag: html/css | Qianyue Zhang's Blog</title>
+  <title>LAN chatroom | Qianyue Zhang's Blog</title>
   
 
 
@@ -168,50 +169,121 @@
           <div class="content">
             
 
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h1 class="collection-header">html/css
-          <small>Tag</small>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en-us">
+    <link itemprop="mainEntityOfPage" href="http://zhqyvvn.github.io/2019/11/25/LAN-chatroom/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/38484412?s=460&v=4">
+      <meta itemprop="name" content="Qianyue Zhang">
+      <meta itemprop="description" content="Nice to meet you :-)">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Qianyue Zhang's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          LAN chatroom
         </h1>
-      </div>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: Nov 25th 2019 15:38:00" itemprop="dateCreated datePublished" datetime="2019-11-25T15:38:00-05:00">Nov 25th 2019</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: Mar 10th 2020 16:27:43" itemprop="dateModified" datetime="2020-03-10T16:27:43-04:00">Mar 10th 2020</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C/" itemprop="url" rel="index">
+                    <span itemprop="name">C</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <h1 class="collection-header">2019</h1>
+        <iframe src="https://drive.google.com/file/d/1WVjCZBgDepbzkw85w2grPSDVMEgFCST1/preview" width="640" height="480">
+</iframe>  
+<p style="text-align: center; border-bottom: 0px solid #ddd;"></p>   
+
+<a id="more"></a>  
+
+<p><strong>Built with</strong>:<br>• C</p>
+<p><strong>Components</strong>:<br>Clients:<br>• Send requests to the server and get responses from the server<br>• Multi-threads<br> -detect user’s inputs<br> -receive server’s responses  </p>
+<p>Server:<br>• Load and store users / sessions / invitations information<br>• Act as the intermediate between clients<br> -create a new thread for each newly connected client<br> -receive client’s requests and reply responses on every thread  </p>
+<p><strong>Features</strong>:<br>Authentication:<br>• login / logout    </p>
+<p>Session (Chatroom):<br>• Users can create a new session or join one existing session<br>• Multiple users can group-chat in one session<br>• Users can join multiple sessions and chat with multiple groups of people<br>• Users can leave the session   </p>
+<p>Invitation:<br>• Invite other users to join one existing session<br>• Accept the invitation and join the group chat<br>• Decline the invitation   </p>
+<p>Query:<br>• Users can query the list of online users and valid sessions from the server  </p>
+<p><strong>Note</strong>:<br>The example ran clients and the server in one same PC thus using 127.0.0.1 as the server IP address.<br>It can be altered as other IP address if the server ran on the different PC.   </p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-12-15T05:22:05-05:00"
-              content="Dec 15th 2019">
-          12-15
-        </time>
-      </div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/c/" rel="tag"># c</a>
+          </div>
 
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2019/12/15/Second-Buy/" itemprop="url">
-            <span itemprop="name">Second Buy</span>
-          </a>
-      </h2>
+        
 
-    </header>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/03/12/Fakestagram/" rel="prev" title="Fakestagram">
+      <i class="fa fa-chevron-left"></i> Fakestagram
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/12/15/Second-Buy/" rel="next" title="Second Buy">
+      Second Buy <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
   </article>
+  
+  
+  
 
-    </div>
   </div>
-  
-  
-  
-
-  
-
 
 
           </div>
