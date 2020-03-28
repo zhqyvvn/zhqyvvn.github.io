@@ -49,7 +49,7 @@
   <meta property="og:type" content="article">
 <meta property="og:title" content="Breakout Ball">
 <meta property="og:url" content="http://zhqyvvn.github.io/2018/07/11/Breakout-Ball/index.html">
-<meta property="og:site_name" content="Qianyue Zhang&#39;s Blog">
+<meta property="og:site_name" content="TechStack">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2018-07-11T20:00:16.000Z">
 <meta property="article:modified_time" content="2020-03-25T17:29:51.372Z">
@@ -69,7 +69,7 @@
   };
 </script>
 
-  <title>Breakout Ball | Qianyue Zhang's Blog</title>
+  <title>Breakout Ball | TechStack</title>
   
 
 
@@ -113,10 +113,11 @@
     <div>
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Qianyue Zhang's Blog</span>
+        <span class="site-title">TechStack</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
+        <p class="site-subtitle">Coding is an art</p>
   </div>
 
   <div class="site-nav-toggle">
@@ -179,11 +180,11 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/38484412?s=460&v=4">
       <meta itemprop="name" content="Qianyue Zhang">
-      <meta itemprop="description" content="Nice to meet you :-)">
+      <meta itemprop="description" content="Coding is an art">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Qianyue Zhang's Blog">
+      <meta itemprop="name" content="TechStack">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -278,6 +279,7 @@
 
           </div>
           
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -332,7 +334,7 @@
     <img class="site-author-image" itemprop="image" alt="Qianyue Zhang"
       src="https://avatars0.githubusercontent.com/u/38484412?s=460&v=4">
   <p class="site-author-name" itemprop="name">Qianyue Zhang</p>
-  <div class="site-description" itemprop="description">Nice to meet you :-)</div>
+  <div class="site-description" itemprop="description">Coding is an art</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
@@ -467,6 +469,26 @@
   
 
   
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID: 'c28a59a6f171f3e27313',
+      clientSecret: 'a31ffbb812ba7a28cd66045ae2a68e017e9d539f',
+      repo: 'zhqyvvn.github.io',
+      owner: 'zhqyvvn',
+      admin: ['zhqyvvn'],
+      id: 'a443f79f5a7dddd22834ed7b353c2042',
+        language: '',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
 
 </body>
 </html>
