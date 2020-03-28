@@ -24,8 +24,8 @@
       <tags>
         <tag>AWS</tag>
         <tag>JavaScript</tag>
-        <tag>React</tag>
         <tag>Express</tag>
+        <tag>React</tag>
         <tag>OpenCV</tag>
       </tags>
   </entry>
@@ -66,10 +66,10 @@
       </categories>
       <tags>
         <tag>JavaScript</tag>
-        <tag>Express</tag>
         <tag>HTML</tag>
         <tag>CSS</tag>
         <tag>Node.js</tag>
+        <tag>Express</tag>
         <tag>MongoDB</tag>
         <tag>Heroku</tag>
       </tags>
