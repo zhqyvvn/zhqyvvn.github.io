@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
-  <meta charset="UTF-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 4.2.0">
@@ -30,7 +30,7 @@
     bookmark: {"enable":false,"color":"#222","save":"auto"},
     fancybox: false,
     mediumzoom: false,
-    lazyload: false,
+    lazyload: true,
     pangu: false,
     comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
     algolia: {
@@ -41,7 +41,7 @@
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
     localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
-    path: '',
+    path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
   };
 </script>
@@ -58,7 +58,7 @@
 <meta property="og:image" content="http://zhqyvvn.github.io/images/sc_comment.jpg">
 <meta property="og:image" content="http://zhqyvvn.github.io/images/sc_notification.png">
 <meta property="article:published_time" content="2019-12-15T10:22:05.000Z">
-<meta property="article:modified_time" content="2020-03-27T15:53:39.336Z">
+<meta property="article:modified_time" content="2020-03-28T16:14:34.001Z">
 <meta property="article:author" content="Qianyue Zhang">
 <meta property="article:tag" content="JavaScript">
 <meta property="article:tag" content="Express">
@@ -111,12 +111,12 @@
   .use-motion .logo-line-before i { left: initial; }
   .use-motion .logo-line-after i { right: initial; }
   </style>
-</noscript>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
     <div class="headband"></div>
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -219,7 +219,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: Mar 27th 2020 11:53:39" itemprop="dateModified" datetime="2020-03-27T11:53:39-04:00">Mar 27th 2020</time>
+                <time title="Modified: Mar 28th 2020 12:14:34" itemprop="dateModified" datetime="2020-03-28T12:14:34-04:00">Mar 28th 2020</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -251,37 +251,34 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><img src="/images/sc_index.jpg" alt="">  </p>
+        <p><img data-src="/images/sc_index.jpg" alt="">  </p>
 <a id="more"></a>  
 <p style="text-align: center; border-bottom: 1px solid #ddd;"> Index </p>  
 
-<p><img src="/images/sc_profile.jpg" alt="">  </p>
+<p><img data-src="/images/sc_profile.jpg" alt="">  </p>
 <p style="text-align: center; border-bottom: 1px solid #ddd;"> Profile </p>  
 
-<p><img src="/images/sc_sell.jpg" alt="">  </p>
+<p><img data-src="/images/sc_sell.jpg" alt="">  </p>
 <p style="text-align: center; border-bottom: 1px solid #ddd;"> Sell / Edit </p>  
 
-<p><img src="/images/sc_detail.jpg" alt="">  </p>
+<p><img data-src="/images/sc_detail.jpg" alt="">  </p>
 <p style="text-align: center; border-bottom: 1px solid #ddd;"> Detail </p>  
 
-<p><img src="/images/sc_comment.jpg" alt="">  </p>
+<p><img data-src="/images/sc_comment.jpg" alt="">  </p>
 <p style="text-align: center; border-bottom: 1px solid #ddd;"> Comment / Reply </p>  
 
-<p><img src="/images/sc_notification.png" alt="">  </p>
+<p><img data-src="/images/sc_notification.png" alt="">  </p>
 <p style="text-align: center; border-bottom: 1px solid #ddd;"> Notification </p>  
 
-<p><strong>Built with</strong>:<br>• JavaScript<br>• HTML &amp; CSS<br>• Node.js<br>• Express<br>• MongoDB<br>• Heroku  </p>
-<p><strong>Components</strong>:<br>• Database —&gt; <a href="https://www.mongodb.com/" target="_blank" rel="noopener">MongoDB</a><br>• Deployment —&gt; <a href="https://www.heroku.com/platform" target="_blank" rel="noopener">Heroku</a>  </p>
-<p><strong>Features</strong>:<br>Authentication:<br>• login / signup / logout  </p>
+<h4 id="🌟-Built-with"><a href="#🌟-Built-with" class="headerlink" title="🌟 Built with"></a>🌟 Built with</h4><p>• JavaScript<br>• HTML &amp; CSS<br>• Node.js<br>• Express<br>• MongoDB<br>• Heroku  </p>
+<h4 id="🌟-Components"><a href="#🌟-Components" class="headerlink" title="🌟 Components"></a>🌟 Components</h4><p>• Database —&gt; <a href="https://www.mongodb.com/" target="_blank" rel="noopener">MongoDB</a><br>• Deployment —&gt; <a href="https://www.heroku.com/platform" target="_blank" rel="noopener">Heroku</a>  </p>
+<h4 id="🌟-Features"><a href="#🌟-Features" class="headerlink" title="🌟 Features"></a>🌟 Features</h4><p>Authentication:<br>• login / signup / logout  </p>
 <p>Index Page:<br>• Browse posts of second-hand books on sale published by other users<br>• Search sale information of specific second-hand books by the search bar<br>• Brief profile information on side  </p>
 <p>Profile Page:<br>• Edit username and contact information<br>• Check the number of own books on sale / the number of own books sold<br>• Browse brief information of own posts<br>• Other users can check the profile but only in guest view (editing functions are hidden)  </p>
 <p>Sell Book Page (also Edit Book information Page):<br>• Create a new post by filling the information form and upload the picture of the book<br>• Edit one existing post later<br>• Mark the book ‘on sale’ or ‘sold’   </p>
 <p>Book Detail Page:<br>• Show the owner of the book and other books information<br>• Other users can claim the book by clicking “I want this” to send a notification to the owner<br>• Comment and reply under the post  </p>
 <p>Notification Page:<br>Receive notifications if<br>• some users want to buy certain own books<br>• some users commented under certain own posts<br>• some users replied own comments under certain posts  </p>
-<p><strong>Note</strong>:<br>• Information of books in the example were randomly selected from <a href="https://search.library.utoronto.ca/index" target="_blank" rel="noopener">U of T library</a><br>• Background image (and alt image in the ‘upload the picture of the book’ area) was from Google Image<br>• Modified from my course project. Thanks to teammates <a href="https://github.com/AlexChum" target="_blank" rel="noopener">Alex</a>, <a href="https://github.com/ritadi" target="_blank" rel="noopener">Rita</a>, <a href="https://github.com/glebka100500" target="_blank" rel="noopener">Hlib</a> and our instructor <a href="https://github.com/mark-kazakevich" target="_blank" rel="noopener">Mark</a>   </p>
-<ul>
-<li>Email me to get the website link if you are interested  </li>
-</ul>
+<h4 id="📌-Note"><a href="#📌-Note" class="headerlink" title="📌 Note"></a>📌 Note</h4><p>• Information of books in the example were randomly selected from <a href="https://search.library.utoronto.ca/index" target="_blank" rel="noopener">U of T library</a><br>• Background image (and alt image in the ‘upload the picture of the book’ area) was from Google Image<br>• Modified from my course project. Thanks to teammates <a href="https://github.com/AlexChum" target="_blank" rel="noopener">Alex</a>, <a href="https://github.com/ritadi" target="_blank" rel="noopener">Rita</a>, <a href="https://github.com/glebka100500" target="_blank" rel="noopener">Hlib</a> and our instructor <a href="https://github.com/mark-kazakevich" target="_blank" rel="noopener">Mark</a>    </p>
 
     </div>
 
@@ -306,12 +303,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2019/11/25/LAN-chatroom/" rel="prev" title="LAN chatroom">
-      <i class="fa fa-chevron-left"></i> LAN chatroom
+    <a href="/2020/01/12/Magical-Rectangle/" rel="prev" title="Magical Rectangle">
+      <i class="fa fa-chevron-left"></i> Magical Rectangle
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/01/12/Magical-Rectangle/" rel="next" title="Magical Rectangle">
-      Magical Rectangle <i class="fa fa-chevron-right"></i>
+    <a href="/2019/11/25/LAN-chatroom/" rel="next" title="LAN chatroom">
+      LAN chatroom <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -373,6 +370,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#🌟-Built-with"><span class="nav-number">1.</span> <span class="nav-text">🌟 Built with</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#🌟-Components"><span class="nav-number">2.</span> <span class="nav-text">🌟 Components</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#🌟-Features"><span class="nav-number">3.</span> <span class="nav-text">🌟 Features</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#📌-Note"><span class="nav-number">4.</span> <span class="nav-text">📌 Note</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -448,7 +446,7 @@
 
         
 <div class="busuanzi-count">
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
       <span class="post-meta-item-icon">
         <i class="fa fa-user"></i>
@@ -481,6 +479,8 @@
 
   
   <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 
@@ -493,6 +493,63 @@
 
 
 <script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.getAttribute('pjax') !== null) {
+      element.setAttribute('pjax', '');
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
 
 
 
@@ -513,6 +570,7 @@
 
 
 
+    <div id="pjax">
   
 
   
@@ -537,5 +595,6 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
 });
 </script>
 
+    </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>

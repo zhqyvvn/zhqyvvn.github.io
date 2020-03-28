@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
-  <meta charset="UTF-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 4.2.0">
@@ -30,7 +30,7 @@
     bookmark: {"enable":false,"color":"#222","save":"auto"},
     fancybox: false,
     mediumzoom: false,
-    lazyload: false,
+    lazyload: true,
     pangu: false,
     comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
     algolia: {
@@ -41,7 +41,7 @@
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
     localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
-    path: '',
+    path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
   };
 </script>
@@ -52,7 +52,7 @@
 <meta property="og:site_name" content="TechStack">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2019-11-25T20:38:00.000Z">
-<meta property="article:modified_time" content="2020-03-27T15:55:31.188Z">
+<meta property="article:modified_time" content="2020-03-28T16:15:33.338Z">
 <meta property="article:author" content="Qianyue Zhang">
 <meta property="article:tag" content="C">
 <meta name="twitter:card" content="summary">
@@ -98,12 +98,12 @@
   .use-motion .logo-line-before i { left: initial; }
   .use-motion .logo-line-after i { right: initial; }
   </style>
-</noscript>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
     <div class="headband"></div>
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -206,7 +206,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: Mar 27th 2020 11:55:31" itemprop="dateModified" datetime="2020-03-27T11:55:31-04:00">Mar 27th 2020</time>
+                <time title="Modified: Mar 28th 2020 12:15:33" itemprop="dateModified" datetime="2020-03-28T12:15:33-04:00">Mar 28th 2020</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -244,14 +244,14 @@
 
 <a id="more"></a>  
 
-<p><strong>Built with</strong>:<br>• C</p>
-<p><strong>Components</strong>:<br>Clients:<br>• Send requests to the server and get responses from the server<br>• Multi-threads<br> -detect user’s inputs<br> -receive server’s responses  </p>
+<h4 id="🌟-Built-with"><a href="#🌟-Built-with" class="headerlink" title="🌟 Built with"></a>🌟 Built with</h4><p>• C</p>
+<h4 id="🌟-Components"><a href="#🌟-Components" class="headerlink" title="🌟 Components"></a>🌟 Components</h4><p>Clients:<br>• Send requests to the server and get responses from the server<br>• Multi-threads<br> -detect user’s inputs<br> -receive server’s responses  </p>
 <p>Server:<br>• Load and store users’ / sessions’ / invitations’ information<br>• Act as the intermediate between clients<br> -create a new thread for each newly connected client<br> -receive client’s requests and reply responses on every thread  </p>
-<p><strong>Features</strong>:<br>Authentication:<br>• login / logout    </p>
+<h4 id="🌟-Features"><a href="#🌟-Features" class="headerlink" title="🌟 Features"></a>🌟 Features</h4><p>Authentication:<br>• login / logout    </p>
 <p>Session (Chatroom):<br>• Users can create a new session or join one existing session<br>• Multiple users can group-chat in one session<br>• Users can join multiple sessions and chat with multiple groups of people<br>• Users can leave the session   </p>
 <p>Invitation:<br>• Invite other users to join one existing session<br>• Accept the invitation and join the group chat<br>• Decline the invitation   </p>
 <p>Query:<br>• Users can query the list of online users and valid sessions from the server  </p>
-<p><strong>Note</strong>:<br>The example ran clients and the server in one same PC thus using 127.0.0.1 as the server IP address.<br>It can be altered as other IP address if the server ran on the different PC.   </p>
+<h4 id="📌-Note"><a href="#📌-Note" class="headerlink" title="📌 Note"></a>📌 Note</h4><p>The example ran clients and the server in one same PC thus using 127.0.0.1 as the server IP address.<br>It can be altered as other IP address if the server ran on the different PC.   </p>
 
     </div>
 
@@ -270,12 +270,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2019/03/12/Fakestagram/" rel="prev" title="Fakestagram">
-      <i class="fa fa-chevron-left"></i> Fakestagram
+    <a href="/2019/12/15/Second-Buy/" rel="prev" title="Second Buy">
+      <i class="fa fa-chevron-left"></i> Second Buy
     </a></div>
       <div class="post-nav-item">
-    <a href="/2019/12/15/Second-Buy/" rel="next" title="Second Buy">
-      Second Buy <i class="fa fa-chevron-right"></i>
+    <a href="/2019/03/12/Fakestagram/" rel="next" title="Fakestagram">
+      Fakestagram <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -337,6 +337,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#🌟-Built-with"><span class="nav-number">1.</span> <span class="nav-text">🌟 Built with</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#🌟-Components"><span class="nav-number">2.</span> <span class="nav-text">🌟 Components</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#🌟-Features"><span class="nav-number">3.</span> <span class="nav-text">🌟 Features</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#📌-Note"><span class="nav-number">4.</span> <span class="nav-text">📌 Note</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -412,7 +413,7 @@
 
         
 <div class="busuanzi-count">
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
       <span class="post-meta-item-icon">
         <i class="fa fa-user"></i>
@@ -445,6 +446,8 @@
 
   
   <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 
@@ -457,6 +460,63 @@
 
 
 <script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.getAttribute('pjax') !== null) {
+      element.setAttribute('pjax', '');
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
 
 
 
@@ -477,6 +537,7 @@
 
 
 
+    <div id="pjax">
   
 
   
@@ -501,5 +562,6 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
 });
 </script>
 
+    </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>
