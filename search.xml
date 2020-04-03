@@ -78,8 +78,8 @@
 <h4 id="String"><a href="#String" class="headerlink" title="String"></a>String</h4><p>Built-in methods:<br><code>&lt;String&gt;.substring(int start, int end)</code>, <code>&lt;String&gt;.startsWith(String prefix)</code>, <code>&lt;String&gt;.isEmpty()</code>, <code>&lt;String A&gt;.equals(&lt;String B&gt;)</code>,<br><code>&lt;String&gt;.charAt(int index)</code></p>
 <hr>
 <p><code>&lt;String&gt;.toCharArray()</code>:  </p>
-<p>e.g.</p>
-<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">String str = "String";</span><br><span class="line"><span class="type">char</span>[] <span class="keyword">array</span>= str.toCharArray();</span><br><span class="line">//<span class="keyword">array</span>: &#123;<span class="string">'S'</span>, <span class="string">'t'</span>, <span class="string">'r'</span>, <span class="string">'i'</span>, <span class="string">'n'</span>, <span class="string">'g'</span>&#125;</span><br><span class="line">```  </span><br><span class="line"><span class="comment">---</span></span><br><span class="line">`<span class="built_in">new</span> String(<span class="type">char</span>[] <span class="keyword">array</span>)`, `<span class="built_in">new</span> String(<span class="type">char</span>[] <span class="keyword">array</span>, <span class="type">int</span> <span class="keyword">start</span>, <span class="type">int</span> length)`  </span><br><span class="line"></span><br><span class="line">e.g. convert <span class="type">char</span>[] <span class="keyword">array</span> back <span class="keyword">to</span> String</span><br></pre></td></tr></table></figure>
+<p>e.g.  </p>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">String str = "String";</span><br><span class="line"><span class="type">char</span>[] <span class="keyword">array</span>= str.toCharArray();</span><br><span class="line">//<span class="keyword">array</span>: &#123;<span class="string">'S'</span>, <span class="string">'t'</span>, <span class="string">'r'</span>, <span class="string">'i'</span>, <span class="string">'n'</span>, <span class="string">'g'</span>&#125;</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line"><span class="comment">---</span></span><br><span class="line">`<span class="built_in">new</span> String(<span class="type">char</span>[] <span class="keyword">array</span>)`, `<span class="built_in">new</span> String(<span class="type">char</span>[] <span class="keyword">array</span>, <span class="type">int</span> <span class="keyword">start</span>, <span class="type">int</span> length)`  </span><br><span class="line"></span><br><span class="line">e.g. convert <span class="type">char</span>[] <span class="keyword">array</span> back <span class="keyword">to</span> String</span><br></pre></td></tr></table></figure>
 <p>str = new String(array);<br>//str: “String”<br>str = new String(array, 0, 3);<br>//str: “Str”</p>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="string">`&lt;String</span> <span class="string">A&gt;.compareTo(&lt;String</span> <span class="string">B&gt;)`:</span>  </span><br><span class="line"></span><br><span class="line"><span class="string">returns</span> <span class="number">0</span> <span class="string">if</span> <span class="string">A</span> <span class="string">equal</span> <span class="string">to</span> <span class="string">B;</span>  </span><br><span class="line"><span class="string">returns</span> <span class="string">&lt;</span> <span class="number">0</span> <span class="string">if</span> <span class="string">A</span> <span class="string">is</span> <span class="string">lexicographically</span> <span class="string">less</span> <span class="string">than</span> <span class="string">B;</span>  </span><br><span class="line"><span class="string">returns</span> <span class="string">&gt;</span> <span class="number">0</span> <span class="string">if</span> <span class="string">A</span> <span class="string">is</span> <span class="string">lexicographically</span> <span class="string">greater</span> <span class="string">than</span> <span class="string">B;</span>  </span><br><span class="line"></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="string">`&lt;String&gt;.split()`:</span></span><br></pre></td></tr></table></figure>
 <p>String text = “we will we will rock you”;<br>String[] words = text.split(“ “);<br>//words: {“we”, “will”, “we”, “will”, “rock”, “you”}</p>
@@ -137,8 +137,8 @@ Built-in methods:
       <tags>
         <tag>AWS</tag>
         <tag>JavaScript</tag>
-        <tag>Express</tag>
         <tag>React</tag>
+        <tag>Express</tag>
         <tag>OpenCV</tag>
       </tags>
   </entry>
@@ -179,10 +179,10 @@ Built-in methods:
       </categories>
       <tags>
         <tag>JavaScript</tag>
+        <tag>Express</tag>
         <tag>HTML</tag>
         <tag>CSS</tag>
         <tag>Node.js</tag>
-        <tag>Express</tag>
         <tag>MongoDB</tag>
         <tag>Heroku</tag>
       </tags>
