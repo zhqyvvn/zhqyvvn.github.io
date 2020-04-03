@@ -5,7 +5,7 @@
     <url>/2020/04/02/Frequently-used-Java-syntax/</url>
     <content><![CDATA[<p>Summarize some frequently used Java syntax and make it convenient for lookup.<br>Suggestions are welcome.  </p>
 <p><em>Original post by Qianyue Zhang in Apr 2020</em>  </p>
-<p>(continue posting …) </p>
+<p>(continue posting …)</p>
 <a id="more"></a>
 <h4 id="Arrays"><a href="#Arrays" class="headerlink" title="Arrays"></a>Arrays</h4><figure class="highlight nimrod"><table><tr><td class="code"><pre><span class="line"><span class="type">Arrays</span>.sort(<span class="built_in">int</span>[] <span class="built_in">array</span>, new <span class="type">Comparator</span> &lt;<span class="built_in">int</span>[]&gt; (...)<span class="meta">&#123;...&#125;</span>)</span><br></pre></td></tr></table></figure>
 <p>e.g.</p>
@@ -69,9 +69,11 @@
 <h4 id="Others"><a href="#Others" class="headerlink" title="Others"></a>Others</h4><p><a href="https://leetcode.com/problems/dungeon-game/" target="_blank" rel="noopener">leetcode 174. Dungeon Game</a>  </p>
 <h4 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h4><p><a href="https://docs.oracle.com/javase/8/docs/api/" target="_blank" rel="noopener">Java Platform SE 8 - Oracle Help Center</a></p>
 ]]></content>
+      <categories>
+        <category>Summary</category>
+      </categories>
       <tags>
         <tag>Java</tag>
-        <tag>Summary</tag>
       </tags>
   </entry>
   <entry>
@@ -98,8 +100,8 @@
       <tags>
         <tag>AWS</tag>
         <tag>JavaScript</tag>
-        <tag>Express</tag>
         <tag>React</tag>
+        <tag>Express</tag>
         <tag>OpenCV</tag>
       </tags>
   </entry>
@@ -140,10 +142,10 @@
       </categories>
       <tags>
         <tag>JavaScript</tag>
+        <tag>Express</tag>
         <tag>HTML</tag>
         <tag>CSS</tag>
         <tag>Node.js</tag>
-        <tag>Express</tag>
         <tag>MongoDB</tag>
         <tag>Heroku</tag>
       </tags>
