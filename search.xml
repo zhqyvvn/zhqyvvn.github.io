@@ -79,33 +79,26 @@
 <hr>
 <p><code>&lt;String&gt;.toCharArray()</code>:  </p>
 <p>e.g.  </p>
-<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">String str = "String";</span><br><span class="line"><span class="type">char</span>[] <span class="keyword">array</span>= str.toCharArray();</span><br><span class="line">//<span class="keyword">array</span>: &#123;<span class="string">'S'</span>, <span class="string">'t'</span>, <span class="string">'r'</span>, <span class="string">'i'</span>, <span class="string">'n'</span>, <span class="string">'g'</span>&#125;</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line"><span class="comment">---</span></span><br><span class="line">`<span class="built_in">new</span> String(<span class="type">char</span>[] <span class="keyword">array</span>)`, `<span class="built_in">new</span> String(<span class="type">char</span>[] <span class="keyword">array</span>, <span class="type">int</span> <span class="keyword">start</span>, <span class="type">int</span> length)`  </span><br><span class="line"></span><br><span class="line">e.g. convert <span class="type">char</span>[] <span class="keyword">array</span> back <span class="keyword">to</span> String</span><br></pre></td></tr></table></figure>
-<p>str = new String(array);<br>//str: “String”<br>str = new String(array, 0, 3);<br>//str: “Str”</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="string">`&lt;String</span> <span class="string">A&gt;.compareTo(&lt;String</span> <span class="string">B&gt;)`:</span>  </span><br><span class="line"></span><br><span class="line"><span class="string">returns</span> <span class="number">0</span> <span class="string">if</span> <span class="string">A</span> <span class="string">equal</span> <span class="string">to</span> <span class="string">B;</span>  </span><br><span class="line"><span class="string">returns</span> <span class="string">&lt;</span> <span class="number">0</span> <span class="string">if</span> <span class="string">A</span> <span class="string">is</span> <span class="string">lexicographically</span> <span class="string">less</span> <span class="string">than</span> <span class="string">B;</span>  </span><br><span class="line"><span class="string">returns</span> <span class="string">&gt;</span> <span class="number">0</span> <span class="string">if</span> <span class="string">A</span> <span class="string">is</span> <span class="string">lexicographically</span> <span class="string">greater</span> <span class="string">than</span> <span class="string">B;</span>  </span><br><span class="line"></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="string">`&lt;String&gt;.split()`:</span></span><br></pre></td></tr></table></figure>
-<p>String text = “we will we will rock you”;<br>String[] words = text.split(“ “);<br>//words: {“we”, “will”, “we”, “will”, “rock”, “you”}</p>
-<figure class="highlight clean"><table><tr><td class="code"><pre><span class="line">#### StringBuilder</span><br><span class="line">e.g.</span><br></pre></td></tr></table></figure>
-<p>StringBuilder sb = new StringBuilder();</p>
-<pre><code>---
-Built-in methods:  
-`sb.append(char c)`, `sb.toString()`
-
-#### Palindrome
-[leetcode 132. Palindrome Partitioning II](https://leetcode.com/problems/palindrome-partitioning-ii/)
-
-#### Stock
-[Detailed Explanation](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/discuss/75931/Easiest-JAVA-solution-with-explanations)  
-[leetcode 188. Best Time to Buy and Sell Stock IV](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/)  
-[leetcode 309. Best Time to Buy and Sell Stock with Cooldown](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/)  
-[Most consistent ways of dealing with the series of stock problems](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/discuss/108870/most-consistent-ways-of-dealing-with-the-series-of-stock-problems)
-
-#### Union-Find
-[leetcode 547. Friend Circles](https://leetcode.com/problems/friend-circles/)
-
-#### Others
-[leetcode 174. Dungeon Game](https://leetcode.com/problems/dungeon-game/)  
-
-#### Reference
-[Java Platform SE 8 - Oracle Help Center](https://docs.oracle.com/javase/8/docs/api/)</code></pre>]]></content>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">String str = "String";</span><br><span class="line"><span class="type">char</span>[] <span class="keyword">array</span>= str.toCharArray();</span><br><span class="line">//<span class="keyword">array</span>: &#123;<span class="string">'S'</span>, <span class="string">'t'</span>, <span class="string">'r'</span>, <span class="string">'i'</span>, <span class="string">'n'</span>, <span class="string">'g'</span>&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p><code>new String(char[] array)</code>, <code>new String(char[] array, int start, int length)</code>  </p>
+<p>e.g. convert char[] array back to String</p>
+<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line">str = <span class="keyword">new</span> <span class="keyword">String</span>(<span class="built_in">array</span>);</span><br><span class="line"><span class="comment">//str: "String"</span></span><br><span class="line">str = <span class="keyword">new</span> <span class="keyword">String</span>(<span class="built_in">array</span>, <span class="number">0</span>, <span class="number">3</span>);</span><br><span class="line"><span class="comment">//str: "Str"</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p><code>&lt;String A&gt;.compareTo(&lt;String B&gt;)</code>:  </p>
+<p>returns 0 if A equal to B;<br>returns &lt; 0 if A is lexicographically less than B;<br>returns &gt; 0 if A is lexicographically greater than B;  </p>
+<hr>
+<p><code>&lt;String&gt;.split()</code>:</p>
+<figure class="highlight smalltalk"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> text = <span class="comment">"we will we will rock you"</span>;</span><br><span class="line"><span class="type">String</span>[] words = text.split(<span class="comment">" "</span>);</span><br><span class="line">//words: &#123;<span class="comment">"we"</span>, <span class="comment">"will"</span>, <span class="comment">"we"</span>, <span class="comment">"will"</span>, <span class="comment">"rock"</span>, <span class="comment">"you"</span>&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="StringBuilder"><a href="#StringBuilder" class="headerlink" title="StringBuilder"></a>StringBuilder</h4><p>e.g.</p>
+<pre><code>StringBuilder sb = new StringBuilder();</code></pre><hr>
+<p>Built-in methods:<br><code>sb.append(char c)</code>, <code>sb.toString()</code></p>
+<h4 id="Palindrome"><a href="#Palindrome" class="headerlink" title="Palindrome"></a>Palindrome</h4><p><a href="https://leetcode.com/problems/palindrome-partitioning-ii/" target="_blank" rel="noopener">leetcode 132. Palindrome Partitioning II</a></p>
+<h4 id="Stock"><a href="#Stock" class="headerlink" title="Stock"></a>Stock</h4><p><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/discuss/75931/Easiest-JAVA-solution-with-explanations" target="_blank" rel="noopener">Detailed Explanation</a><br><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/" target="_blank" rel="noopener">leetcode 188. Best Time to Buy and Sell Stock IV</a><br><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/" target="_blank" rel="noopener">leetcode 309. Best Time to Buy and Sell Stock with Cooldown</a><br><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/discuss/108870/most-consistent-ways-of-dealing-with-the-series-of-stock-problems" target="_blank" rel="noopener">Most consistent ways of dealing with the series of stock problems</a></p>
+<h4 id="Union-Find"><a href="#Union-Find" class="headerlink" title="Union-Find"></a>Union-Find</h4><p><a href="https://leetcode.com/problems/friend-circles/" target="_blank" rel="noopener">leetcode 547. Friend Circles</a></p>
+<h4 id="Others"><a href="#Others" class="headerlink" title="Others"></a>Others</h4><p><a href="https://leetcode.com/problems/dungeon-game/" target="_blank" rel="noopener">leetcode 174. Dungeon Game</a>  </p>
+<h4 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h4><p><a href="https://docs.oracle.com/javase/8/docs/api/" target="_blank" rel="noopener">Java Platform SE 8 - Oracle Help Center</a></p>
+]]></content>
       <categories>
         <category>Summary</category>
       </categories>
