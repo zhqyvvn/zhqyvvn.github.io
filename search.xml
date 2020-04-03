@@ -3,27 +3,37 @@
   <entry>
     <title>Frequently used Java syntax</title>
     <url>/2020/04/02/Frequently-used-Java-syntax/</url>
-    <content><![CDATA[<p>Summarize some frequently used Java syntax and make it convenient for lookup.<br>Suggestions are welcome.  </p>
+    <content><![CDATA[<p>Summarize my frequently used Java syntax and make it convenient for lookup.<br>Suggestions are welcome.  </p>
 <p><em>Original post by Qianyue Zhang in Apr 2020</em>  </p>
 <p>(continue posting …)</p>
 <a id="more"></a>
-<h4 id="Arrays"><a href="#Arrays" class="headerlink" title="Arrays"></a>Arrays</h4><figure class="highlight nimrod"><table><tr><td class="code"><pre><span class="line"><span class="type">Arrays</span>.sort(<span class="built_in">int</span>[] <span class="built_in">array</span>, new <span class="type">Comparator</span> &lt;<span class="built_in">int</span>[]&gt; (...)<span class="meta">&#123;...&#125;</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="Arrays"><a href="#Arrays" class="headerlink" title="Arrays"></a>Arrays</h4><figure class="highlight fsharp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">type</span> <span class="title">var</span>-<span class="title">name</span>[] </span>= <span class="keyword">new</span> <span class="class"><span class="keyword">type</span>[<span class="title">size</span>];</span></span><br><span class="line">OR</span><br><span class="line"><span class="class"><span class="keyword">type</span>[] <span class="title">var</span>-<span class="title">name</span> </span>= <span class="keyword">new</span> <span class="class"><span class="keyword">type</span>[<span class="title">size</span>];</span></span><br></pre></td></tr></table></figure>
+<p>Built-in methods:<br><code>Arrays.fill(Object[] array, Object value)</code>,<br><code>Arrays.equals(Object[] array1, Object[] array2)</code>  </p>
+<hr>
+<figure class="highlight nimrod"><table><tr><td class="code"><pre><span class="line"><span class="type">Arrays</span>.sort(<span class="built_in">int</span>[] <span class="built_in">array</span>, new <span class="type">Comparator</span> &lt;<span class="built_in">int</span>[]&gt; (...)<span class="meta">&#123;...&#125;</span>)</span><br></pre></td></tr></table></figure>
 <p>e.g.</p>
 <figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">Arrays.sort(envelopes, new Comparator&lt;<span class="built_in">int</span>[]&gt;()&#123;</span><br><span class="line">           <span class="keyword">public</span> <span class="built_in">int</span> compare(<span class="built_in">int</span>[] nums1, <span class="built_in">int</span>[] nums2)&#123;</span><br><span class="line">               <span class="keyword">if</span> (nums1[<span class="number">0</span>] == nums2[<span class="number">0</span>])&#123;</span><br><span class="line">                   <span class="keyword">return</span> nums2[<span class="number">1</span>] - nums1[<span class="number">1</span>];</span><br><span class="line">               &#125;</span><br><span class="line">               <span class="keyword">return</span> nums1[<span class="number">0</span>] - nums2[<span class="number">0</span>];</span><br><span class="line">           &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
 <hr>
 <figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line"><span class="module-access"><span class="module"><span class="identifier">Arrays</span>.</span></span>binary<span class="constructor">Search(<span class="params">int</span>[] <span class="params">array</span>, <span class="params">int</span> <span class="params">left</span>, <span class="params">int</span> <span class="params">right</span>, <span class="params">int</span> <span class="params">key</span>)</span></span><br></pre></td></tr></table></figure>
 <p>e.g.</p>
 <figure class="highlight smali"><table><tr><td class="code"><pre><span class="line">int index = Arrays.binarySearch(dp, 0, len, envelope[1]);</span><br><span class="line">//index of the search key,<span class="built_in"> if </span>it is contained in the<span class="built_in"> array </span>within the specified range; otherwise, (-(insertion point) - 1). The insertion point is defined as the point at which the key would be inserted into the array</span><br><span class="line">//The<span class="built_in"> return </span>value will be &gt;= 0<span class="built_in"> if </span>and only<span class="built_in"> if </span>the key is found.</span><br></pre></td></tr></table></figure>
+<hr>
+<p><code>Array.asList(Object[] array)</code>:  </p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">String</span>[] a = new <span class="keyword">String</span>[] &#123; <span class="string">"A"</span>, <span class="string">"B"</span>, <span class="string">"C"</span>, <span class="string">"D"</span> &#125;;</span><br><span class="line"><span class="keyword">List</span>&lt;<span class="keyword">String</span>&gt; <span class="keyword">list</span> = Arrays.asList(a);</span><br><span class="line">//<span class="keyword">list</span>: [<span class="string">"A"</span>, <span class="string">"B"</span>, <span class="string">"C"</span>, <span class="string">"D"</span>]</span><br></pre></td></tr></table></figure>
+
+<h4 id="Character"><a href="#Character" class="headerlink" title="Character"></a>Character</h4><p>e.g.</p>
+<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">int num</span> = <span class="string">'b'</span> - <span class="string">'a'</span>;</span><br><span class="line"><span class="attribute">char c</span> = <span class="string">'c'</span>;</span><br><span class="line"><span class="attribute">char d</span> = c++;</span><br></pre></td></tr></table></figure>
+
 <h4 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h4><p>e.g.  </p>
 <figure class="highlight processing"><table><tr><td class="code"><pre><span class="line"><span class="keyword">HashMap</span> &lt;Integer&gt; <span class="built_in">map</span> = <span class="keyword">new</span> <span class="keyword">HashMap</span>();</span><br></pre></td></tr></table></figure>
 <hr>
-<p>Built-in methods:<br><code>map.containsKey(Object key)</code>, <code>map.get(Object key)</code>, <code>map.put(Object key, Object value)</code>, <code>map.keySet()</code>,</p>
+<p>Built-in methods:<br><code>map.containsKey(Object key)</code>, <code>map.get(Object key)</code>, <code>map.keySet()</code>,<br><code>map.remove(Object key)</code>, <code>map.values()</code><br><code>map.clear()</code>: clear and remove all of the elements or mappings from a specified Map collection<br><code>map.put(Object key, Object value)</code>, <code>map.putIfAbsent(Object key, Object value)</code>:<br>returns the previous value associated with the specified key, or null if there was no mapping for the key.</p>
 <h4 id="MAX-MIN"><a href="#MAX-MIN" class="headerlink" title="MAX/MIN"></a>MAX/MIN</h4><p><code>Integer.MAX_VALUE</code>, <code>Integer.MIN_VALUE</code></p>
 <h4 id="List"><a href="#List" class="headerlink" title="List"></a>List</h4><p>e.g.  </p>
-<figure class="highlight lasso"><table><tr><td class="code"><pre><span class="line"><span class="built_in">List</span> &lt;<span class="built_in">Integer</span>&gt; <span class="built_in">list</span> = <span class="literal">new</span> ArrayList();</span><br></pre></td></tr></table></figure>
-<figure class="highlight lasso"><table><tr><td class="code"><pre><span class="line"><span class="built_in">List</span> &lt;<span class="built_in">Integer</span>&gt; <span class="built_in">list</span> = <span class="literal">new</span> LinkedList();</span><br></pre></td></tr></table></figure>
-<hr>
-<p>Built-in methods:<br><code>list.add(Object element)</code><br>For arraylist:<br><code>list.get(int index)</code></p>
+<figure class="highlight lasso"><table><tr><td class="code"><pre><span class="line">ArrayList &lt;<span class="built_in">Integer</span>&gt; <span class="built_in">list</span> = <span class="literal">new</span> ArrayList();</span><br></pre></td></tr></table></figure>
+<figure class="highlight lasso"><table><tr><td class="code"><pre><span class="line">LinkedList &lt;<span class="built_in">Integer</span>&gt; <span class="built_in">list</span> = <span class="literal">new</span> LinkedList();</span><br></pre></td></tr></table></figure>
+<p>e.g. create ArrayList of ArrayList  </p>
+<figure class="highlight lasso"><table><tr><td class="code"><pre><span class="line"><span class="built_in">List</span>&lt;<span class="built_in">List</span>&lt;<span class="built_in">Integer</span>&gt;&gt; <span class="built_in">list</span> = <span class="literal">new</span> ArrayList&lt;&gt;();</span><br><span class="line"><span class="built_in">list</span>.add(<span class="literal">new</span> ArrayList&lt;&gt;(sub_arraylist));</span><br></pre></td></tr></table></figure>
 <hr>
 <p><a href="https://www.javatpoint.com/difference-between-arraylist-and-linkedlist" target="_blank" rel="noopener">Differences between ArrayList and LinkedList</a>:  </p>
 <table>
@@ -50,22 +60,42 @@
 <td>LinkedList is <strong>better for manipulating</strong> data.</td>
 </tr>
 </tbody></table>
-<h4 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h4><p>e.g.  </p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Set</span> &lt;<span class="built_in">Integer</span>&gt; <span class="keyword">set</span> = <span class="keyword">new</span> HashSet();</span><br></pre></td></tr></table></figure>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Set</span> &lt;<span class="built_in">Integer</span>&gt; <span class="keyword">set</span> = <span class="keyword">new</span> TreeSet();</span><br></pre></td></tr></table></figure>
 <hr>
-<p>Built-in methods:<br><code>set.add(Object element)</code></p>
+<p>Built-in methods:<br><code>list.add(Object e)</code>, <code>list.remove(Object e)</code>, <code>list.get(int index)</code>, <code>list.add(int index, Object e)</code>, <code>list.set(int index, Object e)</code>, <code>list.remove(int index)</code>, <code>list.size()</code>, <code>list.contains(Object e)</code><br><code>list.clear()</code>: remove all of the elements from the list  </p>
+<hr>
+<p><code>list.toArray(T[] a)</code>:  </p>
+<figure class="highlight smali"><table><tr><td class="code"><pre><span class="line">String[]<span class="built_in"> array </span>= list.toArray(new String[list.size()]);</span><br></pre></td></tr></table></figure>
+<h4 id="Queue"><a href="#Queue" class="headerlink" title="Queue"></a>Queue</h4><p>e.g.  </p>
+<figure class="highlight lasso"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Queue</span> &lt;<span class="built_in">Integer</span>&gt; q = <span class="literal">new</span> LinkedList&lt;<span class="built_in">Integer</span>&gt;();</span><br></pre></td></tr></table></figure>
+<hr>
+<p>Built-in methods:<br><code>q.add(Object e)</code></p>
+<h4 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h4><p>e.g.  </p>
+<figure class="highlight gams"><table><tr><td class="code"><pre><span class="line">HashSet &lt;<span class="keyword">Integer</span>&gt; <span class="keyword">set</span> = new <span class="comment">HashSet()</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight gams"><table><tr><td class="code"><pre><span class="line">TreeSet &lt;<span class="keyword">Integer</span>&gt; <span class="keyword">set</span> = new <span class="comment">TreeSet()</span>;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>Built-in methods:<br><code>set.add(Object e)</code>, <code>set.contains(Object e)</code>, <code>set.remove(Object e)</code>, <code>set.size()</code><br>For TreeSet - O(logn):<br><code>treeset.floor(Object e)</code>: returns the greatest element less than or equal to e, or null if there is no such element.<br><code>treeset.ceiling(Object e)</code>: returns the least element greater than or equal to e, or null if there is no such element.<br><code>treeset.last()</code>: returns the highest member of the set. If the elements are of string type then they are checked in alphabetical order irrespective of length and if the elements are of integer types then the largest integer is returned. The string of alphabet types is given higher priority.</p>
 <h4 id="Stack"><a href="#Stack" class="headerlink" title="Stack"></a>Stack</h4><p>e.g.</p>
 <figure class="highlight lasso"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Stack</span> &lt;<span class="built_in">Integer</span>&gt; <span class="built_in">stack</span> = <span class="literal">new</span> <span class="built_in">Stack</span>();</span><br></pre></td></tr></table></figure>
 
-<h4 id="String"><a href="#String" class="headerlink" title="String"></a>String</h4><p>Built-in methods:<br><code>&lt;String&gt;.substring(int start, int end)</code>, <code>&lt;String&gt;.startsWith(String prefix)</code>, <code>&lt;String&gt;.isEmpty()</code>  </p>
+<h4 id="String"><a href="#String" class="headerlink" title="String"></a>String</h4><p>Built-in methods:<br><code>&lt;String&gt;.substring(int start, int end)</code>, <code>&lt;String&gt;.startsWith(String prefix)</code>, <code>&lt;String&gt;.isEmpty()</code>, <code>&lt;String A&gt;.equals(&lt;String B&gt;)</code>,<br><code>&lt;String&gt;.charAt(int index)</code></p>
 <hr>
 <p><code>&lt;String&gt;.toCharArray()</code>:  </p>
 <p>e.g.</p>
-<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span>[] <span class="keyword">array</span>= "String".toCharArray();</span><br><span class="line">//<span class="keyword">array</span>: &#123;<span class="string">'S'</span>, <span class="string">'t'</span>, <span class="string">'r'</span>, <span class="string">'i'</span>, <span class="string">'n'</span>, <span class="string">'g'</span>&#125;</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">String str = "String";</span><br><span class="line"><span class="type">char</span>[] <span class="keyword">array</span>= str.toCharArray();</span><br><span class="line">//<span class="keyword">array</span>: &#123;<span class="string">'S'</span>, <span class="string">'t'</span>, <span class="string">'r'</span>, <span class="string">'i'</span>, <span class="string">'n'</span>, <span class="string">'g'</span>&#125;</span><br></pre></td></tr></table></figure>
+<p>e.g. convert char[] array back to String</p>
+<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line">str = <span class="keyword">new</span> <span class="keyword">String</span>(<span class="built_in">array</span>);</span><br><span class="line"><span class="comment">//str: "String"</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p><code>&lt;String A&gt;.compareTo(&lt;String B&gt;)</code>:  </p>
+<p>returns 0 if A equal to B;<br>returns &lt; 0 if A is lexicographically less than B;<br>returns &gt; 0 if A is lexicographically greater than B;  </p>
+<hr>
+<p><code>&lt;String&gt;.split()</code>:</p>
+<figure class="highlight smalltalk"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> text = <span class="comment">"we will we will rock you"</span>;</span><br><span class="line"><span class="type">String</span>[] words = text.split(<span class="comment">" "</span>);</span><br><span class="line">//words: &#123;<span class="comment">"we"</span>, <span class="comment">"will"</span>, <span class="comment">"we"</span>, <span class="comment">"will"</span>, <span class="comment">"rock"</span>, <span class="comment">"you"</span>&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="StringBuilder"><a href="#StringBuilder" class="headerlink" title="StringBuilder"></a>StringBuilder</h4><p>e.g.</p>
+<pre><code>StringBuilder sb = new StringBuilder();</code></pre><hr>
+<p>Built-in methods:<br><code>sb.append(char c)</code>, <code>sb.toString()</code></p>
 <h4 id="Palindrome"><a href="#Palindrome" class="headerlink" title="Palindrome"></a>Palindrome</h4><p><a href="https://leetcode.com/problems/palindrome-partitioning-ii/" target="_blank" rel="noopener">leetcode 132. Palindrome Partitioning II</a></p>
 <h4 id="Stock"><a href="#Stock" class="headerlink" title="Stock"></a>Stock</h4><p><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/discuss/75931/Easiest-JAVA-solution-with-explanations" target="_blank" rel="noopener">Detailed Explanation</a><br><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/" target="_blank" rel="noopener">leetcode 188. Best Time to Buy and Sell Stock IV</a><br><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/" target="_blank" rel="noopener">leetcode 309. Best Time to Buy and Sell Stock with Cooldown</a><br><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/discuss/108870/most-consistent-ways-of-dealing-with-the-series-of-stock-problems" target="_blank" rel="noopener">Most consistent ways of dealing with the series of stock problems</a></p>
+<h4 id="Union-Find"><a href="#Union-Find" class="headerlink" title="Union-Find"></a>Union-Find</h4><p><a href="https://leetcode.com/problems/friend-circles/" target="_blank" rel="noopener">leetcode 547. Friend Circles</a></p>
 <h4 id="Others"><a href="#Others" class="headerlink" title="Others"></a>Others</h4><p><a href="https://leetcode.com/problems/dungeon-game/" target="_blank" rel="noopener">leetcode 174. Dungeon Game</a>  </p>
 <h4 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h4><p><a href="https://docs.oracle.com/javase/8/docs/api/" target="_blank" rel="noopener">Java Platform SE 8 - Oracle Help Center</a></p>
 ]]></content>
