@@ -48,26 +48,21 @@
   };
 </script>
 
-  <meta property="og:type" content="article">
-<meta property="og:title" content="Magical Rectangle">
-<meta property="og:url" content="http://zhqyvvn.github.io/2020/01/12/Magical-Rectangle/index.html">
+  <meta name="description" content="Summarize some frequently used Java syntax and make it convenient for lookup.Suggestions are welcome.   Original post by Qianyue Zhang in Apr 2020   (continue posting …)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Frequently used Java syntax">
+<meta property="og:url" content="http://zhqyvvn.github.io/2020/04/02/Frequently-used-Java-syntax/index.html">
 <meta property="og:site_name" content="Techstack">
+<meta property="og:description" content="Summarize some frequently used Java syntax and make it convenient for lookup.Suggestions are welcome.   Original post by Qianyue Zhang in Apr 2020   (continue posting …)">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://zhqyvvn.github.io/images/mr_login.png">
-<meta property="og:image" content="http://zhqyvvn.github.io/images/mr_home.png">
-<meta property="og:image" content="http://zhqyvvn.github.io/images/mr_album.png">
-<meta property="article:published_time" content="2020-01-12T09:03:29.000Z">
-<meta property="article:modified_time" content="2020-03-28T16:14:01.328Z">
+<meta property="article:published_time" content="2020-04-03T02:14:57.000Z">
+<meta property="article:modified_time" content="2020-04-03T04:32:51.993Z">
 <meta property="article:author" content="Qianyue Zhang">
-<meta property="article:tag" content="AWS">
-<meta property="article:tag" content="JavaScript">
-<meta property="article:tag" content="Express">
-<meta property="article:tag" content="React">
-<meta property="article:tag" content="OpenCV">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="Summary">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://zhqyvvn.github.io/images/mr_login.png">
 
-<link rel="canonical" href="http://zhqyvvn.github.io/2020/01/12/Magical-Rectangle/">
+<link rel="canonical" href="http://zhqyvvn.github.io/2020/04/02/Frequently-used-Java-syntax/">
 
 
 <script id="page-configurations">
@@ -79,7 +74,7 @@
   };
 </script>
 
-  <title>Magical Rectangle | Techstack</title>
+  <title>Frequently used Java syntax | Techstack</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162128119-1"></script>
     <script pjax>
@@ -220,7 +215,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en-us">
-    <link itemprop="mainEntityOfPage" href="http://zhqyvvn.github.io/2020/01/12/Magical-Rectangle/">
+    <link itemprop="mainEntityOfPage" href="http://zhqyvvn.github.io/2020/04/02/Frequently-used-Java-syntax/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/38484412?s=460&v=4">
@@ -233,7 +228,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Magical Rectangle
+          Frequently used Java syntax
         </h1>
 
         <div class="post-meta">
@@ -243,26 +238,15 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: Jan 12th 2020 4:03:29" itemprop="dateCreated datePublished" datetime="2020-01-12T04:03:29-05:00">Jan 12th 2020</time>
+              <time title="Created: Apr 2nd 2020 22:14:57" itemprop="dateCreated datePublished" datetime="2020-04-02T22:14:57-04:00">Apr 2nd 2020</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: Mar 28th 2020 12:14:01" itemprop="dateModified" datetime="2020-03-28T12:14:01-04:00">Mar 28th 2020</time>
+                <time title="Modified: Apr 3rd 2020 0:32:51" itemprop="dateModified" datetime="2020-04-03T00:32:51-04:00">Apr 3rd 2020</time>
               </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Website/" itemprop="url" rel="index">
-                    <span itemprop="name">Website</span>
-                  </a>
-                </span>
-            </span>
 
           
             <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
@@ -282,20 +266,71 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><img data-src="/images/mr_login.png" alt="">  </p>
-<a id="more"></a>  
-<p style="text-align: center; border-bottom: 1px solid #ddd;"> Login </p>  
+        <p>Summarize some frequently used Java syntax and make it convenient for lookup.<br>Suggestions are welcome.  </p>
+<p><em>Original post by Qianyue Zhang in Apr 2020</em>  </p>
+<p>(continue posting …) </p>
+<a id="more"></a>
+<h4 id="Arrays"><a href="#Arrays" class="headerlink" title="Arrays"></a>Arrays</h4><figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Arrays</span>.sort(<span class="built_in">int</span>[] <span class="built_in">array</span>, new <span class="type">Comparator</span> &lt;<span class="built_in">int</span>[]&gt; (...)<span class="meta">&#123;...&#125;</span>)</span><br></pre></td></tr></table></figure>
+<p>e.g.</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Arrays.sort(envelopes, new Comparator&lt;<span class="built_in">int</span>[]&gt;()&#123;</span><br><span class="line">           <span class="keyword">public</span> <span class="built_in">int</span> compare(<span class="built_in">int</span>[] nums1, <span class="built_in">int</span>[] nums2)&#123;</span><br><span class="line">               <span class="keyword">if</span> (nums1[<span class="number">0</span>] == nums2[<span class="number">0</span>])&#123;</span><br><span class="line">                   <span class="keyword">return</span> nums2[<span class="number">1</span>] - nums1[<span class="number">1</span>];</span><br><span class="line">               &#125;</span><br><span class="line">               <span class="keyword">return</span> nums1[<span class="number">0</span>] - nums2[<span class="number">0</span>];</span><br><span class="line">           &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
+<hr>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="module-access"><span class="module"><span class="identifier">Arrays</span>.</span></span>binary<span class="constructor">Search(<span class="params">int</span>[] <span class="params">array</span>, <span class="params">int</span> <span class="params">left</span>, <span class="params">int</span> <span class="params">right</span>, <span class="params">int</span> <span class="params">key</span>)</span></span><br></pre></td></tr></table></figure>
+<p>e.g.</p>
+<figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int index = Arrays.binarySearch(dp, 0, len, envelope[1]);</span><br><span class="line">//index of the search key,<span class="built_in"> if </span>it is contained in the<span class="built_in"> array </span>within the specified range; otherwise, (-(insertion point) - 1). The insertion point is defined as the point at which the key would be inserted into the array</span><br><span class="line">//The<span class="built_in"> return </span>value will be &gt;= 0<span class="built_in"> if </span>and only<span class="built_in"> if </span>the key is found.</span><br></pre></td></tr></table></figure>
+<h4 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h4><p>e.g.  </p>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">HashMap</span> &lt;Integer&gt; <span class="built_in">map</span> = <span class="keyword">new</span> <span class="keyword">HashMap</span>();</span><br></pre></td></tr></table></figure>
+<hr>
+<p>Built-in methods:<br><code>map.containsKey(Object key)</code>, <code>map.get(Object key)</code>, <code>map.put(Object key, Object value)</code>, <code>map.keySet()</code>,</p>
+<h4 id="MAX-MIN"><a href="#MAX-MIN" class="headerlink" title="MAX/MIN"></a>MAX/MIN</h4><p><code>Integer.MAX_VALUE</code>, <code>Integer.MIN_VALUE</code></p>
+<h4 id="List"><a href="#List" class="headerlink" title="List"></a>List</h4><p>e.g.  </p>
+<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">List</span> &lt;<span class="built_in">Integer</span>&gt; <span class="built_in">list</span> = <span class="literal">new</span> ArrayList();</span><br></pre></td></tr></table></figure>
+<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">List</span> &lt;<span class="built_in">Integer</span>&gt; <span class="built_in">list</span> = <span class="literal">new</span> LinkedList();</span><br></pre></td></tr></table></figure>
+<hr>
+<p>Built-in methods:<br><code>list.add(Object element)</code><br>For arraylist:<br><code>list.get(int index)</code></p>
+<hr>
+<p><a href="https://www.javatpoint.com/difference-between-arraylist-and-linkedlist" target="_blank" rel="noopener">Differences between ArrayList and LinkedList</a>:  </p>
+<table>
+<thead>
+<tr>
+<th>ArrayList</th>
+<th>LinkedList</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ArrayList internally uses a <strong>dynamic array</strong> to store the elements.</td>
+<td>LinkedList internally uses a <strong>doubly linked list</strong> to store the elements.</td>
+</tr>
+<tr>
+<td>Manipulation with ArrayList is <strong>slow</strong> because it internally uses an array. If any element is removed from the array, all the bits are shifted in memory.</td>
+<td>Manipulation with LinkedList is <strong>faster</strong> than ArrayList because it uses a doubly linked list, so no bit shifting is required in memory.</td>
+</tr>
+<tr>
+<td>An ArrayList class can <strong>act as a list</strong> only because it implements List only.</td>
+<td>LinkedList class can <strong>act as a list and queue</strong> both because it implements List and Deque interfaces.</td>
+</tr>
+<tr>
+<td>ArrayList is <strong>better for storing and accessing</strong> data.</td>
+<td>LinkedList is <strong>better for manipulating</strong> data.</td>
+</tr>
+</tbody></table>
+<h4 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h4><p>e.g.  </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Set</span> &lt;<span class="built_in">Integer</span>&gt; <span class="keyword">set</span> = <span class="keyword">new</span> HashSet();</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Set</span> &lt;<span class="built_in">Integer</span>&gt; <span class="keyword">set</span> = <span class="keyword">new</span> TreeSet();</span><br></pre></td></tr></table></figure>
+<hr>
+<p>Built-in methods:<br><code>set.add(Object element)</code></p>
+<h4 id="Stack"><a href="#Stack" class="headerlink" title="Stack"></a>Stack</h4><p>e.g.</p>
+<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Stack</span> &lt;<span class="built_in">Integer</span>&gt; <span class="built_in">stack</span> = <span class="literal">new</span> <span class="built_in">Stack</span>();</span><br></pre></td></tr></table></figure>
 
-<p><img data-src="/images/mr_home.png" alt="">  </p>
-<p style="text-align: center; border-bottom: 1px solid #ddd;"> Home </p>  
+<h4 id="String"><a href="#String" class="headerlink" title="String"></a>String</h4><p>Built-in methods:<br><code>&lt;String&gt;.substring(int start, int end)</code>, <code>&lt;String&gt;.startsWith(String prefix)</code>, <code>&lt;String&gt;.isEmpty()</code>  </p>
+<hr>
+<p><code>&lt;String&gt;.toCharArray()</code>:  </p>
+<p>e.g.</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span>[] <span class="keyword">array</span>= "String".toCharArray();</span><br><span class="line">//<span class="keyword">array</span>: &#123;<span class="string">'S'</span>, <span class="string">'t'</span>, <span class="string">'r'</span>, <span class="string">'i'</span>, <span class="string">'n'</span>, <span class="string">'g'</span>&#125;</span><br></pre></td></tr></table></figure>
 
-<p><img data-src="/images/mr_album.png" alt="">  </p>
-<p style="text-align: center; border-bottom: 1px solid #ddd;"> Album </p>  
-
-<h4 id="🌟-Built-with"><a href="#🌟-Built-with" class="headerlink" title="🌟 Built with"></a>🌟 Built with</h4><p>• JavaScript<br>• React<br>• Express<br>• OpenCV<br>• Amazon Web Services  </p>
-<h4 id="🌟-Components"><a href="#🌟-Components" class="headerlink" title="🌟 Components"></a>🌟 Components</h4><p>• Object Detection —&gt; OpenCV (<a href="https://www.npmjs.com/package/opencv4nodejs/v/4.1.0" target="_blank" rel="noopener">opencv4nodejs</a>)<br>• Database —&gt; <a href="https://aws.amazon.com/dynamodb/" target="_blank" rel="noopener">Dynamodb</a><br>• Image Storage —&gt; <a href="https://aws.amazon.com/s3/" target="_blank" rel="noopener">S3</a><br>• Deployment —&gt; <a href="https://aws.amazon.com/ec2/" target="_blank" rel="noopener">EC2</a>  </p>
-<h4 id="🌟-Features"><a href="#🌟-Features" class="headerlink" title="🌟 Features"></a>🌟 Features</h4><p>• Authentication (login / signup / logout)<br>• Upload images and get object detection results (where colourful rectangles appear)<br>• Browse all processed images in the album  </p>
-<h4 id="📌-Note"><a href="#📌-Note" class="headerlink" title="📌 Note"></a>📌 Note</h4><p>• Objects’ classes that can be detected are listed <a href="https://github.com/justadudewhohacks/opencv4nodejs/blob/master/examples/dnnCocoClassNames.js" target="_blank" rel="noopener">here</a><br>• All images used for object detection in the example were randomly picked from Google Image<br>• Original wallpaper was from Google Image and then modified by myself  </p>
+<h4 id="Palindrome"><a href="#Palindrome" class="headerlink" title="Palindrome"></a>Palindrome</h4><p><a href="https://leetcode.com/problems/palindrome-partitioning-ii/" target="_blank" rel="noopener">leetcode 132. Palindrome Partitioning II</a></p>
+<h4 id="Stock"><a href="#Stock" class="headerlink" title="Stock"></a>Stock</h4><p><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/discuss/75931/Easiest-JAVA-solution-with-explanations" target="_blank" rel="noopener">Detailed Explanation</a><br><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/" target="_blank" rel="noopener">leetcode 188. Best Time to Buy and Sell Stock IV</a><br><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/" target="_blank" rel="noopener">leetcode 309. Best Time to Buy and Sell Stock with Cooldown</a><br><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/discuss/108870/most-consistent-ways-of-dealing-with-the-series-of-stock-problems" target="_blank" rel="noopener">Most consistent ways of dealing with the series of stock problems</a></p>
+<h4 id="Others"><a href="#Others" class="headerlink" title="Others"></a>Others</h4><p><a href="https://leetcode.com/problems/dungeon-game/" target="_blank" rel="noopener">leetcode 174. Dungeon Game</a>  </p>
+<h4 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h4><p><a href="https://docs.oracle.com/javase/8/docs/api/" target="_blank" rel="noopener">Java Platform SE 8 - Oracle Help Center</a></p>
 
     </div>
 
@@ -305,11 +340,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/AWS/" rel="tag"># AWS</a>
-              <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
-              <a href="/tags/Express/" rel="tag"># Express</a>
-              <a href="/tags/React/" rel="tag"># React</a>
-              <a href="/tags/OpenCV/" rel="tag"># OpenCV</a>
+              <a href="/tags/Java/" rel="tag"># Java</a>
+              <a href="/tags/Summary/" rel="tag"># Summary</a>
           </div>
 
         
@@ -317,13 +349,10 @@
 
         
     <div class="post-nav">
+      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2020/04/02/Frequently-used-Java-syntax/" rel="prev" title="Frequently used Java syntax">
-      <i class="fa fa-chevron-left"></i> Frequently used Java syntax
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/2019/12/15/Second-Buy/" rel="next" title="Second Buy">
-      Second Buy <i class="fa fa-chevron-right"></i>
+    <a href="/2020/01/12/Magical-Rectangle/" rel="next" title="Magical Rectangle">
+      Magical Rectangle <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -385,7 +414,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#🌟-Built-with"><span class="nav-number">1.</span> <span class="nav-text">🌟 Built with</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#🌟-Components"><span class="nav-number">2.</span> <span class="nav-text">🌟 Components</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#🌟-Features"><span class="nav-number">3.</span> <span class="nav-text">🌟 Features</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#📌-Note"><span class="nav-number">4.</span> <span class="nav-text">📌 Note</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Arrays"><span class="nav-number">1.</span> <span class="nav-text">Arrays</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HashMap"><span class="nav-number">2.</span> <span class="nav-text">HashMap</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MAX-MIN"><span class="nav-number">3.</span> <span class="nav-text">MAX&#x2F;MIN</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#List"><span class="nav-number">4.</span> <span class="nav-text">List</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Set"><span class="nav-number">5.</span> <span class="nav-text">Set</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Stack"><span class="nav-number">6.</span> <span class="nav-text">Stack</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String"><span class="nav-number">7.</span> <span class="nav-text">String</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Palindrome"><span class="nav-number">8.</span> <span class="nav-text">Palindrome</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Stock"><span class="nav-number">9.</span> <span class="nav-text">Stock</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Others"><span class="nav-number">10.</span> <span class="nav-text">Others</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Reference"><span class="nav-number">11.</span> <span class="nav-text">Reference</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -609,7 +638,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
       repo: 'zhqyvvn.github.io',
       owner: 'zhqyvvn',
       admin: ['zhqyvvn'],
-      id: 'd9d97f3484e6859704af2a3231fc6bcd',
+      id: '60a164e2e74f02d2335c86c504aaeaee',
         language: '',
       distractionFreeMode: true
     });
