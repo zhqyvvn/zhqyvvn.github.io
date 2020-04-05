@@ -48,15 +48,15 @@
   };
 </script>
 
-  <meta name="description" content="List Java solutions for problems in Leetcode   (keep posting …)">
+  <meta name="description" content="Post Java solutions for problems in LeetcodeSuggestions are welcome. (keep posting …)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Leetcode in Java">
 <meta property="og:url" content="http://zhqyvvn.github.io/2020/04/04/Leetcode-in-Java/index.html">
 <meta property="og:site_name" content="zhqyvvn">
-<meta property="og:description" content="List Java solutions for problems in Leetcode   (keep posting …)">
+<meta property="og:description" content="Post Java solutions for problems in LeetcodeSuggestions are welcome. (keep posting …)">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-04-05T00:23:38.000Z">
-<meta property="article:modified_time" content="2020-04-05T00:56:41.742Z">
+<meta property="article:modified_time" content="2020-04-05T19:59:56.955Z">
 <meta property="article:author" content="Qianyue Zhang">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
@@ -236,10 +236,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: Apr 4th 2020 20:23:38 / Modified: 20:56:41" itemprop="dateCreated datePublished" datetime="2020-04-04T20:23:38-04:00">Apr 4th 2020</time>
+              <time title="Created: Apr 4th 2020 20:23:38" itemprop="dateCreated datePublished" datetime="2020-04-04T20:23:38-04:00">Apr 4th 2020</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: Apr 5th 2020 15:59:56" itemprop="dateModified" datetime="2020-04-05T15:59:56-04:00">Apr 5th 2020</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -270,10 +276,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>List Java solutions for problems in <a href="https://leetcode.com/problemset/all/" target="_blank" rel="noopener">Leetcode</a>  </p>
+        <p>Post Java solutions for problems in <a href="https://leetcode.com/problemset/all/" target="_blank" rel="noopener">Leetcode</a><br>Suggestions are welcome.</p>
 <p>(keep posting …)  </p>
 <a id="more"></a>  
+
 <h4 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h4><h5 id="Greedy"><a href="#Greedy" class="headerlink" title="Greedy"></a>Greedy</h5><h6 id="455-Assign-Cookies"><a href="#455-Assign-Cookies" class="headerlink" title="455. Assign Cookies"></a><a href="https://leetcode.com/problems/assign-cookies/" target="_blank" rel="noopener">455. Assign Cookies</a></h6><figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="symbol">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> findContentChildren(<span class="built_in">int</span>[] g, <span class="built_in">int</span>[] s) &#123;</span><br><span class="line">        Arrays.sort(g); <span class="comment">//sort greed factor</span></span><br><span class="line">        Arrays.sort(s); <span class="comment">//sort cookie size</span></span><br><span class="line">        <span class="built_in">int</span> child = <span class="number">0</span>, cookie = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (child &lt; g.length &amp;&amp; cookie &lt; s.length) &#123;</span><br><span class="line">            <span class="keyword">if</span> (g[child] &lt;= s[cookie]) &#123;</span><br><span class="line">                child += <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            cookie += <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> child;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="135-Candy"><a href="#135-Candy" class="headerlink" title="135. Candy"></a><a href="https://leetcode.com/problems/candy/" target="_blank" rel="noopener">135. Candy</a></h6><figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="symbol">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> candy(<span class="built_in">int</span>[] ratings) &#123;</span><br><span class="line">        <span class="built_in">int</span> len = ratings.length;</span><br><span class="line">        <span class="built_in">int</span>[] candies = new <span class="built_in">int</span>[len];</span><br><span class="line">        candies[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="comment">//Loop from left to right. Ensure right one with higher rating gets more candies than the left</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">1</span>; i &lt; len; i++) &#123;</span><br><span class="line">            candies[i] = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (ratings[i] &gt; ratings[i - <span class="number">1</span>]) &#123;</span><br><span class="line">                candies[i] = candies[i - <span class="number">1</span>] + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">int</span> sum = candies[len - <span class="number">1</span>];</span><br><span class="line">        <span class="comment">//Loop from right to left. Ensure left one with higher rating gets more candies than the right</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">int</span> i = len - <span class="number">2</span>; i &gt;= <span class="number">0</span> ; i--) &#123;</span><br><span class="line">            <span class="keyword">if</span> (ratings[i] &gt; ratings[i + <span class="number">1</span>] &amp;&amp; candies[i] &lt;= candies[i + <span class="number">1</span>]) &#123;</span><br><span class="line">                candies[i] = candies[i + <span class="number">1</span>] + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            sum += candies[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="Math"><a href="#Math" class="headerlink" title="Math"></a>Math</h4><h4 id="Data-Structure"><a href="#Data-Structure" class="headerlink" title="Data Structure"></a>Data Structure</h4><h4 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h4><p><a href="https://www.changgy.com/leetcode-101" target="_blank" rel="noopener">LeetCode 101 - A LeetCode Grinding Guide</a></p>
 
     </div>
@@ -357,7 +365,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Algorithm"><span class="nav-number">1.</span> <span class="nav-text">Algorithm</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Greedy"><span class="nav-number">1.1.</span> <span class="nav-text">Greedy</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#455-Assign-Cookies"><span class="nav-number">1.1.1.</span> <span class="nav-text">455. Assign Cookies</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Math"><span class="nav-number">2.</span> <span class="nav-text">Math</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Data-Structure"><span class="nav-number">3.</span> <span class="nav-text">Data Structure</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Reference"><span class="nav-number">4.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Algorithm"><span class="nav-number">1.</span> <span class="nav-text">Algorithm</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Greedy"><span class="nav-number">1.1.</span> <span class="nav-text">Greedy</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#455-Assign-Cookies"><span class="nav-number">1.1.1.</span> <span class="nav-text">455. Assign Cookies</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#135-Candy"><span class="nav-number">1.1.2.</span> <span class="nav-text">135. Candy</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Math"><span class="nav-number">2.</span> <span class="nav-text">Math</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Data-Structure"><span class="nav-number">3.</span> <span class="nav-text">Data Structure</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Reference"><span class="nav-number">4.</span> <span class="nav-text">Reference</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
