@@ -1,12 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Frequently used Java syntax</title>
-    <url>/2020/04/02/Frequently-used-Java-syntax/</url>
+    <title>Leetcode in Java</title>
+    <url>/2020/04/04/Leetcode-in-Java/</url>
+    <content><![CDATA[<p>List Java solutions for problems in <a href="https://leetcode.com/problemset/all/" target="_blank" rel="noopener">Leetcode</a>  </p>
+<p>(keep posting …)  </p>
+<a id="more"></a>  
+<h4 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h4><h5 id="Greedy"><a href="#Greedy" class="headerlink" title="Greedy"></a>Greedy</h5><h6 id="455-Assign-Cookies"><a href="#455-Assign-Cookies" class="headerlink" title="455. Assign Cookies"></a><a href="https://leetcode.com/problems/assign-cookies/" target="_blank" rel="noopener">455. Assign Cookies</a></h6><figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="symbol">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> findContentChildren(<span class="built_in">int</span>[] g, <span class="built_in">int</span>[] s) &#123;</span><br><span class="line">        Arrays.sort(g); <span class="comment">//sort greed factor</span></span><br><span class="line">        Arrays.sort(s); <span class="comment">//sort cookie size</span></span><br><span class="line">        <span class="built_in">int</span> child = <span class="number">0</span>, cookie = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (child &lt; g.length &amp;&amp; cookie &lt; s.length) &#123;</span><br><span class="line">            <span class="keyword">if</span> (g[child] &lt;= s[cookie]) &#123;</span><br><span class="line">                child += <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            cookie += <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> child;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Math"><a href="#Math" class="headerlink" title="Math"></a>Math</h4><h4 id="Data-Structure"><a href="#Data-Structure" class="headerlink" title="Data Structure"></a>Data Structure</h4><h4 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h4><p><a href="https://www.changgy.com/leetcode-101" target="_blank" rel="noopener">LeetCode 101 - A LeetCode Grinding Guide</a></p>
+]]></content>
+      <categories>
+        <category>Leetcode</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Frequently Used Java Syntax</title>
+    <url>/2020/04/02/Frequently-Used-Java-Syntax/</url>
     <content><![CDATA[<p>Summarize my frequently used Java syntax and make it convenient for lookup.<br>Suggestions are welcome.  </p>
 <p><em>Original post by Qianyue Zhang in Apr 2020</em>  </p>
-<p>(keep posting …)</p>
-<a id="more"></a>
+<a id="more"></a>  
+
 <h4 id="Arrays"><a href="#Arrays" class="headerlink" title="Arrays"></a>Arrays</h4><figure class="highlight fsharp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">type</span> <span class="title">var</span>-<span class="title">name</span>[] </span>= <span class="keyword">new</span> <span class="class"><span class="keyword">type</span>[<span class="title">size</span>];</span></span><br><span class="line">OR</span><br><span class="line"><span class="class"><span class="keyword">type</span>[] <span class="title">var</span>-<span class="title">name</span> </span>= <span class="keyword">new</span> <span class="class"><span class="keyword">type</span>[<span class="title">size</span>];</span></span><br></pre></td></tr></table></figure>
 <h5 id="Built-in-methods"><a href="#Built-in-methods" class="headerlink" title="Built-in methods"></a>Built-in methods</h5><p><code>Arrays.fill(Object[] array, Object value)</code>,  </p>
 <p><code>Arrays.equals(Object[] array1, Object[] array2)</code>  </p>
