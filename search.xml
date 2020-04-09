@@ -182,7 +182,9 @@
 <h5 id="Built-in-methods-11"><a href="#Built-in-methods-11" class="headerlink" title="Built-in methods"></a>Built-in methods</h5><p><code>stack.peek()</code>,  </p>
 <p><code>stack.push(Object e)</code>,  </p>
 <p><code>stack.pop()</code>,  </p>
-<p><code>stack.empty()</code>/<code>stack.isEmpty()</code></p>
+<p><code>stack.empty()</code>/<code>stack.isEmpty()</code>,</p>
+<p><code>stack.size()</code>,  </p>
+<p><code>stack1.equals(stack2)</code></p>
 <h4 id="String"><a href="#String" class="headerlink" title="String"></a>String</h4><h5 id="Built-in-methods-12"><a href="#Built-in-methods-12" class="headerlink" title="Built-in methods"></a>Built-in methods</h5><p><code>&lt;String&gt;.substring(int start, int end)</code>,   </p>
 <p><code>&lt;String&gt;.startsWith(String prefix)</code>,   </p>
 <p><code>&lt;String&gt;.isEmpty()</code>,   </p>
