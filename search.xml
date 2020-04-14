@@ -237,12 +237,15 @@
 
 <h5 id="Built-in-methods-13"><a href="#Built-in-methods-13" class="headerlink" title="Built-in methods"></a>Built-in methods</h5><p><code>sb.append(char c)</code>,   </p>
 <p><code>sb.append(int n)</code>,   </p>
+<p><code>sb.append(String s)</code>,  </p>
 <p><code>sb.insert(int index, String/int/char c)</code>,   </p>
 <p><code>sb.reverse()</code>,   </p>
 <p><code>sb.length()</code>,   </p>
 <p><code>sb.setCharAt(int index, char c)</code>  </p>
 <p><code>sb.toString()</code>: Returns a string representing the data in this sequence.  </p>
-<p><code>sb.setLength(int newlength)</code>: setting newlength to 0 will empty SB</p>
+<p><code>sb.setLength(int newlength)</code>: setting newlength to 0 will empty SB  </p>
+<p><code>sb.substring(int start, int end)</code>  </p>
+<p><code>sb.delete(int start, int end)</code>  </p>
 <h4 id="Classic-Problems"><a href="#Classic-Problems" class="headerlink" title="Classic Problems"></a>Classic Problems</h4><h5 id="Backtracking"><a href="#Backtracking" class="headerlink" title="Backtracking"></a>Backtracking</h5><p><a href="https://leetcode.com/problems/subsets/" target="_blank" rel="noopener">leetcode 78. Subsets</a></p>
 <h5 id="Binary-Search-Tree"><a href="#Binary-Search-Tree" class="headerlink" title="Binary Search Tree"></a>Binary Search Tree</h5><p><a href="https://leetcode.com/problems/validate-binary-search-tree/" target="_blank" rel="noopener">leetcode 98. Validate Binary Search Tree</a></p>
 <h5 id="Integer-Range"><a href="#Integer-Range" class="headerlink" title="Integer Range"></a>Integer Range</h5><p><a href="https://leetcode.com/problems/reverse-integer/" target="_blank" rel="noopener">leetcode 7. Reverse Integer</a><br><a href="https://leetcode.com/problems/add-to-array-form-of-integer/" target="_blank" rel="noopener">leetcode 989. Add to Array-Form of Integer</a></p>
