@@ -56,7 +56,7 @@
 <meta property="og:description" content="Summarize my frequently used Java syntax and make it convenient for lookup.Suggestions are welcome.   Original post by Qianyue Zhang in Apr 2020">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-04-03T02:14:57.000Z">
-<meta property="article:modified_time" content="2020-04-14T16:09:16.569Z">
+<meta property="article:modified_time" content="2020-04-19T04:46:15.212Z">
 <meta property="article:author" content="Qianyue Zhang">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
@@ -244,7 +244,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: Apr 14th 2020 12:09:16" itemprop="dateModified" datetime="2020-04-14T12:09:16-04:00">Apr 14th 2020</time>
+                <time title="Modified: Apr 19th 2020 0:46:15" itemprop="dateModified" datetime="2020-04-19T00:46:15-04:00">Apr 19th 2020</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -317,7 +317,7 @@
 <p>e.g. int -&gt; char  </p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> c = (<span class="keyword">char</span>)(<span class="string">'a'</span> + <span class="number">1</span>);</span><br><span class="line"><span class="comment">//c: 'b'</span></span><br></pre></td></tr></table></figure>
 
-<h5 id="Built-in-methods-1"><a href="#Built-in-methods-1" class="headerlink" title="Built-in methods"></a>Built-in methods</h5><p><code>Character.toLowerCase(char c)</code><br><code>Character.isLetterOrDigit(char c)</code>: returns true if the character is a letter or digit; false otherwise.<br><code>Character.getNumericValue(char c)</code>: returns the int value that the specified Unicode character represents</p>
+<h5 id="Built-in-methods-1"><a href="#Built-in-methods-1" class="headerlink" title="Built-in methods"></a>Built-in methods</h5><p><code>Character.toLowerCase(char c)</code><br><code>Character.isLetterOrDigit(char c)</code>: returns true if the character is a letter or digit; false otherwise.<br><code>Character.getNumericValue(char c)</code>: returns the int value that the specified Unicode character represents<br><code>Character.isLetter(char c)</code>: returns true if the character is a letter, false otherwise<br><code>Character.isDigit(char c)</code>: returns true if the character is a digit, false otherwise  </p>
 <h4 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h4><p>e.g.  </p>
 <figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">HashMap</span> &lt;Integer, Double&gt; <span class="built_in">map</span> = <span class="keyword">new</span> <span class="keyword">HashMap</span>();</span><br></pre></td></tr></table></figure>
 <h5 id="Built-in-methods-2"><a href="#Built-in-methods-2" class="headerlink" title="Built-in methods"></a>Built-in methods</h5><p><code>map.keySet()</code>,  </p>
@@ -333,7 +333,7 @@
 
 <h4 id="Integer"><a href="#Integer" class="headerlink" title="Integer"></a>Integer</h4><p>range: -2^{31} ~ 2^{31} - 1</p>
 <h5 id="MAX-MIN"><a href="#MAX-MIN" class="headerlink" title="MAX/MIN"></a>MAX/MIN</h5><p><code>Integer.MAX_VALUE</code>, <code>Integer.MIN_VALUE</code></p>
-<h5 id="Built-in-methods-3"><a href="#Built-in-methods-3" class="headerlink" title="Built-in methods"></a>Built-in methods</h5><p><code>Integer.bitCount(int num)</code>: returns the number of one-bits in the two’s complement binary representation of the specified int value. (number of digits in decimal)<br><code>Integer.parseInt(String s)</code>: Parses the string argument as a signed decimal integer.</p>
+<h5 id="Built-in-methods-3"><a href="#Built-in-methods-3" class="headerlink" title="Built-in methods"></a>Built-in methods</h5><p><code>Integer.bitCount(int num)</code>: returns the number of one-bits in the two’s complement binary representation of the specified int value. (number of digits in decimal)<br><code>Integer.parseInt(String s)</code>: Parses the string argument as a signed decimal integer<br><code>Integer.toString(int num)</code>: Returns the string object of the particular Integer value<br><code>Integer.parseInt(String s)</code>: Parses the string argument as a signed decimal integer  </p>
 <h4 id="Math"><a href="#Math" class="headerlink" title="Math"></a>Math</h4><h5 id="Built-in-methods-4"><a href="#Built-in-methods-4" class="headerlink" title="Built-in methods"></a>Built-in methods</h5><p><code>Math.pow(double base, double exponent)</code>: Returns double<br><code>Math.sqrt(double num)</code>: Returns the correctly rounded positive square root of a double value.</p>
 <h4 id="List"><a href="#List" class="headerlink" title="List"></a>List</h4><p>e.g.  </p>
 <figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ArrayList &lt;<span class="built_in">Integer</span>&gt; <span class="built_in">list</span> = <span class="literal">new</span> ArrayList();</span><br></pre></td></tr></table></figure>
@@ -391,6 +391,12 @@
 <hr>
 <p>e.g. print list</p>
 <figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String str = <span class="module-access"><span class="module"><span class="identifier">Arrays</span>.</span></span><span class="keyword">to</span><span class="constructor">String(<span class="params">list</span>.<span class="params">toArray</span>()</span>);</span><br><span class="line"><span class="module-access"><span class="module"><span class="identifier">System</span>.</span></span>out.println(str);</span><br></pre></td></tr></table></figure>
+<hr>
+<p>e.g. sort list</p>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="module-access"><span class="module"><span class="identifier">Collections</span>.</span></span>sort(<span class="built_in">list</span>);</span><br></pre></td></tr></table></figure>
+<hr>
+<p>e.g. convert set to list</p>
+<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">List</span>&lt;<span class="built_in">String</span>&gt; <span class="built_in">list</span> = <span class="literal">new</span> ArrayList(<span class="built_in">set</span>);</span><br></pre></td></tr></table></figure>
 
 <h4 id="Long"><a href="#Long" class="headerlink" title="Long"></a>Long</h4><h5 id="Built-in-methods-6"><a href="#Built-in-methods-6" class="headerlink" title="Built-in methods"></a>Built-in methods</h5><p>e.g. convert string to long type:</p>
 <figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">long <span class="keyword">val</span> = <span class="module-access"><span class="module"><span class="identifier">Long</span>.</span></span>parse<span class="constructor">Long(<span class="string">"1234"</span>)</span>;</span><br><span class="line"><span class="comment">//val: 1234</span></span><br></pre></td></tr></table></figure>
@@ -425,10 +431,11 @@
 <h4 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h4><p>e.g.  </p>
 <figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HashSet &lt;<span class="keyword">Integer</span>&gt; <span class="keyword">set</span> = new <span class="comment">HashSet()</span>;</span><br></pre></td></tr></table></figure>
 <figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TreeSet &lt;<span class="keyword">Integer</span>&gt; <span class="keyword">set</span> = new <span class="comment">TreeSet()</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SortedSet &lt;<span class="keyword">Integer</span>&gt; <span class="keyword">set</span> = new <span class="comment">TreeSet()</span>;</span><br></pre></td></tr></table></figure>
 <p>e.g. list -&gt; set:  </p>
 <figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">List</span>&lt;<span class="built_in">String</span>&gt; <span class="built_in">list</span> = <span class="literal">new</span> ArrayList();</span><br><span class="line"><span class="built_in">Set</span>&lt;<span class="built_in">String</span>&gt; <span class="built_in">set</span> = <span class="literal">new</span> HashSet(<span class="built_in">list</span>);</span><br></pre></td></tr></table></figure>
 <p>e.g. loop over set:  </p>
-<figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Iterator <span class="built_in">value</span> = <span class="built_in">set</span>.iterator();</span><br><span class="line"><span class="keyword">while</span> (<span class="built_in">value</span>.hasNext()) &#123;</span><br><span class="line">    <span class="built_in">value</span>.<span class="built_in">next</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Iterator <span class="keyword">value</span> = <span class="keyword">set</span>.iterator();</span><br><span class="line"><span class="keyword">while</span> (<span class="keyword">value</span>.hasNext()) &#123;</span><br><span class="line">    <span class="type">int</span> num = <span class="keyword">value</span>.next();//<span class="keyword">begin</span> <span class="keyword">from</span> first element <span class="keyword">in</span> <span class="keyword">set</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h5 id="Built-in-methods-10"><a href="#Built-in-methods-10" class="headerlink" title="Built-in methods"></a>Built-in methods</h5><p><code>set.add(Object e)</code>,   </p>
 <p><code>set.contains(Object e)</code>,   </p>
 <p><code>set.remove(Object e)</code>,   </p>
