@@ -50,15 +50,16 @@
 
   <meta name="description" content="Post Java solutions for problems in LeetcodeSuggestions are welcome. (keep posting …)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Leetcode in Java">
+<meta property="og:title" content="LeetCode in Java">
 <meta property="og:url" content="http://zhqyvvn.github.io/2020/04/04/Leetcode-in-Java/index.html">
 <meta property="og:site_name" content="zhqyvvn">
 <meta property="og:description" content="Post Java solutions for problems in LeetcodeSuggestions are welcome. (keep posting …)">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-04-05T00:23:38.000Z">
-<meta property="article:modified_time" content="2020-05-12T22:43:46.879Z">
+<meta property="article:modified_time" content="2020-05-12T22:52:51.423Z">
 <meta property="article:author" content="Qianyue Zhang">
 <meta property="article:tag" content="Java">
+<meta property="article:tag" content="LeetCode">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://zhqyvvn.github.io/2020/04/04/Leetcode-in-Java/">
@@ -73,7 +74,7 @@
   };
 </script>
 
-  <title>Leetcode in Java | zhqyvvn</title>
+  <title>LeetCode in Java | zhqyvvn</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162128119-1"></script>
     <script pjax>
@@ -227,7 +228,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Leetcode in Java
+          LeetCode in Java
         </h1>
 
         <div class="post-meta">
@@ -244,7 +245,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: May 12th 2020 18:43:46" itemprop="dateModified" datetime="2020-05-12T18:43:46-04:00">May 12th 2020</time>
+                <time title="Modified: May 12th 2020 18:52:51" itemprop="dateModified" datetime="2020-05-12T18:52:51-04:00">May 12th 2020</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -252,8 +253,8 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Leetcode/" itemprop="url" rel="index">
-                    <span itemprop="name">Leetcode</span>
+                  <a href="/categories/Summary/" itemprop="url" rel="index">
+                    <span itemprop="name">Summary</span>
                   </a>
                 </span>
             </span>
@@ -315,7 +316,7 @@
 <h5 id="Tree"><a href="#Tree" class="headerlink" title="Tree"></a>Tree</h5><h6 id="543-Diameter-of-Binary-Tree"><a href="#543-Diameter-of-Binary-Tree" class="headerlink" title="543. Diameter of Binary Tree"></a><a href="https://leetcode.com/problems/diameter-of-binary-tree/" target="_blank" rel="noopener">543. Diameter of Binary Tree</a></h6><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * public class TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode left;</span></span><br><span class="line"><span class="comment"> *     TreeNode right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) &#123; val = x; &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> <span class="built_in">max</span> = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">diameterOfBinaryTree</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        helper(root);</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">max</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">helper</span><span class="params">(TreeNode node)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (node == null) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> l = helper(node.left);</span><br><span class="line">        <span class="keyword">int</span> r = helper(node.right);</span><br><span class="line">        <span class="built_in">max</span> = Math.<span class="built_in">max</span>(l + r, <span class="built_in">max</span>);</span><br><span class="line">        <span class="keyword">return</span> Math.<span class="built_in">max</span>(l, r) + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h6 id="1008-Construct-Binary-Search-Tree-from-Preorder-Traversal💫"><a href="#1008-Construct-Binary-Search-Tree-from-Preorder-Traversal💫" class="headerlink" title="1008. Construct Binary Search Tree from Preorder Traversal💫"></a><a href="https://leetcode.com/problems/construct-binary-search-tree-from-preorder-traversal/" target="_blank" rel="noopener">1008. Construct Binary Search Tree from Preorder Traversal</a>💫</h6><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Definition for a binary tree <span class="keyword">node</span>.<span class="title"></span></span><br><span class="line"><span class="title"> * public</span> class TreeNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     TreeNode left;</span><br><span class="line"> *     TreeNode right;</span><br><span class="line"> *     TreeNode(int x) &#123; val = x; &#125;</span><br><span class="line"> * &#125;</span><br><span class="line"> */</span><br><span class="line">class Solution &#123;</span><br><span class="line">    public TreeNode bstFromPreorder(int[] preorder) &#123;</span><br><span class="line">        return helper(preorder, <span class="number">0</span>, preorder.length - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    public TreeNode helper(int[] preorder, int <span class="literal">start</span>, int end) &#123;</span><br><span class="line">        if (<span class="literal">start</span> &gt; end) &#123;</span><br><span class="line">            return null;</span><br><span class="line">        &#125;</span><br><span class="line">        TreeNode <span class="keyword">node</span> <span class="title">= new</span> TreeNode(preorder[<span class="literal">start</span>]);</span><br><span class="line">        int i = <span class="literal">start</span> + <span class="number">1</span>;</span><br><span class="line">        for (; i <span class="tag">&lt;= end; i++) &#123;</span></span><br><span class="line"><span class="tag">            if (preorder[i] &gt;</span> preorder[<span class="literal">start</span>]) break;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">node</span>.<span class="title">left</span> = helper(preorder, <span class="literal">start</span> + <span class="number">1</span>, i - <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">node</span>.<span class="title">right</span> = helper(preorder, i, end);</span><br><span class="line">        return <span class="keyword">node</span><span class="title">;</span></span><br><span class="line"><span class="title"></span></span><br><span class="line"><span class="title">    &#125;</span></span><br><span class="line"><span class="title">&#125;</span></span><br></pre></td></tr></table></figure>
 <h4 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h4><ol>
-<li><a href="https://github.com/changgyhub/leetcode_101" target="_blank" rel="noopener">LeetCode 101 - A LeetCode Grinding Guide</a> from <a href="https://github.com/changgyhub" target="_blank" rel="noopener">changgyhub</a>  </li>
+<li><a href="https://github.com/changgyhub/leetcode_101" target="_blank" rel="noopener">LeetCode 101 - A LeetCode Grinding Guide</a> by <a href="https://github.com/changgyhub" target="_blank" rel="noopener">changgyhub</a>  </li>
 <li><a href="https://leetcode.com/problems/construct-binary-search-tree-from-preorder-traversal/" target="_blank" rel="noopener">1008. Construct Binary Search Tree from Preorder Traversal</a> – <a href="https://leetcode.com/problems/construct-binary-search-tree-from-preorder-traversal/discuss/589059/JAVA-EASIEST-SOLUTION-WITH-CLEAR-EXPLANATION-OF-LOGIC!" target="_blank" rel="noopener">JAVA EASIEST SOLUTION -WITH CLEAR EXPLANATION OF LOGIC!</a></li>
 </ol>
 <h4 id="Original-posts-of-solutions"><a href="#Original-posts-of-solutions" class="headerlink" title="Original posts of solutions"></a>Original posts of solutions</h4><ol>
@@ -332,6 +333,7 @@
       <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/Java/" rel="tag"># Java</a>
+              <a href="/tags/LeetCode/" rel="tag"># LeetCode</a>
           </div>
 
         
@@ -427,13 +429,13 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
