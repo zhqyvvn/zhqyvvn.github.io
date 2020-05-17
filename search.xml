@@ -85,7 +85,9 @@
     <title>Java Syntax Tips</title>
     <url>/2020/02/18/Java-Syntax-Tips/</url>
     <content><![CDATA[<p>Summarize Java syntax frequently used and make it convenient for lookup. Suggestions are welcome.  </p>
-<h4 id="Arrays"><a href="#Arrays" class="headerlink" title="Arrays"></a>Arrays</h4><figure class="highlight fsharp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">type</span> <span class="title">var</span>-<span class="title">name</span>[] </span>= <span class="keyword">new</span> <span class="class"><span class="keyword">type</span>[<span class="title">size</span>];</span></span><br><span class="line">OR</span><br><span class="line"><span class="class"><span class="keyword">type</span>[] <span class="title">var</span>-<span class="title">name</span> </span>= <span class="keyword">new</span> <span class="class"><span class="keyword">type</span>[<span class="title">size</span>];</span></span><br></pre></td></tr></table></figure>
+<h4 id="Arrays"><a href="#Arrays" class="headerlink" title="Arrays"></a>Arrays</h4><figure class="highlight fsharp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">type</span> <span class="title">var</span>-<span class="title">name</span>[] </span>= <span class="keyword">new</span> <span class="class"><span class="keyword">type</span>[<span class="title">size</span>];</span></span><br></pre></td></tr></table></figure>
+<p>OR</p>
+<figure class="highlight fsharp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">type</span>[] <span class="title">var</span>-<span class="title">name</span> </span>= <span class="keyword">new</span> <span class="class"><span class="keyword">type</span>[<span class="title">size</span>];</span></span><br></pre></td></tr></table></figure>
 <h5 id="Built-in-methods"><a href="#Built-in-methods" class="headerlink" title="Built-in methods"></a>Built-in methods</h5><p><code>Arrays.fill(Object[] array, Object value)</code>,  </p>
 <p><code>Arrays.equals(Object[] array1, Object[] array2)</code>  </p>
 <a id="more"></a>  
