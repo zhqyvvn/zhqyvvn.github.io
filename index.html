@@ -242,7 +242,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: May 17th 2020 14:08:35" itemprop="dateModified" datetime="2020-05-17T14:08:35-04:00">May 17th 2020</time>
+                <time title="Modified: May 17th 2020 14:54:04" itemprop="dateModified" datetime="2020-05-17T14:54:04-04:00">May 17th 2020</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -267,8 +267,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>Post Java solutions for problems in <a href="https://leetcode.com/problemset/all/" target="_blank" rel="noopener">Leetcode</a><br>Suggestions are welcome.</p>
-<p>(keep posting …)  </p>
+          <p>Post Java solutions for problems in <a href="https://leetcode.com/problemset/all/" target="_blank" rel="noopener">Leetcode</a>. Suggestions are welcome.</p>
+<p>(keep on posting …)  </p>
+<h4 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h4><h5 id="Greedy"><a href="#Greedy" class="headerlink" title="Greedy"></a>Greedy</h5><h6 id="53-Maximum-Subarray"><a href="#53-Maximum-Subarray" class="headerlink" title="53. Maximum Subarray"></a><a href="https://leetcode.com/problems/maximum-subarray/" target="_blank" rel="noopener">53. Maximum Subarray</a></h6><figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> maxSubArray(<span class="built_in">int</span>[] nums) &#123;</span><br><span class="line">        <span class="built_in">int</span> <span class="built_in">max</span> = nums[<span class="number">0</span>], <span class="built_in">sum</span> = nums[<span class="number">0</span>];</span><br><span class="line">        //Ensure each <span class="keyword">number</span> is greater than itself after plus <span class="string">'sum'</span></span><br><span class="line">        for (<span class="built_in">int</span> i = <span class="number">1</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="built_in">sum</span> &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="built_in">sum</span> += nums[i];</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="built_in">sum</span> = nums[i];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">max</span> = Math.<span class="built_in">max</span>(<span class="built_in">max</span>, <span class="built_in">sum</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">max</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/04/04/Leetcode-in-Java/#more" rel="contents">
@@ -326,7 +327,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: May 17th 2020 14:42:04" itemprop="dateModified" datetime="2020-05-17T14:42:04-04:00">May 17th 2020</time>
+                <time title="Modified: May 17th 2020 14:54:41" itemprop="dateModified" datetime="2020-05-17T14:54:41-04:00">May 17th 2020</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -351,8 +352,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>Summarize Java syntax frequently used and make it convenient for lookup.<br>Suggestions are welcome.  </p>
-<p><em>Original post by Qianyue Zhang in Apr 2020</em>  </p>
+          <p>Summarize Java syntax frequently used and make it convenient for lookup. Suggestions are welcome.  </p>
+<h4 id="Arrays"><a href="#Arrays" class="headerlink" title="Arrays"></a>Arrays</h4><figure class="highlight fsharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">type</span> <span class="title">var</span>-<span class="title">name</span>[] </span>= <span class="keyword">new</span> <span class="class"><span class="keyword">type</span>[<span class="title">size</span>];</span></span><br><span class="line">OR</span><br><span class="line"><span class="class"><span class="keyword">type</span>[] <span class="title">var</span>-<span class="title">name</span> </span>= <span class="keyword">new</span> <span class="class"><span class="keyword">type</span>[<span class="title">size</span>];</span></span><br></pre></td></tr></table></figure>
+<h5 id="Built-in-methods"><a href="#Built-in-methods" class="headerlink" title="Built-in methods"></a>Built-in methods</h5><p><code>Arrays.fill(Object[] array, Object value)</code>,  </p>
+<p><code>Arrays.equals(Object[] array1, Object[] array2)</code>  </p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/02/18/Java-Syntax-Tips/#more" rel="contents">
