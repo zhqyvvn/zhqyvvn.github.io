@@ -1,0 +1,1520 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://zhqyvvn.github.io').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: true,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeIn","post_body":"fadeIn","coll_header":"fadeIn","sidebar":"perspectiveDownIn"}}
+  };
+</script>
+
+  <meta name="description" content="Reading notes on &lt;&lt;Database Systems The Complete Book 2nd edition&gt;&gt; The Relational Model of Data  Relational Algebra: This algebra underlies most query languages for the relational model.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Notes on Database">
+<meta property="og:url" content="http://zhqyvvn.github.io/2018/09/12/Notes-on-Database/index.html">
+<meta property="og:site_name" content="zhqyvvn">
+<meta property="og:description" content="Reading notes on &lt;&lt;Database Systems The Complete Book 2nd edition&gt;&gt; The Relational Model of Data  Relational Algebra: This algebra underlies most query languages for the relational model.">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2018-09-12T18:12:46.000Z">
+<meta property="article:modified_time" content="2020-08-06T02:43:07.173Z">
+<meta property="article:author" content="Qianyue Zhang">
+<meta property="article:tag" content="Relational Algebra">
+<meta property="article:tag" content="SQL">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://zhqyvvn.github.io/2018/09/12/Notes-on-Database/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>Notes on Database | zhqyvvn</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162128119-1"></script>
+    <script pjax>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-162128119-1');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">zhqyvvn</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">Qianyue Zhang's Tech Blog</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="Searching..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en-us">
+    <link itemprop="mainEntityOfPage" href="http://zhqyvvn.github.io/2018/09/12/Notes-on-Database/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/38484412?s=460&v=4">
+      <meta itemprop="name" content="Qianyue Zhang">
+      <meta itemprop="description" content="Down to the earth">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zhqyvvn">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Notes on Database
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: Sep 12th 2018 14:12:46" itemprop="dateCreated datePublished" datetime="2018-09-12T14:12:46-04:00">Sep 12th 2018</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: Aug 5th 2020 22:43:07" itemprop="dateModified" datetime="2020-08-05T22:43:07-04:00">Aug 5th 2020</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Summary/" itemprop="url" rel="index">
+                    <span itemprop="name">Summary</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>Reading notes on &lt;&lt;Database Systems The Complete Book 2nd edition&gt;&gt;</p>
+<h3 id="the-relational-model-of-data">The Relational Model of Data</h3>
+<blockquote>
+<p><em>Relational Algebra</em>: This algebra underlies most query languages for the relational model. Its principal operators are union, intersection, difference, selection, projection, Cartesian product, natural join, theta-join, and renaming.</p>
+</blockquote>
+<h4 id="basics-of-the-relational-model">Basics of the Relational Model</h4>
+<table>
+<thead>
+<tr class="header">
+<th>title</th>
+<th>year</th>
+<th>length</th>
+<th>genre</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Gone With the Wind</td>
+<td>1939</td>
+<td>231</td>
+<td>drama</td>
+</tr>
+<tr class="even">
+<td>Star Wars</td>
+<td>1997</td>
+<td>124</td>
+<td>sciFi</td>
+</tr>
+<tr class="odd">
+<td>Wayne’s World</td>
+<td>1992</td>
+<td>95</td>
+<td>comedy</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>Attribute: Columns of a relation(<code>title, year, length, genre</code>)</p></li>
+<li><p>Tuple: Rows of a relation, other than the header row containing the attribute names (the first of the three tuples has the four components <code>Gone With the Wind, 1939, 231, drama</code> for attributes <code>title, year, length, and genre</code>). Each component of each tuple be atomic. It is not permitted for a value to be <code>set, list, array</code>. In the relational algebra of sets, duplicate tuples are always eliminated.</p></li>
+</ul>
+<a id="more"></a>
+<ul>
+<li><p>Schema: Name of a relation and the set of attributes for a relation (<code>Movies(title, year, length, genre)</code>)</p></li>
+<li><p>Domain: Elementary type associated with each attribute of a relation (we could represent the schema for the <code>Movies</code> relation as <code>Movies(title:string, year:integer, length:integer, genre:string)</code>)</p></li>
+<li><p>Instance: A set of tuples for a given relation an instance of that relation.</p></li>
+<li><p>Keys: Declare that the relation <code>Movies</code> has a key consisting of the two attributes <code>title</code> and <code>year</code>. That is, we don’t believe there could ever be two movies that had both the same title and the same year</p></li>
+</ul>
+<h4 id="defining-a-relation-schema-in-sql">Defining a Relation Schema in SQL</h4>
+<h5 id="data-types">Data Types</h5>
+<p><code>CHAR(n)</code>: A fixed-length string of up to <code>n</code> characters. Short strings are padded<br />
+<code>VARCHAR(n)</code>: A string of up to <code>n</code> characters. An endmarker or string-length is used<br />
+<code>BIT(n)</code>: Bit strings of length n<br />
+<code>BIT VARYING(n)</code>: Bit strings of length up to n<br />
+<code>BOOLEAN</code>: TRUE, FALSE, UNKNOWN <code>INT</code> or <code>INTEGER</code>, <code>SHORTINT</code><br />
+<code>FLOAT</code> or <code>REAL</code><br />
+<code>DECIMAL(n,d)</code>: Values that consist of <code>n</code> decimal digits, with the decimal point assumed to be <code>d</code> positions from the right (<code>0123.45</code> is a possible value of type <code>DECIMAL(6,2)</code>)<br />
+<code>DATE</code>: Keyword <code>DATE</code> followed by a quoted string of a special form (<code>DATE '1948-05-14'</code>)<br />
+<code>TIME</code>: Keyword <code>TIME</code> and a quoted string. If fractions of a second are desired, we may continue with a decimal point (<code>TIME '15:00:02.5'</code> represents the time at 3 PM: two and a half seconds past three o’clock)</p>
+<h5 id="simple-table-declarations">Simple Table Declarations</h5>
+<ul>
+<li>Declaration of a relation schema: <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> MovieStar (</span><br><span class="line">    <span class="keyword">name</span> <span class="built_in">CHAR</span>(<span class="number">30</span>),</span><br><span class="line">    address <span class="built_in">VARCHAR</span>(<span class="number">255</span>),</span><br><span class="line">    gender <span class="built_in">CHAR</span>(<span class="number">1</span>),</span><br><span class="line">    birthdate <span class="built_in">DATE</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure> The value of each of these components is set to the special null value, <code>NULL</code>.</li>
+</ul>
+<h5 id="modifying-relation-schemas">Modifying Relation Schemas</h5>
+<ul>
+<li>Delete a relation R by the SQL statement: <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> R;</span><br></pre></td></tr></table></figure></li>
+<li>Modify the <code>MovieStar</code> relation by adding an attribute <code>phone</code> with: <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> MovieStar <span class="keyword">ADD</span> phone <span class="built_in">CHAR</span>(<span class="number">16</span>);</span><br></pre></td></tr></table></figure></li>
+<li>Delete the <code>birthdate</code> attribute: <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> MovieStar <span class="keyword">DROP</span> birthdate;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="default-values">Default Values</h5>
+<ul>
+<li>Replace the declarations of <code>gender</code> and <code>birthdate</code> by: <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gender CHAR(1) DEFAULT '?',</span><br><span class="line">birthdate DATE DEFAULT DATE '0000-00-00'</span><br></pre></td></tr></table></figure></li>
+<li>Declared the default value for new attribute <code>phone</code> to be <code>unlisted</code> when we added this attribute: <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> MovieStar <span class="keyword">ADD</span> phone <span class="built_in">CHAR</span>(<span class="number">16</span>) <span class="keyword">DEFAULT</span> <span class="string">'unlisted'</span>;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="declaring-keys">Declaring Keys</h5>
+<ul>
+<li><p>Key is a single attribute: <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> MovieStar (</span><br><span class="line">    <span class="keyword">name</span> <span class="built_in">CHAR</span>(<span class="number">30</span>) PRIMARY <span class="keyword">KEY</span>,</span><br><span class="line">    address <span class="built_in">VARCHAR</span>(<span class="number">255</span>),</span><br><span class="line">    gender <span class="built_in">CHAR</span>(<span class="number">1</span>),</span><br><span class="line">    birthdate <span class="built_in">DATE</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure> OR <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> MovieStar (</span><br><span class="line">    <span class="keyword">name</span> <span class="built_in">CHAR</span>(<span class="number">30</span>),</span><br><span class="line">    address <span class="built_in">VARCHAR</span>(<span class="number">255</span>),</span><br><span class="line">    gender <span class="built_in">CHAR</span>(<span class="number">1</span>),</span><br><span class="line">    birthdate <span class="built_in">DATE</span>,</span><br><span class="line">    PRIMARY <span class="keyword">KEY</span> (<span class="keyword">name</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure> <code>UNIQUE</code> could replace <code>PRIMARY KEY</code>, and <code>NULL</code> is permitted then</p></li>
+<li><p>Key has more than one attribute: <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> Movies (</span><br><span class="line">    title <span class="built_in">CHAR</span>(<span class="number">100</span>),</span><br><span class="line">    <span class="keyword">year</span> <span class="built_in">INT</span>,</span><br><span class="line">    <span class="keyword">length</span> <span class="built_in">INT</span>,</span><br><span class="line">    genre <span class="built_in">CHAR</span>(<span class="number">10</span>),</span><br><span class="line">    studioName <span class="built_in">CHAR</span>(<span class="number">30</span>),</span><br><span class="line">    producerC<span class="comment"># INT,</span></span><br><span class="line">    PRIMARY <span class="keyword">KEY</span> (title, <span class="keyword">year</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure></p></li>
+</ul>
+<h4 id="an-algebraic-query-language">An Algebraic Query Language</h4>
+<blockquote>
+<p>Relational algebra is not used today as a query language in commercial DBMS’s, although some of the early prototypes did use this algebra directly. Rather, the “real” query language, SQL, incorporates relational algebra at its center, and many SQL programs are really “syntactically sugared” expressions of relational algebra. Further, when a DBMS processes queries, the first thing that happens to a SQL query is that it gets translated into relational algebra or a very similar internal representation. Thus, there are several good reasons to start out learning this algebra.</p>
+</blockquote>
+<h5 id="set-operations-on-relations">Set Operations on Relations</h5>
+<p><span class="math inline">\(R \cup S\)</span>: the union of <span class="math inline">\(R\)</span> and <span class="math inline">\(S\)</span>, is the set of elements that are in <span class="math inline">\(R\)</span> or <span class="math inline">\(S\)</span> or both. An element appears only once in the union even if it is present in both <span class="math inline">\(R\)</span> and <span class="math inline">\(S\)</span><br />
+<span class="math inline">\(R \cap S\)</span>: the intersection of <span class="math inline">\(R\)</span> and <span class="math inline">\(S\)</span>, is the set of elements that are in both <span class="math inline">\(R\)</span> and <span class="math inline">\(S\)</span><br />
+<span class="math inline">\(R - S\)</span>: the difference of <span class="math inline">\(R\)</span> and <span class="math inline">\(S\)</span>, is the set of elements that are in <span class="math inline">\(R\)</span> but not in <span class="math inline">\(S\)</span>. Note that <span class="math inline">\(R − S\)</span> is different from <span class="math inline">\(S − R\)</span>; the latter is the set of elements that are in <span class="math inline">\(S\)</span> but not in <span class="math inline">\(R\)</span>.</p>
+<h5 id="projection">Projection</h5>
+<blockquote>
+<p>The projection operator is used to produce from a relation <span class="math inline">\(R\)</span> a new relation that has only some of <span class="math inline">\(R\)</span>'s columns. The value of expression <span class="math inline">\(\pi_{A1,A2,\dots,An}(R)\)</span> is a relation that has only the columns for attributes <span class="math inline">\(A1, A2,\dots, An\)</span> of <span class="math inline">\(R\)</span>.</p>
+</blockquote>
+<p>e.g.<br />
+<span class="math display">\[\pi_{title,year,length}(\text{Movies})\]</span></p>
+<table>
+<thead>
+<tr class="header">
+<th>title</th>
+<th>year</th>
+<th>length</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Gone With the Wind</td>
+<td>1939</td>
+<td>231</td>
+</tr>
+<tr class="even">
+<td>Star Wars</td>
+<td>1997</td>
+<td>124</td>
+</tr>
+<tr class="odd">
+<td>Wayne’s World</td>
+<td>1992</td>
+<td>95</td>
+</tr>
+</tbody>
+</table>
+<h5 id="selection">Selection</h5>
+<blockquote>
+<p>The selection operator, applied to a relation <span class="math inline">\(R\)</span>, produces a new relation with a subset of <span class="math inline">\(R\)</span>’s tuples. The tuples in the resulting relation are those that satisfy some condition <span class="math inline">\(C\)</span> that involves the attributes of <span class="math inline">\(R\)</span>. We denote this operation <span class="math inline">\(\sigma_{C}(R)\)</span>. The schema for the resulting relation is the same as <span class="math inline">\(R\)</span>’s schema, and we conventionally show the attributes in the same order as we use for <span class="math inline">\(R\)</span></p>
+</blockquote>
+<p>e.g.<br />
+<span class="math display">\[\sigma_{length \geq 100}(\text{Movies})\]</span></p>
+<table>
+<thead>
+<tr class="header">
+<th>title</th>
+<th>year</th>
+<th>length</th>
+<th>genre</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Gone With the Wind</td>
+<td>1939</td>
+<td>231</td>
+<td>drama</td>
+</tr>
+<tr class="even">
+<td>Star Wars</td>
+<td>1997</td>
+<td>124</td>
+<td>sciFi</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math display">\[\sigma_{length \geq 100 \, \textrm{AND} \, genre=&#39;drama&#39;}(\text{Movies})\]</span></p>
+<table>
+<thead>
+<tr class="header">
+<th>title</th>
+<th>year</th>
+<th>length</th>
+<th>genre</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Gone With the Wind</td>
+<td>1939</td>
+<td>231</td>
+<td>drama</td>
+</tr>
+</tbody>
+</table>
+<h5 id="cartesian-product">Cartesian Product</h5>
+<blockquote>
+<p>The Cartesian product (or cross-product, or just product) of two sets <span class="math inline">\(R\)</span> and <span class="math inline">\(S\)</span> is the set of pairs that can be formed by choosing the first element of the pair to be any element of <span class="math inline">\(R\)</span> and the second any element of <span class="math inline">\(S\)</span>. This product is denoted <span class="math inline">\(R × S\)</span>.</p>
+</blockquote>
+<blockquote>
+<p>When <span class="math inline">\(R\)</span> and <span class="math inline">\(S\)</span> are relations, the product is essentially the same. However, since the members of <span class="math inline">\(R\)</span> and <span class="math inline">\(S\)</span> are tuples, usually consisting of more than one component, the result of pairing a tuple from <span class="math inline">\(R\)</span> with a tuple from <span class="math inline">\(S\)</span> is a longer tuple, with one component for each of the components of the constituent tuples. By convention, the components from <span class="math inline">\(R\)</span> (the left operand) precede the components from <span class="math inline">\(S\)</span> in the attribute order for the result.</p>
+</blockquote>
+<blockquote>
+<p>if <span class="math inline">\(R\)</span> and <span class="math inline">\(S\)</span> should happen to have some attributes in common, then we need to invent new names for at least one of each pair of identical attributes. To disambiguate an attribute <span class="math inline">\(A\)</span> that is in the schemas of both <span class="math inline">\(R\)</span> and <span class="math inline">\(S\)</span>, we use <span class="math inline">\(R.A\)</span> for the attribute from <span class="math inline">\(R\)</span> and <span class="math inline">\(S.A\)</span> for the attribute from <span class="math inline">\(S\)</span>.</p>
+</blockquote>
+<p>e.g.<br />
+Relation <span class="math inline">\(R\)</span>:</p>
+<table>
+<thead>
+<tr class="header">
+<th>A</th>
+<th>B</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p>Relation <span class="math inline">\(S\)</span>:</p>
+<table>
+<thead>
+<tr class="header">
+<th>B</th>
+<th>C</th>
+<th>D</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2</td>
+<td>5</td>
+<td>6</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>7</td>
+<td>8</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>10</td>
+<td>11</td>
+</tr>
+</tbody>
+</table>
+<p>Relation <span class="math inline">\(R × S\)</span>:</p>
+<table>
+<thead>
+<tr class="header">
+<th>A</th>
+<th>R.B</th>
+<th>S.B</th>
+<th>C</th>
+<th>D</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>2</td>
+<td>2</td>
+<td>5</td>
+<td>6</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>2</td>
+<td>4</td>
+<td>7</td>
+<td>8</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>2</td>
+<td>9</td>
+<td>10</td>
+<td>11</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>4</td>
+<td>2</td>
+<td>5</td>
+<td>6</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>4</td>
+<td>4</td>
+<td>7</td>
+<td>8</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>4</td>
+<td>9</td>
+<td>10</td>
+<td>11</td>
+</tr>
+</tbody>
+</table>
+<p>The product <span class="math inline">\(R × S\)</span> consists of the six tuples. We paired each of the two tuples of <span class="math inline">\(R\)</span> with each of the three tuples of <span class="math inline">\(S\)</span>. Since <span class="math inline">\(B\)</span> is an attribute of both schemas, we have used <span class="math inline">\(R.B\)</span> and <span class="math inline">\(S.B\)</span> in the schema for <span class="math inline">\(R × S\)</span>. The other attributes are unambiguous, and their names appear in the resulting schema unchanged.</p>
+<h5 id="natural-joins">Natural Joins</h5>
+<blockquote>
+<p>The natural join of two relations <span class="math inline">\(R\)</span> and <span class="math inline">\(S\)</span>, denoted <span class="math inline">\(R \bowtie S\)</span>, in which we pair only those tuples from <span class="math inline">\(R\)</span> and <span class="math inline">\(S\)</span> that agree in whatever attributes are common to the schemas of <span class="math inline">\(R\)</span> and <span class="math inline">\(S\)</span>. More precisely, let <span class="math inline">\(A_1, A_2, \dots, A_n\)</span> be all the attributes that are in both the schema of <span class="math inline">\(R\)</span> and the schema of <span class="math inline">\(S\)</span>. Then a tuple <span class="math inline">\(r\)</span> from <span class="math inline">\(R\)</span> and a tuple <span class="math inline">\(s\)</span> from <span class="math inline">\(S\)</span> are successfully paired if and only if <span class="math inline">\(r\)</span> and <span class="math inline">\(s\)</span> agree on each of the attributes <span class="math inline">\(A_1, A_2, \dots, A_n\)</span>.</p>
+</blockquote>
+<p>e.g.<br />
+The natural join of the relations <span class="math inline">\(R\)</span> and <span class="math inline">\(S\)</span>:</p>
+<table>
+<thead>
+<tr class="header">
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>D</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>2</td>
+<td>5</td>
+<td>6</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>4</td>
+<td>7</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
+<p>The only attribute common to <span class="math inline">\(R\)</span> and <span class="math inline">\(S\)</span> is B. Thus, to pair successfully, tuples need only to agree in their <span class="math inline">\(B\)</span> components. Note that the third tuple of <span class="math inline">\(S\)</span> does not pair with any tuple of <span class="math inline">\(R\)</span> and thus has no effect on the result of <span class="math inline">\(R \bowtie S\)</span>. A tuple that fails to pair with any tuple of the other relation in a join is said to be a <em>dangling tuple</em>.</p>
+<p>e.g.<br />
+Relation <span class="math inline">\(U\)</span>:</p>
+<table>
+<thead>
+<tr class="header">
+<th>A</th>
+<th>B</th>
+<th>C</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>2</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>7</td>
+<td>8</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>7</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
+<p>Relation <span class="math inline">\(V\)</span>:</p>
+<table>
+<thead>
+<tr class="header">
+<th>B</th>
+<th>C</th>
+<th>D</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2</td>
+<td>3</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>3</td>
+<td>5</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>8</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+<p>Relation <span class="math inline">\(U \bowtie V\)</span>:</p>
+<table>
+<thead>
+<tr class="header">
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>D</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>5</td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td>9</td>
+<td>7</td>
+<td>8</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+<p>For tuples to pair successfully, they must agree in both the <span class="math inline">\(B\)</span> and <span class="math inline">\(C\)</span> components. Thus, the first tuple of <span class="math inline">\(U\)</span> joins with the first two tuples of <span class="math inline">\(V\)</span> , while the second and third tuples of <span class="math inline">\(U\)</span> join with the third tuple of <span class="math inline">\(V\)</span>.</p>
+<h5 id="theta-joins">Theta-Joins</h5>
+<blockquote>
+<p>The notation for a theta-join of relations <span class="math inline">\(R\)</span> and <span class="math inline">\(S\)</span> based on condition <span class="math inline">\(C\)</span> is <span class="math inline">\(R \bowtie_{C} S\)</span>. The result of this operation is constructed as follows:<br />
+1. Take the product of <span class="math inline">\(R\)</span> and <span class="math inline">\(S\)</span>.<br />
+2. Select from the product only those tuples that satisfy the condition <span class="math inline">\(C\)</span>.</p>
+</blockquote>
+<p>e.g.<br />
+<span class="math display">\[U \bowtie_{A&lt;D} V\]</span></p>
+<table>
+<thead>
+<tr class="header">
+<th>A</th>
+<th>U.B</th>
+<th>U.C</th>
+<th>V.B</th>
+<th>V.C</th>
+<th>D</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>2</td>
+<td>3</td>
+<td>5</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>7</td>
+<td>8</td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>7</td>
+<td>8</td>
+<td>10</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>7</td>
+<td>8</td>
+<td>7</td>
+<td>8</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+<p>Notice that the schema for the result consists of all six attributes, with <span class="math inline">\(U\)</span> and <span class="math inline">\(V\)</span> prefixed to their respective occurrences of attributes <span class="math inline">\(B\)</span> and <span class="math inline">\(C\)</span> to distinguish them. Thus, the theta-join contrasts with natural join, since in the latter common attributes are merged into one copy.</p>
+<p>e.g.<br />
+<span class="math display">\[U \bowtie_{A&lt;D \, \textrm{AND} \, U.B \neq V.B} V\]</span></p>
+<table>
+<thead>
+<tr class="header">
+<th>A</th>
+<th>U.B</th>
+<th>U.C</th>
+<th>V.B</th>
+<th>V.C</th>
+<th>D</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>7</td>
+<td>8</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+<h5 id="combining-operations-to-form-queries">Combining Operations to Form Queries</h5>
+<p>e.g. What are the titles and years of movies made by Fox that are at least 100 minutes long? <span class="math display">\[\pi_{title, year}(\sigma_{length \geq 100}(\textrm{Movies}) \cap \sigma_{studioName=\textrm{&#39;Fox&#39;}}(\textrm{Movies}))\]</span> OR<br />
+<span class="math display">\[\pi_{title, year}(\sigma_{length \geq 100 \, \textrm{AND} \, studioName=\textrm{&#39;Fox&#39;}}(\textrm{Movies}))\]</span></p>
+<h5 id="naming-and-renaming">Naming and Renaming</h5>
+<blockquote>
+<p>use the operator <span class="math inline">\(\rho_{S(A_1,A_2,\dots,A_n)}(R)\)</span> to rename a relation <span class="math inline">\(R\)</span>. The resulting relation has exactly the same tuples as <span class="math inline">\(R\)</span>, but the name of the relation is <span class="math inline">\(S\)</span>. Moreover, the attributes of the result relation <span class="math inline">\(S\)</span> are named <span class="math inline">\(A_1, A_2, \dots, A_n\)</span>, in order from the left. If we only want to change the name of the relation to <span class="math inline">\(S\)</span> and leave the attributes as they are in <span class="math inline">\(R\)</span>, we can just say <span class="math inline">\(\rho_{S}(R)\)</span></p>
+</blockquote>
+<p>e.g.<br />
+<span class="math display">\[R × \rho_{S(X,C,D)}(S)\]</span> OR<br />
+<span class="math display">\[\rho_{RS(A,B,X,C,D)}(R × S)\]</span></p>
+<table>
+<thead>
+<tr class="header">
+<th>A</th>
+<th>B</th>
+<th>X</th>
+<th>C</th>
+<th>D</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>2</td>
+<td>2</td>
+<td>5</td>
+<td>6</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>2</td>
+<td>4</td>
+<td>7</td>
+<td>8</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>2</td>
+<td>9</td>
+<td>10</td>
+<td>11</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>4</td>
+<td>2</td>
+<td>5</td>
+<td>6</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>4</td>
+<td>4</td>
+<td>7</td>
+<td>8</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>4</td>
+<td>9</td>
+<td>10</td>
+<td>11</td>
+</tr>
+</tbody>
+</table>
+<h5 id="relationships-among-operations">Relationships Among Operations</h5>
+<ol type="1">
+<li><span class="math display">\[R \cap S = R - (R - S)\]</span></li>
+<li><span class="math display">\[R \bowtie_{C} S = \sigma_{C}(R × S)\]</span></li>
+<li>Condition <span class="math inline">\(C\)</span> is <span class="math inline">\(R.A_1=S.A_1 \, \textrm{AND} \, R.A_2=S.A_2 \, \textrm{AND} \, \dots \, \textrm{AND} R.A_n=S.A_n\)</span><br />
+where <span class="math inline">\(A_1, A_2, \dots, A_n\)</span> are all the attributes appearing in the schemas of both <span class="math inline">\(R\)</span> and <span class="math inline">\(S\)</span>.<br />
+Let <span class="math inline">\(L\)</span> be the list of attributes in the schema of <span class="math inline">\(R\)</span> followed by those attributes in the schema of <span class="math inline">\(S\)</span> that are not also in the schema of <span class="math inline">\(R\)</span><br />
+<span class="math display">\[R \bowtie S = \pi_{L}(\sigma_{C}(R × S))\]</span></li>
+</ol>
+<p>e.g. Theta-Join in the example has relationships: <span class="math display">\[U \bowtie_{A&lt;D \, \textrm{AND} \, U.B \neq V.B} V = \sigma_{A&lt;D \, \textrm{AND} \, U.B \neq V.B}(U × V)\]</span></p>
+<h5 id="a-linear-notation-for-algebraic-expressions">A Linear Notation for Algebraic Expressions</h5>
+<blockquote>
+<p>The notation we used for assignment statements is:</p>
+</blockquote>
+<blockquote>
+<ol type="1">
+<li>A relation name and parenthesized list of attributes for that relation. The name <em>Answer</em> will be used conventionally for the result of the final step; i.e., the name of the relation at the root of the expression tree</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="2" type="1">
+<li>The assignment symbol :=</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="3" type="1">
+<li>Any algebraic expression on the right. We can choose to use only one operator per assignment, in which case each interior node of the tree gets its own assignment statement. However, it is also permissible to combine several algebraic operations in one right side, if it is convenient to do so.</li>
+</ol>
+</blockquote>
+<p>e.g. <span class="math display">\[\pi_{title, year}(\sigma_{length \geq 100}(\textrm{Movies}) \cap \sigma_{studioName=\textrm{&#39;Fox&#39;}}(\textrm{Movies}))\]</span> can be written as <span class="math display">\[\begin{align}
+R(t,y,l,i,s,p) &amp;:= \sigma_{length \geq 100}(\textrm{Movies}) \nonumber  \\
+S(t,y,l,i,s,p) &amp;:= \sigma_{studioName=\textrm{&#39;Fox&#39;}}(\textrm{Movies}) \nonumber\\
+T(t,y,l,i,s,p) &amp;:= R \cap S \nonumber\\
+\textrm{Answer}(title, year) &amp;:= \pi_{t,y}(T) \nonumber
+\end{align}\]</span></p>
+<h4 id="constraints-on-relations">Constraints on Relations</h4>
+<ol type="1">
+<li>Referential Integrity Constraint<br />
+<span class="math inline">\(\pi_{A}(R) \subseteq \pi_{B}(S)\)</span>, or equivalently, <span class="math inline">\(\pi_{A}(R) - \pi_{B}(S) = \emptyset\)</span></li>
+<li>Key Constraint<br />
+e.g.<br />
+<span class="math inline">\(\sigma_{MS1.name = MS2.name \, \textrm{AND} \, MS1.address \neq MS2.address}(MS1 × MS2) = \emptyset\)</span>, where &quot;name&quot; is the key</li>
+<li>Domain Constraint<br />
+e.g.<br />
+<span class="math inline">\(\sigma_{gender \neq &#39;F&#39; \, \textrm{AND} \, gender \neq &#39;M&#39;}(\textrm{MovieStar}) = \emptyset\)</span></li>
+</ol>
+<h3 id="design-theory-for-relational-databases">Design Theory for Relational Databases</h3>
+<h4 id="functional-dependencies">Functional Dependencies</h4>
+<h5 id="definition-of-functional-dependency">Definition of Functional Dependency</h5>
+<blockquote>
+<p>A <em>functional dependency</em> (FD) on a relation <span class="math inline">\(R\)</span> is a statement of the form “If two tuples of <span class="math inline">\(R\)</span> agree on all of the attributes <span class="math inline">\(A_1, A_2, \dots , A_n\)</span> (i.e., the tuples have the same values in their respective components for each of these attributes), then they must also agree on all of another list of attributes <span class="math inline">\(B_1, B_2, \dots, B_m\)</span>. We write this FD formally as <span class="math inline">\(A_{1} A_{2} \dots A_{n} \to B_{1} B_{2} \dots B_{m}\)</span> and say that<br />
+<span class="math display">\[A_1, A_2, \dots, A_n \; \textrm{functionally determine} \; B_1, B_2, \dots, B_m\]</span></p>
+</blockquote>
+<p>e.g.</p>
+<table>
+<thead>
+<tr class="header">
+<th>title</th>
+<th>year</th>
+<th>length</th>
+<th>genre</th>
+<th>studioName</th>
+<th>starName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Star Wars</td>
+<td>1977</td>
+<td>124</td>
+<td>SciFi</td>
+<td>Fox</td>
+<td>Carrie Fisher</td>
+</tr>
+<tr class="even">
+<td>Star Wars</td>
+<td>1977</td>
+<td>124</td>
+<td>SciFi</td>
+<td>Fox</td>
+<td>Mark Hamill</td>
+</tr>
+<tr class="odd">
+<td>Star Wars</td>
+<td>1977</td>
+<td>124</td>
+<td>SciFi</td>
+<td>Fox</td>
+<td>Harrison Ford</td>
+</tr>
+<tr class="even">
+<td>Gone With the Wind</td>
+<td>1939</td>
+<td>231</td>
+<td>drama</td>
+<td>MGM</td>
+<td>Vivien Leigh</td>
+</tr>
+<tr class="odd">
+<td>Wayne's World</td>
+<td>1992</td>
+<td>95</td>
+<td>comedy</td>
+<td>Paramount</td>
+<td>Dana Carvey</td>
+</tr>
+<tr class="even">
+<td>Wayne's World</td>
+<td>1992</td>
+<td>95</td>
+<td>comedy</td>
+<td>Paramount</td>
+<td>Mike Meyers</td>
+</tr>
+</tbody>
+</table>
+<p>The following FD holds: <span class="math display">\[\textrm{title year} \to \textrm{length genre studioName}\]</span></p>
+<blockquote>
+<p>Informally, this FD says that if two tuples have the same value in their <strong><em>title</em></strong> components, and they also have the same value in their <strong><em>year</em></strong> components, then these two tuples must also have the same values in their <strong><em>length</em></strong> components, the same values in their <strong><em>genre</em></strong> components, and the same values in their <strong><em>studioName</em></strong> components.</p>
+</blockquote>
+<blockquote>
+<p>This assertion makes sense, since we believe that it is not possible for there to be two movies released in the same year with the same title (although there could be movies of the same title released in different years). Thus, we expect that given a title and year, there is a unique movie. Therefore, there is a unique length for the movie, a unique genre, and a unique studio.</p>
+</blockquote>
+<blockquote>
+<p><span class="math inline">\(A_{1} A_{2} \dots A_{n} \to B\)</span> is called a “functional” dependency because in principle there is a function that takes a list of values, one for each of attributes <span class="math inline">\(A_1, A_2, \dots, A_n\)</span> and produces a unique value (or no value at all) for <span class="math inline">\(B\)</span></p>
+</blockquote>
+<blockquote>
+<p>The function is only computed by lookup in the relation. We look for a tuple with the given <strong><em>title</em></strong> and <strong><em>year</em></strong> values and see what value that tuple has for <strong><em>length</em></strong>.</p>
+</blockquote>
+<p>The following statement is false and it is not a functional dependency: <span class="math display">\[\textrm{title year} \to \textrm{starName}\]</span></p>
+<h5 id="keys-of-relations">Keys of Relations</h5>
+<blockquote>
+<p>We say a set of one or more attributes {<span class="math inline">\(A_1, A_2, \dots, A_n\)</span>} is a key for a relation <span class="math inline">\(R\)</span> if:<br />
+1. Those attributes functionally determine all other attributes of the relation. That is, it is impossible for two distinct tuples of <span class="math inline">\(R\)</span> to agree on all of <span class="math inline">\(A_1, A_2, \dots, A_n\)</span>.<br />
+2. No proper subset of {<span class="math inline">\(A_1, A_2, \dots, A_n\)</span>} functionally determines all other attributes of <span class="math inline">\(R\)</span>; i.e., a key must be minimal.<br />
+When a key consists of a single attribute <span class="math inline">\(A\)</span>, we often say that <span class="math inline">\(A\)</span> (rather than {<span class="math inline">\(A\)</span>}) is a key.</p>
+</blockquote>
+<h5 id="superkeys">SuperKeys</h5>
+<blockquote>
+<p>A set of attributes that contains a key is called a <strong><em>superkey</em></strong>, short for “superset of a key.” Thus, every key is a superkey. However, some superkeys are not (minimal) keys. Note that every superkey satisfies the first condition of a key: it functionally determines all other attributes of the relation. However, a superkey need not satisfy the second condition: minimality</p>
+</blockquote>
+<p>e.g.<br />
+Not only is the key {<span class="math inline">\(\textrm{title, year, starName}\)</span>} a superkey, but any superset of this set of attributes, such as {<span class="math inline">\(\textrm{title, year, starName, length, studioName}\)</span>} is a superkey</p>
+<h4 id="rules-about-functional-dependencies">Rules About Functional Dependencies</h4>
+<h5 id="the-splittingcombining-rule">The Splitting/Combining Rule</h5>
+<p><span class="math display">\[A_1 A_2 \dots A_n \to B_1 B_2 \dots B_m\]</span> is equivalent to <span class="math display">\[A_1 A_2 \dots A_n \to B_i \; \textrm{for i = 1,2,...,m}\]</span></p>
+<h5 id="trivial-functional-dependencies">Trivial Functional Dependencies</h5>
+<p>The FD <span class="math inline">\(A_1 A_2 \dots A_n \to B_1 B_2 \dots B_m\)</span> is equivalent to <span class="math display">\[A_1 A_2 \dots A_n \to C_1 C_2 \dots C_k\]</span> where the <span class="math inline">\(C\)</span>'s are all those <span class="math inline">\(B\)</span>'s that are not also <span class="math inline">\(A\)</span>'s</p>
+<h5 id="computing-the-closure-of-attributes">Computing the Closure of Attributes</h5>
+<blockquote>
+<p><strong><em>Algorithm 7</em></strong>: Closure of a Set of Attributes<br />
+<strong><em>INPUT</em></strong>: A set of attributes <span class="math inline">\({A_1, A_2, \dots, A_n}\)</span> and a set of FD’s <span class="math inline">\(S\)</span>.<br />
+<strong><em>OUTPUT</em></strong>: The closure <span class="math inline">\({A_1, A_2, \dots, A_n}^{+}\)</span><br />
+1. If necessary, split the FD’s of <span class="math inline">\(S\)</span>, so each FD in <span class="math inline">\(S\)</span> has a single attribute on the right.<br />
+2. Let <span class="math inline">\(X\)</span> be a set of attributes that eventually will become the closure. Initialize <span class="math inline">\(X\)</span> to be <span class="math inline">\({A_1, A_2, \dots, A_n}\)</span>.<br />
+3. Repeatedly search for some FD <span class="math display">\[B_1 B_2 \dots B_m \to C\]</span> such that all of <span class="math inline">\(B_1, B_2, \dots, B_m\)</span> are in the set of attributes <span class="math inline">\(X\)</span>, but <span class="math inline">\(C\)</span> is not. Add <span class="math inline">\(C\)</span> to the set <span class="math inline">\(X\)</span> and repeat the search. Since <span class="math inline">\(X\)</span> can only grow, and the number of attributes of any relation schema must be finite, eventually nothing more can be added to <span class="math inline">\(X\)</span>, and this step ends.<br />
+4. The set <span class="math inline">\(X\)</span>, after no more attributes can be added to it, is the correct value of <span class="math inline">\({A_1, A_2, \dots, A_n}^{+}\)</span>.</p>
+</blockquote>
+<h5 id="the-transitive-rule">The Transitive Rule</h5>
+<h5 id="closing-sets-of-functional-dependencies">Closing Sets of Functional Dependencies</h5>
+<h5 id="projecting-functional-dependencies">Projecting Functional Dependencies</h5>
+<h4 id="design-of-relational-database-schemas">Design of Relational Database Schemas</h4>
+<h5 id="anomalies">Anomalies</h5>
+<h5 id="decomposing-relations">Decomposing Relations</h5>
+<h5 id="boyce-codd-normal-form">Boyce-Codd Normal Form</h5>
+<blockquote>
+<p>A relation <span class="math inline">\(R\)</span> is in BCNF if and only if: whenever there is a nontrivial FD <span class="math inline">\(A_1 A_2 \dots A_n \to B_1 B_2 \dots B_m\)</span> for <span class="math inline">\(R\)</span>, it is the case that <span class="math inline">\({A_1, A_2, \dots, A_n}\)</span> is a superkey for <span class="math inline">\(R\)</span>.</p>
+</blockquote>
+<p>E.g. Consider a relation with schema {title, year, length, genre, studioName, starName} has FD: <span class="math display">\[\textrm{title} \; \textrm{year} \to \textrm{length} \; \textrm{genre} \; \textrm{studioName}\]</span> The left side of the above FD is not a superkey. In particular, we know that <em>title</em> and <em>year</em> do not functionally determine the sixth attribute, <em>starName</em>. Thus, the existence of this FD violates the BCNF condition and tells us this relation is not in BCNF</p>
+<h5 id="decomposition-into-bcnf">Decomposition into BCNF</h5>
+<blockquote>
+<p><strong><em>Algorithm 20</em></strong>: BCNF Decomposition Algorithm<br />
+<strong><em>INPUT</em></strong>: A relation <span class="math inline">\(R_0\)</span> with a set of functional dependencies <span class="math inline">\(S_0\)</span><br />
+<strong><em>OUTPUT</em></strong>: A decomposition of <span class="math inline">\(R_0\)</span> into a collection of relations, all of which are in BCNF.<br />
+<strong><em>METHOD</em></strong>: The following steps can be applied recursively to any relation <span class="math inline">\(R\)</span> and set of FD’s <span class="math inline">\(S\)</span>. Initially, apply them with <span class="math inline">\(R\)</span> = <span class="math inline">\(R_0\)</span> and <span class="math inline">\(S\)</span> = <span class="math inline">\(S_0\)</span>.<br />
+1. Check whether <span class="math inline">\(R\)</span> is in BCNF. If so, nothing more needs to be done. Return <span class="math inline">\({R}\)</span> as the answer.<br />
+2. If there are BCNF violations, let one be <span class="math inline">\(X \to Y\)</span> . Use Algorithm 7 to compute <span class="math inline">\(X^+\)</span>. Choose <span class="math inline">\(R_1 = X^+\)</span> as one relation schema and let <span class="math inline">\(R_2\)</span> have attributes <span class="math inline">\(X\)</span> and those attributes of <span class="math inline">\(R\)</span> that are not in <span class="math inline">\(X^+\)</span>.<br />
+3. Use Algorithm 12 to compute the sets of FD’s for <span class="math inline">\(R_1\)</span> and <span class="math inline">\(R_2\)</span>; let these be <span class="math inline">\(S_1\)</span> and <span class="math inline">\(S_2\)</span>, respectively.<br />
+4. Recursively decompose <span class="math inline">\(R_1\)</span> and <span class="math inline">\(R_2\)</span> using this algorithm. Return the union of the results of these decompositions.</p>
+</blockquote>
+<p>E.g. Consider <span class="math display">\[\textrm{title} \; \textrm{year} \to \textrm{length} \; \textrm{genre} \; \textrm{studioName}\]</span> is a BCNF violation. In this case, the right side already includes all the attributes functionally determined by <em>title</em> and <em>year</em>, so we shall use this BCNF violation to decompose the relation into:<br />
+1. The schema {title, year, length, genre, studioName} consisting of all the attributes on either side of the FD.<br />
+2. The schema {title, year, starName} consisting of the left side of the FD plus all attributes of the relation that do not appear in either side of the FD (only starName, in this case).</p>
+<h3 id="high-level-database-models">High-Level Database Models</h3>
+<h3 id="algebraic-and-logical-query-languages">Algebraic and Logical Query Languages</h3>
+<h3 id="the-database-language-sql">The Database Language SQL</h3>
+<h4 id="simple-queries-in-sql">Simple Queries in SQL</h4>
+<p>Movies(title, year, length, genre, studioName, producerC#) <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--all movies produced by Disney Studios in 1990</span></span><br><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> Movies</span><br><span class="line"><span class="keyword">WHERE</span> studioName = ’Disney’ <span class="keyword">AND</span> <span class="keyword">year</span> = <span class="number">1990</span>;</span><br></pre></td></tr></table></figure></p>
+<h5 id="projection-in-sql">Projection in SQL</h5>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--produce only the movie title and length</span></span><br><span class="line"><span class="keyword">SELECT</span> title, <span class="keyword">length</span></span><br><span class="line"><span class="keyword">FROM</span> Movies</span><br><span class="line"><span class="keyword">WHERE</span> studioName = ’Disney’ <span class="keyword">AND</span> <span class="keyword">year</span> = <span class="number">1990</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--produce a relation with attributes name and duration in place of title and length</span></span><br><span class="line"><span class="keyword">SELECT</span> title <span class="keyword">AS</span> <span class="keyword">name</span>, <span class="keyword">length</span> <span class="keyword">AS</span> <span class="keyword">duration</span></span><br><span class="line"><span class="keyword">FROM</span> Movies</span><br><span class="line"><span class="keyword">WHERE</span> studioName = ’Disney’ <span class="keyword">AND</span> <span class="keyword">year</span> = <span class="number">1990</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--with the length in hours</span></span><br><span class="line"><span class="keyword">SELECT</span> title <span class="keyword">AS</span> <span class="keyword">name</span>, <span class="keyword">length</span>*<span class="number">0.016667</span> <span class="keyword">AS</span> lengthInHours</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--allow a constant as an expression in the SELECT clause.</span></span><br><span class="line"><span class="keyword">SELECT</span> title, <span class="keyword">length</span>*<span class="number">0.016667</span> <span class="keyword">AS</span> <span class="keyword">length</span>, ’hrs.’ <span class="keyword">AS</span> inHours</span><br><span class="line"><span class="keyword">FROM</span> Movies</span><br><span class="line"><span class="keyword">WHERE</span> studioName = ’Disney’ <span class="keyword">AND</span> <span class="keyword">year</span> = <span class="number">1990</span>;</span><br></pre></td></tr></table></figure>
+<h5 id="selection-in-sql">Selection in SQL</h5>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> title</span><br><span class="line"><span class="keyword">FROM</span> Movies</span><br><span class="line"><span class="keyword">WHERE</span> (<span class="keyword">year</span> &gt; <span class="number">1970</span> <span class="keyword">OR</span> <span class="keyword">length</span> &lt; <span class="number">90</span>) <span class="keyword">AND</span> studioName = ’MGM’;</span><br></pre></td></tr></table></figure>
+<h5 id="comparison-of-strings">Comparison of Strings</h5>
+<h5 id="pattern-matching-in-sql">Pattern Matching in SQL</h5>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s LIKE p</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--The last four characters may be anything.</span></span><br><span class="line"><span class="keyword">SELECT</span> title</span><br><span class="line"><span class="keyword">FROM</span> Movies</span><br><span class="line"><span class="keyword">WHERE</span> title <span class="keyword">LIKE</span> ’Star ____’;</span><br><span class="line"><span class="comment">--results can be Star Wars and Star Trek.</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--search for all movies with a possessive (’s) in their titles</span></span><br><span class="line"><span class="keyword">SELECT</span> title</span><br><span class="line"><span class="keyword">FROM</span> Movies</span><br><span class="line"><span class="keyword">WHERE</span> title <span class="keyword">LIKE</span> ’%’’s%’;</span><br><span class="line"><span class="comment">--’’s in a pattern is matched by a single apostrophe followed by an s.</span></span><br><span class="line"><span class="comment">-- results can be Logan’s Run or Alice’s Restaurant</span></span><br></pre></td></tr></table></figure>
+<h5 id="dates-and-times">Dates and Times</h5>
+<h5 id="null-values-and-comparisons-involving-null">Null Values and Comparisons Involving NULL</h5>
+<h5 id="the-truth-value-unknown">The Truth-Value UNKNOWN</h5>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> Movies</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">length</span> &lt;= <span class="number">120</span> <span class="keyword">OR</span> <span class="keyword">length</span> &gt; <span class="number">120</span>;</span><br><span class="line"><span class="comment">--the true meaning of the query is “find all the Movies tuples with non-NULL lengths.”</span></span><br></pre></td></tr></table></figure>
+<h5 id="ordering-the-output">Ordering the Output</h5>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--get the movies listed by length, shortest first, and among movies of equal length, alphabetically</span></span><br><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> Movies</span><br><span class="line"><span class="keyword">WHERE</span> studioName = ’Disney’ <span class="keyword">AND</span> <span class="keyword">year</span> = <span class="number">1990</span></span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">length</span>, title;</span><br></pre></td></tr></table></figure>
+<h4 id="queries-involving-more-than-one-relation">Queries Involving More Than One Relation</h4>
+<h5 id="products-and-joins-in-sql">Products and Joins in SQL</h5>
+<p>Movies(title, year, length, genre, studioName, producerC#)<br />
+MovieExec(name, address, cert#, netWorth) <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--get the name of the producer of Star Wars</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">name</span></span><br><span class="line"><span class="keyword">FROM</span> Movies, MovieExec</span><br><span class="line"><span class="keyword">WHERE</span> title = ’Star Wars’ <span class="keyword">AND</span> producerC<span class="comment"># = cert#;</span></span><br></pre></td></tr></table></figure></p>
+<h5 id="disambiguating-attributes">Disambiguating Attributes</h5>
+<p>MovieStar(name, address, gender, birthdate)<br />
+MovieExec(name, address, cert#, netWorth) <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--find pairs consisting of a star and an executive with the same address.</span></span><br><span class="line"><span class="keyword">SELECT</span> MovieStar.name, MovieExec.name</span><br><span class="line"><span class="keyword">FROM</span> MovieStar, MovieExec</span><br><span class="line"><span class="keyword">WHERE</span> MovieStar.address = MovieExec.address;</span><br></pre></td></tr></table></figure> <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--The relation name, followed by a dot, is permissible even in situations where there is no ambiguity.</span></span><br><span class="line"><span class="keyword">SELECT</span> MovieExec.name</span><br><span class="line"><span class="keyword">FROM</span> Movies, MovieExec</span><br><span class="line"><span class="keyword">WHERE</span> Movie.title = ’Star Wars’</span><br><span class="line"><span class="keyword">AND</span> Movie.producerC<span class="comment"># = MovieExec.cert#;</span></span><br></pre></td></tr></table></figure></p>
+<h5 id="tuple-variables">Tuple Variables</h5>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--find two stars who share an address and use tuple variables as aliases for two uses of MovieStar</span></span><br><span class="line"><span class="keyword">SELECT</span> Star1.name, Star2.name</span><br><span class="line"><span class="keyword">FROM</span> MovieStar Star1, MovieStar Star2</span><br><span class="line"><span class="keyword">WHERE</span> Star1.address = Star2.address</span><br><span class="line"><span class="keyword">AND</span> Star1.name &lt; Star2.name;</span><br></pre></td></tr></table></figure>
+<h5 id="interpreting-multirelation-queries">Interpreting Multirelation Queries</h5>
+<h5 id="union-intersection-and-difference-of-queries">Union, Intersection, and Difference of Queries</h5>
+<p>MovieStar(name, address, gender, birthdate)<br />
+MovieExec(name, address, cert#, netWorth) <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--the names and addresses of all female movie stars who are also movie executives with a net worth over $10,000,000</span></span><br><span class="line">(<span class="keyword">SELECT</span> <span class="keyword">name</span>, address</span><br><span class="line"><span class="keyword">FROM</span> MovieStar</span><br><span class="line"><span class="keyword">WHERE</span> gender = ’F’)</span><br><span class="line"><span class="keyword">INTERSECT</span></span><br><span class="line">(<span class="keyword">SELECT</span> <span class="keyword">name</span>, address</span><br><span class="line"><span class="keyword">FROM</span> MovieExec</span><br><span class="line"><span class="keyword">WHERE</span> netWorth &gt; <span class="number">10000000</span>);</span><br></pre></td></tr></table></figure> <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--take the difference of two sets of persons, each selected from a relation.</span></span><br><span class="line">(<span class="keyword">SELECT</span> <span class="keyword">name</span>, address <span class="keyword">FROM</span> MovieStar)</span><br><span class="line"><span class="keyword">EXCEPT</span></span><br><span class="line">(<span class="keyword">SELECT</span> <span class="keyword">name</span>, address <span class="keyword">FROM</span> MovieExec);</span><br></pre></td></tr></table></figure> Movies(title, year, length, genre, studioName, producerC#)<br />
+StarsIn(movieTitle, movieYear, starName) <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--find all the titles and years of movies that appeared in either the Movies or StarsIn relation</span></span><br><span class="line">(<span class="keyword">SELECT</span> title, <span class="keyword">year</span> <span class="keyword">FROM</span> Movie)</span><br><span class="line"><span class="keyword">UNION</span></span><br><span class="line">(<span class="keyword">SELECT</span> movieTitle <span class="keyword">AS</span> title, movieYear <span class="keyword">AS</span> <span class="keyword">year</span> <span class="keyword">FROM</span> StarsIn);</span><br></pre></td></tr></table></figure></p>
+<h4 id="subqueries">Subqueries</h4>
+<h5 id="subqueries-that-produce-scalar-values">Subqueries that Produce Scalar Values</h5>
+<p>Movies(title, year, length, genre, studioName, producerC#)<br />
+MovieExec(name, address, cert#, netWorth) <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">name</span></span><br><span class="line"><span class="keyword">FROM</span> MovieExec</span><br><span class="line"><span class="keyword">WHERE</span> cert<span class="comment"># =</span></span><br><span class="line">    (<span class="keyword">SELECT</span> producerC<span class="comment">#</span></span><br><span class="line">    <span class="keyword">FROM</span> Movies</span><br><span class="line">    <span class="keyword">WHERE</span> title = ’Star Wars’</span><br><span class="line">    );</span><br></pre></td></tr></table></figure> as if it were <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">name</span></span><br><span class="line"><span class="keyword">FROM</span> MovieExec</span><br><span class="line"><span class="keyword">WHERE</span> cert<span class="comment"># = 12345;</span></span><br></pre></td></tr></table></figure></p>
+<h5 id="conditions-involving-relations">Conditions Involving Relations</h5>
+<h5 id="conditions-involving-tuples">Conditions Involving Tuples</h5>
+<p>Movies(title, year, length, genre, studioName, producerC#)<br />
+StarsIn(movieTitle, movieYear, starName)<br />
+MovieExec(name, address, cert#, netWorth) <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--Finding the producers of Harrison Ford’s movies</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">name</span></span><br><span class="line"><span class="keyword">FROM</span> MovieExec</span><br><span class="line"><span class="keyword">WHERE</span> cert<span class="comment"># IN</span></span><br><span class="line">    (<span class="keyword">SELECT</span> producerC<span class="comment">#</span></span><br><span class="line">    <span class="keyword">FROM</span> Movies</span><br><span class="line">    <span class="keyword">WHERE</span> (title, <span class="keyword">year</span>) <span class="keyword">IN</span></span><br><span class="line">        (<span class="keyword">SELECT</span> movieTitle, movieYear</span><br><span class="line">        <span class="keyword">FROM</span> StarsIn</span><br><span class="line">        <span class="keyword">WHERE</span> starName = ’Harrison Ford’</span><br><span class="line">        )</span><br><span class="line">    );</span><br></pre></td></tr></table></figure> <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--Ford’s producers without nested subqueries</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">name</span></span><br><span class="line"><span class="keyword">FROM</span> MovieExec, Movies, StarsIn</span><br><span class="line"><span class="keyword">WHERE</span> cert<span class="comment"># = producerC# AND</span></span><br><span class="line">    title = movieTitle <span class="keyword">AND</span></span><br><span class="line">    <span class="keyword">year</span> = movieYear <span class="keyword">AND</span></span><br><span class="line">    starName = ’Harrison Ford’;</span><br></pre></td></tr></table></figure></p>
+<h5 id="correlated-subqueries">Correlated Subqueries</h5>
+<p>Movies(title, year, length, genre, studioName, producerC#) <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- Finding movie titles that appear more than once</span></span><br><span class="line"><span class="keyword">SELECT</span> title</span><br><span class="line"><span class="keyword">FROM</span> Movies <span class="keyword">Old</span></span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">year</span> &lt; <span class="keyword">ANY</span></span><br><span class="line">    (<span class="keyword">SELECT</span> <span class="keyword">year</span></span><br><span class="line">    <span class="keyword">FROM</span> Movies</span><br><span class="line">    <span class="keyword">WHERE</span> title = Old.title</span><br><span class="line">    );</span><br></pre></td></tr></table></figure></p>
+<h5 id="subqueries-in-from-clauses">Subqueries in FROM Clauses</h5>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--Finding the producers of Ford’s movies using a subquery in the FROM clause</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">name</span></span><br><span class="line"><span class="keyword">FROM</span> MovieExec, (<span class="keyword">SELECT</span> producerC<span class="comment">#</span></span><br><span class="line">                <span class="keyword">FROM</span> Movies, StarsIn</span><br><span class="line">                <span class="keyword">WHERE</span> title = movieTitle <span class="keyword">AND</span></span><br><span class="line">                <span class="keyword">year</span> = movieYear <span class="keyword">AND</span></span><br><span class="line">                starName = ’Harrison Ford’</span><br><span class="line">                ) Prod</span><br><span class="line"><span class="keyword">WHERE</span> cert<span class="comment"># = Prod.producerC#;</span></span><br></pre></td></tr></table></figure>
+<h5 id="sql-join-expressions">SQL Join Expressions</h5>
+<p>Movies(title, year, length, genre, studioName, producerC#)<br />
+StarsIn(movieTitle, movieYear, starName) <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Movies JOIN StarsIn ON</span><br><span class="line">    title = movieTitle AND year = movieYear;</span><br><span class="line"><span class="comment">--a tuple from Movies and one from StarsIn combine to form a tuple of the result only if the two tuples agree on both the title and year.</span></span><br><span class="line"><span class="comment">--two of the columns are redundant, because every tuple of the result will have the same value in both the title and movieTitle components and will have the same value in both year and movieYear.</span></span><br></pre></td></tr></table></figure> <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--remove redundant components</span></span><br><span class="line"><span class="keyword">SELECT</span> title, <span class="keyword">year</span>, <span class="keyword">length</span>, genre, studioName,</span><br><span class="line">    producerC<span class="comment">#, starName</span></span><br><span class="line"><span class="keyword">FROM</span> Movies <span class="keyword">JOIN</span> StarsIn <span class="keyword">ON</span></span><br><span class="line">    title = movieTitle <span class="keyword">AND</span> <span class="keyword">year</span> = movieYear;</span><br></pre></td></tr></table></figure></p>
+<h5 id="natural-joins-1">Natural Joins</h5>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MovieStar NATURAL JOIN MovieExec;</span><br></pre></td></tr></table></figure>
+<h5 id="outerjoins">Outerjoins</h5>
+<p>MovieStar(name, address, gender, birthdate)<br />
+MovieExec(name, address, cert#, netWorth)</p>
+<table>
+<thead>
+<tr class="header">
+<th>name</th>
+<th>address</th>
+<th>gender</th>
+<th>birthdate</th>
+<th>cert#</th>
+<th>networth</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Mary</td>
+<td>Maple St.</td>
+<td>'F'</td>
+<td>9/9/99</td>
+<td>12345</td>
+<td>$100..</td>
+</tr>
+<tr class="even">
+<td>Tom</td>
+<td>Cherry Ln.</td>
+<td>'M'</td>
+<td>8/8/88</td>
+<td>NULL</td>
+<td>NULL</td>
+</tr>
+<tr class="odd">
+<td>George</td>
+<td>Oak Rd.</td>
+<td>NULL</td>
+<td>NULL</td>
+<td>23456</td>
+<td>$200..</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- The result of this operation is above, a relation with the same six-attribute schema. The tuples of this relation are of three kinds.</span></span><br><span class="line">MovieStar NATURAL FULL OUTER JOIN MovieExec;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- yield the first two tuples but not the third</span></span><br><span class="line">MovieStar NATURAL LEFT OUTER JOIN MovieExec;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- yield the first and third tuples but not the second</span></span><br><span class="line">MovieStar NATURAL RIGHT OUTER JOIN MovieExec;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Next, suppose we want a theta-outerjoin instead of a natural outerjoin. Instead of using the keyword <em>NATURAL</em>, we may follow the join by <em>ON</em> and a condition that matching tuples must obey. If we also specify <em>FULL OUTER JOIN</em>, then after matching tuples from the two joined relations, we pad dangling tuples of either relation with NULL’s and include the padded tuples in the result</p>
+</blockquote>
+<p>Movies(title, year, length, genre, studioName, producerC#)<br />
+StarsIn(movieTitle, movieYear, starName) <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--  shall get not only tuples for movies that have at least one star mentioned in StarsIn, but we shall get tuples for movies with no listed stars, padded with NULL’s in attributes movieTitle, movieYear, and starName. Likewise, for stars not appearing in any movie listed in relation Movies we get a tuple with NULL’s in the six attributes of Movies.</span></span><br><span class="line">Movies FULL OUTER JOIN StarsIn ON</span><br><span class="line">    title = movieTitle AND year = movieYear;</span><br></pre></td></tr></table></figure> <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- gives us the Movies tuples with at least one listed star and NULL-padded Movies tuples without a listed star, but will not include stars without a listed movie</span></span><br><span class="line">Movies LEFT OUTER JOIN StarsIn ON</span><br><span class="line">    title = movieTitle AND year = movieYear;</span><br></pre></td></tr></table></figure> <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- omit the tuples for movies without a listed star but will include tuples for stars not in any listed movies, padded with NULL’s.</span></span><br><span class="line">Movies RIGHT OUTER JOIN StarsIn ON  </span><br><span class="line">    title = movieTitle AND year = movieYear;</span><br></pre></td></tr></table></figure></p>
+<h4 id="full-relation-operations">Full-Relation Operations</h4>
+<h5 id="eliminating-duplicates">Eliminating Duplicates</h5>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> <span class="keyword">name</span></span><br></pre></td></tr></table></figure>
+<h5 id="duplicates-in-unions-intersections-and-differences">Duplicates in Unions, Intersections, and Differences</h5>
+<blockquote>
+<p>Unlike the <em>SELECT</em> statement, which preserves duplicates as a default and only eliminates them when instructed to by the <em>DISTINCT</em> keyword, the union, intersection, and difference operations, normally eliminate duplicates. That is, bags are converted to sets, and the set version of the operation is applied. In order to prevent the elimination of duplicates, we must follow the operator <em>UNION</em>, <em>INTERSECT</em>, or <em>EXCEPT</em> by the keyword <strong>ALL</strong>. If we do, then we get the bag semantics of these operators.</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">SELECT</span> title, <span class="keyword">year</span> <span class="keyword">FROM</span> Movies)</span><br><span class="line"><span class="keyword">UNION</span> <span class="keyword">ALL</span></span><br><span class="line">(<span class="keyword">SELECT</span> movieTitle <span class="keyword">AS</span> title, movieYear <span class="keyword">AS</span> <span class="keyword">year</span> <span class="keyword">FROM</span> StarsIn);</span><br></pre></td></tr></table></figure>
+<h3 id="constraints-and-triggers">Constraints and Triggers</h3>
+<h3 id="views-and-indexes">Views and Indexes</h3>
+<h3 id="index-structures">Index Structures</h3>
+<h3 id="parallel-and-distributed-databases">Parallel and Distributed Databases</h3>
+<h3 id="reference">Reference</h3>
+<p>Database Systems The Complete Book 2nd ed (2014, Pearson)</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Relational-Algebra/" rel="tag"># Relational Algebra</a>
+              <a href="/tags/SQL/" rel="tag"># SQL</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/12/10/Art-Style-Transfer/" rel="prev" title="Art Style Transfer">
+      <i class="fa fa-chevron-left"></i> Art Style Transfer
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/07/11/Breakout-Ball/" rel="next" title="Breakout Ball">
+      Breakout Ball <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#the-relational-model-of-data"><span class="nav-number">1.</span> <span class="nav-text">The Relational Model of Data</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#basics-of-the-relational-model"><span class="nav-number">1.1.</span> <span class="nav-text">Basics of the Relational Model</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#defining-a-relation-schema-in-sql"><span class="nav-number">1.2.</span> <span class="nav-text">Defining a Relation Schema in SQL</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#data-types"><span class="nav-number">1.2.1.</span> <span class="nav-text">Data Types</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#simple-table-declarations"><span class="nav-number">1.2.2.</span> <span class="nav-text">Simple Table Declarations</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#modifying-relation-schemas"><span class="nav-number">1.2.3.</span> <span class="nav-text">Modifying Relation Schemas</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#default-values"><span class="nav-number">1.2.4.</span> <span class="nav-text">Default Values</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#declaring-keys"><span class="nav-number">1.2.5.</span> <span class="nav-text">Declaring Keys</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#an-algebraic-query-language"><span class="nav-number">1.3.</span> <span class="nav-text">An Algebraic Query Language</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#set-operations-on-relations"><span class="nav-number">1.3.1.</span> <span class="nav-text">Set Operations on Relations</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#projection"><span class="nav-number">1.3.2.</span> <span class="nav-text">Projection</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#selection"><span class="nav-number">1.3.3.</span> <span class="nav-text">Selection</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#cartesian-product"><span class="nav-number">1.3.4.</span> <span class="nav-text">Cartesian Product</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#natural-joins"><span class="nav-number">1.3.5.</span> <span class="nav-text">Natural Joins</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#theta-joins"><span class="nav-number">1.3.6.</span> <span class="nav-text">Theta-Joins</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#combining-operations-to-form-queries"><span class="nav-number">1.3.7.</span> <span class="nav-text">Combining Operations to Form Queries</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#naming-and-renaming"><span class="nav-number">1.3.8.</span> <span class="nav-text">Naming and Renaming</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#relationships-among-operations"><span class="nav-number">1.3.9.</span> <span class="nav-text">Relationships Among Operations</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#a-linear-notation-for-algebraic-expressions"><span class="nav-number">1.3.10.</span> <span class="nav-text">A Linear Notation for Algebraic Expressions</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#constraints-on-relations"><span class="nav-number">1.4.</span> <span class="nav-text">Constraints on Relations</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#design-theory-for-relational-databases"><span class="nav-number">2.</span> <span class="nav-text">Design Theory for Relational Databases</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#functional-dependencies"><span class="nav-number">2.1.</span> <span class="nav-text">Functional Dependencies</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#definition-of-functional-dependency"><span class="nav-number">2.1.1.</span> <span class="nav-text">Definition of Functional Dependency</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#keys-of-relations"><span class="nav-number">2.1.2.</span> <span class="nav-text">Keys of Relations</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#superkeys"><span class="nav-number">2.1.3.</span> <span class="nav-text">SuperKeys</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rules-about-functional-dependencies"><span class="nav-number">2.2.</span> <span class="nav-text">Rules About Functional Dependencies</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#the-splittingcombining-rule"><span class="nav-number">2.2.1.</span> <span class="nav-text">The Splitting&#x2F;Combining Rule</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#trivial-functional-dependencies"><span class="nav-number">2.2.2.</span> <span class="nav-text">Trivial Functional Dependencies</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#computing-the-closure-of-attributes"><span class="nav-number">2.2.3.</span> <span class="nav-text">Computing the Closure of Attributes</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#the-transitive-rule"><span class="nav-number">2.2.4.</span> <span class="nav-text">The Transitive Rule</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#closing-sets-of-functional-dependencies"><span class="nav-number">2.2.5.</span> <span class="nav-text">Closing Sets of Functional Dependencies</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#projecting-functional-dependencies"><span class="nav-number">2.2.6.</span> <span class="nav-text">Projecting Functional Dependencies</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#design-of-relational-database-schemas"><span class="nav-number">2.3.</span> <span class="nav-text">Design of Relational Database Schemas</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#anomalies"><span class="nav-number">2.3.1.</span> <span class="nav-text">Anomalies</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#decomposing-relations"><span class="nav-number">2.3.2.</span> <span class="nav-text">Decomposing Relations</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#boyce-codd-normal-form"><span class="nav-number">2.3.3.</span> <span class="nav-text">Boyce-Codd Normal Form</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#decomposition-into-bcnf"><span class="nav-number">2.3.4.</span> <span class="nav-text">Decomposition into BCNF</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#high-level-database-models"><span class="nav-number">3.</span> <span class="nav-text">High-Level Database Models</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#algebraic-and-logical-query-languages"><span class="nav-number">4.</span> <span class="nav-text">Algebraic and Logical Query Languages</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#the-database-language-sql"><span class="nav-number">5.</span> <span class="nav-text">The Database Language SQL</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#simple-queries-in-sql"><span class="nav-number">5.1.</span> <span class="nav-text">Simple Queries in SQL</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#projection-in-sql"><span class="nav-number">5.1.1.</span> <span class="nav-text">Projection in SQL</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#selection-in-sql"><span class="nav-number">5.1.2.</span> <span class="nav-text">Selection in SQL</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#comparison-of-strings"><span class="nav-number">5.1.3.</span> <span class="nav-text">Comparison of Strings</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#pattern-matching-in-sql"><span class="nav-number">5.1.4.</span> <span class="nav-text">Pattern Matching in SQL</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#dates-and-times"><span class="nav-number">5.1.5.</span> <span class="nav-text">Dates and Times</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#null-values-and-comparisons-involving-null"><span class="nav-number">5.1.6.</span> <span class="nav-text">Null Values and Comparisons Involving NULL</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#the-truth-value-unknown"><span class="nav-number">5.1.7.</span> <span class="nav-text">The Truth-Value UNKNOWN</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ordering-the-output"><span class="nav-number">5.1.8.</span> <span class="nav-text">Ordering the Output</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#queries-involving-more-than-one-relation"><span class="nav-number">5.2.</span> <span class="nav-text">Queries Involving More Than One Relation</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#products-and-joins-in-sql"><span class="nav-number">5.2.1.</span> <span class="nav-text">Products and Joins in SQL</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#disambiguating-attributes"><span class="nav-number">5.2.2.</span> <span class="nav-text">Disambiguating Attributes</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#tuple-variables"><span class="nav-number">5.2.3.</span> <span class="nav-text">Tuple Variables</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#interpreting-multirelation-queries"><span class="nav-number">5.2.4.</span> <span class="nav-text">Interpreting Multirelation Queries</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#union-intersection-and-difference-of-queries"><span class="nav-number">5.2.5.</span> <span class="nav-text">Union, Intersection, and Difference of Queries</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#subqueries"><span class="nav-number">5.3.</span> <span class="nav-text">Subqueries</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#subqueries-that-produce-scalar-values"><span class="nav-number">5.3.1.</span> <span class="nav-text">Subqueries that Produce Scalar Values</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#conditions-involving-relations"><span class="nav-number">5.3.2.</span> <span class="nav-text">Conditions Involving Relations</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#conditions-involving-tuples"><span class="nav-number">5.3.3.</span> <span class="nav-text">Conditions Involving Tuples</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#correlated-subqueries"><span class="nav-number">5.3.4.</span> <span class="nav-text">Correlated Subqueries</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#subqueries-in-from-clauses"><span class="nav-number">5.3.5.</span> <span class="nav-text">Subqueries in FROM Clauses</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#sql-join-expressions"><span class="nav-number">5.3.6.</span> <span class="nav-text">SQL Join Expressions</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#natural-joins-1"><span class="nav-number">5.3.7.</span> <span class="nav-text">Natural Joins</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#outerjoins"><span class="nav-number">5.3.8.</span> <span class="nav-text">Outerjoins</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#full-relation-operations"><span class="nav-number">5.4.</span> <span class="nav-text">Full-Relation Operations</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#eliminating-duplicates"><span class="nav-number">5.4.1.</span> <span class="nav-text">Eliminating Duplicates</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#duplicates-in-unions-intersections-and-differences"><span class="nav-number">5.4.2.</span> <span class="nav-text">Duplicates in Unions, Intersections, and Differences</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#constraints-and-triggers"><span class="nav-number">6.</span> <span class="nav-text">Constraints and Triggers</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#views-and-indexes"><span class="nav-number">7.</span> <span class="nav-text">Views and Indexes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#index-structures"><span class="nav-number">8.</span> <span class="nav-text">Index Structures</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#parallel-and-distributed-databases"><span class="nav-number">9.</span> <span class="nav-text">Parallel and Distributed Databases</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reference"><span class="nav-number">10.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Qianyue Zhang"
+      src="https://avatars0.githubusercontent.com/u/38484412?s=460&v=4">
+  <p class="site-author-name" itemprop="name">Qianyue Zhang</p>
+  <div class="site-description" itemprop="description">Down to the earth</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zhqyvvn" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zhqyvvn" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:zhqyvvn@gmail.com" title="E-Mail → mailto:zhqyvvn@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Friend Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://hcwang95.github.io/" title="https:&#x2F;&#x2F;hcwang95.github.io&#x2F;" rel="noopener" target="_blank">hcwang95.github.io</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Qianyue Zhang</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.1
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.0
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.getAttribute('pjax') !== null) {
+      element.setAttribute('pjax', '');
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID: 'c28a59a6f171f3e27313',
+      clientSecret: 'a31ffbb812ba7a28cd66045ae2a68e017e9d539f',
+      repo: 'zhqyvvn.github.io',
+      owner: 'zhqyvvn',
+      admin: ['zhqyvvn'],
+      id: 'eaefa5e7c3587db462ee24c42fd75852',
+        language: '',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+    </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+</html>

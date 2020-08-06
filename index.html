@@ -4,7 +4,7 @@
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 4.2.1">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -242,7 +242,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: May 17th 2020 14:54:04" itemprop="dateModified" datetime="2020-05-17T14:54:04-04:00">May 17th 2020</time>
+                <time title="Modified: Aug 6th 2020 15:37:38" itemprop="dateModified" datetime="2020-08-06T15:37:38-04:00">Aug 6th 2020</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -267,9 +267,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>Post Java solutions for problems in <a href="https://leetcode.com/problemset/all/" target="_blank" rel="noopener">Leetcode</a>. Suggestions are welcome.</p>
-<p>(keep on posting …)  </p>
-<h4 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h4><h5 id="Greedy"><a href="#Greedy" class="headerlink" title="Greedy"></a>Greedy</h5><h6 id="53-Maximum-Subarray"><a href="#53-Maximum-Subarray" class="headerlink" title="53. Maximum Subarray"></a><a href="https://leetcode.com/problems/maximum-subarray/" target="_blank" rel="noopener">53. Maximum Subarray</a></h6><figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> maxSubArray(<span class="built_in">int</span>[] nums) &#123;</span><br><span class="line">        <span class="built_in">int</span> <span class="built_in">max</span> = nums[<span class="number">0</span>], <span class="built_in">sum</span> = nums[<span class="number">0</span>];</span><br><span class="line">        //Ensure each <span class="keyword">number</span> is greater than itself after plus <span class="string">'sum'</span></span><br><span class="line">        for (<span class="built_in">int</span> i = <span class="number">1</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="built_in">sum</span> &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="built_in">sum</span> += nums[i];</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="built_in">sum</span> = nums[i];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">max</span> = Math.<span class="built_in">max</span>(<span class="built_in">max</span>, <span class="built_in">sum</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">max</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <h4 id="algorithm">Algorithm</h4>
+<h5 id="greedy">Greedy</h5>
+<h6 id="maximum-subarray"><a href="https://leetcode.com/problems/maximum-subarray/" target="_blank" rel="noopener">53. Maximum Subarray</a></h6>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxSubArray</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> max = nums[<span class="number">0</span>], sum = nums[<span class="number">0</span>];</span><br><span class="line">    <span class="comment">//Ensure each number is greater than itself after plus 'sum'</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (sum &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            sum += nums[i];</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            sum = nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">        max = Math.max(max, sum);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> max;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/04/04/Leetcode-in-Java/#more" rel="contents">
@@ -327,7 +328,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: May 17th 2020 14:58:34" itemprop="dateModified" datetime="2020-05-17T14:58:34-04:00">May 17th 2020</time>
+                <time title="Modified: Jul 20th 2020 16:20:05" itemprop="dateModified" datetime="2020-07-20T16:20:05-04:00">Jul 20th 2020</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -352,12 +353,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>Summarize Java syntax frequently used and make it convenient for lookup. Suggestions are welcome.  </p>
-<h4 id="Arrays"><a href="#Arrays" class="headerlink" title="Arrays"></a>Arrays</h4><figure class="highlight fsharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">type</span> <span class="title">var</span>-<span class="title">name</span>[] </span>= <span class="keyword">new</span> <span class="class"><span class="keyword">type</span>[<span class="title">size</span>];</span></span><br></pre></td></tr></table></figure>
-<p>OR</p>
-<figure class="highlight fsharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">type</span>[] <span class="title">var</span>-<span class="title">name</span> </span>= <span class="keyword">new</span> <span class="class"><span class="keyword">type</span>[<span class="title">size</span>];</span></span><br></pre></td></tr></table></figure>
-<h5 id="Built-in-methods"><a href="#Built-in-methods" class="headerlink" title="Built-in methods"></a>Built-in methods</h5><p><code>Arrays.fill(Object[] array, Object value)</code>,  </p>
-<p><code>Arrays.equals(Object[] array1, Object[] array2)</code>  </p>
+          <p>Summarize Java syntax frequently used and make it convenient for lookup. Suggestions are welcome.</p>
+<h4 id="arrays">Arrays</h4>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type <span class="keyword">var</span>-name[] = <span class="keyword">new</span> type[size];</span><br></pre></td></tr></table></figure>
+<p>OR <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type[] <span class="keyword">var</span>-name = <span class="keyword">new</span> type[size];</span><br></pre></td></tr></table></figure></p>
+<h5 id="built-in-methods">Built-in methods</h5>
+<p><code>Arrays.fill(Object[] array, Object value)</code>,</p>
+<p><code>Arrays.equals(Object[] array1, Object[] array2)</code></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/02/18/Java-Syntax-Tips/#more" rel="contents">
@@ -415,7 +417,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: May 12th 2020 18:56:39" itemprop="dateModified" datetime="2020-05-12T18:56:39-04:00">May 12th 2020</time>
+                <time title="Modified: May 20th 2020 15:03:49" itemprop="dateModified" datetime="2020-05-20T15:03:49-04:00">May 20th 2020</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -440,7 +442,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><img data-src="/images/mr_login.png" alt="">  </p>
+          <p><img data-src="/images/mr_login.png" /></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/01/12/Magical-Rectangle/#more" rel="contents">
@@ -498,7 +500,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: May 12th 2020 18:57:22" itemprop="dateModified" datetime="2020-05-12T18:57:22-04:00">May 12th 2020</time>
+                <time title="Modified: May 20th 2020 15:04:33" itemprop="dateModified" datetime="2020-05-20T15:04:33-04:00">May 20th 2020</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -523,7 +525,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><img data-src="/images/sc_index.jpg" alt="">  </p>
+          <p><img data-src="/images/sc_index.jpg" /></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/12/15/Second-Buy/#more" rel="contents">
@@ -581,7 +583,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: Mar 28th 2020 12:15:33" itemprop="dateModified" datetime="2020-03-28T12:15:33-04:00">Mar 28th 2020</time>
+                <time title="Modified: May 20th 2020 15:04:57" itemprop="dateModified" datetime="2020-05-20T15:04:57-04:00">May 20th 2020</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -607,8 +609,9 @@
 
       
           <iframe src="https://drive.google.com/file/d/1WVjCZBgDepbzkw85w2grPSDVMEgFCST1/preview" width="640" height="480">
-</iframe>  
-<p style="text-align: center; border-bottom: 0px solid #ddd;"></p>
+</iframe>
+<p style="text-align: center; border-bottom: 0px solid #ddd;">
+</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/11/25/LAN-chatroom/#more" rel="contents">
@@ -666,7 +669,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: Mar 28th 2020 12:15:53" itemprop="dateModified" datetime="2020-03-28T12:15:53-04:00">Mar 28th 2020</time>
+                <time title="Modified: May 20th 2020 15:05:26" itemprop="dateModified" datetime="2020-05-20T15:05:26-04:00">May 20th 2020</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -692,8 +695,9 @@
 
       
           <iframe src="https://drive.google.com/file/d/1neXzFjKNY9PmYUEm_KSLe0uCsGwrPEDA/preview" width="640" height="480">
-</iframe>  
-<p style="text-align: center; border-bottom: 0px solid #ddd;"></p>
+</iframe>
+<p style="text-align: center; border-bottom: 0px solid #ddd;">
+</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/03/12/Fakestagram/#more" rel="contents">
@@ -788,7 +792,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">9</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -801,7 +805,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-count">20</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -855,7 +859,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Qianyue Zhang</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.1
   </div>
   <span class="post-meta-divider">|</span>
   <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.0
@@ -992,6 +996,8 @@ window.addEventListener('pjax:success', () => {
 
 
     <div id="pjax">
+  
+
   
 
   
