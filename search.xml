@@ -402,57 +402,13 @@ returns &gt; 0 if A is lexicographically greater than B;</p>
 <a href="https://leetcode.com/problems/x-of-a-kind-in-a-deck-of-cards/" target="_blank" rel="noopener">leetcode 914. X of a Kind in a Deck of Cards</a><br />
 <a href="https://leetcode.com/problems/word-search/" target="_blank" rel="noopener">leetcode 79. Word Search</a></p>
 <h4 id="reference">Reference</h4>
-<p><a href="https://docs.oracle.com/javase/8/docs/api/" target="_blank" rel="noopener">Java Platform SE 8 - Oracle Help Center</a> <a href="https://www.oreilly.com/library/view/learning-java-4th/9781449372477/" target="_blank" rel="noopener">&lt;<Learning Java>&gt;</a></p>
+<p><a href="https://docs.oracle.com/javase/8/docs/api/" target="_blank" rel="noopener">Java Platform SE 8 - Oracle Help Center</a> <a href="https://www.oreilly.com/library/view/learning-java-4th/9781449372477/" target="_blank" rel="noopener">Learning Java - O'Reilly</a></p>
 ]]></content>
       <categories>
         <category>Summary</category>
       </categories>
       <tags>
         <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LAN chatroom</title>
-    <url>/2019/11/25/LAN-chatroom/</url>
-    <content><![CDATA[<iframe src="https://drive.google.com/file/d/1WVjCZBgDepbzkw85w2grPSDVMEgFCST1/preview" width="640" height="480">
-</iframe>
-<p style="text-align: center; border-bottom: 0px solid #ddd;">
-</p>
-<a id="more"></a>
-<h4 id="built-with">🌟 Built with</h4>
-<p>• C</p>
-<h4 id="components">🌟 Components</h4>
-<p>Clients:<br />
-• Send requests to the server and get responses from the server<br />
-• Multi-threads<br />
--detect user's inputs<br />
--receive server's responses</p>
-<p>Server:<br />
-• Load and store users' / sessions' / invitations' information<br />
-• Act as the intermediate between clients -create a new thread for each newly connected client<br />
--receive client's requests and reply responses on every thread</p>
-<h4 id="features">🌟 Features</h4>
-<p>Authentication:<br />
-• login / logout</p>
-<p>Session (Chatroom):<br />
-• Users can create a new session or join one existing session<br />
-• Multiple users can group-chat in one session<br />
-• Users can join multiple sessions and chat with multiple groups of people<br />
-• Users can leave the session</p>
-<p>Invitation:<br />
-• Invite other users to join one existing session<br />
-• Accept the invitation and join the group chat<br />
-• Decline the invitation</p>
-<p>Query:<br />
-• Users can query the list of online users and valid sessions from the server</p>
-<h4 id="note">📌 Note</h4>
-<p>The example ran clients and the server in one same PC thus using 127.0.0.1 as the server IP address. It can be altered as other IP address if the server ran on the different PC.</p>
-]]></content>
-      <categories>
-        <category>C</category>
-      </categories>
-      <tags>
-        <tag>C</tag>
       </tags>
   </entry>
   <entry>
@@ -1359,6 +1315,53 @@ StarsIn(movieTitle, movieYear, starName) <figure class="highlight sql"><table><t
 <p>Unlike the <em>SELECT</em> statement, which preserves duplicates as a default and only eliminates them when instructed to by the <em>DISTINCT</em> keyword, the union, intersection, and difference operations, normally eliminate duplicates. That is, bags are converted to sets, and the set version of the operation is applied. In order to prevent the elimination of duplicates, we must follow the operator <em>UNION</em>, <em>INTERSECT</em>, or <em>EXCEPT</em> by the keyword <strong>ALL</strong>. If we do, then we get the bag semantics of these operators.</p>
 </blockquote>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">(<span class="keyword">SELECT</span> title, <span class="keyword">year</span> <span class="keyword">FROM</span> Movies)</span><br><span class="line"><span class="keyword">UNION</span> <span class="keyword">ALL</span></span><br><span class="line">(<span class="keyword">SELECT</span> movieTitle <span class="keyword">AS</span> title, movieYear <span class="keyword">AS</span> <span class="keyword">year</span> <span class="keyword">FROM</span> StarsIn);</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- If R and S are relations, then the result of expression is the relation in which the number of times a tuple t appears is the minimum of the number of times it appears in R and the number of times it appears in S.</span></span><br><span class="line">R INTERSECT ALL S</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- The result of expression has tuple t as many times as the difference of the number of times it appears in R minus the number of times it appears in S, provided the difference is positive</span></span><br><span class="line">R EXCEPT ALL S</span><br></pre></td></tr></table></figure>
+<h5 id="grouping-and-aggregation-in-sql">Grouping and Aggregation in SQL</h5>
+<h5 id="aggregation-operators">Aggregation Operators</h5>
+<p>MovieExec(name, address, cert#, netWorth) <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">AVG</span>(netWorth)</span><br><span class="line"><span class="keyword">FROM</span> MovieExec;</span><br></pre></td></tr></table></figure> <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">COUNT</span>(*)</span><br><span class="line"><span class="keyword">FROM</span> StarsIn;</span><br></pre></td></tr></table></figure> <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">COUNT</span>(starName)</span><br><span class="line"><span class="keyword">FROM</span> StarsIn;</span><br></pre></td></tr></table></figure> <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">COUNT</span>(<span class="keyword">DISTINCT</span> starName)</span><br><span class="line"><span class="keyword">FROM</span> StarsIn;</span><br></pre></td></tr></table></figure></p>
+<h5 id="grouping">Grouping</h5>
+<p>Movies(title, year, length, genre, studioName, producerC#) <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> studioName, <span class="keyword">SUM</span>(<span class="keyword">length</span>)</span><br><span class="line"><span class="keyword">FROM</span> Movies</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> studioName;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>In a <em>SELECT</em> clause that has aggregations, only those attributes that are mentioned in the <em>GROUP BY</em> clause may appear unaggregated in the <em>SELECT</em> clause.</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> studioName</span><br><span class="line"><span class="keyword">FROM</span> Movies</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> studioName;</span><br></pre></td></tr></table></figure>
+<p>the above query has the same effect as <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> studioName</span><br><span class="line"><span class="keyword">FROM</span> Movies;</span><br></pre></td></tr></table></figure></p>
+<p>Movies(title, year, length, genre, studioName, producerC#) MovieExec(name, address, cert#, netWorth) <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- print a table listing each producer’s total length of film produced.</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">name</span>, <span class="keyword">SUM</span>(<span class="keyword">length</span>)</span><br><span class="line"><span class="keyword">FROM</span> MovieExec, Movies</span><br><span class="line"><span class="keyword">WHERE</span> producerC<span class="comment"># = cert# --taking their theta-join, equating the certificate numbers from the two relations.</span></span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="keyword">name</span>;</span><br></pre></td></tr></table></figure></p>
+<h5 id="grouping-aggregation-and-nulls">Grouping, Aggregation, and Nulls</h5>
+<blockquote>
+<p><code>COUNT(*)</code> is always a count of the number of tuples in a relation, but <code>COUNT(A)</code> is the number of tuples with <em>non-NULL</em> values for attribute <em>A</em>.</p>
+</blockquote>
+<table>
+<thead>
+<tr class="header">
+<th>A</th>
+<th>B</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>NULL</td>
+<td>NULL</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- the result is the one tuple (NULL, 0)</span></span><br><span class="line"><span class="keyword">SELECT</span> A, <span class="keyword">COUNT</span>(B)</span><br><span class="line"><span class="keyword">FROM</span> R</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> A;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- the result is the one tuple (NULL, NULL).</span></span><br><span class="line"><span class="keyword">SELECT</span> A, <span class="keyword">SUM</span>(B)</span><br><span class="line"><span class="keyword">FROM</span> R</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> A;</span><br></pre></td></tr></table></figure>
+<h5 id="having-clauses">HAVING Clauses</h5>
+<blockquote>
+<p>Sometimes we want to choose our groups based on some aggregate property of the group itself. Then we follow the <em>GROUP BY</em> clause with a <em>HAVING</em> clause. The latter clause consists of the keyword <em>HAVING</em> followed by a condition about the group</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- print the total film length for only those producers who made at least one film prior to 1930</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">name</span>, <span class="keyword">SUM</span>(<span class="keyword">length</span>)</span><br><span class="line"><span class="keyword">FROM</span> MovieExec, Movies</span><br><span class="line"><span class="keyword">WHERE</span> producerC<span class="comment"># = cert#</span></span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="keyword">name</span>;</span><br><span class="line">HAVING MIN(year) &lt; 1930</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>There are several rules about HAVING clauses:<br />
+* An aggregation in a <em>HAVING</em> clause applies only to the tuples of the group being tested.<br />
+* Any attribute of relations in the <em>FROM</em> clause may be aggregated in the <em>HAVING</em> clause, but only those attributes that are in the <em>GROUP BY</em> list may appear unaggregated in the <em>HAVING</em> clause (the same rule as for the <em>SELECT</em> clause).</p>
+</blockquote>
+<blockquote>
+<p>We have now met all six clauses that can appear in a SQL “select-fromwhere” query: <em>SELECT</em>, <em>FROM</em>, <em>WHERE</em>, <em>GROUP BY</em>, <em>HAVING</em>, and <em>ORDER BY</em>. Only the <em>SELECT</em> and <em>FROM</em> clauses are required. Whichever additional clauses appear must be in the order listed above.</p>
+</blockquote>
+<h4 id="database-modifications">Database Modifications</h4>
 <h3 id="constraints-and-triggers">Constraints and Triggers</h3>
 <h3 id="views-and-indexes">Views and Indexes</h3>
 <h3 id="index-structures">Index Structures</h3>
@@ -1372,6 +1375,50 @@ StarsIn(movieTitle, movieYear, starName) <figure class="highlight sql"><table><t
       <tags>
         <tag>Relational Algebra</tag>
         <tag>SQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LAN chatroom</title>
+    <url>/2019/11/25/LAN-chatroom/</url>
+    <content><![CDATA[<iframe src="https://drive.google.com/file/d/1WVjCZBgDepbzkw85w2grPSDVMEgFCST1/preview" width="640" height="480">
+</iframe>
+<p style="text-align: center; border-bottom: 0px solid #ddd;">
+</p>
+<a id="more"></a>
+<h4 id="built-with">🌟 Built with</h4>
+<p>• C</p>
+<h4 id="components">🌟 Components</h4>
+<p>Clients:<br />
+• Send requests to the server and get responses from the server<br />
+• Multi-threads<br />
+-detect user's inputs<br />
+-receive server's responses</p>
+<p>Server:<br />
+• Load and store users' / sessions' / invitations' information<br />
+• Act as the intermediate between clients -create a new thread for each newly connected client<br />
+-receive client's requests and reply responses on every thread</p>
+<h4 id="features">🌟 Features</h4>
+<p>Authentication:<br />
+• login / logout</p>
+<p>Session (Chatroom):<br />
+• Users can create a new session or join one existing session<br />
+• Multiple users can group-chat in one session<br />
+• Users can join multiple sessions and chat with multiple groups of people<br />
+• Users can leave the session</p>
+<p>Invitation:<br />
+• Invite other users to join one existing session<br />
+• Accept the invitation and join the group chat<br />
+• Decline the invitation</p>
+<p>Query:<br />
+• Users can query the list of online users and valid sessions from the server</p>
+<h4 id="note">📌 Note</h4>
+<p>The example ran clients and the server in one same PC thus using 127.0.0.1 as the server IP address. It can be altered as other IP address if the server ran on the different PC.</p>
+]]></content>
+      <categories>
+        <category>C</category>
+      </categories>
+      <tags>
+        <tag>C</tag>
       </tags>
   </entry>
   <entry>
@@ -1721,8 +1768,12 @@ Receive notifications if<br />
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">pathSum</span><span class="params">(TreeNode root, <span class="keyword">int</span> sum)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> pathSumStartWithRoot(root, sum) + pathSum(root.right, sum) + pathSum(root.left, sum);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">pathSumStartWithRoot</span><span class="params">(TreeNode node, <span class="keyword">int</span> sum)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (node == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> cnt = node.val == sum? <span class="number">1</span>: <span class="number">0</span>;</span><br><span class="line">    cnt += pathSumStartWithRoot(node.left, sum - node.val);</span><br><span class="line">    cnt += pathSumStartWithRoot(node.right, sum - node.val);</span><br><span class="line">    <span class="keyword">return</span> cnt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h6 id="diameter-of-binary-tree"><a href="https://leetcode.com/problems/diameter-of-binary-tree/" target="_blank" rel="noopener">543. Diameter of Binary Tree</a></h6>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> max = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">diameterOfBinaryTree</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        helper(root);</span><br><span class="line">        <span class="keyword">return</span> max;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">helper</span><span class="params">(TreeNode node)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (node == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> l = helper(node.left);</span><br><span class="line">        <span class="keyword">int</span> r = helper(node.right);</span><br><span class="line">        max = Math.max(l + r, max);</span><br><span class="line">        <span class="keyword">return</span> Math.max(l, r) + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="average-of-levels-in-binary-tree"><a href="https://leetcode.com/problems/average-of-levels-in-binary-tree/" target="_blank" rel="noopener">637. Average of Levels in Binary Tree</a>📌</h6>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//recording the count of nodes in each layer helps traverse each layer</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Double&gt; <span class="title">averageOfLevels</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    List&lt;Double&gt; ans = <span class="keyword">new</span> ArrayList();</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">    Queue &lt;TreeNode&gt; q = <span class="keyword">new</span> LinkedList();</span><br><span class="line">    q.offer(root);</span><br><span class="line">    <span class="keyword">while</span> (!q.isEmpty()) &#123;</span><br><span class="line">        <span class="keyword">int</span> count = q.size();</span><br><span class="line">        <span class="keyword">double</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; count; i++) &#123;</span><br><span class="line">            TreeNode node = q.poll();</span><br><span class="line">            sum += node.val;</span><br><span class="line">            <span class="keyword">if</span> (node.left != <span class="keyword">null</span>) &#123;</span><br><span class="line">                q.offer(node.left);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (node.right != <span class="keyword">null</span>) &#123;</span><br><span class="line">                q.offer(node.right);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        ans.add(sum / count);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h6 id="construct-binary-search-tree-from-preorder-traversal"><a href="https://leetcode.com/problems/construct-binary-search-tree-from-preorder-traversal/" target="_blank" rel="noopener">1008. Construct Binary Search Tree from Preorder Traversal</a>💫</h6>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * public class TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode left;</span></span><br><span class="line"><span class="comment"> *     TreeNode right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) &#123; val = x; &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> TreeNode <span class="title">bstFromPreorder</span><span class="params">(<span class="keyword">int</span>[] preorder)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> helper(preorder, <span class="number">0</span>, preorder.length - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> TreeNode <span class="title">helper</span><span class="params">(<span class="keyword">int</span>[] preorder, <span class="keyword">int</span> start, <span class="keyword">int</span> end)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (start &gt; end) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        TreeNode node = <span class="keyword">new</span> TreeNode(preorder[start]);</span><br><span class="line">        <span class="keyword">int</span> i = start + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (; i &lt;= end; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (preorder[i] &gt; preorder[start]) <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        node.left = helper(preorder, start + <span class="number">1</span>, i - <span class="number">1</span>);</span><br><span class="line">        node.right = helper(preorder, i, end);</span><br><span class="line">        <span class="keyword">return</span> node;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> TreeNode <span class="title">bstFromPreorder</span><span class="params">(<span class="keyword">int</span>[] preorder)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> helper(preorder, <span class="number">0</span>, preorder.length - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> TreeNode <span class="title">helper</span><span class="params">(<span class="keyword">int</span>[] preorder, <span class="keyword">int</span> start, <span class="keyword">int</span> end)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (start &gt; end) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        TreeNode node = <span class="keyword">new</span> TreeNode(preorder[start]);</span><br><span class="line">        <span class="keyword">int</span> i = start + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (; i &lt;= end; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (preorder[i] &gt; preorder[start]) <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        node.left = helper(preorder, start + <span class="number">1</span>, i - <span class="number">1</span>);</span><br><span class="line">        node.right = helper(preorder, i, end);</span><br><span class="line">        <span class="keyword">return</span> node;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="delete-nodes-and-return-forest"><a href="https://leetcode.com/problems/delete-nodes-and-return-forest/" target="_blank" rel="noopener">1110. Delete Nodes And Return Forest</a></h6>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> List&lt;TreeNode&gt; <span class="title">delNodes</span><span class="params">(TreeNode root, <span class="keyword">int</span>[] to_delete)</span> </span>&#123;</span><br><span class="line">    List&lt;TreeNode&gt; forest = <span class="keyword">new</span> ArrayList();</span><br><span class="line">    HashSet &lt;Integer&gt; set = <span class="keyword">new</span> HashSet();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> val: to_delete) &#123;</span><br><span class="line">        set.add(val);</span><br><span class="line">    &#125;</span><br><span class="line">    root = helper(root, set, forest);</span><br><span class="line">    <span class="keyword">if</span> (root != <span class="keyword">null</span>) &#123;</span><br><span class="line">        forest.add(root);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> forest;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">private</span> TreeNode <span class="title">helper</span><span class="params">(TreeNode root, HashSet&lt;Integer&gt; set, List&lt;TreeNode&gt; forest)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    &#125;</span><br><span class="line">    root.left = helper(root.left, set, forest);</span><br><span class="line">    root.right = helper(root.right, set, forest);</span><br><span class="line">    <span class="keyword">if</span> (set.contains(root.val)) &#123;</span><br><span class="line">        <span class="keyword">if</span> (root.left != <span class="keyword">null</span>) &#123;</span><br><span class="line">            forest.add(root.left);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (root.right != <span class="keyword">null</span>) &#123;</span><br><span class="line">            forest.add(root.right);</span><br><span class="line">        &#125;</span><br><span class="line">        root = <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> root;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h5 id="graph">Graph</h5>
 <h5 id="other-data-structures">Other Data Structures</h5>
 <h4 id="reference">Reference</h4>
