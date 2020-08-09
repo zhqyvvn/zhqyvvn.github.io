@@ -75,7 +75,7 @@ Detail of one processed photo
 • All images used for style transfer examples were randomly selected from Google Image</p>
 ]]></content>
       <categories>
-        <category>Website</category>
+        <category>Websites</category>
       </categories>
       <tags>
         <tag>Python</tag>
@@ -97,7 +97,7 @@ Detail of one processed photo
 •　<a href="https://www.youtube.com/watch?v=K9qMm3JbOH0&amp;list=PLjLATQlrmaYcdV-YRWBj8NDPoAjDaKKri&amp;index=2&amp;t=0s" target="_blank" rel="noopener">Reference</a></p>
 ]]></content>
       <categories>
-        <category>Game</category>
+        <category>Applications</category>
       </categories>
       <tags>
         <tag>Java</tag>
@@ -122,7 +122,7 @@ Detail of one processed photo
 • Browse / Delete own photos</p>
 ]]></content>
       <categories>
-        <category>Android</category>
+        <category>Applications</category>
       </categories>
       <tags>
         <tag>Java</tag>
@@ -405,10 +405,54 @@ returns &gt; 0 if A is lexicographically greater than B;</p>
 <p><a href="https://docs.oracle.com/javase/8/docs/api/" target="_blank" rel="noopener">Java Platform SE 8 - Oracle Help Center</a> <a href="https://www.oreilly.com/library/view/learning-java-4th/9781449372477/" target="_blank" rel="noopener">Learning Java - O'Reilly</a></p>
 ]]></content>
       <categories>
-        <category>Summary</category>
+        <category>Notes</category>
       </categories>
       <tags>
         <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LAN chatroom</title>
+    <url>/2019/11/25/LAN-chatroom/</url>
+    <content><![CDATA[<iframe src="https://drive.google.com/file/d/1WVjCZBgDepbzkw85w2grPSDVMEgFCST1/preview" width="640" height="480">
+</iframe>
+<p style="text-align: center; border-bottom: 0px solid #ddd;">
+</p>
+<a id="more"></a>
+<h4 id="built-with">🌟 Built with</h4>
+<p>• C</p>
+<h4 id="components">🌟 Components</h4>
+<p>Clients:<br />
+• Send requests to the server and get responses from the server<br />
+• Multi-threads<br />
+-detect user's inputs<br />
+-receive server's responses</p>
+<p>Server:<br />
+• Load and store users' / sessions' / invitations' information<br />
+• Act as the intermediate between clients -create a new thread for each newly connected client<br />
+-receive client's requests and reply responses on every thread</p>
+<h4 id="features">🌟 Features</h4>
+<p>Authentication:<br />
+• login / logout</p>
+<p>Session (Chatroom):<br />
+• Users can create a new session or join one existing session<br />
+• Multiple users can group-chat in one session<br />
+• Users can join multiple sessions and chat with multiple groups of people<br />
+• Users can leave the session</p>
+<p>Invitation:<br />
+• Invite other users to join one existing session<br />
+• Accept the invitation and join the group chat<br />
+• Decline the invitation</p>
+<p>Query:<br />
+• Users can query the list of online users and valid sessions from the server</p>
+<h4 id="note">📌 Note</h4>
+<p>The example ran clients and the server in one same PC thus using 127.0.0.1 as the server IP address. It can be altered as other IP address if the server ran on the different PC.</p>
+]]></content>
+      <categories>
+        <category>Applications</category>
+      </categories>
+      <tags>
+        <tag>C</tag>
       </tags>
   </entry>
   <entry>
@@ -450,7 +494,7 @@ Album
 • Original wallpaper was from Google Image and then modified by myself</p>
 ]]></content>
       <categories>
-        <category>Website</category>
+        <category>Websites</category>
       </categories>
       <tags>
         <tag>AWS</tag>
@@ -1362,6 +1406,12 @@ StarsIn(movieTitle, movieYear, starName) <figure class="highlight sql"><table><t
 <p>We have now met all six clauses that can appear in a SQL “select-fromwhere” query: <em>SELECT</em>, <em>FROM</em>, <em>WHERE</em>, <em>GROUP BY</em>, <em>HAVING</em>, and <em>ORDER BY</em>. Only the <em>SELECT</em> and <em>FROM</em> clauses are required. Whichever additional clauses appear must be in the order listed above.</p>
 </blockquote>
 <h4 id="database-modifications">Database Modifications</h4>
+<h5 id="insertion">Insertion</h5>
+<p><code>INSERT INTO R(A1, . . . , An) VALUES (v1, . . . , vn);</code> <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> StarsIn(movieTitle, movieYear, starName)</span><br><span class="line"><span class="keyword">VALUES</span>(’The Maltese Falcon’, <span class="number">1942</span>, ’Sydney Greenstreet’);</span><br></pre></td></tr></table></figure> Or <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- must be sure that the order of the values is the same as the standard order of attributes for the relation.</span></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> StarsIn</span><br><span class="line"><span class="keyword">VALUES</span>(’The Maltese Falcon’, <span class="number">1942</span>, ’Sydney Greenstreet’);</span><br></pre></td></tr></table></figure></p>
+<p>Studio(name, address, presC#)<br />
+Movies(title, year, length, genre, studioName, producerC#) <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- insert with NULL for the attributes address and presC#, into relation Studio</span></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> Studio(<span class="keyword">name</span>)</span><br><span class="line">    <span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> studioName</span><br><span class="line">    <span class="keyword">FROM</span> Movies</span><br><span class="line">    <span class="keyword">WHERE</span> studioName <span class="keyword">NOT</span> <span class="keyword">IN</span></span><br><span class="line">        (<span class="keyword">SELECT</span> <span class="keyword">name</span></span><br><span class="line">        <span class="keyword">FROM</span> Studio);</span><br></pre></td></tr></table></figure></p>
+<h5 id="deletion">Deletion</h5>
+<p><code>DELETE FROM R WHERE &lt;condition&gt;;</code></p>
 <h3 id="constraints-and-triggers">Constraints and Triggers</h3>
 <h3 id="views-and-indexes">Views and Indexes</h3>
 <h3 id="index-structures">Index Structures</h3>
@@ -1370,55 +1420,11 @@ StarsIn(movieTitle, movieYear, starName) <figure class="highlight sql"><table><t
 <p>Database Systems The Complete Book 2nd ed (2014, Pearson)</p>
 ]]></content>
       <categories>
-        <category>Summary</category>
+        <category>Notes</category>
       </categories>
       <tags>
         <tag>Relational Algebra</tag>
         <tag>SQL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LAN chatroom</title>
-    <url>/2019/11/25/LAN-chatroom/</url>
-    <content><![CDATA[<iframe src="https://drive.google.com/file/d/1WVjCZBgDepbzkw85w2grPSDVMEgFCST1/preview" width="640" height="480">
-</iframe>
-<p style="text-align: center; border-bottom: 0px solid #ddd;">
-</p>
-<a id="more"></a>
-<h4 id="built-with">🌟 Built with</h4>
-<p>• C</p>
-<h4 id="components">🌟 Components</h4>
-<p>Clients:<br />
-• Send requests to the server and get responses from the server<br />
-• Multi-threads<br />
--detect user's inputs<br />
--receive server's responses</p>
-<p>Server:<br />
-• Load and store users' / sessions' / invitations' information<br />
-• Act as the intermediate between clients -create a new thread for each newly connected client<br />
--receive client's requests and reply responses on every thread</p>
-<h4 id="features">🌟 Features</h4>
-<p>Authentication:<br />
-• login / logout</p>
-<p>Session (Chatroom):<br />
-• Users can create a new session or join one existing session<br />
-• Multiple users can group-chat in one session<br />
-• Users can join multiple sessions and chat with multiple groups of people<br />
-• Users can leave the session</p>
-<p>Invitation:<br />
-• Invite other users to join one existing session<br />
-• Accept the invitation and join the group chat<br />
-• Decline the invitation</p>
-<p>Query:<br />
-• Users can query the list of online users and valid sessions from the server</p>
-<h4 id="note">📌 Note</h4>
-<p>The example ran clients and the server in one same PC thus using 127.0.0.1 as the server IP address. It can be altered as other IP address if the server ran on the different PC.</p>
-]]></content>
-      <categories>
-        <category>C</category>
-      </categories>
-      <tags>
-        <tag>C</tag>
       </tags>
   </entry>
   <entry>
@@ -1495,7 +1501,7 @@ Receive notifications if<br />
 • Modified from my course project. Thanks to teammates <a href="https://github.com/AlexChum" target="_blank" rel="noopener">Alex</a>, <a href="https://github.com/ritadi" target="_blank" rel="noopener">Rita</a>, <a href="https://github.com/glebka100500" target="_blank" rel="noopener">Hlib</a> and our instructor <a href="https://github.com/mark-kazakevich" target="_blank" rel="noopener">Mark</a></p>
 ]]></content>
       <categories>
-        <category>Website</category>
+        <category>Websites</category>
       </categories>
       <tags>
         <tag>JavaScript</tag>
@@ -1758,10 +1764,18 @@ Receive notifications if<br />
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isPalindrome</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (head == <span class="keyword">null</span> || head.next == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    ListNode fast = head, slow = head;</span><br><span class="line">    <span class="keyword">while</span> (fast != <span class="keyword">null</span> &amp;&amp; fast.next != <span class="keyword">null</span>) &#123;</span><br><span class="line">        fast = fast.next.next;</span><br><span class="line">        slow = slow.next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (fast != <span class="keyword">null</span>) &#123;</span><br><span class="line">        slow.next = reverse(slow.next);</span><br><span class="line">        slow = slow.next;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        slow = reverse(slow);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (slow != <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (head.val != slow.val) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        head = head.next;</span><br><span class="line">        slow = slow.next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">private</span> ListNode <span class="title">reverse</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (head == <span class="keyword">null</span> || head.next == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">    &#125;</span><br><span class="line">    ListNode pre = head, cur = head.next;</span><br><span class="line">    pre.next = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">while</span> (cur != <span class="keyword">null</span>) &#123;</span><br><span class="line">        ListNode then = cur.next;</span><br><span class="line">        cur.next = pre;</span><br><span class="line">        pre = cur;</span><br><span class="line">        cur = then;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> pre;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h5 id="tree">Tree</h5>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * public class TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode left;</span></span><br><span class="line"><span class="comment"> *     TreeNode right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int val) &#123; this.val = val; &#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int val, TreeNode left, TreeNode right) &#123;</span></span><br><span class="line"><span class="comment"> *         this.val = val;</span></span><br><span class="line"><span class="comment"> *         this.left = left;</span></span><br><span class="line"><span class="comment"> *         this.right = right;</span></span><br><span class="line"><span class="comment"> *     &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<h6 id="preorder-traversal">Preorder Traversal</h6>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">preorder</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    visit(root);</span><br><span class="line">    preorder(root.left);</span><br><span class="line">    preorder(root.right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="inorder-traversal">Inorder Traversal</h6>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">inorder</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    inorder(root.left);</span><br><span class="line">    visit(root);</span><br><span class="line">    inorder(root.right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="postorder-traversal">Postorder Traversal</h6>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">postorder</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    postorder(root.left);</span><br><span class="line">    postorder(root.right);</span><br><span class="line">    visit(root);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h6 id="symmetric-tree"><a href="https://leetcode.com/problems/symmetric-tree/" target="_blank" rel="noopener">101. Symmetric Tree</a></h6>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isSymmetric</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> root == <span class="keyword">null</span>? <span class="keyword">true</span>: isSymmetric(root.left, root.right);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">isSymmetric</span><span class="params">(TreeNode left, TreeNode right)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (left == <span class="keyword">null</span> &amp;&amp; right == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (left == <span class="keyword">null</span> || right == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (left.val != right.val) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> isSymmetric(left.left, right.right) &amp;&amp; isSymmetric(left.right, right.left);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h6 id="maximum-depth-of-binary-tree"><a href="https://leetcode.com/problems/maximum-depth-of-binary-tree/" target="_blank" rel="noopener">104. Maximum Depth of Binary Tree</a></h6>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxDepth</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span> + Math.max(maxDepth(root.right), maxDepth(root.left));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="construct-binary-tree-from-preorder-and-inorder-traversal"><a href="https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/" target="_blank" rel="noopener">105. Construct Binary Tree from Preorder and Inorder Traversal</a>💫</h6>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> TreeNode <span class="title">buildTree</span><span class="params">(<span class="keyword">int</span>[] preorder, <span class="keyword">int</span>[] inorder)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (preorder.length == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    HashMap &lt;Integer, Integer&gt; inorder_hash = <span class="keyword">new</span> HashMap();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; inorder.length; i++) &#123;</span><br><span class="line">        inorder_hash.put(inorder[i], i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> buildTreeHelper(inorder_hash, preorder, <span class="number">0</span>, preorder.length - <span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">private</span> TreeNode <span class="title">buildTreeHelper</span><span class="params">(HashMap &lt;Integer, Integer&gt; inorder_hash, <span class="keyword">int</span>[] preorder, <span class="keyword">int</span> left_in_start, <span class="keyword">int</span> left_in_end, <span class="keyword">int</span> root_pre)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//left_in_start: start index of left subtree in inorder, left_in_end: end index of left subtree in inorder, root_pre: root index in preorder</span></span><br><span class="line">    <span class="keyword">if</span> (left_in_start &gt; left_in_end) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> val = preorder[root_pre], root_in = inorder_hash.get(val), leftLen = root_in - left_in_start;</span><br><span class="line">    TreeNode node = <span class="keyword">new</span> TreeNode(val);</span><br><span class="line">    node.left = buildTreeHelper(inorder_hash, preorder, left_in_start, root_in - <span class="number">1</span>, root_pre + <span class="number">1</span>);</span><br><span class="line">    node.right = buildTreeHelper(inorder_hash, preorder, root_in + <span class="number">1</span>, left_in_end, root_pre + leftLen + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> node;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h6 id="balanced-binary-tree"><a href="https://leetcode.com/problems/balanced-binary-tree/" target="_blank" rel="noopener">110. Balanced Binary Tree</a></h6>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isBalanced</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> MaxDepth(root) == -<span class="number">1</span>? <span class="keyword">false</span>: <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">MaxDepth</span><span class="params">(TreeNode node)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (node == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> left = MaxDepth(node.left);</span><br><span class="line">    <span class="keyword">int</span> right = MaxDepth(node.right);</span><br><span class="line">    <span class="keyword">if</span> (left == -<span class="number">1</span> || right == -<span class="number">1</span> || Math.abs(left - right) &gt; <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span> + Math.max(left, right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h6 id="path-sum-iii"><a href="https://leetcode.com/problems/path-sum-iii/" target="_blank" rel="noopener">437. Path Sum III</a>💫</h6>
@@ -1798,7 +1812,7 @@ Receive notifications if<br />
 <p>📌 - classic 🌟 - skills 💫 - tricky</p>
 ]]></content>
       <categories>
-        <category>Summary</category>
+        <category>Notes</category>
       </categories>
       <tags>
         <tag>Java</tag>
