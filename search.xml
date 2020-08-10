@@ -507,7 +507,7 @@ Album
   <entry>
     <title>Notes on Database</title>
     <url>/2018/09/12/Notes-on-Database/</url>
-    <content><![CDATA[<p>Reading notes on &lt;&lt;Database Systems The Complete Book 2nd edition&gt;&gt;</p>
+    <content><![CDATA[<p>Reading notes on <em>Database Systems-The Complete Book(2nd edition)</em></p>
 <h3 id="the-relational-model-of-data">The Relational Model of Data</h3>
 <blockquote>
 <p><em>Relational Algebra</em>: This algebra underlies most query languages for the relational model. Its principal operators are union, intersection, difference, selection, projection, Cartesian product, natural join, theta-join, and renaming.</p>
@@ -1412,12 +1412,25 @@ StarsIn(movieTitle, movieYear, starName) <figure class="highlight sql"><table><t
 Movies(title, year, length, genre, studioName, producerC#) <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- insert with NULL for the attributes address and presC#, into relation Studio</span></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> Studio(<span class="keyword">name</span>)</span><br><span class="line">    <span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> studioName</span><br><span class="line">    <span class="keyword">FROM</span> Movies</span><br><span class="line">    <span class="keyword">WHERE</span> studioName <span class="keyword">NOT</span> <span class="keyword">IN</span></span><br><span class="line">        (<span class="keyword">SELECT</span> <span class="keyword">name</span></span><br><span class="line">        <span class="keyword">FROM</span> Studio);</span><br></pre></td></tr></table></figure></p>
 <h5 id="deletion">Deletion</h5>
 <p><code>DELETE FROM R WHERE &lt;condition&gt;;</code></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- must describe the tuple exactly by a WHERE clause</span></span><br><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> StarsIn</span><br><span class="line"><span class="keyword">WHERE</span> movieTitle = <span class="string">'The Maltese Falcon'</span> <span class="keyword">AND</span></span><br><span class="line">    movieYear = <span class="number">1942</span> <span class="keyword">AND</span></span><br><span class="line">    starName = <span class="string">'Sydney Greenstreet'</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> MovieExec</span><br><span class="line"><span class="keyword">WHERE</span> netWorth &lt; <span class="number">10000000</span>;</span><br></pre></td></tr></table></figure>
+<h5 id="updates">Updates</h5>
+<p><code>UPDATE R SET &lt;new-value assignments&gt; WHERE &lt;condition&gt;;</code></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- attach the title Pres. in front of the name of every movie executive who is the president of a studio.</span></span><br><span class="line"><span class="keyword">UPDATE</span> MovieExec</span><br><span class="line"><span class="keyword">SET</span> <span class="keyword">name</span> = <span class="string">'Pres. '</span> || <span class="keyword">name</span> <span class="comment">-- the operator || denotes concatenation of strings</span></span><br><span class="line"><span class="keyword">WHERE</span> cert<span class="comment"># IN (SELECT presC# FROM Studio);</span></span><br></pre></td></tr></table></figure>
+<h4 id="transactions-in-sql">Transactions in SQL</h4>
+<h5 id="serializability">Serializability</h5>
+<h5 id="atomicity">Atomicity</h5>
+<h5 id="transactions">Transactions</h5>
+<h5 id="read-only-transactionss">Read-Only Transactionss</h5>
+<h5 id="dirty-reads">Dirty Reads</h5>
+<h5 id="other-isolation-levels">Other Isolation Levels</h5>
 <h3 id="constraints-and-triggers">Constraints and Triggers</h3>
+<h4 id="keys-and-foreign-key">Keys and Foreign Key</h4>
 <h3 id="views-and-indexes">Views and Indexes</h3>
 <h3 id="index-structures">Index Structures</h3>
 <h3 id="parallel-and-distributed-databases">Parallel and Distributed Databases</h3>
 <h3 id="reference">Reference</h3>
-<p>Database Systems The Complete Book 2nd ed (2014, Pearson)</p>
+<p>Database Systems-The Complete Book(2nd ed, 2014, Pearson)</p>
 ]]></content>
       <categories>
         <category>Notes</category>
@@ -1804,7 +1817,7 @@ Receive notifications if<br />
 </li>
 <li><a href="https://zhuanlan.zhihu.com/p/31824895" target="_blank" rel="noopener">漫画算法：辗转相除法是什么鬼？-小灰</a></li>
 </ol>
-<h4 id="original-posts-of-solutions">Original posts of solutions</h4>
+<h4 id="posts">Posts</h4>
 <ol type="1">
 <li><a href="https://leetcode.com/problems/valid-parenthesis-string/" target="_blank" rel="noopener">678. Valid Parenthesis String</a> -- 🎯<a href="https://leetcode.com/problems/valid-parenthesis-string/discuss/583165/java-one-pass-solution-with-on-time-and-o1-space" target="_blank" rel="noopener">One pass solution with O(n) time and O(1) space</a></li>
 </ol>
