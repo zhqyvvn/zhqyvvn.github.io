@@ -1,25 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Breakout Ball</title>
-    <url>/2018/07/11/Breakout-Ball/</url>
-    <content><![CDATA[<iframe src="https://drive.google.com/file/d/1vJPSyKD83s_67LJ7Ohe6NiZ4XgdloM7z/preview" width="640" height="480">
-</iframe>
-<p style="text-align: center; border-bottom: 0px solid #ddd;">
-</p>
-<a id="more"></a>
-<p>•　GUI is built on JFrame / JPanel<br />
-•　Use KeyListener / ActionListener to detect keyboard input (right / left)<br />
-•　<a href="https://www.youtube.com/watch?v=K9qMm3JbOH0&amp;list=PLjLATQlrmaYcdV-YRWBj8NDPoAjDaKKri&amp;index=2&amp;t=0s" target="_blank" rel="noopener">Reference</a></p>
-]]></content>
-      <categories>
-        <category>Applications</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Art Style Transfer</title>
     <url>/2018/12/10/Art-Style-Transfer/</url>
     <content><![CDATA[<p><img data-src="/images/ast_home1.png" /></p>
@@ -131,47 +112,22 @@ Detail of one processed photo
       </tags>
   </entry>
   <entry>
-    <title>LAN chatroom</title>
-    <url>/2019/11/25/LAN-chatroom/</url>
-    <content><![CDATA[<iframe src="https://drive.google.com/file/d/1WVjCZBgDepbzkw85w2grPSDVMEgFCST1/preview" width="640" height="480">
+    <title>Breakout Ball</title>
+    <url>/2018/07/11/Breakout-Ball/</url>
+    <content><![CDATA[<iframe src="https://drive.google.com/file/d/1vJPSyKD83s_67LJ7Ohe6NiZ4XgdloM7z/preview" width="640" height="480">
 </iframe>
 <p style="text-align: center; border-bottom: 0px solid #ddd;">
 </p>
 <a id="more"></a>
-<h4 id="built-with">🌟 Built with</h4>
-<p>• C</p>
-<h4 id="components">🌟 Components</h4>
-<p>Clients:<br />
-• Send requests to the server and get responses from the server<br />
-• Multi-threads<br />
--detect user's inputs<br />
--receive server's responses</p>
-<p>Server:<br />
-• Load and store users' / sessions' / invitations' information<br />
-• Act as the intermediate between clients -create a new thread for each newly connected client<br />
--receive client's requests and reply responses on every thread</p>
-<h4 id="features">🌟 Features</h4>
-<p>Authentication:<br />
-• login / logout</p>
-<p>Session (Chatroom):<br />
-• Users can create a new session or join one existing session<br />
-• Multiple users can group-chat in one session<br />
-• Users can join multiple sessions and chat with multiple groups of people<br />
-• Users can leave the session</p>
-<p>Invitation:<br />
-• Invite other users to join one existing session<br />
-• Accept the invitation and join the group chat<br />
-• Decline the invitation</p>
-<p>Query:<br />
-• Users can query the list of online users and valid sessions from the server</p>
-<h4 id="note">📌 Note</h4>
-<p>The example ran clients and the server in one same PC thus using 127.0.0.1 as the server IP address. It can be altered as other IP address if the server ran on the different PC.</p>
+<p>•　GUI is built on JFrame / JPanel<br />
+•　Use KeyListener / ActionListener to detect keyboard input (right / left)<br />
+•　<a href="https://www.youtube.com/watch?v=K9qMm3JbOH0&amp;list=PLjLATQlrmaYcdV-YRWBj8NDPoAjDaKKri&amp;index=2&amp;t=0s" target="_blank" rel="noopener">Reference</a></p>
 ]]></content>
       <categories>
         <category>Applications</category>
       </categories>
       <tags>
-        <tag>C</tag>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -453,6 +409,50 @@ returns &gt; 0 if A is lexicographically greater than B;</p>
       </categories>
       <tags>
         <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LAN chatroom</title>
+    <url>/2019/11/25/LAN-chatroom/</url>
+    <content><![CDATA[<iframe src="https://drive.google.com/file/d/1WVjCZBgDepbzkw85w2grPSDVMEgFCST1/preview" width="640" height="480">
+</iframe>
+<p style="text-align: center; border-bottom: 0px solid #ddd;">
+</p>
+<a id="more"></a>
+<h4 id="built-with">🌟 Built with</h4>
+<p>• C</p>
+<h4 id="components">🌟 Components</h4>
+<p>Clients:<br />
+• Send requests to the server and get responses from the server<br />
+• Multi-threads<br />
+-detect user's inputs<br />
+-receive server's responses</p>
+<p>Server:<br />
+• Load and store users' / sessions' / invitations' information<br />
+• Act as the intermediate between clients -create a new thread for each newly connected client<br />
+-receive client's requests and reply responses on every thread</p>
+<h4 id="features">🌟 Features</h4>
+<p>Authentication:<br />
+• login / logout</p>
+<p>Session (Chatroom):<br />
+• Users can create a new session or join one existing session<br />
+• Multiple users can group-chat in one session<br />
+• Users can join multiple sessions and chat with multiple groups of people<br />
+• Users can leave the session</p>
+<p>Invitation:<br />
+• Invite other users to join one existing session<br />
+• Accept the invitation and join the group chat<br />
+• Decline the invitation</p>
+<p>Query:<br />
+• Users can query the list of online users and valid sessions from the server</p>
+<h4 id="note">📌 Note</h4>
+<p>The example ran clients and the server in one same PC thus using 127.0.0.1 as the server IP address. It can be altered as other IP address if the server ran on the different PC.</p>
+]]></content>
+      <categories>
+        <category>Applications</category>
+      </categories>
+      <tags>
+        <tag>C</tag>
       </tags>
   </entry>
   <entry>
