@@ -1,117 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Art Style Transfer</title>
-    <url>/2018/12/10/Art-Style-Transfer/</url>
-    <content><![CDATA[<p><img data-src="/images/ast_home1.png" /></p>
-<a id="more"></a>
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Home Page
-</p>
-<img data-src="/images/ast_home2.png" />
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Home Page
-</p>
-<img data-src="/images/ast_starry.png" />
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Example: transfer to <i>Starry Night</i> style
-</p>
-<img data-src="/images/ast_wave.png" /><br />
-
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Example: transfer to <i>The Great Wave off Kanagawa</i> style
-</p>
-<img data-src="/images/ast_mosaic.png" /><br />
-
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Example: transfer to <i>Mosaic</i> style
-</p>
-<img data-src="/images/ast_cubist.png" /><br />
-
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Example: transfer to <i>Cubism</i> style
-</p>
-<img data-src="/images/ast_udine.png" /><br />
-
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Example: transfer to <i>Udnie</i> style
-</p>
-<img data-src="/images/ast_feathers.png" /><br />
-
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Example: transfer to <i>Feathers</i> style
-</p>
-<img data-src="/images/ast_scream.png" /><br />
-
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Example: transfer to <i>The Scream</i> style
-</p>
-<img data-src="/images/ast_album.png" /><br />
-
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Album
-</p>
-<img data-src="/images/ast_detail.png" /><br />
-
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Detail of one processed photo
-</p>
-<h4 id="built-with">🌟 Built with</h4>
-<p>• Python<br />
-• Flask<br />
-• Amazon Web Services<br />
-• Tensorflow</p>
-<h4 id="components">🌟 Components</h4>
-<p>• Style Transfer ---&gt; Tensorflow (<a href="https://github.com/hzy46/fast-neural-style-tensorflow" target="_blank" rel="noopener">Fast Neural Style</a>)<br />
-• Database ---&gt; <a href="https://aws.amazon.com/dynamodb/" target="_blank" rel="noopener">Dynamodb</a><br />
-• Image Storage ---&gt; <a href="https://aws.amazon.com/s3/" target="_blank" rel="noopener">S3</a></p>
-<h4 id="features">🌟 Features</h4>
-<p>• Authentication (login / signup / logout)<br />
-• Chose one of the art styles and perform style transfer to users' uploaded photos<br />
-• Browse all saved processed photos and their full-resolution versions in the album<br />
-• Delete one selected photo per time, or delete all photos one time in album</p>
-<h4 id="note">📌 Note</h4>
-<p>• Fast Neural Style models are in reference to <a href="https://github.com/hzy46/fast-neural-style-tensorflow" target="_blank" rel="noopener">here</a><br />
-• All images used for style transfer examples were randomly selected from Google Image</p>
-]]></content>
-      <categories>
-        <category>Websites</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>Flask</tag>
-        <tag>AWS</tag>
-        <tag>TensorFlow</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Fakestagram</title>
-    <url>/2019/03/12/Fakestagram/</url>
-    <content><![CDATA[<iframe src="https://drive.google.com/file/d/1neXzFjKNY9PmYUEm_KSLe0uCsGwrPEDA/preview" width="640" height="480">
-</iframe>
-<p style="text-align: center; border-bottom: 0px solid #ddd;">
-</p>
-<a id="more"></a>
-<h4 id="built-with">🌟 Built with</h4>
-<p>• Java<br />
-• Android Studio<br />
-• Google Firebase</p>
-<h4 id="features">🌟 Features</h4>
-<p>• Authentication (login / signup / logout)<br />
-• Browse / Comment / Reply global photo posts<br />
-• Take photos, auto-add tags and upload to own album<br />
-• Browse / Delete own photos</p>
-]]></content>
-      <categories>
-        <category>Applications</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>Android</tag>
-        <tag>Google Firebase</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Breakout Ball</title>
     <url>/2018/07/11/Breakout-Ball/</url>
     <content><![CDATA[<iframe src="https://drive.google.com/file/d/1vJPSyKD83s_67LJ7Ohe6NiZ4XgdloM7z/preview" width="640" height="480">
@@ -409,6 +298,117 @@ returns &gt; 0 if A is lexicographically greater than B;</p>
       </categories>
       <tags>
         <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Art Style Transfer</title>
+    <url>/2018/12/10/Art-Style-Transfer/</url>
+    <content><![CDATA[<p><img data-src="/images/ast_home1.png" /></p>
+<a id="more"></a>
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Home Page
+</p>
+<img data-src="/images/ast_home2.png" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Home Page
+</p>
+<img data-src="/images/ast_starry.png" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Example: transfer to <i>Starry Night</i> style
+</p>
+<img data-src="/images/ast_wave.png" /><br />
+
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Example: transfer to <i>The Great Wave off Kanagawa</i> style
+</p>
+<img data-src="/images/ast_mosaic.png" /><br />
+
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Example: transfer to <i>Mosaic</i> style
+</p>
+<img data-src="/images/ast_cubist.png" /><br />
+
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Example: transfer to <i>Cubism</i> style
+</p>
+<img data-src="/images/ast_udine.png" /><br />
+
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Example: transfer to <i>Udnie</i> style
+</p>
+<img data-src="/images/ast_feathers.png" /><br />
+
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Example: transfer to <i>Feathers</i> style
+</p>
+<img data-src="/images/ast_scream.png" /><br />
+
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Example: transfer to <i>The Scream</i> style
+</p>
+<img data-src="/images/ast_album.png" /><br />
+
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Album
+</p>
+<img data-src="/images/ast_detail.png" /><br />
+
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Detail of one processed photo
+</p>
+<h4 id="built-with">🌟 Built with</h4>
+<p>• Python<br />
+• Flask<br />
+• Amazon Web Services<br />
+• Tensorflow</p>
+<h4 id="components">🌟 Components</h4>
+<p>• Style Transfer ---&gt; Tensorflow (<a href="https://github.com/hzy46/fast-neural-style-tensorflow" target="_blank" rel="noopener">Fast Neural Style</a>)<br />
+• Database ---&gt; <a href="https://aws.amazon.com/dynamodb/" target="_blank" rel="noopener">Dynamodb</a><br />
+• Image Storage ---&gt; <a href="https://aws.amazon.com/s3/" target="_blank" rel="noopener">S3</a></p>
+<h4 id="features">🌟 Features</h4>
+<p>• Authentication (login / signup / logout)<br />
+• Chose one of the art styles and perform style transfer to users' uploaded photos<br />
+• Browse all saved processed photos and their full-resolution versions in the album<br />
+• Delete one selected photo per time, or delete all photos one time in album</p>
+<h4 id="note">📌 Note</h4>
+<p>• Fast Neural Style models are in reference to <a href="https://github.com/hzy46/fast-neural-style-tensorflow" target="_blank" rel="noopener">here</a><br />
+• All images used for style transfer examples were randomly selected from Google Image</p>
+]]></content>
+      <categories>
+        <category>Websites</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>Flask</tag>
+        <tag>AWS</tag>
+        <tag>TensorFlow</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Fakestagram</title>
+    <url>/2019/03/12/Fakestagram/</url>
+    <content><![CDATA[<iframe src="https://drive.google.com/file/d/1neXzFjKNY9PmYUEm_KSLe0uCsGwrPEDA/preview" width="640" height="480">
+</iframe>
+<p style="text-align: center; border-bottom: 0px solid #ddd;">
+</p>
+<a id="more"></a>
+<h4 id="built-with">🌟 Built with</h4>
+<p>• Java<br />
+• Android Studio<br />
+• Google Firebase</p>
+<h4 id="features">🌟 Features</h4>
+<p>• Authentication (login / signup / logout)<br />
+• Browse / Comment / Reply global photo posts<br />
+• Take photos, auto-add tags and upload to own album<br />
+• Browse / Delete own photos</p>
+]]></content>
+      <categories>
+        <category>Applications</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>Android</tag>
+        <tag>Google Firebase</tag>
       </tags>
   </entry>
   <entry>
