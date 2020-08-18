@@ -1,6 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Art Style Transfer</title>
+    <url>/2018/12/10/Art-Style-Transfer/</url>
+    <content><![CDATA[<p><img data-src="/images/ast_home1.png" /></p>
+<a id="more"></a>
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Home Page
+</p>
+<img data-src="/images/ast_home2.png" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Home Page
+</p>
+<img data-src="/images/ast_starry.png" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Example: transfer to <i>Starry Night</i> style
+</p>
+<img data-src="/images/ast_wave.png" /><br />
+
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Example: transfer to <i>The Great Wave off Kanagawa</i> style
+</p>
+<img data-src="/images/ast_mosaic.png" /><br />
+
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Example: transfer to <i>Mosaic</i> style
+</p>
+<img data-src="/images/ast_cubist.png" /><br />
+
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Example: transfer to <i>Cubism</i> style
+</p>
+<img data-src="/images/ast_udine.png" /><br />
+
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Example: transfer to <i>Udnie</i> style
+</p>
+<img data-src="/images/ast_feathers.png" /><br />
+
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Example: transfer to <i>Feathers</i> style
+</p>
+<img data-src="/images/ast_scream.png" /><br />
+
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Example: transfer to <i>The Scream</i> style
+</p>
+<img data-src="/images/ast_album.png" /><br />
+
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Album
+</p>
+<img data-src="/images/ast_detail.png" /><br />
+
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Detail of one processed photo
+</p>
+<h4 id="built-with">🌟 Built with</h4>
+<p>• Python<br />
+• Flask<br />
+• Amazon Web Services<br />
+• Tensorflow</p>
+<h4 id="components">🌟 Components</h4>
+<p>• Style Transfer ---&gt; Tensorflow (<a href="https://github.com/hzy46/fast-neural-style-tensorflow" target="_blank" rel="noopener">Fast Neural Style</a>)<br />
+• Database ---&gt; <a href="https://aws.amazon.com/dynamodb/" target="_blank" rel="noopener">Dynamodb</a><br />
+• Image Storage ---&gt; <a href="https://aws.amazon.com/s3/" target="_blank" rel="noopener">S3</a></p>
+<h4 id="features">🌟 Features</h4>
+<p>• Authentication (login / signup / logout)<br />
+• Chose one of the art styles and perform style transfer to users' uploaded photos<br />
+• Browse all saved processed photos and their full-resolution versions in the album<br />
+• Delete one selected photo per time, or delete all photos one time in album</p>
+<h4 id="note">📌 Note</h4>
+<p>• Fast Neural Style models are in reference to <a href="https://github.com/hzy46/fast-neural-style-tensorflow" target="_blank" rel="noopener">here</a><br />
+• All images used for style transfer examples were randomly selected from Google Image</p>
+]]></content>
+      <categories>
+        <category>Websites</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>Flask</tag>
+        <tag>AWS</tag>
+        <tag>TensorFlow</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Fakestagram</title>
+    <url>/2019/03/12/Fakestagram/</url>
+    <content><![CDATA[<iframe src="https://drive.google.com/file/d/1neXzFjKNY9PmYUEm_KSLe0uCsGwrPEDA/preview" width="640" height="480">
+</iframe>
+<p style="text-align: center; border-bottom: 0px solid #ddd;">
+</p>
+<a id="more"></a>
+<h4 id="built-with">🌟 Built with</h4>
+<p>• Java<br />
+• Android Studio<br />
+• Google Firebase</p>
+<h4 id="features">🌟 Features</h4>
+<p>• Authentication (login / signup / logout)<br />
+• Browse / Comment / Reply global photo posts<br />
+• Take photos, auto-add tags and upload to own album<br />
+• Browse / Delete own photos</p>
+]]></content>
+      <categories>
+        <category>Applications</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>Android</tag>
+        <tag>Google Firebase</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Breakout Ball</title>
     <url>/2018/07/11/Breakout-Ball/</url>
     <content><![CDATA[<iframe src="https://drive.google.com/file/d/1vJPSyKD83s_67LJ7Ohe6NiZ4XgdloM7z/preview" width="640" height="480">
@@ -301,117 +412,6 @@ returns &gt; 0 if A is lexicographically greater than B;</p>
       </tags>
   </entry>
   <entry>
-    <title>Art Style Transfer</title>
-    <url>/2018/12/10/Art-Style-Transfer/</url>
-    <content><![CDATA[<p><img data-src="/images/ast_home1.png" /></p>
-<a id="more"></a>
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Home Page
-</p>
-<img data-src="/images/ast_home2.png" />
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Home Page
-</p>
-<img data-src="/images/ast_starry.png" />
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Example: transfer to <i>Starry Night</i> style
-</p>
-<img data-src="/images/ast_wave.png" /><br />
-
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Example: transfer to <i>The Great Wave off Kanagawa</i> style
-</p>
-<img data-src="/images/ast_mosaic.png" /><br />
-
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Example: transfer to <i>Mosaic</i> style
-</p>
-<img data-src="/images/ast_cubist.png" /><br />
-
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Example: transfer to <i>Cubism</i> style
-</p>
-<img data-src="/images/ast_udine.png" /><br />
-
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Example: transfer to <i>Udnie</i> style
-</p>
-<img data-src="/images/ast_feathers.png" /><br />
-
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Example: transfer to <i>Feathers</i> style
-</p>
-<img data-src="/images/ast_scream.png" /><br />
-
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Example: transfer to <i>The Scream</i> style
-</p>
-<img data-src="/images/ast_album.png" /><br />
-
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Album
-</p>
-<img data-src="/images/ast_detail.png" /><br />
-
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Detail of one processed photo
-</p>
-<h4 id="built-with">🌟 Built with</h4>
-<p>• Python<br />
-• Flask<br />
-• Amazon Web Services<br />
-• Tensorflow</p>
-<h4 id="components">🌟 Components</h4>
-<p>• Style Transfer ---&gt; Tensorflow (<a href="https://github.com/hzy46/fast-neural-style-tensorflow" target="_blank" rel="noopener">Fast Neural Style</a>)<br />
-• Database ---&gt; <a href="https://aws.amazon.com/dynamodb/" target="_blank" rel="noopener">Dynamodb</a><br />
-• Image Storage ---&gt; <a href="https://aws.amazon.com/s3/" target="_blank" rel="noopener">S3</a></p>
-<h4 id="features">🌟 Features</h4>
-<p>• Authentication (login / signup / logout)<br />
-• Chose one of the art styles and perform style transfer to users' uploaded photos<br />
-• Browse all saved processed photos and their full-resolution versions in the album<br />
-• Delete one selected photo per time, or delete all photos one time in album</p>
-<h4 id="note">📌 Note</h4>
-<p>• Fast Neural Style models are in reference to <a href="https://github.com/hzy46/fast-neural-style-tensorflow" target="_blank" rel="noopener">here</a><br />
-• All images used for style transfer examples were randomly selected from Google Image</p>
-]]></content>
-      <categories>
-        <category>Websites</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>Flask</tag>
-        <tag>AWS</tag>
-        <tag>TensorFlow</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Fakestagram</title>
-    <url>/2019/03/12/Fakestagram/</url>
-    <content><![CDATA[<iframe src="https://drive.google.com/file/d/1neXzFjKNY9PmYUEm_KSLe0uCsGwrPEDA/preview" width="640" height="480">
-</iframe>
-<p style="text-align: center; border-bottom: 0px solid #ddd;">
-</p>
-<a id="more"></a>
-<h4 id="built-with">🌟 Built with</h4>
-<p>• Java<br />
-• Android Studio<br />
-• Google Firebase</p>
-<h4 id="features">🌟 Features</h4>
-<p>• Authentication (login / signup / logout)<br />
-• Browse / Comment / Reply global photo posts<br />
-• Take photos, auto-add tags and upload to own album<br />
-• Browse / Delete own photos</p>
-]]></content>
-      <categories>
-        <category>Applications</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>Android</tag>
-        <tag>Google Firebase</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>LAN chatroom</title>
     <url>/2019/11/25/LAN-chatroom/</url>
     <content><![CDATA[<iframe src="https://drive.google.com/file/d/1WVjCZBgDepbzkw85w2grPSDVMEgFCST1/preview" width="640" height="480">
@@ -453,55 +453,6 @@ Detail of one processed photo
       </categories>
       <tags>
         <tag>C</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Magical Rectangle</title>
-    <url>/2020/01/12/Magical-Rectangle/</url>
-    <content><![CDATA[<p><img data-src="/images/mr_login.png" /></p>
-<a id="more"></a>
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Login
-</p>
-<img data-src="/images/mr_home.png" /><br />
-
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Home
-</p>
-<img data-src="/images/mr_album.png" /><br />
-
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Album
-</p>
-<h4 id="built-with">🌟 Built with</h4>
-<p>• JavaScript<br />
-• React<br />
-• Express.js<br />
-• OpenCV<br />
-• Amazon Web Services</p>
-<h4 id="components">🌟 Components</h4>
-<p>• Object Detection ---&gt; OpenCV (<a href="https://www.npmjs.com/package/opencv4nodejs/v/4.1.0" target="_blank" rel="noopener">opencv4nodejs</a>)<br />
-• Database ---&gt; <a href="https://aws.amazon.com/dynamodb/" target="_blank" rel="noopener">Dynamodb</a><br />
-• Image Storage ---&gt; <a href="https://aws.amazon.com/s3/" target="_blank" rel="noopener">S3</a><br />
-• Deployment ---&gt; <a href="https://aws.amazon.com/ec2/" target="_blank" rel="noopener">EC2</a></p>
-<h4 id="features">🌟 Features</h4>
-<p>• Authentication (login / signup / logout)<br />
-• Upload images and get object detection results (where colourful rectangles appear)<br />
-• Browse all processed images in the album</p>
-<h4 id="note">📌 Note</h4>
-<p>• Objects' classes that can be detected are listed <a href="https://github.com/justadudewhohacks/opencv4nodejs/blob/master/examples/dnnCocoClassNames.js" target="_blank" rel="noopener">here</a><br />
-• All images used for object detection in the example were randomly picked from Google Image<br />
-• Original wallpaper was from Google Image and then modified by myself</p>
-]]></content>
-      <categories>
-        <category>Websites</category>
-      </categories>
-      <tags>
-        <tag>AWS</tag>
-        <tag>JavaScript</tag>
-        <tag>React.js</tag>
-        <tag>Express.js</tag>
-        <tag>OpenCV</tag>
       </tags>
   </entry>
   <entry>
@@ -1513,6 +1464,55 @@ MovieExec(name, address, cert#, netWorth) <figure class="highlight sql"><table><
       </tags>
   </entry>
   <entry>
+    <title>Magical Rectangle</title>
+    <url>/2020/01/12/Magical-Rectangle/</url>
+    <content><![CDATA[<p><img data-src="/images/mr_login.png" /></p>
+<a id="more"></a>
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Login
+</p>
+<img data-src="/images/mr_home.png" /><br />
+
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Home
+</p>
+<img data-src="/images/mr_album.png" /><br />
+
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Album
+</p>
+<h4 id="built-with">🌟 Built with</h4>
+<p>• JavaScript<br />
+• React<br />
+• Express.js<br />
+• OpenCV<br />
+• Amazon Web Services</p>
+<h4 id="components">🌟 Components</h4>
+<p>• Object Detection ---&gt; OpenCV (<a href="https://www.npmjs.com/package/opencv4nodejs/v/4.1.0" target="_blank" rel="noopener">opencv4nodejs</a>)<br />
+• Database ---&gt; <a href="https://aws.amazon.com/dynamodb/" target="_blank" rel="noopener">Dynamodb</a><br />
+• Image Storage ---&gt; <a href="https://aws.amazon.com/s3/" target="_blank" rel="noopener">S3</a><br />
+• Deployment ---&gt; <a href="https://aws.amazon.com/ec2/" target="_blank" rel="noopener">EC2</a></p>
+<h4 id="features">🌟 Features</h4>
+<p>• Authentication (login / signup / logout)<br />
+• Upload images and get object detection results (where colourful rectangles appear)<br />
+• Browse all processed images in the album</p>
+<h4 id="note">📌 Note</h4>
+<p>• Objects' classes that can be detected are listed <a href="https://github.com/justadudewhohacks/opencv4nodejs/blob/master/examples/dnnCocoClassNames.js" target="_blank" rel="noopener">here</a><br />
+• All images used for object detection in the example were randomly picked from Google Image<br />
+• Original wallpaper was from Google Image and then modified by myself</p>
+]]></content>
+      <categories>
+        <category>Websites</category>
+      </categories>
+      <tags>
+        <tag>AWS</tag>
+        <tag>JavaScript</tag>
+        <tag>React.js</tag>
+        <tag>Express.js</tag>
+        <tag>OpenCV</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Second Buy</title>
     <url>/2019/12/15/Second-Buy/</url>
     <content><![CDATA[<p><img data-src="/images/sc_index.jpg" /></p>
@@ -1601,7 +1601,8 @@ Receive notifications if<br />
   <entry>
     <title>LeetCode in Java</title>
     <url>/2020/04/04/Leetcode-in-Java/</url>
-    <content><![CDATA[<h3 id="algorithm">Algorithm</h3>
+    <content><![CDATA[<p>Follow the structure of <a href="https://github.com/changgyhub/notes/blob/master/basics/algorithms-and-data-structures.md" target="_blank" rel="noopener">Algorithms and Data Structures (C++)</a></p>
+<h3 id="algorithm">Algorithm</h3>
 <h4 id="greedy">Greedy</h4>
 <h5 id="maximum-subarray"><a href="https://leetcode.com/problems/maximum-subarray/" target="_blank" rel="noopener">53. Maximum Subarray</a></h5>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxSubArray</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> max = nums[<span class="number">0</span>], sum = nums[<span class="number">0</span>];</span><br><span class="line">    <span class="comment">//Ensure each number is greater than itself after plus 'sum'</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (sum &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            sum += nums[i];</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            sum = nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">        max = Math.max(max, sum);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> max;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -1873,21 +1874,38 @@ Receive notifications if<br />
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isBalanced</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> MaxDepth(root) == -<span class="number">1</span>? <span class="keyword">false</span>: <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">MaxDepth</span><span class="params">(TreeNode node)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (node == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> left = MaxDepth(node.left);</span><br><span class="line">    <span class="keyword">int</span> right = MaxDepth(node.right);</span><br><span class="line">    <span class="keyword">if</span> (left == -<span class="number">1</span> || right == -<span class="number">1</span> || Math.abs(left - right) &gt; <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span> + Math.max(left, right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h5 id="binary-tree-preorder-traversal"><a href="https://leetcode.com/problems/binary-tree-preorder-traversal/" target="_blank" rel="noopener">144. Binary Tree Preorder Traversal</a></h5>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">preorderTraversal</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    List&lt;Integer&gt; ans = <span class="keyword">new</span> ArrayList();</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">    Stack &lt;TreeNode&gt; s = <span class="keyword">new</span> Stack();</span><br><span class="line">    s.push(root);</span><br><span class="line">    <span class="keyword">while</span> (!s.isEmpty()) &#123;</span><br><span class="line">        TreeNode node = s.pop();</span><br><span class="line">        ans.add(node.val);</span><br><span class="line">        <span class="keyword">if</span> (node.right != <span class="keyword">null</span>) &#123;</span><br><span class="line">            s.push(node.right);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (node.left != <span class="keyword">null</span>) &#123;</span><br><span class="line">            s.push(node.left);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="implement-trie-prefix-tree"><a href="https://leetcode.com/problems/implement-trie-prefix-tree/" target="_blank" rel="noopener">208. Implement Trie (Prefix Tree)</a></h5>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Trie</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="class"><span class="keyword">class</span> <span class="title">TrieNode</span> </span>&#123;</span><br><span class="line">        <span class="keyword">boolean</span> isEnd;</span><br><span class="line">        TrieNode[] children;</span><br><span class="line">        TrieNode() &#123;</span><br><span class="line">            <span class="keyword">this</span>.isEnd = <span class="keyword">false</span>;</span><br><span class="line">            <span class="keyword">this</span>.children = <span class="keyword">new</span> TrieNode[<span class="number">26</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> TrieNode root;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Initialize your data structure here. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Trie</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.root = <span class="keyword">new</span> TrieNode();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Inserts a word into the trie. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">insert</span><span class="params">(String word)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = word.length();</span><br><span class="line">        TrieNode node = root;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> idx = word.charAt(i) - <span class="string">'a'</span>;</span><br><span class="line">            <span class="keyword">if</span> (node.children[idx] == <span class="keyword">null</span>) &#123;</span><br><span class="line">                node.children[idx] = <span class="keyword">new</span> TrieNode();</span><br><span class="line">                node = node.children[idx];</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                node = node.children[idx];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        node.isEnd = <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Returns if the word is in the trie. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">search</span><span class="params">(String word)</span> </span>&#123;</span><br><span class="line">        TrieNode node = find(word);</span><br><span class="line">        <span class="keyword">if</span> (node == <span class="keyword">null</span> || node.isEnd == <span class="keyword">false</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Returns if there is any word in the trie that starts with the given prefix. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">startsWith</span><span class="params">(String prefix)</span> </span>&#123;</span><br><span class="line">        TrieNode node = find(prefix);</span><br><span class="line">        <span class="keyword">if</span> (node == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> TrieNode <span class="title">find</span><span class="params">(String word)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = word.length();</span><br><span class="line">        TrieNode node = root;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> idx = word.charAt(i) - <span class="string">'a'</span>;</span><br><span class="line">            <span class="keyword">if</span> (node.children[idx] == <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                node = node.children[idx];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> node;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Your Trie object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"> * Trie obj = new Trie();</span></span><br><span class="line"><span class="comment"> * obj.insert(word);</span></span><br><span class="line"><span class="comment"> * boolean param_2 = obj.search(word);</span></span><br><span class="line"><span class="comment"> * boolean param_3 = obj.startsWith(prefix);</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
 <h5 id="path-sum-iii"><a href="https://leetcode.com/problems/path-sum-iii/" target="_blank" rel="noopener">437. Path Sum III</a>💫</h5>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">pathSum</span><span class="params">(TreeNode root, <span class="keyword">int</span> sum)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> pathSumStartWithRoot(root, sum) + pathSum(root.right, sum) + pathSum(root.left, sum);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">pathSumStartWithRoot</span><span class="params">(TreeNode node, <span class="keyword">int</span> sum)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (node == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> cnt = node.val == sum? <span class="number">1</span>: <span class="number">0</span>;</span><br><span class="line">    cnt += pathSumStartWithRoot(node.left, sum - node.val);</span><br><span class="line">    cnt += pathSumStartWithRoot(node.right, sum - node.val);</span><br><span class="line">    <span class="keyword">return</span> cnt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h5 id="diameter-of-binary-tree"><a href="https://leetcode.com/problems/diameter-of-binary-tree/" target="_blank" rel="noopener">543. Diameter of Binary Tree</a></h5>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> max = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">diameterOfBinaryTree</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        helper(root);</span><br><span class="line">        <span class="keyword">return</span> max;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">helper</span><span class="params">(TreeNode node)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (node == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> l = helper(node.left);</span><br><span class="line">        <span class="keyword">int</span> r = helper(node.right);</span><br><span class="line">        max = Math.max(l + r, max);</span><br><span class="line">        <span class="keyword">return</span> Math.max(l, r) + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h5 id="average-of-levels-in-binary-tree"><a href="https://leetcode.com/problems/average-of-levels-in-binary-tree/" target="_blank" rel="noopener">637. Average of Levels in Binary Tree</a>📌</h5>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//recording the count of nodes in each layer helps traverse each layer</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Double&gt; <span class="title">averageOfLevels</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    List&lt;Double&gt; ans = <span class="keyword">new</span> ArrayList();</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">    Queue &lt;TreeNode&gt; q = <span class="keyword">new</span> LinkedList();</span><br><span class="line">    q.offer(root);</span><br><span class="line">    <span class="keyword">while</span> (!q.isEmpty()) &#123;</span><br><span class="line">        <span class="keyword">int</span> count = q.size();</span><br><span class="line">        <span class="keyword">double</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; count; i++) &#123;</span><br><span class="line">            TreeNode node = q.poll();</span><br><span class="line">            sum += node.val;</span><br><span class="line">            <span class="keyword">if</span> (node.left != <span class="keyword">null</span>) &#123;</span><br><span class="line">                q.offer(node.left);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (node.right != <span class="keyword">null</span>) &#123;</span><br><span class="line">                q.offer(node.right);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        ans.add(sum / count);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="trim-a-binary-search-tree"><a href="https://leetcode.com/problems/trim-a-binary-search-tree/" target="_blank" rel="noopener">669. Trim a Binary Search Tree</a></h5>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> TreeNode <span class="title">trimBST</span><span class="params">(TreeNode root, <span class="keyword">int</span> L, <span class="keyword">int</span> R)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (root.val &gt; R) &#123;</span><br><span class="line">        <span class="keyword">return</span> trimBST(root.left, L, R);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (root.val &lt; L) &#123;</span><br><span class="line">        <span class="keyword">return</span> trimBST(root.right, L, R);</span><br><span class="line">    &#125;</span><br><span class="line">    root.left = trimBST(root.left, L, R);</span><br><span class="line">    root.right = trimBST(root.right, L, R);</span><br><span class="line">    <span class="keyword">return</span> root;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h5 id="construct-binary-search-tree-from-preorder-traversal"><a href="https://leetcode.com/problems/construct-binary-search-tree-from-preorder-traversal/" target="_blank" rel="noopener">1008. Construct Binary Search Tree from Preorder Traversal</a>💫</h5>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> TreeNode <span class="title">bstFromPreorder</span><span class="params">(<span class="keyword">int</span>[] preorder)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> helper(preorder, <span class="number">0</span>, preorder.length - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> TreeNode <span class="title">helper</span><span class="params">(<span class="keyword">int</span>[] preorder, <span class="keyword">int</span> start, <span class="keyword">int</span> end)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (start &gt; end) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        TreeNode node = <span class="keyword">new</span> TreeNode(preorder[start]);</span><br><span class="line">        <span class="keyword">int</span> i = start + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (; i &lt;= end; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (preorder[i] &gt; preorder[start]) <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        node.left = helper(preorder, start + <span class="number">1</span>, i - <span class="number">1</span>);</span><br><span class="line">        node.right = helper(preorder, i, end);</span><br><span class="line">        <span class="keyword">return</span> node;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h5 id="delete-nodes-and-return-forest"><a href="https://leetcode.com/problems/delete-nodes-and-return-forest/" target="_blank" rel="noopener">1110. Delete Nodes And Return Forest</a></h5>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> List&lt;TreeNode&gt; <span class="title">delNodes</span><span class="params">(TreeNode root, <span class="keyword">int</span>[] to_delete)</span> </span>&#123;</span><br><span class="line">    List&lt;TreeNode&gt; forest = <span class="keyword">new</span> ArrayList();</span><br><span class="line">    HashSet &lt;Integer&gt; set = <span class="keyword">new</span> HashSet();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> val: to_delete) &#123;</span><br><span class="line">        set.add(val);</span><br><span class="line">    &#125;</span><br><span class="line">    root = helper(root, set, forest);</span><br><span class="line">    <span class="keyword">if</span> (root != <span class="keyword">null</span>) &#123;</span><br><span class="line">        forest.add(root);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> forest;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">private</span> TreeNode <span class="title">helper</span><span class="params">(TreeNode root, HashSet&lt;Integer&gt; set, List&lt;TreeNode&gt; forest)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    &#125;</span><br><span class="line">    root.left = helper(root.left, set, forest);</span><br><span class="line">    root.right = helper(root.right, set, forest);</span><br><span class="line">    <span class="keyword">if</span> (set.contains(root.val)) &#123;</span><br><span class="line">        <span class="keyword">if</span> (root.left != <span class="keyword">null</span>) &#123;</span><br><span class="line">            forest.add(root.left);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (root.right != <span class="keyword">null</span>) &#123;</span><br><span class="line">            forest.add(root.right);</span><br><span class="line">        &#125;</span><br><span class="line">        root = <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> root;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="graph">Graph</h4>
-<h4 id="other-data-structures">Other Data Structures</h4>
+<h5 id="course-schedule-ii"><a href="https://leetcode.com/problems/course-schedule-ii/" target="_blank" rel="noopener">210. Course Schedule II</a></h5>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] findOrder(<span class="keyword">int</span> numCourses, <span class="keyword">int</span>[][] prerequisites) &#123;</span><br><span class="line">    List &lt;Integer&gt; [] graph = <span class="keyword">new</span> ArrayList[numCourses];</span><br><span class="line">    <span class="keyword">int</span>[] indegree = <span class="keyword">new</span> <span class="keyword">int</span>[numCourses];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span>[] prerequisite: prerequisites) &#123;</span><br><span class="line">        <span class="keyword">if</span> (graph[prerequisite[<span class="number">1</span>]] == <span class="keyword">null</span>) &#123;</span><br><span class="line">             graph[prerequisite[<span class="number">1</span>]] = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//point from prerequisite[1] to prerequisite[0]</span></span><br><span class="line">        graph[prerequisite[<span class="number">1</span>]].add(prerequisite[<span class="number">0</span>]);</span><br><span class="line">        indegree[prerequisite[<span class="number">0</span>]] += <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    Queue &lt;Integer&gt; q = <span class="keyword">new</span> LinkedList();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; numCourses; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (indegree[i] == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="comment">//prerequisite course</span></span><br><span class="line">            q.offer(i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span>[] ans = <span class="keyword">new</span> <span class="keyword">int</span>[numCourses];</span><br><span class="line">    <span class="keyword">while</span> (!q.isEmpty()) &#123;</span><br><span class="line">        <span class="keyword">int</span> u = q.poll();</span><br><span class="line">        ans[cnt++] = u;</span><br><span class="line">        <span class="keyword">if</span> (graph[u] == <span class="keyword">null</span>) <span class="keyword">continue</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> v: graph[u]) &#123;</span><br><span class="line">            indegree[v] -= <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (indegree[v] == <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="comment">//prerequisites of course v have been completed</span></span><br><span class="line">                q.offer(v);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; numCourses; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (indegree[i] != <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;&#125;;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="is-graph-bipartite"><a href="https://leetcode.com/problems/is-graph-bipartite/" target="_blank" rel="noopener">785. Is Graph Bipartite?</a></h5>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isBipartite</span><span class="params">(<span class="keyword">int</span>[][] graph)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = graph.length;</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span>[] color = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line">    Queue &lt;Integer&gt; q = <span class="keyword">new</span> LinkedList();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (color[i] == <span class="number">0</span>) &#123;</span><br><span class="line">            q.offer(i);</span><br><span class="line">            color[i] = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (!q.isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">int</span> node = q.poll();</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j: graph[node]) &#123;</span><br><span class="line">                <span class="keyword">if</span> (color[j] == <span class="number">0</span>) &#123;</span><br><span class="line">                    q.offer(j);</span><br><span class="line">                    color[j] = color[node] == <span class="number">1</span>? <span class="number">2</span>:<span class="number">1</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (color[node] == color[j]) &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="disjoint-set">Disjoint Set</h4>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UnionFind</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span>[] id;</span><br><span class="line">    UnionFind(<span class="keyword">int</span> n) &#123;</span><br><span class="line">        <span class="keyword">this</span>.id = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            id[i] = i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> p)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">while</span> (p != id[p]) &#123;</span><br><span class="line">            p = id[p];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> p;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">connect</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> q)</span> </span>&#123;</span><br><span class="line">        id[find(p)] = find(q);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">isConnected</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> q)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> find(p) == find(q);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Or <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UnionFind</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span>[] id;</span><br><span class="line">    <span class="keyword">int</span>[] size;</span><br><span class="line"></span><br><span class="line">    UnionFind(<span class="keyword">int</span> n) &#123;</span><br><span class="line">        <span class="keyword">this</span>.id = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            id[i] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">this</span>.size = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line">        Arrays.fill(size, <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> p)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">while</span> (p != id[p]) &#123;</span><br><span class="line">            id[p] = id[id[p]];</span><br><span class="line">            p = id[p];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> p;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">connect</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> q)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = find(p), j = find(q);</span><br><span class="line">        <span class="keyword">if</span> (size[i] &lt; size[j]) &#123;</span><br><span class="line">            id[i] = j;</span><br><span class="line">            size[j] += size[i];</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            id[j] = i;</span><br><span class="line">            size[i] += size[j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">isConnected</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> q)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> find(p) == find(q);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="redundant-connection"><a href="https://leetcode.com/problems/redundant-connection/" target="_blank" rel="noopener">684. Redundant Connection</a></h5>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] findRedundantConnection(<span class="keyword">int</span>[][] edges) &#123;</span><br><span class="line">    <span class="keyword">int</span> n = edges.length;</span><br><span class="line">    UnionFind uf = <span class="keyword">new</span> UnionFind(n+<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span>[] edge: edges) &#123;</span><br><span class="line">        <span class="keyword">int</span> u = edge[<span class="number">0</span>], v = edge[<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">if</span> (uf.isConnected(u, v)) &#123;</span><br><span class="line">            <span class="keyword">return</span> edge;</span><br><span class="line">        &#125;</span><br><span class="line">        uf.connect(u, v);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="other">Other</h4>
+<h5 id="lru-cache"><a href="https://leetcode.com/problems/lru-cache/" target="_blank" rel="noopener">146. LRU Cache</a></h5>
+<p>@<a href="https://leetcode.com/problems/lru-cache/discuss/45922/JAVA-Easy-Version-To-Understand!!!!/45348" target="_blank" rel="noopener">DyXrLxSTAOadoD</a> <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span></span>&#123;</span><br><span class="line">    Node prev, next;</span><br><span class="line">    <span class="keyword">int</span> key, value;</span><br><span class="line">    Node(<span class="keyword">int</span> k, <span class="keyword">int</span> v)&#123;</span><br><span class="line">        key = k;</span><br><span class="line">        value = v;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LRUCache</span> </span>&#123;</span><br><span class="line">    <span class="keyword">final</span> Node head = <span class="keyword">new</span> Node(<span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">final</span> Node tail = <span class="keyword">new</span> Node(<span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">final</span> Map&lt;Integer, Node&gt; map;</span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">int</span> capacity;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">LRUCache</span><span class="params">(<span class="keyword">int</span> capacity)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.capacity = capacity;</span><br><span class="line">        map = <span class="keyword">new</span> HashMap(capacity);</span><br><span class="line">        head.next = tail;</span><br><span class="line">        tail.prev = head;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">get</span><span class="params">(<span class="keyword">int</span> key)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> res = -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (map.containsKey(key)) &#123;</span><br><span class="line">            Node n = map.get(key);</span><br><span class="line">            remove(n);</span><br><span class="line">            insertToHead(n);</span><br><span class="line">            res = n.value;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">put</span><span class="params">(<span class="keyword">int</span> key, <span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (map.containsKey(key)) &#123;</span><br><span class="line">            Node n = map.get(key);</span><br><span class="line">            remove(n);</span><br><span class="line">            n.value = value;</span><br><span class="line">            insertToHead(n);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (map.size() == capacity) &#123;</span><br><span class="line">                map.remove(tail.prev.key);</span><br><span class="line">                remove(tail.prev);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            Node n = <span class="keyword">new</span> Node(key, value);</span><br><span class="line">            insertToHead(n);</span><br><span class="line">            map.put(key, n);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">remove</span><span class="params">(Node n)</span> </span>&#123;</span><br><span class="line">        n.prev.next = n.next;</span><br><span class="line">        n.next.prev = n.prev;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">insertToHead</span><span class="params">(Node n)</span> </span>&#123;</span><br><span class="line">        Node headNext = head.next;</span><br><span class="line">        head.next = n;</span><br><span class="line">        headNext.prev = n;</span><br><span class="line">        n.prev = head;</span><br><span class="line">        n.next = headNext;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Your LRUCache object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"> * LRUCache obj = new LRUCache(capacity);</span></span><br><span class="line"><span class="comment"> * int param_1 = obj.get(key);</span></span><br><span class="line"><span class="comment"> * obj.put(key,value);</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure></p>
 <h3 id="reference">Reference</h3>
 <ol type="1">
 <li><a href="https://github.com/changgyhub/leetcode_101" target="_blank" rel="noopener">LeetCode 101 - A LeetCode Grinding Guide</a> by <a href="https://github.com/changgyhub" target="_blank" rel="noopener">changgyhub</a><br />
+</li>
+<li><a href="https://github.com/changgyhub/notes/blob/master/basics/algorithms-and-data-structures.md" target="_blank" rel="noopener">Algorithms and Data Structures (C++)</a> by <a href="https://github.com/changgyhub" target="_blank" rel="noopener">changgyhub</a><br />
 </li>
 <li><a href="https://leetcode.com/problems/word-ladder-ii/" target="_blank" rel="noopener">126. Word Ladder II</a> -- <a href="https://leetcode.com/problems/word-ladder-ii/discuss/40475/My-concise-JAVA-solution-based-on-BFS-and-DFS/153689" target="_blank" rel="noopener">Faster two-end BFS + DFS.</a><br />
 </li>
