@@ -27,7 +27,7 @@
     version: '7.7.0',
     exturl: false,
     sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
-    copycode: {"enable":false,"show_result":false,"style":null},
+    copycode: {"enable":true,"show_result":false,"style":null},
     back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
     fancybox: false,
@@ -56,7 +56,7 @@
 <meta property="og:description" content="Summarize Java syntax frequently used and make it convenient for lookup. Suggestions are welcome. Arrays 1type var-name[] &#x3D; new type[size]; OR 1type[] var-name &#x3D; new type[size]; Built-in methods Array">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-02-19T03:14:57.000Z">
-<meta property="article:modified_time" content="2020-08-09T21:56:42.805Z">
+<meta property="article:modified_time" content="2020-09-06T05:07:15.507Z">
 <meta property="article:author" content="Qianyue Zhang">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
@@ -244,7 +244,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: Aug 9th 2020 17:56:42" itemprop="dateModified" datetime="2020-08-09T17:56:42-04:00">Aug 9th 2020</time>
+                <time title="Modified: Sep 6th 2020 1:07:15" itemprop="dateModified" datetime="2020-09-06T01:07:15-04:00">Sep 6th 2020</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -403,6 +403,8 @@ returns the previous value associated with the specified key, or null if there w
 <p>e.g. sort list <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Collections.sort(list);</span><br></pre></td></tr></table></figure></p>
 <hr />
 <p>e.g. convert set to list <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; list = <span class="keyword">new</span> ArrayList(set);</span><br></pre></td></tr></table></figure></p>
+<hr />
+<p>Use <code>binarySearch()</code> to get the count of integers greater than the specified integer <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// list is arraylist, num is the specified integer</span></span><br><span class="line"><span class="keyword">int</span> idx = Collections.binarySearch(list, num);</span><br><span class="line"><span class="keyword">if</span> (idx &gt;= <span class="number">0</span> &amp;&amp; idx &lt; list.size()) &#123;</span><br><span class="line">    sum += list.size() - idx - <span class="number">1</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (idx &lt; <span class="number">0</span> &amp;&amp; -idx - <span class="number">1</span> &lt; list.size()) &#123;</span><br><span class="line">    sum += list.size() - (-idx - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h4 id="long">Long</h4>
 <h5 id="built-in-methods-5">Built-in methods</h5>
 <p>e.g. convert string to long type: <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">long</span> val = Long.parseLong(<span class="string">"1234"</span>);</span><br><span class="line"><span class="comment">//val: 1234</span></span><br></pre></td></tr></table></figure> e.g. cast long to int: <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> num = Math.toIntExact(val);</span><br></pre></td></tr></table></figure> OR <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> num = (<span class="keyword">int</span>)val;</span><br></pre></td></tr></table></figure></p>
@@ -568,8 +570,8 @@ returns &gt; 0 if A is lexicographically greater than B;</p>
       <i class="fa fa-chevron-left"></i> LeetCode in Java
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/01/12/Magical-Rectangle/" rel="next" title="Magical Rectangle">
-      Magical Rectangle <i class="fa fa-chevron-right"></i>
+    <a href="/2020/01/12/Magical-Rectangle/" rel="next" title="Magic Rectangle">
+      Magic Rectangle <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -647,20 +649,20 @@ returns &gt; 0 if A is lexicographically greater than B;</p>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-count">23</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -707,10 +709,10 @@ returns &gt; 0 if A is lexicographically greater than B;</p>
 
 <div class="copyright">
   
-  &copy; 
+  &copy; 2018 – 
   <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
-    <i class="fa fa-user"></i>
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Qianyue Zhang</span>
 </div>
