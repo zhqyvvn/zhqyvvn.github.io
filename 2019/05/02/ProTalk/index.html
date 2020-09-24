@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://zhqyvvn.github.io').hostname,
+    root: '/',
+    scheme: 'Muse',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: true,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeIn","post_body":"fadeIn","coll_header":"fadeIn","sidebar":"perspectiveDownIn"}}
+  };
+</script>
+
+  <meta name="description" content="🌟 Screenshots">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ProTalk">
+<meta property="og:url" content="http://zhqyvvn.github.io/2019/05/02/ProTalk/index.html">
+<meta property="og:site_name" content="zhqyvvn">
+<meta property="og:description" content="🌟 Screenshots">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://zhqyvvn.github.io/images/prt/prt_home.png">
+<meta property="og:image" content="http://zhqyvvn.github.io/images/prt/prt_history_detail.jpg">
+<meta property="og:image" content="http://zhqyvvn.github.io/images/prt/prt_create_new_talk.png">
+<meta property="og:image" content="http://zhqyvvn.github.io/images/prt/prt_practice1.png">
+<meta property="og:image" content="http://zhqyvvn.github.io/images/prt/prt_practice2.png">
+<meta property="og:image" content="http://zhqyvvn.github.io/images/prt/prt_practice3.jpg">
+<meta property="og:image" content="http://zhqyvvn.github.io/images/prt/prt_practice4.jpg">
+<meta property="og:image" content="http://zhqyvvn.github.io/images/prt/prt_jargons.jpg">
+<meta property="og:image" content="http://zhqyvvn.github.io/images/prt/prt_jargons_tip1.png">
+<meta property="og:image" content="http://zhqyvvn.github.io/images/prt/prt_jargons_tip2.png">
+<meta property="og:image" content="http://zhqyvvn.github.io/images/prt/prt_sidebar.png">
+<meta property="og:image" content="http://zhqyvvn.github.io/images/prt/prt_chart_listing.png">
+<meta property="og:image" content="http://zhqyvvn.github.io/images/prt/prt_progress_chart.png">
+<meta property="article:published_time" content="2019-05-02T22:34:28.000Z">
+<meta property="article:modified_time" content="2020-09-24T05:09:58.112Z">
+<meta property="article:author" content="Qianyue Zhang">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="Android">
+<meta property="article:tag" content="Google Firebase">
+<meta property="article:tag" content="GCP">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://zhqyvvn.github.io/images/prt/prt_home.png">
+
+<link rel="canonical" href="http://zhqyvvn.github.io/2019/05/02/ProTalk/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>ProTalk | zhqyvvn</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162128119-1"></script>
+    <script pjax>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-162128119-1');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">zhqyvvn</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">Qianyue Zhang's Tech Blog</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="Searching..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en-us">
+    <link itemprop="mainEntityOfPage" href="http://zhqyvvn.github.io/2019/05/02/ProTalk/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/38484412?s=460&v=4">
+      <meta itemprop="name" content="Qianyue Zhang">
+      <meta itemprop="description" content="Eyes on the stars / Feet on the ground">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zhqyvvn">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ProTalk
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: May 2nd 2019 18:34:28" itemprop="dateCreated datePublished" datetime="2019-05-02T18:34:28-04:00">May 2nd 2019</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: Sep 24th 2020 1:09:58" itemprop="dateModified" datetime="2020-09-24T01:09:58-04:00">Sep 24th 2020</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Applications/" itemprop="url" rel="index">
+                    <span itemprop="name">Applications</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h4 id="screenshots">🌟 Screenshots</h4>
+<p><img data-src="/images/prt/prt_home.png" style="width:40.0%" /></p>
+<a id="more"></a>
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Home - browse the listing of practice
+</p>
+<img data-src="/images/prt/prt_history_detail.jpg" style="width:40.0%" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+History - browse the detail of one practice history
+</p>
+<img data-src="/images/prt/prt_create_new_talk.png" style="width:40.0%" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Create a New Practice
+</p>
+<img data-src="/images/prt/prt_practice1.png" style="width:40.0%" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Practice - enter the practice page
+</p>
+<img data-src="/images/prt/prt_practice2.png" style="width:40.0%" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Practice - set the timer
+</p>
+<img data-src="/images/prt/prt_practice3.jpg" style="width:40.0%" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Practice - start practicing; the timer counts down; speech-to-text works
+</p>
+<img data-src="/images/prt/prt_practice4.jpg" style="width:40.0%" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Practice - after pressing the stop button, the &quot;EXTRACT JARGON&quot; button appears
+</p>
+<img data-src="/images/prt/prt_jargons.jpg" style="width:40.0%" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Practice Result - show jargon in this speech
+</p>
+<img data-src="/images/prt/prt_jargons_tip1.png" style="width:40.0%" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Practice Result - click jargon words in highlighting to get tips
+</p>
+<img data-src="/images/prt/prt_jargons_tip2.png" style="width:40.0%" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Practice Result - jargon words in different positions could get different tips
+</p>
+<img data-src="/images/prt/prt_sidebar.png" style="width:40.0%" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Side Bar
+</p>
+<img data-src="/images/prt/prt_chart_listing.png" style="width:40.0%" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+History - browse the listing of practice progress
+</p>
+<img data-src="/images/prt/prt_progress_chart.png" style="width:40.0%" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Progress Chart - for one practice
+</p>
+<h4 id="built-with">🌟 Built with</h4>
+<ul>
+<li>Java<br />
+</li>
+<li>Android Studio<br />
+</li>
+<li>Google Firebase<br />
+</li>
+<li>Google Cloud Platform</li>
+</ul>
+<h4 id="components">🌟 Components</h4>
+<ul>
+<li>Database ---&gt; <a href="https://firebase.google.com/" target="_blank" rel="noopener">Google Firebase</a><br />
+</li>
+<li>Speech-to-Test ---&gt; <a href="https://github.com/GoogleCloudPlatform/android-docs-samples/tree/master/speech/Speech" target="_blank" rel="noopener">Google Cloud Speech API</a><br />
+</li>
+<li>Token Extraction ---&gt; <a href="https://cloud.google.com/natural-language/docs/reference/rest/v1/Token" target="_blank" rel="noopener">Google Cloud Platform NLP API</a></li>
+<li>Charts ---&gt; <a href="https://github.com/lecho/hellocharts-android" target="_blank" rel="noopener">hellocharts</a></li>
+</ul>
+<h4 id="features">🌟 Features</h4>
+<h5 id="home-screen">Home screen</h5>
+<ul>
+<li>The Home screen allows users to view their previously saved talks.<br />
+</li>
+<li>The user may also create a new talk from the Home screen. To do so, they tap the &quot;Create A New Talk&quot; button on the bottom of the screen.<br />
+</li>
+<li>After tapping &quot;Create and Start&quot;, the app will bring the users to the recording screen, where they can record and save a new talk.<br />
+</li>
+<li>When a user taps on a talk from the Home screen, they navigate to a transcript of their most recent practice and a list of the jargon words they used during that practice. They may also opt to re-practice the talk by tapping the &quot;Practice Again&quot; button. If they tap this button, the app will bring them to the Recording screen.</li>
+<li>Users can also navigate to the Progress Tracker from the Home screen by tapping the hamburger menu in the upper-left corner.</li>
+</ul>
+<h5 id="recording-screen">Recording Screen</h5>
+<ul>
+<li>The Recording screen allows users to record a new talk and view a transcript of that talk.<br />
+</li>
+<li>To begin recording, users tap the &quot;Talk&quot; button at the bottom-right hand corner of the screen.<br />
+</li>
+<li>The user may choose to set a time length for their practice by scrolling to the desired value under the appropriate unit of measurement [hours, minutes, and/or seconds].<br />
+</li>
+<li>Once they have indicated the time length, they may tap &quot;Set&quot; to set the time and begin practicing.</li>
+<li>ProTalk transcribes the user’s practice word-for-word (i.e., from speech to text) as they rehearse it.<br />
+</li>
+<li>Once the user has finished practicing, they may tap the &quot;Stop&quot; button at the bottom of the screen to turn off the microphone. They will, then, be prompted to &quot;Extract Jargon&quot; at the top-right of the screen.</li>
+</ul>
+<h5 id="jargon-extraction-screen">Jargon Extraction screen</h5>
+<ul>
+<li>Once the user taps &quot;Extract Jargon&quot;, all jargon words used during the practice will be highlighted yellow.<br />
+</li>
+<li>The jargon words will also be listed below the transcript.<br />
+</li>
+<li>The user may tap jargon words to view recommendations for replacing them: when the user taps a jargon word that they have used more than twice in their practice, the app will recommend that they describe the word after the first time they use it; If they use a jargon word two times or less, the app will recommend that they use another word or describe the jargon word in simpler words.<br />
+</li>
+<li>If ProTalk recognizes a common term as jargon, the user may tap &quot;This is not jargon&quot;, and the app will remove the word from the talk’s jargon list and the word will no longer be highlighted in the talk’s transcript.<br />
+</li>
+<li>Once the user has finished reviewing the transcript of their practice, they may tap &quot;Save This Talk&quot;, and the transcript and listed jargon words will be accessible from the Home screen.</li>
+</ul>
+<h5 id="progress-tracker-screen">Progress Tracker screen</h5>
+<ul>
+<li>The user may view their progress — measured as a decrease in the number of jargon words used for each talk — by navigating to the Progress Tracking screen from the Home screen.<br />
+</li>
+<li>The user may select the talk for which they wish to view their progress.<br />
+</li>
+<li>The app will show the user a graph of their progress over time, with the number of jargon words used per practice attempt on the y-axis and the date and time of the practice on the x-axis.<br />
+</li>
+<li>Progress is represented by a downward trend in the graph, representing a decreased use of jargon words over time</li>
+</ul>
+<h4 id="note">📌 Note</h4>
+<p>This is a team collaborated work. Huge thanks to my teammates - <a href="https://www.linkedin.com/in/yuting-rebecca-zhang-87ba0b179" target="_blank" rel="noopener">Yuting Zhang</a> and <a href="https://www.linkedin.com/in/cath-virelli-a09727a7/" target="_blank" rel="noopener">Cath Virelli</a></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Java/" rel="tag"># Java</a>
+              <a href="/tags/Android/" rel="tag"># Android</a>
+              <a href="/tags/Google-Firebase/" rel="tag"># Google Firebase</a>
+              <a href="/tags/GCP/" rel="tag"># GCP</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/11/25/LAN-chatroom/" rel="prev" title="LAN chatroom">
+      <i class="fa fa-chevron-left"></i> LAN chatroom
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/03/12/Fakestagram/" rel="next" title="Fakestagram">
+      Fakestagram <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#screenshots"><span class="nav-text">🌟 Screenshots</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#built-with"><span class="nav-text">🌟 Built with</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#components"><span class="nav-text">🌟 Components</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#features"><span class="nav-text">🌟 Features</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#home-screen"><span class="nav-text">Home screen</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#recording-screen"><span class="nav-text">Recording Screen</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#jargon-extraction-screen"><span class="nav-text">Jargon Extraction screen</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#progress-tracker-screen"><span class="nav-text">Progress Tracker screen</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#note"><span class="nav-text">📌 Note</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Qianyue Zhang"
+      src="https://avatars0.githubusercontent.com/u/38484412?s=460&v=4">
+  <p class="site-author-name" itemprop="name">Qianyue Zhang</p>
+  <div class="site-description" itemprop="description">Eyes on the stars / Feet on the ground</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zhqyvvn" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zhqyvvn" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:zhqyvvn@gmail.com" title="E-Mail → mailto:zhqyvvn@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Friend Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://hcwang95.github.io/" title="https:&#x2F;&#x2F;hcwang95.github.io&#x2F;" rel="noopener" target="_blank">hcwang95.github.io</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Qianyue Zhang</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.1
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.7.0
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.getAttribute('pjax') !== null) {
+      element.setAttribute('pjax', '');
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID: 'c28a59a6f171f3e27313',
+      clientSecret: 'a31ffbb812ba7a28cd66045ae2a68e017e9d539f',
+      repo: 'zhqyvvn.github.io',
+      owner: 'zhqyvvn',
+      admin: ['zhqyvvn'],
+      id: 'f68c19e6b36bc0baf916e29da8cad158',
+        language: '',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+    </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+</html>
