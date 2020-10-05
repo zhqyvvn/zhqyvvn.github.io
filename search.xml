@@ -87,13 +87,38 @@ Detail of one processed photo
 </ul>
 ]]></content>
       <categories>
-        <category>Websites</category>
+        <category>Website</category>
       </categories>
       <tags>
         <tag>Python</tag>
         <tag>Flask</tag>
         <tag>AWS</tag>
         <tag>TensorFlow</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Breakout Ball</title>
+    <url>/2018/07/11/Breakout-Ball/</url>
+    <content><![CDATA[<h4 id="game-video">🌟 Game Video</h4>
+<iframe src="https://drive.google.com/file/d/1vJPSyKD83s_67LJ7Ohe6NiZ4XgdloM7z/preview" width="640" height="480">
+</iframe>
+<p style="text-align: center; border-bottom: 0px solid #ddd;">
+</p>
+<a id="more"></a>
+<h4 id="components">🌟 Components</h4>
+<ul>
+<li>Built GUI with JFrame / JPanel<br />
+</li>
+<li>Used KeyListener and ActionListener to detect keyboard inputs (right or left)</li>
+</ul>
+<h4 id="reference">📌 Reference</h4>
+<p><a href="https://www.youtube.com/watch?v=K9qMm3JbOH0&amp;list=PLjLATQlrmaYcdV-YRWBj8NDPoAjDaKKri&amp;index=2&amp;t=0s" target="_blank" rel="noopener">Reference Link</a></p>
+]]></content>
+      <categories>
+        <category>Application</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -159,175 +184,12 @@ Photo Page - browse comments from both other users and herself
 </ul>
 ]]></content>
       <categories>
-        <category>Applications</category>
+        <category>Application</category>
       </categories>
       <tags>
         <tag>Java</tag>
         <tag>Android</tag>
         <tag>Google Firebase</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Breakout Ball</title>
-    <url>/2018/07/11/Breakout-Ball/</url>
-    <content><![CDATA[<h4 id="game-video">🌟 Game Video</h4>
-<iframe src="https://drive.google.com/file/d/1vJPSyKD83s_67LJ7Ohe6NiZ4XgdloM7z/preview" width="640" height="480">
-</iframe>
-<p style="text-align: center; border-bottom: 0px solid #ddd;">
-</p>
-<a id="more"></a>
-<h4 id="components">🌟 Components</h4>
-<ul>
-<li>Built GUI with JFrame / JPanel<br />
-</li>
-<li>Used KeyListener and ActionListener to detect keyboard inputs (right or left)</li>
-</ul>
-<h4 id="reference">📌 Reference</h4>
-<p><a href="https://www.youtube.com/watch?v=K9qMm3JbOH0&amp;list=PLjLATQlrmaYcdV-YRWBj8NDPoAjDaKKri&amp;index=2&amp;t=0s" target="_blank" rel="noopener">Reference Link</a></p>
-]]></content>
-      <categories>
-        <category>Applications</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LAN chatroom</title>
-    <url>/2019/11/25/LAN-chatroom/</url>
-    <content><![CDATA[<h4 id="application-video">🌟 Application Video</h4>
-<iframe src="https://drive.google.com/file/d/1WVjCZBgDepbzkw85w2grPSDVMEgFCST1/preview" width="640" height="480">
-</iframe>
-<p style="text-align: center; border-bottom: 0px solid #ddd;">
-</p>
-<a id="more"></a>
-<h4 id="built-with">🌟 Built with</h4>
-<ul>
-<li>C</li>
-</ul>
-<h4 id="components">🌟 Components</h4>
-<h5 id="clients">Clients</h5>
-<ul>
-<li>Send requests to the server and get responses from the server<br />
-</li>
-<li>Multithreading:<br />
--detect user's inputs<br />
--receive server's responses</li>
-</ul>
-<h5 id="server">Server</h5>
-<ul>
-<li>Load and store users, sessions, and invitation information<br />
-</li>
-<li>Multithreading</li>
-<li>Act as the intermediate between clients:<br />
--for each newly connected client, create a new thread<br />
--receive client's requests and reply responses in each thread</li>
-</ul>
-<h4 id="features">🌟 Features</h4>
-<h5 id="authentication">Authentication</h5>
-<ul>
-<li>login / logout</li>
-</ul>
-<h5 id="session-chatroom">Session (Chatroom)</h5>
-<ul>
-<li>Users can create a new session or join one existing session<br />
-</li>
-<li>Multiple users can group-chat in one session<br />
-</li>
-<li>Users can join multiple sessions and chat with multiple groups of people<br />
-</li>
-<li>Users can leave the session</li>
-</ul>
-<h5 id="invitation">Invitation</h5>
-<ul>
-<li>Invite other users to join one existing session<br />
-</li>
-<li>Accept the invitation and join the group chat<br />
-</li>
-<li>Decline the invitation</li>
-</ul>
-<h5 id="query">Query</h5>
-<ul>
-<li>Users can query the list of online users and valid sessions from the server</li>
-</ul>
-<h4 id="note">📌 Note</h4>
-<ul>
-<li>The example ran clients and the server on the same PC, thus using localhost 127.0.0.1 as the server's IP address. It can be altered to another IP address if the server ran on a different PC.</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Applications</category>
-      </categories>
-      <tags>
-        <tag>C</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Magic Rectangle</title>
-    <url>/2020/01/12/Magical-Rectangle/</url>
-    <content><![CDATA[<h4 id="screenshots">🌟 Screenshots</h4>
-<p><img data-src="/images/mr/mr_login.png" /></p>
-<a id="more"></a>
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Login
-</p>
-<img data-src="/images/mr/mr_home.png" />
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Home
-</p>
-<img data-src="/images/mr/mr_album.png" />
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Album
-</p>
-<h4 id="built-with">🌟 Built with</h4>
-<ul>
-<li>JavaScript<br />
-</li>
-<li>React<br />
-</li>
-<li>Express.js<br />
-</li>
-<li>OpenCV<br />
-</li>
-<li>Amazon Web Services</li>
-</ul>
-<h4 id="components">🌟 Components</h4>
-<ul>
-<li>Object Detection ---&gt; OpenCV (<a href="https://www.npmjs.com/package/opencv4nodejs/v/4.1.0" target="_blank" rel="noopener">opencv4nodejs</a>)<br />
-</li>
-<li>Database ---&gt; <a href="https://aws.amazon.com/dynamodb/" target="_blank" rel="noopener">Dynamodb</a><br />
-</li>
-<li>Image Storage ---&gt; <a href="https://aws.amazon.com/s3/" target="_blank" rel="noopener">S3</a><br />
-</li>
-<li>Deployment ---&gt; <a href="https://aws.amazon.com/ec2/" target="_blank" rel="noopener">EC2</a></li>
-</ul>
-<h4 id="features">🌟 Features</h4>
-<p>The user can:</p>
-<ul>
-<li>Login / Sign-up / Logout<br />
-</li>
-<li>Upload images and get object detection results (where colourful rectangles appear)<br />
-</li>
-<li>Browse all processed images in the album</li>
-</ul>
-<h4 id="note">📌 Note</h4>
-<ul>
-<li>Objects' classes that can be detected are listed <a href="https://github.com/justadudewhohacks/opencv4nodejs/blob/master/examples/dnnCocoClassNames.js" target="_blank" rel="noopener">here</a><br />
-</li>
-<li>All images used for object detection in the example were randomly picked from Google Image<br />
-</li>
-<li>Original wallpaper was from Google Image and then modified by myself</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Websites</category>
-      </categories>
-      <tags>
-        <tag>AWS</tag>
-        <tag>JavaScript</tag>
-        <tag>React.js</tag>
-        <tag>Express.js</tag>
-        <tag>OpenCV</tag>
       </tags>
   </entry>
   <entry>
@@ -614,6 +476,144 @@ returns &gt; 0 if A is lexicographically greater than B;</p>
       </tags>
   </entry>
   <entry>
+    <title>LAN chatroom</title>
+    <url>/2019/11/25/LAN-chatroom/</url>
+    <content><![CDATA[<h4 id="application-video">🌟 Application Video</h4>
+<iframe src="https://drive.google.com/file/d/1WVjCZBgDepbzkw85w2grPSDVMEgFCST1/preview" width="640" height="480">
+</iframe>
+<p style="text-align: center; border-bottom: 0px solid #ddd;">
+</p>
+<a id="more"></a>
+<h4 id="built-with">🌟 Built with</h4>
+<ul>
+<li>C</li>
+</ul>
+<h4 id="components">🌟 Components</h4>
+<h5 id="clients">Clients</h5>
+<ul>
+<li>Send requests to the server and get responses from the server<br />
+</li>
+<li>Multithreading:<br />
+-detect user's inputs<br />
+-receive server's responses</li>
+</ul>
+<h5 id="server">Server</h5>
+<ul>
+<li>Load and store users, sessions, and invitation information<br />
+</li>
+<li>Multithreading</li>
+<li>Act as the intermediate between clients:<br />
+-for each newly connected client, create a new thread<br />
+-receive client's requests and reply responses in each thread</li>
+</ul>
+<h4 id="features">🌟 Features</h4>
+<h5 id="authentication">Authentication</h5>
+<ul>
+<li>login / logout</li>
+</ul>
+<h5 id="session-chatroom">Session (Chatroom)</h5>
+<ul>
+<li>Users can create a new session or join one existing session<br />
+</li>
+<li>Multiple users can group-chat in one session<br />
+</li>
+<li>Users can join multiple sessions and chat with multiple groups of people<br />
+</li>
+<li>Users can leave the session</li>
+</ul>
+<h5 id="invitation">Invitation</h5>
+<ul>
+<li>Invite other users to join one existing session<br />
+</li>
+<li>Accept the invitation and join the group chat<br />
+</li>
+<li>Decline the invitation</li>
+</ul>
+<h5 id="query">Query</h5>
+<ul>
+<li>Users can query the list of online users and valid sessions from the server</li>
+</ul>
+<h4 id="note">📌 Note</h4>
+<ul>
+<li>The example ran clients and the server on the same PC, thus using localhost 127.0.0.1 as the server's IP address. It can be altered to another IP address if the server ran on a different PC.</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Application</category>
+      </categories>
+      <tags>
+        <tag>C</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Magic Rectangle</title>
+    <url>/2020/01/12/Magical-Rectangle/</url>
+    <content><![CDATA[<h4 id="screenshots">🌟 Screenshots</h4>
+<p><img data-src="/images/mr/mr_login.png" /></p>
+<a id="more"></a>
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Login
+</p>
+<img data-src="/images/mr/mr_home.png" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Home
+</p>
+<img data-src="/images/mr/mr_album.png" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Album
+</p>
+<h4 id="built-with">🌟 Built with</h4>
+<ul>
+<li>JavaScript<br />
+</li>
+<li>React<br />
+</li>
+<li>Express.js<br />
+</li>
+<li>OpenCV<br />
+</li>
+<li>Amazon Web Services</li>
+</ul>
+<h4 id="components">🌟 Components</h4>
+<ul>
+<li>Object Detection ---&gt; OpenCV (<a href="https://www.npmjs.com/package/opencv4nodejs/v/4.1.0" target="_blank" rel="noopener">opencv4nodejs</a>)<br />
+</li>
+<li>Database ---&gt; <a href="https://aws.amazon.com/dynamodb/" target="_blank" rel="noopener">Dynamodb</a><br />
+</li>
+<li>Image Storage ---&gt; <a href="https://aws.amazon.com/s3/" target="_blank" rel="noopener">S3</a><br />
+</li>
+<li>Deployment ---&gt; <a href="https://aws.amazon.com/ec2/" target="_blank" rel="noopener">EC2</a></li>
+</ul>
+<h4 id="features">🌟 Features</h4>
+<p>The user can:</p>
+<ul>
+<li>Login / Sign-up / Logout<br />
+</li>
+<li>Upload images and get object detection results (where colourful rectangles appear)<br />
+</li>
+<li>Browse all processed images in the album</li>
+</ul>
+<h4 id="note">📌 Note</h4>
+<ul>
+<li>Objects' classes that can be detected are listed <a href="https://github.com/justadudewhohacks/opencv4nodejs/blob/master/examples/dnnCocoClassNames.js" target="_blank" rel="noopener">here</a><br />
+</li>
+<li>All images used for object detection in the example were randomly picked from Google Image<br />
+</li>
+<li>Original wallpaper was from Google Image and then modified by myself</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Website</category>
+      </categories>
+      <tags>
+        <tag>AWS</tag>
+        <tag>JavaScript</tag>
+        <tag>React.js</tag>
+        <tag>Express.js</tag>
+        <tag>OpenCV</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ProTalk</title>
     <url>/2019/05/02/ProTalk/</url>
     <content><![CDATA[<h4 id="screenshots">🌟 Screenshots</h4>
@@ -740,133 +740,13 @@ Progress Chart - for one practice
 <p>This is a team collaborated work. Huge thanks to my teammates - <a href="https://www.linkedin.com/in/yuting-rebecca-zhang-87ba0b179" target="_blank" rel="noopener">Yuting Zhang</a> and <a href="https://www.linkedin.com/in/cath-virelli-a09727a7/" target="_blank" rel="noopener">Cath Virelli</a></p>
 ]]></content>
       <categories>
-        <category>Applications</category>
+        <category>Application</category>
       </categories>
       <tags>
         <tag>Java</tag>
         <tag>Android</tag>
         <tag>Google Firebase</tag>
         <tag>GCP</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Second Buy</title>
-    <url>/2019/12/15/Second-Buy/</url>
-    <content><![CDATA[<h4 id="screenshots">🌟 Screenshots</h4>
-<p><img data-src="/images/sc/sc_index.jpg" /></p>
-<a id="more"></a>
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Index
-</p>
-<img data-src="/images/sc/sc_profile.jpg" />
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Profile
-</p>
-<img data-src="/images/sc/sc_sell.jpg" />
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Sell / Edit
-</p>
-<img data-src="/images/sc/sc_detail.jpg" />
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Detail
-</p>
-<img data-src="/images/sc/sc_comment.jpg" />
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Comment / Reply
-</p>
-<img data-src="/images/sc/sc_notification.png" />
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Notification
-</p>
-<h4 id="built-with">🌟 Built with</h4>
-<ul>
-<li>JavaScript<br />
-</li>
-<li>HTML &amp; CSS<br />
-</li>
-<li>Node.js<br />
-</li>
-<li>Express<br />
-</li>
-<li>MongoDB<br />
-</li>
-<li>Heroku</li>
-</ul>
-<h4 id="components">🌟 Components</h4>
-<ul>
-<li>Database ---&gt; <a href="https://www.mongodb.com/" target="_blank" rel="noopener">MongoDB</a><br />
-</li>
-<li>Deployment ---&gt; <a href="https://www.heroku.com/platform" target="_blank" rel="noopener">Heroku</a></li>
-</ul>
-<h4 id="features">🌟 Features</h4>
-<p>There are many things a user can do in each page:</p>
-<h5 id="authentication">Authentication</h5>
-<ul>
-<li>Login / Sign-up / Logout</li>
-</ul>
-<h5 id="index-page">Index Page</h5>
-<ul>
-<li>Browse postings of second-hand books on sale published by other users<br />
-</li>
-<li>Search the sale information of specified second-hand books in the search bar<br />
-</li>
-<li>Check brief information of her profile on the side</li>
-</ul>
-<h5 id="users-profile-page">User's Profile Page</h5>
-<ul>
-<li>Edit username and contact information<br />
-</li>
-<li>Check the number of her books on sale and the number of her books sold<br />
-</li>
-<li>Browse brief information of her postings<br />
-</li>
-<li>Other users can check her profile but only in the guest mode (editing functions are hidden)</li>
-</ul>
-<h5 id="sell-book-page-also-edit-book-information-page">Sell Book Page (also Edit Book information Page)</h5>
-<ul>
-<li>Create a new posting by filling the book's information and uploading the book's picture<br />
-</li>
-<li>Edit her published postings<br />
-</li>
-<li>Tag the book with 'on sale' or 'sold'</li>
-</ul>
-<h5 id="book-detail-page">Book Detail Page</h5>
-<ul>
-<li>Check the owner of a book and other detailed information<br />
-</li>
-<li>Users can claim the book by clicking &quot;I want this&quot; to send a notification to the owner<br />
-</li>
-<li>Comment and reply under the book's postings</li>
-</ul>
-<h5 id="notification-page">Notification Page</h5>
-<p>Receive notifications if:</p>
-<ul>
-<li>some users want to buy her books<br />
-</li>
-<li>some users commented under her postings<br />
-</li>
-<li>some users replied to her comments under postings</li>
-</ul>
-<h4 id="note">📌 Note</h4>
-<ul>
-<li>Information of books in the example were randomly selected from <a href="https://search.library.utoronto.ca/index" target="_blank" rel="noopener">U of T library</a><br />
-</li>
-<li>Background image (and alt image in the 'upload the picture of the book' area) was from Google Image<br />
-</li>
-<li>Modified from my course project. Thanks to teammates <a href="https://github.com/AlexChum" target="_blank" rel="noopener">Alex</a>, <a href="https://github.com/ritadi" target="_blank" rel="noopener">Rita</a>, <a href="https://github.com/glebka100500" target="_blank" rel="noopener">Hlib</a> and our instructor <a href="https://github.com/mark-kazakevich" target="_blank" rel="noopener">Mark</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Websites</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
-        <tag>Express.js</tag>
-        <tag>HTML</tag>
-        <tag>CSS</tag>
-        <tag>Node.js</tag>
-        <tag>MongoDB</tag>
-        <tag>Heroku</tag>
       </tags>
   </entry>
   <entry>
@@ -1907,6 +1787,126 @@ MovieExec(name, address, cert#, netWorth) <figure class="highlight sql"><table><
       </tags>
   </entry>
   <entry>
+    <title>Second Buy</title>
+    <url>/2019/12/15/Second-Buy/</url>
+    <content><![CDATA[<h4 id="screenshots">🌟 Screenshots</h4>
+<p><img data-src="/images/sc/sc_index.jpg" /></p>
+<a id="more"></a>
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Index
+</p>
+<img data-src="/images/sc/sc_profile.jpg" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Profile
+</p>
+<img data-src="/images/sc/sc_sell.jpg" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Sell / Edit
+</p>
+<img data-src="/images/sc/sc_detail.jpg" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Detail
+</p>
+<img data-src="/images/sc/sc_comment.jpg" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Comment / Reply
+</p>
+<img data-src="/images/sc/sc_notification.png" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Notification
+</p>
+<h4 id="built-with">🌟 Built with</h4>
+<ul>
+<li>JavaScript<br />
+</li>
+<li>HTML &amp; CSS<br />
+</li>
+<li>Node.js<br />
+</li>
+<li>Express<br />
+</li>
+<li>MongoDB<br />
+</li>
+<li>Heroku</li>
+</ul>
+<h4 id="components">🌟 Components</h4>
+<ul>
+<li>Database ---&gt; <a href="https://www.mongodb.com/" target="_blank" rel="noopener">MongoDB</a><br />
+</li>
+<li>Deployment ---&gt; <a href="https://www.heroku.com/platform" target="_blank" rel="noopener">Heroku</a></li>
+</ul>
+<h4 id="features">🌟 Features</h4>
+<p>There are many things a user can do in each page:</p>
+<h5 id="authentication">Authentication</h5>
+<ul>
+<li>Login / Sign-up / Logout</li>
+</ul>
+<h5 id="index-page">Index Page</h5>
+<ul>
+<li>Browse postings of second-hand books on sale published by other users<br />
+</li>
+<li>Search the sale information of specified second-hand books in the search bar<br />
+</li>
+<li>Check brief information of her profile on the side</li>
+</ul>
+<h5 id="users-profile-page">User's Profile Page</h5>
+<ul>
+<li>Edit username and contact information<br />
+</li>
+<li>Check the number of her books on sale and the number of her books sold<br />
+</li>
+<li>Browse brief information of her postings<br />
+</li>
+<li>Other users can check her profile but only in the guest mode (editing functions are hidden)</li>
+</ul>
+<h5 id="sell-book-page-also-edit-book-information-page">Sell Book Page (also Edit Book information Page)</h5>
+<ul>
+<li>Create a new posting by filling the book's information and uploading the book's picture<br />
+</li>
+<li>Edit her published postings<br />
+</li>
+<li>Tag the book with 'on sale' or 'sold'</li>
+</ul>
+<h5 id="book-detail-page">Book Detail Page</h5>
+<ul>
+<li>Check the owner of a book and other detailed information<br />
+</li>
+<li>Users can claim the book by clicking &quot;I want this&quot; to send a notification to the owner<br />
+</li>
+<li>Comment and reply under the book's postings</li>
+</ul>
+<h5 id="notification-page">Notification Page</h5>
+<p>Receive notifications if:</p>
+<ul>
+<li>some users want to buy her books<br />
+</li>
+<li>some users commented under her postings<br />
+</li>
+<li>some users replied to her comments under postings</li>
+</ul>
+<h4 id="note">📌 Note</h4>
+<ul>
+<li>Information of books in the example were randomly selected from <a href="https://search.library.utoronto.ca/index" target="_blank" rel="noopener">U of T library</a><br />
+</li>
+<li>Background image (and alt image in the 'upload the picture of the book' area) was from Google Image<br />
+</li>
+<li>Modified from my course project. Thanks to teammates <a href="https://github.com/AlexChum" target="_blank" rel="noopener">Alex</a>, <a href="https://github.com/ritadi" target="_blank" rel="noopener">Rita</a>, <a href="https://github.com/glebka100500" target="_blank" rel="noopener">Hlib</a> and our instructor <a href="https://github.com/mark-kazakevich" target="_blank" rel="noopener">Mark</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Website</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>Express.js</tag>
+        <tag>HTML</tag>
+        <tag>CSS</tag>
+        <tag>Node.js</tag>
+        <tag>MongoDB</tag>
+        <tag>Heroku</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Tutorial on DApp - Museum Pass Card Promotions</title>
     <url>/2020/09/09/Tutorial-on-DApp/</url>
     <content><![CDATA[<p>Note: This tutorial follows the logic of <a href="https://www.dappuniversity.com/articles/the-ultimate-ethereum-dapp-tutorial" target="_blank" rel="noopener">The Ultimate Ethereum Dapp Tutorial</a></p>
@@ -2101,6 +2101,8 @@ In Metamask, select <code>Import Account</code>, copy the private key of the fir
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findKthLargest</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> l = <span class="number">0</span>, r = nums.length - <span class="number">1</span>, target = nums.length - k;</span><br><span class="line">    <span class="keyword">while</span> (l &lt; r) &#123;</span><br><span class="line">        <span class="keyword">int</span> mid = quickSelection(nums, l, r);</span><br><span class="line">        <span class="keyword">if</span> (mid == target) &#123;</span><br><span class="line">            <span class="keyword">return</span> nums[mid];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (mid &lt; target) &#123;</span><br><span class="line">            l = mid + <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            r = mid - <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> nums[l];</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//similar to Quicksort</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">quickSelection</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i = l + <span class="number">1</span>, j = r;</span><br><span class="line">    <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">        <span class="keyword">while</span> (i &lt; r &amp;&amp; nums[i] &lt;= nums[l]) &#123;</span><br><span class="line">            i += <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (l &lt; j &amp;&amp; nums[j] &gt;= nums[l]) &#123;</span><br><span class="line">            j -= <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (i &gt;= j) &#123;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        swap(nums, i, j);</span><br><span class="line">    &#125;</span><br><span class="line">    swap(nums, l, j);</span><br><span class="line">    <span class="keyword">return</span> j;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> temp = nums[i];</span><br><span class="line">    nums[i] = nums[j];</span><br><span class="line">    nums[j] = temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h5 id="top-k-frequent-elements"><a href="https://leetcode.com/problems/top-k-frequent-elements/" target="_blank" rel="noopener">347. Top K Frequent Elements</a>💫</h5>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//Bucket Sort</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] topKFrequent(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k) &#123;</span><br><span class="line">    HashMap &lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> num: nums) &#123;</span><br><span class="line">        <span class="keyword">int</span> freq = map.getOrDefault(num, <span class="number">0</span>) + <span class="number">1</span>;</span><br><span class="line">        map.put(num, freq);</span><br><span class="line">    &#125;</span><br><span class="line">    PriorityQueue &lt;<span class="keyword">int</span>[]&gt; q = <span class="keyword">new</span> PriorityQueue(map.size(), <span class="keyword">new</span> Comparator &lt;<span class="keyword">int</span>[]&gt; () &#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(<span class="keyword">int</span>[] p1, <span class="keyword">int</span>[] p2)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> p2[<span class="number">0</span>] - p1[<span class="number">0</span>]; <span class="comment">// reverse sort by frequency</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">for</span> (Map.Entry &lt;Integer, Integer&gt; entry: map.entrySet()) &#123;</span><br><span class="line">        q.offer(<span class="keyword">new</span> <span class="keyword">int</span>[]&#123;entry.getValue(), entry.getKey()&#125;); <span class="comment">// add to queue</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span>[] ans = <span class="keyword">new</span> <span class="keyword">int</span>[k];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; k; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span>[] p = q.poll();</span><br><span class="line">        ans[i] = p[<span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="sort-characters-by-frequency"><a href="https://leetcode.com/problems/sort-characters-by-frequency/" target="_blank" rel="noopener">451. Sort Characters By Frequency</a></h5>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//Bucket Sort</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span> </span>&#123;</span><br><span class="line">    <span class="keyword">char</span> c;</span><br><span class="line">    <span class="keyword">int</span> freq;</span><br><span class="line">    Node(<span class="keyword">char</span> c, <span class="keyword">int</span> freq) &#123;</span><br><span class="line">        <span class="keyword">this</span>.c = c;</span><br><span class="line">        <span class="keyword">this</span>.freq = freq;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">frequencySort</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (s.length() &lt;= <span class="number">2</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> s;</span><br><span class="line">    &#125;</span><br><span class="line">    HashMap &lt;Character, Integer&gt; map = <span class="keyword">new</span> HashMap();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); i++) &#123;</span><br><span class="line">        <span class="keyword">char</span> c = s.charAt(i);</span><br><span class="line">        map.put(c, map.getOrDefault(c, <span class="number">0</span>) + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    PriorityQueue &lt;Node&gt; q = <span class="keyword">new</span> PriorityQueue(<span class="keyword">new</span> Comparator &lt;Node&gt; () &#123;</span><br><span class="line">       <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span> <span class="params">(Node a, Node b)</span> </span>&#123;</span><br><span class="line">           <span class="keyword">return</span> b.freq - a.freq;</span><br><span class="line">       &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">for</span> (Map.Entry &lt;Character, Integer&gt; entry: map.entrySet())&#123;</span><br><span class="line">        <span class="keyword">int</span> freq = entry.getValue();</span><br><span class="line">        <span class="keyword">char</span> c = entry.getKey();</span><br><span class="line">        Node node = <span class="keyword">new</span> Node(c, freq);</span><br><span class="line">        q.offer(node);</span><br><span class="line">    &#125;</span><br><span class="line">    StringBuilder ans = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">    <span class="keyword">while</span> (!q.isEmpty()) &#123;</span><br><span class="line">        Node node = q.poll();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; node.freq; i++) &#123;</span><br><span class="line">            ans.append(node.c);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans.toString();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="search">Search</h4>
 <h5 id="dfs">DFS</h5>
 <h5 id="pacific-atlantic-water-flow"><a href="https://leetcode.com/problems/pacific-atlantic-water-flow/" target="_blank" rel="noopener">417. Pacific Atlantic Water Flow</a></h5>
