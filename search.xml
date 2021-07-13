@@ -122,81 +122,6 @@ Detail of one processed photo
       </tags>
   </entry>
   <entry>
-    <title>Fakestagram</title>
-    <url>/2019/03/12/Fakestagram/</url>
-    <content><![CDATA[<h4 id="screenshots">🌟 Screenshots</h4>
-<p><img data-src="/images/fks/fks_home.png" style="width:40.0%" /></p>
-<a id="more"></a>
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Profile Page - browse photos at the profile page
-</p>
-<img data-src="/images/fks/fks_global.png" style="width:40.0%" />
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Global Page - browse photos taken by all users at the global page
-</p>
-<img data-src="/images/fks/fks_other_photo.png" style="width:40.0%" />
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Photo Page - check the detail information of the photo
-</p>
-<img data-src="/images/fks/fks_other_comment.png" style="width:40.0%" />
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Photo Page - post comments under the photo
-</p>
-<img data-src="/images/fks/fks_other_comment2.png" style="width:40.0%" />
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Photo Page - post comments under the photo
-</p>
-<img data-src="/images/fks/fks_take_photo.png" style="width:40.0%" />
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Take Photo
-</p>
-<img data-src="/images/fks/fks_autotag.png" style="width:40.0%" />
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Take Photo - edit its caption and add tags automatically based on the objects shown in the photo
-</p>
-<img data-src="/images/fks/fks_self_photo.png" style="width:40.0%" />
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Photo Page - check the detail information of the photo; <br> the &quot;delete&quot; button is enabled if the user browsing the photo is the owner
-</p>
-<img data-src="/images/fks/fks_personal_comments.png" style="width:40.0%" />
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Photo Page - check updated comments from other users
-</p>
-<h4 id="built-with">🌟 Built with</h4>
-<ul>
-<li>Java<br />
-</li>
-<li>Android Studio<br />
-</li>
-<li>Google Firebase</li>
-</ul>
-<h4 id="components">🌟 Components</h4>
-<ul>
-<li>Database ---&gt; <a href="https://firebase.google.com/" target="_blank" rel="noopener">Google Firebase</a></li>
-</ul>
-<h4 id="features">🌟 Features</h4>
-<p>The user can:</p>
-<ul>
-<li>Login / Sign-up / Logout<br />
-</li>
-<li>Take photos, add the caption and enable auto-tagging to add tags to the photo.</li>
-<li>Post photos to both the personal album and global album.<br />
-</li>
-<li>Browse other users' photos in the global album.</li>
-<li>Browse and write comments under the photo's page.</li>
-<li>Delete their own photos.</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Application</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>Android</tag>
-        <tag>Google Firebase</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Java Syntax Tips</title>
     <url>/2020/02/18/Java-Syntax-Tips/</url>
     <content><![CDATA[<p>Summarize Java syntax frequently used and make it convenient for lookup. Suggestions are welcome.</p>
@@ -480,6 +405,81 @@ returns &gt; 0 if A is lexicographically greater than B;</p>
       </tags>
   </entry>
   <entry>
+    <title>Fakestagram</title>
+    <url>/2019/03/12/Fakestagram/</url>
+    <content><![CDATA[<h4 id="screenshots">🌟 Screenshots</h4>
+<p><img data-src="/images/fks/fks_home.png" style="width:40.0%" /></p>
+<a id="more"></a>
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Profile Page - browse photos at the profile page
+</p>
+<img data-src="/images/fks/fks_global.png" style="width:40.0%" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Global Page - browse photos taken by all users at the global page
+</p>
+<img data-src="/images/fks/fks_other_photo.png" style="width:40.0%" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Photo Page - check the detail information of the photo
+</p>
+<img data-src="/images/fks/fks_other_comment.png" style="width:40.0%" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Photo Page - post comments under the photo
+</p>
+<img data-src="/images/fks/fks_other_comment2.png" style="width:40.0%" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Photo Page - post comments under the photo
+</p>
+<img data-src="/images/fks/fks_take_photo.png" style="width:40.0%" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Take Photo
+</p>
+<img data-src="/images/fks/fks_autotag.png" style="width:40.0%" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Take Photo - edit its caption and add tags automatically based on the objects shown in the photo
+</p>
+<img data-src="/images/fks/fks_self_photo.png" style="width:40.0%" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Photo Page - check the detail information of the photo; <br> the &quot;delete&quot; button is enabled if the user browsing the photo is the owner
+</p>
+<img data-src="/images/fks/fks_personal_comments.png" style="width:40.0%" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Photo Page - check updated comments from other users
+</p>
+<h4 id="built-with">🌟 Built with</h4>
+<ul>
+<li>Java<br />
+</li>
+<li>Android Studio<br />
+</li>
+<li>Google Firebase</li>
+</ul>
+<h4 id="components">🌟 Components</h4>
+<ul>
+<li>Database ---&gt; <a href="https://firebase.google.com/" target="_blank" rel="noopener">Google Firebase</a></li>
+</ul>
+<h4 id="features">🌟 Features</h4>
+<p>The user can:</p>
+<ul>
+<li>Login / Sign-up / Logout<br />
+</li>
+<li>Take photos, add the caption and enable auto-tagging to add tags to the photo.</li>
+<li>Post photos to both the personal album and global album.<br />
+</li>
+<li>Browse other users' photos in the global album.</li>
+<li>Browse and write comments under the photo's page.</li>
+<li>Delete their own photos.</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Application</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>Android</tag>
+        <tag>Google Firebase</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LAN chatroom</title>
     <url>/2019/11/25/LAN-chatroom/</url>
     <content><![CDATA[<h4 id="application-video">🌟 Application Video</h4>
@@ -615,262 +615,6 @@ Album
         <tag>React.js</tag>
         <tag>Express.js</tag>
         <tag>OpenCV</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ProTalk</title>
-    <url>/2019/05/02/ProTalk/</url>
-    <content><![CDATA[<h4 id="screenshots">🌟 Screenshots</h4>
-<p><img data-src="/images/prt/prt_home.png" style="width:40.0%" /></p>
-<a id="more"></a>
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Home - browse the listing of practice
-</p>
-<img data-src="/images/prt/prt_history_detail.jpg" style="width:40.0%" />
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-History - browse the detail of one practice history
-</p>
-<img data-src="/images/prt/prt_create_new_talk.png" style="width:40.0%" />
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Create a New Practice
-</p>
-<img data-src="/images/prt/prt_practice1.png" style="width:40.0%" />
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Practice - enter the practice page
-</p>
-<img data-src="/images/prt/prt_practice2.png" style="width:40.0%" />
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Practice - set the timer
-</p>
-<img data-src="/images/prt/prt_practice3.jpg" style="width:40.0%" />
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Practice - start practicing; the timer counts down; speech-to-text works
-</p>
-<img data-src="/images/prt/prt_practice4.jpg" style="width:40.0%" />
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Practice - after pressing the stop button, the &quot;EXTRACT JARGON&quot; button appears
-</p>
-<img data-src="/images/prt/prt_jargons.jpg" style="width:40.0%" />
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Practice Result - show jargon in this speech
-</p>
-<img data-src="/images/prt/prt_jargons_tip1.png" style="width:40.0%" />
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Practice Result - click jargon words in highlighting to get tips
-</p>
-<img data-src="/images/prt/prt_jargons_tip2.png" style="width:40.0%" />
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Practice Result - jargon words in different positions could get different tips
-</p>
-<img data-src="/images/prt/prt_sidebar.png" style="width:40.0%" />
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Side Bar
-</p>
-<img data-src="/images/prt/prt_chart_listing.png" style="width:40.0%" />
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-History - browse the listing of practice progress
-</p>
-<img data-src="/images/prt/prt_progress_chart.png" style="width:40.0%" />
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Progress Chart - for one practice
-</p>
-<h4 id="built-with">🌟 Built with</h4>
-<ul>
-<li>Java<br />
-</li>
-<li>Android Studio<br />
-</li>
-<li>Google Firebase<br />
-</li>
-<li>Google Cloud Platform</li>
-</ul>
-<h4 id="components">🌟 Components</h4>
-<ul>
-<li>Database ---&gt; <a href="https://firebase.google.com/" target="_blank" rel="noopener">Google Firebase</a><br />
-</li>
-<li>Speech-to-Test ---&gt; <a href="https://github.com/GoogleCloudPlatform/android-docs-samples/tree/master/speech/Speech" target="_blank" rel="noopener">Google Cloud Speech API</a><br />
-</li>
-<li>Token Extraction ---&gt; <a href="https://cloud.google.com/natural-language/docs/reference/rest/v1/Token" target="_blank" rel="noopener">Google Cloud Platform NLP API</a></li>
-<li>Charts ---&gt; <a href="https://github.com/lecho/hellocharts-android" target="_blank" rel="noopener">hellocharts</a></li>
-</ul>
-<h4 id="features">🌟 Features</h4>
-<h5 id="home-screen">Home screen</h5>
-<ul>
-<li>The Home screen allows users to view their previously saved talks.<br />
-</li>
-<li>The user may also create a new talk from the Home screen. To do so, they tap the &quot;Create A New Talk&quot; button on the bottom of the screen.<br />
-</li>
-<li>After tapping &quot;Create and Start&quot;, the app will bring the users to the recording screen, where they can record and save a new talk.<br />
-</li>
-<li>When a user taps on a talk from the Home screen, they navigate to a transcript of their most recent practice and a list of the jargon words they used during that practice. They may also opt to re-practice the talk by tapping the &quot;Practice Again&quot; button. If they tap this button, the app will bring them to the Recording screen.</li>
-<li>Users can also navigate to the Progress Tracker from the Home screen by tapping the hamburger menu in the upper-left corner.</li>
-</ul>
-<h5 id="recording-screen">Recording Screen</h5>
-<ul>
-<li>The Recording screen allows users to record a new talk and view a transcript of that talk.<br />
-</li>
-<li>To begin recording, users tap the &quot;Talk&quot; button at the bottom-right hand corner of the screen.<br />
-</li>
-<li>The user may choose to set a time length for their practice by scrolling to the desired value under the appropriate unit of measurement [hours, minutes, and/or seconds].<br />
-</li>
-<li>Once they have indicated the time length, they may tap &quot;Set&quot; to set the time and begin practicing.</li>
-<li>ProTalk transcribes the user’s practice word-for-word (i.e., from speech to text) as they rehearse it.<br />
-</li>
-<li>Once the user has finished practicing, they may tap the &quot;Stop&quot; button at the bottom of the screen to turn off the microphone. They will, then, be prompted to &quot;Extract Jargon&quot; at the top-right of the screen.</li>
-</ul>
-<h5 id="jargon-extraction-screen">Jargon Extraction screen</h5>
-<ul>
-<li>Once the user taps &quot;Extract Jargon&quot;, all jargon words used during the practice will be highlighted yellow.<br />
-</li>
-<li>The jargon words will also be listed below the transcript.<br />
-</li>
-<li>The user may tap jargon words to view recommendations for replacing them: when the user taps a jargon word that they have used more than twice in their practice, the app will recommend that they describe the word after the first time they use it; If they use a jargon word two times or less, the app will recommend that they use another word or describe the jargon word in simpler words.<br />
-</li>
-<li>If ProTalk recognizes a common term as jargon, the user may tap &quot;This is not jargon&quot;, and the app will remove the word from the talk’s jargon list and the word will no longer be highlighted in the talk’s transcript.<br />
-</li>
-<li>Once the user has finished reviewing the transcript of their practice, they may tap &quot;Save This Talk&quot;, and the transcript and listed jargon words will be accessible from the Home screen.</li>
-</ul>
-<h5 id="progress-tracker-screen">Progress Tracker screen</h5>
-<ul>
-<li>The user may view their progress — measured as a decrease in the number of jargon words used for each talk — by navigating to the Progress Tracking screen from the Home screen.<br />
-</li>
-<li>The user may select the talk for which they wish to view their progress.<br />
-</li>
-<li>The app will show the user a graph of their progress over time, with the number of jargon words used per practice attempt on the y-axis and the date and time of the practice on the x-axis.<br />
-</li>
-<li>Progress is represented by a downward trend in the graph, representing a decreased use of jargon words over time</li>
-</ul>
-<h4 id="note">📌 Note</h4>
-<p>This is a team collaborated work. Huge thanks to my teammates - <a href="https://www.linkedin.com/in/yuting-rebecca-zhang-87ba0b179" target="_blank" rel="noopener">Yuting Zhang</a> and <a href="https://www.linkedin.com/in/cath-virelli-a09727a7/" target="_blank" rel="noopener">Cath Virelli</a></p>
-]]></content>
-      <categories>
-        <category>Application</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>Android</tag>
-        <tag>Google Firebase</tag>
-        <tag>GCP</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Second Buy</title>
-    <url>/2019/12/15/Second-Buy/</url>
-    <content><![CDATA[<h4 id="screenshots">🌟 Screenshots</h4>
-<p><img data-src="/images/sc/sc_index.jpg" /></p>
-<a id="more"></a>
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Index
-</p>
-<img data-src="/images/sc/sc_profile.jpg" />
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Profile
-</p>
-<img data-src="/images/sc/sc_sell.jpg" />
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Sell / Edit
-</p>
-<img data-src="/images/sc/sc_detail.jpg" />
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Detail
-</p>
-<img data-src="/images/sc/sc_comment.jpg" />
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Comment / Reply
-</p>
-<img data-src="/images/sc/sc_notification.png" />
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Notification
-</p>
-<h4 id="built-with">🌟 Built with</h4>
-<ul>
-<li>JavaScript<br />
-</li>
-<li>HTML &amp; CSS<br />
-</li>
-<li>Node.js<br />
-</li>
-<li>Express<br />
-</li>
-<li>MongoDB<br />
-</li>
-<li>Heroku</li>
-</ul>
-<h4 id="components">🌟 Components</h4>
-<ul>
-<li>Database ---&gt; <a href="https://www.mongodb.com/" target="_blank" rel="noopener">MongoDB</a><br />
-</li>
-<li>Deployment ---&gt; <a href="https://www.heroku.com/platform" target="_blank" rel="noopener">Heroku</a></li>
-</ul>
-<h4 id="features">🌟 Features</h4>
-<p>There are many things a user can do in each page:</p>
-<h5 id="authentication">Authentication</h5>
-<ul>
-<li>Login / Sign-up / Logout</li>
-</ul>
-<h5 id="index-page">Index Page</h5>
-<ul>
-<li>Browse postings of second-hand books on sale published by other users<br />
-</li>
-<li>Search the sale information of specified second-hand books in the search bar<br />
-</li>
-<li>Check brief information of one's profile on the side</li>
-</ul>
-<h5 id="users-profile-page">User's Profile Page</h5>
-<ul>
-<li>Edit username and contact information<br />
-</li>
-<li>Check the number of the user's own books on sale and the number of the user's own books sold<br />
-</li>
-<li>Browse brief information of the user's own postings<br />
-</li>
-<li>Check other people's profile but only in the guest mode (editing functions are hidden)</li>
-</ul>
-<h5 id="sell-book-page-also-edit-book-information-page">Sell Book Page (also Edit Book information Page)</h5>
-<ul>
-<li>Create a new posting by filling the book's information and uploading the book's picture<br />
-</li>
-<li>Edit the user's own published postings<br />
-</li>
-<li>Tag the book with 'on sale' or 'sold'</li>
-</ul>
-<h5 id="book-detail-page">Book Detail Page</h5>
-<ul>
-<li>Check the owner of a book and other detailed information<br />
-</li>
-<li>Claim the book by clicking &quot;I want this&quot; to send a notification to the book's owner<br />
-</li>
-<li>Comment and reply under the book's postings</li>
-</ul>
-<h5 id="notification-page">Notification Page</h5>
-<p>Receive notifications if:</p>
-<ul>
-<li>some users want to buy the user's books<br />
-</li>
-<li>some users commented under the user's postings<br />
-</li>
-<li>some users replied to the user's comments under postings</li>
-</ul>
-<h4 id="note">📌 Note</h4>
-<ul>
-<li>Information of books in the example were randomly selected from <a href="https://search.library.utoronto.ca/index" target="_blank" rel="noopener">U of T library</a><br />
-</li>
-<li>Background image (and alt image in the 'upload the picture of the book' area) was from Google Image<br />
-</li>
-<li>Modified from my course project. Thanks to teammates <a href="https://github.com/AlexChum" target="_blank" rel="noopener">Alex</a>, <a href="https://github.com/ritadi" target="_blank" rel="noopener">Rita</a>, <a href="https://github.com/glebka100500" target="_blank" rel="noopener">Hlib</a> and our instructor <a href="https://github.com/mark-kazakevich" target="_blank" rel="noopener">Mark</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Website</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
-        <tag>Express.js</tag>
-        <tag>HTML</tag>
-        <tag>CSS</tag>
-        <tag>Node.js</tag>
-        <tag>MongoDB</tag>
-        <tag>Heroku</tag>
       </tags>
   </entry>
   <entry>
@@ -1911,6 +1655,262 @@ MovieExec(name, address, cert#, netWorth) <figure class="highlight sql"><table><
       </tags>
   </entry>
   <entry>
+    <title>ProTalk</title>
+    <url>/2019/05/02/ProTalk/</url>
+    <content><![CDATA[<h4 id="screenshots">🌟 Screenshots</h4>
+<p><img data-src="/images/prt/prt_home.png" style="width:40.0%" /></p>
+<a id="more"></a>
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Home - browse the listing of practice
+</p>
+<img data-src="/images/prt/prt_history_detail.jpg" style="width:40.0%" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+History - browse the detail of one practice history
+</p>
+<img data-src="/images/prt/prt_create_new_talk.png" style="width:40.0%" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Create a New Practice
+</p>
+<img data-src="/images/prt/prt_practice1.png" style="width:40.0%" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Practice - enter the practice page
+</p>
+<img data-src="/images/prt/prt_practice2.png" style="width:40.0%" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Practice - set the timer
+</p>
+<img data-src="/images/prt/prt_practice3.jpg" style="width:40.0%" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Practice - start practicing; the timer counts down; speech-to-text works
+</p>
+<img data-src="/images/prt/prt_practice4.jpg" style="width:40.0%" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Practice - after pressing the stop button, the &quot;EXTRACT JARGON&quot; button appears
+</p>
+<img data-src="/images/prt/prt_jargons.jpg" style="width:40.0%" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Practice Result - show jargon in this speech
+</p>
+<img data-src="/images/prt/prt_jargons_tip1.png" style="width:40.0%" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Practice Result - click jargon words in highlighting to get tips
+</p>
+<img data-src="/images/prt/prt_jargons_tip2.png" style="width:40.0%" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Practice Result - jargon words in different positions could get different tips
+</p>
+<img data-src="/images/prt/prt_sidebar.png" style="width:40.0%" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Side Bar
+</p>
+<img data-src="/images/prt/prt_chart_listing.png" style="width:40.0%" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+History - browse the listing of practice progress
+</p>
+<img data-src="/images/prt/prt_progress_chart.png" style="width:40.0%" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Progress Chart - for one practice
+</p>
+<h4 id="built-with">🌟 Built with</h4>
+<ul>
+<li>Java<br />
+</li>
+<li>Android Studio<br />
+</li>
+<li>Google Firebase<br />
+</li>
+<li>Google Cloud Platform</li>
+</ul>
+<h4 id="components">🌟 Components</h4>
+<ul>
+<li>Database ---&gt; <a href="https://firebase.google.com/" target="_blank" rel="noopener">Google Firebase</a><br />
+</li>
+<li>Speech-to-Test ---&gt; <a href="https://github.com/GoogleCloudPlatform/android-docs-samples/tree/master/speech/Speech" target="_blank" rel="noopener">Google Cloud Speech API</a><br />
+</li>
+<li>Token Extraction ---&gt; <a href="https://cloud.google.com/natural-language/docs/reference/rest/v1/Token" target="_blank" rel="noopener">Google Cloud Platform NLP API</a></li>
+<li>Charts ---&gt; <a href="https://github.com/lecho/hellocharts-android" target="_blank" rel="noopener">hellocharts</a></li>
+</ul>
+<h4 id="features">🌟 Features</h4>
+<h5 id="home-screen">Home screen</h5>
+<ul>
+<li>The Home screen allows users to view their previously saved talks.<br />
+</li>
+<li>The user may also create a new talk from the Home screen. To do so, they tap the &quot;Create A New Talk&quot; button on the bottom of the screen.<br />
+</li>
+<li>After tapping &quot;Create and Start&quot;, the app will bring the users to the recording screen, where they can record and save a new talk.<br />
+</li>
+<li>When a user taps on a talk from the Home screen, they navigate to a transcript of their most recent practice and a list of the jargon words they used during that practice. They may also opt to re-practice the talk by tapping the &quot;Practice Again&quot; button. If they tap this button, the app will bring them to the Recording screen.</li>
+<li>Users can also navigate to the Progress Tracker from the Home screen by tapping the hamburger menu in the upper-left corner.</li>
+</ul>
+<h5 id="recording-screen">Recording Screen</h5>
+<ul>
+<li>The Recording screen allows users to record a new talk and view a transcript of that talk.<br />
+</li>
+<li>To begin recording, users tap the &quot;Talk&quot; button at the bottom-right hand corner of the screen.<br />
+</li>
+<li>The user may choose to set a time length for their practice by scrolling to the desired value under the appropriate unit of measurement [hours, minutes, and/or seconds].<br />
+</li>
+<li>Once they have indicated the time length, they may tap &quot;Set&quot; to set the time and begin practicing.</li>
+<li>ProTalk transcribes the user’s practice word-for-word (i.e., from speech to text) as they rehearse it.<br />
+</li>
+<li>Once the user has finished practicing, they may tap the &quot;Stop&quot; button at the bottom of the screen to turn off the microphone. They will, then, be prompted to &quot;Extract Jargon&quot; at the top-right of the screen.</li>
+</ul>
+<h5 id="jargon-extraction-screen">Jargon Extraction screen</h5>
+<ul>
+<li>Once the user taps &quot;Extract Jargon&quot;, all jargon words used during the practice will be highlighted yellow.<br />
+</li>
+<li>The jargon words will also be listed below the transcript.<br />
+</li>
+<li>The user may tap jargon words to view recommendations for replacing them: when the user taps a jargon word that they have used more than twice in their practice, the app will recommend that they describe the word after the first time they use it; If they use a jargon word two times or less, the app will recommend that they use another word or describe the jargon word in simpler words.<br />
+</li>
+<li>If ProTalk recognizes a common term as jargon, the user may tap &quot;This is not jargon&quot;, and the app will remove the word from the talk’s jargon list and the word will no longer be highlighted in the talk’s transcript.<br />
+</li>
+<li>Once the user has finished reviewing the transcript of their practice, they may tap &quot;Save This Talk&quot;, and the transcript and listed jargon words will be accessible from the Home screen.</li>
+</ul>
+<h5 id="progress-tracker-screen">Progress Tracker screen</h5>
+<ul>
+<li>The user may view their progress — measured as a decrease in the number of jargon words used for each talk — by navigating to the Progress Tracking screen from the Home screen.<br />
+</li>
+<li>The user may select the talk for which they wish to view their progress.<br />
+</li>
+<li>The app will show the user a graph of their progress over time, with the number of jargon words used per practice attempt on the y-axis and the date and time of the practice on the x-axis.<br />
+</li>
+<li>Progress is represented by a downward trend in the graph, representing a decreased use of jargon words over time</li>
+</ul>
+<h4 id="note">📌 Note</h4>
+<p>This is a team collaborated work. Huge thanks to my teammates - <a href="https://www.linkedin.com/in/yuting-rebecca-zhang-87ba0b179" target="_blank" rel="noopener">Yuting Zhang</a> and <a href="https://www.linkedin.com/in/cath-virelli-a09727a7/" target="_blank" rel="noopener">Cath Virelli</a></p>
+]]></content>
+      <categories>
+        <category>Application</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>Android</tag>
+        <tag>Google Firebase</tag>
+        <tag>GCP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Second Buy</title>
+    <url>/2019/12/15/Second-Buy/</url>
+    <content><![CDATA[<h4 id="screenshots">🌟 Screenshots</h4>
+<p><img data-src="/images/sc/sc_index.jpg" /></p>
+<a id="more"></a>
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Index
+</p>
+<img data-src="/images/sc/sc_profile.jpg" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Profile
+</p>
+<img data-src="/images/sc/sc_sell.jpg" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Sell / Edit
+</p>
+<img data-src="/images/sc/sc_detail.jpg" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Detail
+</p>
+<img data-src="/images/sc/sc_comment.jpg" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Comment / Reply
+</p>
+<img data-src="/images/sc/sc_notification.png" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Notification
+</p>
+<h4 id="built-with">🌟 Built with</h4>
+<ul>
+<li>JavaScript<br />
+</li>
+<li>HTML &amp; CSS<br />
+</li>
+<li>Node.js<br />
+</li>
+<li>Express<br />
+</li>
+<li>MongoDB<br />
+</li>
+<li>Heroku</li>
+</ul>
+<h4 id="components">🌟 Components</h4>
+<ul>
+<li>Database ---&gt; <a href="https://www.mongodb.com/" target="_blank" rel="noopener">MongoDB</a><br />
+</li>
+<li>Deployment ---&gt; <a href="https://www.heroku.com/platform" target="_blank" rel="noopener">Heroku</a></li>
+</ul>
+<h4 id="features">🌟 Features</h4>
+<p>There are many things a user can do in each page:</p>
+<h5 id="authentication">Authentication</h5>
+<ul>
+<li>Login / Sign-up / Logout</li>
+</ul>
+<h5 id="index-page">Index Page</h5>
+<ul>
+<li>Browse postings of second-hand books on sale published by other users<br />
+</li>
+<li>Search the sale information of specified second-hand books in the search bar<br />
+</li>
+<li>Check brief information of one's profile on the side</li>
+</ul>
+<h5 id="users-profile-page">User's Profile Page</h5>
+<ul>
+<li>Edit username and contact information<br />
+</li>
+<li>Check the number of the user's own books on sale and the number of the user's own books sold<br />
+</li>
+<li>Browse brief information of the user's own postings<br />
+</li>
+<li>Check other people's profile but only in the guest mode (editing functions are hidden)</li>
+</ul>
+<h5 id="sell-book-page-also-edit-book-information-page">Sell Book Page (also Edit Book information Page)</h5>
+<ul>
+<li>Create a new posting by filling the book's information and uploading the book's picture<br />
+</li>
+<li>Edit the user's own published postings<br />
+</li>
+<li>Tag the book with 'on sale' or 'sold'</li>
+</ul>
+<h5 id="book-detail-page">Book Detail Page</h5>
+<ul>
+<li>Check the owner of a book and other detailed information<br />
+</li>
+<li>Claim the book by clicking &quot;I want this&quot; to send a notification to the book's owner<br />
+</li>
+<li>Comment and reply under the book's postings</li>
+</ul>
+<h5 id="notification-page">Notification Page</h5>
+<p>Receive notifications if:</p>
+<ul>
+<li>some users want to buy the user's books<br />
+</li>
+<li>some users commented under the user's postings<br />
+</li>
+<li>some users replied to the user's comments under postings</li>
+</ul>
+<h4 id="note">📌 Note</h4>
+<ul>
+<li>Information of books in the example were randomly selected from <a href="https://search.library.utoronto.ca/index" target="_blank" rel="noopener">U of T library</a><br />
+</li>
+<li>Background image (and alt image in the 'upload the picture of the book' area) was from Google Image<br />
+</li>
+<li>Modified from my course project. Thanks to teammates <a href="https://github.com/AlexChum" target="_blank" rel="noopener">Alex</a>, <a href="https://github.com/ritadi" target="_blank" rel="noopener">Rita</a>, <a href="https://github.com/glebka100500" target="_blank" rel="noopener">Hlib</a> and our instructor <a href="https://github.com/mark-kazakevich" target="_blank" rel="noopener">Mark</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Website</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>Express.js</tag>
+        <tag>HTML</tag>
+        <tag>CSS</tag>
+        <tag>Node.js</tag>
+        <tag>MongoDB</tag>
+        <tag>Heroku</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Tutorial on DApp - Museum Pass Card Promotions</title>
     <url>/2020/09/09/Tutorial-on-DApp/</url>
     <content><![CDATA[<p>Note: This tutorial follows the logic of <a href="https://www.dappuniversity.com/articles/the-ultimate-ethereum-dapp-tutorial" target="_blank" rel="noopener">The Ultimate Ethereum Dapp Tutorial</a></p>
@@ -2191,7 +2191,7 @@ In Metamask, select <code>Import Account</code>, copy the private key of the fir
 <h5 id="decode-ways"><a href="https://leetcode.com/problems/decode-ways/" target="_blank" rel="noopener">91. Decode Ways</a></h5>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">numDecodings</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (s.charAt(<span class="number">0</span>) == <span class="string">'0'</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> n = s.length();</span><br><span class="line">    <span class="keyword">int</span>[] dp = <span class="keyword">new</span> <span class="keyword">int</span>[n + <span class="number">1</span>];</span><br><span class="line">    dp[<span class="number">0</span>] = <span class="number">1</span>; dp[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> prev = s.charAt(<span class="number">0</span>) - <span class="string">'0'</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> cur = s.charAt(i-<span class="number">1</span>) - <span class="string">'0'</span>;</span><br><span class="line">        <span class="keyword">if</span> ((prev == <span class="number">0</span> || prev &gt; <span class="number">2</span>) &amp;&amp; cur == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (prev == <span class="number">1</span> || (prev == <span class="number">2</span> &amp;&amp; cur &lt;= <span class="number">6</span>)) &#123;</span><br><span class="line">            <span class="keyword">if</span> (cur == <span class="number">0</span>) &#123;</span><br><span class="line">                dp[i] = dp[i-<span class="number">2</span>];</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                dp[i] = dp[i-<span class="number">1</span>] + dp[i-<span class="number">2</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            dp[i] = dp[i-<span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        prev = cur;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dp[n];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h5 id="best-time-to-buy-and-sell-stock"><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock/" target="_blank" rel="noopener">121. Best Time to Buy and Sell Stock</a></h5>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="keyword">int</span>[] prices)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> min = prices[<span class="number">0</span>], profit = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; prices.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (min &lt; prices[i]) &#123;</span><br><span class="line">            profit = Math.max(profit, prices[i] - min);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            min = prices[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> profit;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="https://github.com/labuladong/fucking-algorithm/blob/master/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%9B%A2%E7%81%AD%E8%82%A1%E7%A5%A8%E9%97%AE%E9%A2%98.md" target="_blank" rel="noopener">股票问题</a> <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="keyword">int</span>[] prices)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> min = prices[<span class="number">0</span>], profit = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; prices.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (min &lt; prices[i]) &#123;</span><br><span class="line">            profit = Math.max(profit, prices[i] - min);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            min = prices[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> profit;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h5 id="best-time-to-buy-and-sell-stock-iii"><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/" target="_blank" rel="noopener">123. Best Time to Buy and Sell Stock III</a></h5>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="keyword">int</span>[] prices)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> buy1 = prices[<span class="number">0</span>], buy2 = -prices[<span class="number">0</span>], profit1 = <span class="number">0</span>, profit2 = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; prices.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (buy1 &gt; prices[i]) &#123;</span><br><span class="line">            buy1 = prices[i];</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            profit1 = Math.max(profit1, prices[i] - buy1);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (buy2 &lt; profit1 - prices[i]) &#123;</span><br><span class="line">            buy2 = profit1 - prices[i];</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            profit2 = Math.max(profit2, prices[i] + buy2);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> profit2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>OR <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//dp[i][1][0] = Math.max(dp[i-1][1][0], dp[i-1][1][1] + prices[i])</span></span><br><span class="line"><span class="comment">//dp[i][1][1] = Math.max(dp[i-1][1][1], dp[i-1][0][0] - prices[i])</span></span><br><span class="line"><span class="comment">//dp[i][2][0] = Math.max(dp[i-1][2][0], dp[i-1][2][1] + prices[i])</span></span><br><span class="line"><span class="comment">//dp[i][2][1] = Math.max(dp[i-1][2][1], dp[i-1][1][0] - prices[i])</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="keyword">int</span>[] prices)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> dp_i10 = <span class="number">0</span>, dp_i11 = Integer.MIN_VALUE;</span><br><span class="line">    <span class="keyword">int</span> dp_i20 = <span class="number">0</span>, dp_i21 = Integer.MIN_VALUE;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> price: prices) &#123;</span><br><span class="line">        <span class="keyword">int</span> prev_i10 = dp_i10;</span><br><span class="line">        dp_i10 = Math.max(prev_i10, dp_i11 + price);</span><br><span class="line">        dp_i11 = Math.max(dp_i11, - price);</span><br><span class="line">        dp_i20 = Math.max(dp_i20, dp_i21 + price);</span><br><span class="line">        dp_i21 = Math.max(dp_i21, prev_i10 - price);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dp_i20;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
