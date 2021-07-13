@@ -333,7 +333,7 @@ returns the previous value associated with the specified key, or null if there w
 <p>e.g. convert string to long type: <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">long</span> val = Long.parseLong(<span class="string">"1234"</span>);</span><br><span class="line"><span class="comment">//val: 1234</span></span><br></pre></td></tr></table></figure> e.g. cast long to int: <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> num = Math.toIntExact(val);</span><br></pre></td></tr></table></figure> OR <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> num = (<span class="keyword">int</span>)val;</span><br></pre></td></tr></table></figure></p>
 <h4 id="priority-queue">Priority Queue</h4>
 <p>e.g.<br />
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">PriorityQueue &lt;Integer&gt; heap = <span class="keyword">new</span> PriorityQueue &lt;Integer&gt;();</span><br></pre></td></tr></table></figure> <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">ListNode[] lists = <span class="keyword">new</span> ListNode[]&#123;&lt;ListNode&gt;, &lt;ListNode&gt;, ...&#125;</span><br><span class="line">PriorityQueue &lt;ListNode&gt; heap = <span class="keyword">new</span> PriorityQueue&lt;ListNode&gt;(lists.length, (a, b) -&gt; a.val - b.val);</span><br></pre></td></tr></table></figure> <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">PriorityQueue &lt;Integer&gt; heap = <span class="keyword">new</span> PriorityQueue(Collections.reverseOrder());</span><br></pre></td></tr></table></figure> <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">List&lt;List&lt;Integer&gt;&gt; nums = <span class="keyword">new</span> ArrayList();</span><br><span class="line">PriorityQueue&lt;<span class="keyword">int</span>[]&gt; heap = <span class="keyword">new</span> PriorityQueue(Comparator.comparingInt(o -&gt; nums.get(o[<span class="number">0</span>]).get(o[<span class="number">1</span>])));</span><br></pre></td></tr></table></figure> <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Queue&lt;<span class="keyword">int</span>[]&gt; q = <span class="keyword">new</span> PriorityQueue((a, b) -&gt; a[<span class="number">2</span>] - b[<span class="number">2</span>]);</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">PriorityQueue &lt;Integer&gt; heap = <span class="keyword">new</span> PriorityQueue &lt;Integer&gt;();</span><br></pre></td></tr></table></figure> <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">ListNode[] lists = <span class="keyword">new</span> ListNode[]&#123;&lt;ListNode&gt;, &lt;ListNode&gt;, ...&#125;</span><br><span class="line">PriorityQueue &lt;ListNode&gt; heap = <span class="keyword">new</span> PriorityQueue&lt;ListNode&gt;(lists.length, (a, b) -&gt; a.val - b.val);</span><br></pre></td></tr></table></figure> <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">PriorityQueue &lt;Integer&gt; heap = <span class="keyword">new</span> PriorityQueue(Collections.reverseOrder());</span><br></pre></td></tr></table></figure> <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">List&lt;List&lt;Integer&gt;&gt; nums = <span class="keyword">new</span> ArrayList();</span><br><span class="line">PriorityQueue&lt;<span class="keyword">int</span>[]&gt; heap = <span class="keyword">new</span> PriorityQueue(Comparator.comparingInt(o -&gt; nums.get(o[<span class="number">0</span>]).get(o[<span class="number">1</span>])));</span><br></pre></td></tr></table></figure> <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">PriorityQueue&lt;Integer&gt; pq =<span class="keyword">new</span> PriorityQueue&lt;&gt;((x, y) -&gt; Integer.compare(x, y));</span><br></pre></td></tr></table></figure> <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">PriorityQueue &lt;<span class="keyword">int</span>[]&gt; heap = <span class="keyword">new</span> PriorityQueue &lt;<span class="keyword">int</span>[]&gt; ((a, b) -&gt; (a[<span class="number">0</span>] - b[<span class="number">0</span>]));</span><br></pre></td></tr></table></figure></p>
 <h5 id="built-in-methods-6">Built-in methods</h5>
 <p><code>heap.isEmpty()</code><br />
 <code>heap.offer(Object e)</code>/<code>heap.add(Object e)</code>: Inserts the specified element into this priority queue.<br />
@@ -615,6 +615,262 @@ Album
         <tag>React.js</tag>
         <tag>Express.js</tag>
         <tag>OpenCV</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ProTalk</title>
+    <url>/2019/05/02/ProTalk/</url>
+    <content><![CDATA[<h4 id="screenshots">🌟 Screenshots</h4>
+<p><img data-src="/images/prt/prt_home.png" style="width:40.0%" /></p>
+<a id="more"></a>
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Home - browse the listing of practice
+</p>
+<img data-src="/images/prt/prt_history_detail.jpg" style="width:40.0%" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+History - browse the detail of one practice history
+</p>
+<img data-src="/images/prt/prt_create_new_talk.png" style="width:40.0%" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Create a New Practice
+</p>
+<img data-src="/images/prt/prt_practice1.png" style="width:40.0%" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Practice - enter the practice page
+</p>
+<img data-src="/images/prt/prt_practice2.png" style="width:40.0%" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Practice - set the timer
+</p>
+<img data-src="/images/prt/prt_practice3.jpg" style="width:40.0%" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Practice - start practicing; the timer counts down; speech-to-text works
+</p>
+<img data-src="/images/prt/prt_practice4.jpg" style="width:40.0%" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Practice - after pressing the stop button, the &quot;EXTRACT JARGON&quot; button appears
+</p>
+<img data-src="/images/prt/prt_jargons.jpg" style="width:40.0%" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Practice Result - show jargon in this speech
+</p>
+<img data-src="/images/prt/prt_jargons_tip1.png" style="width:40.0%" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Practice Result - click jargon words in highlighting to get tips
+</p>
+<img data-src="/images/prt/prt_jargons_tip2.png" style="width:40.0%" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Practice Result - jargon words in different positions could get different tips
+</p>
+<img data-src="/images/prt/prt_sidebar.png" style="width:40.0%" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Side Bar
+</p>
+<img data-src="/images/prt/prt_chart_listing.png" style="width:40.0%" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+History - browse the listing of practice progress
+</p>
+<img data-src="/images/prt/prt_progress_chart.png" style="width:40.0%" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Progress Chart - for one practice
+</p>
+<h4 id="built-with">🌟 Built with</h4>
+<ul>
+<li>Java<br />
+</li>
+<li>Android Studio<br />
+</li>
+<li>Google Firebase<br />
+</li>
+<li>Google Cloud Platform</li>
+</ul>
+<h4 id="components">🌟 Components</h4>
+<ul>
+<li>Database ---&gt; <a href="https://firebase.google.com/" target="_blank" rel="noopener">Google Firebase</a><br />
+</li>
+<li>Speech-to-Test ---&gt; <a href="https://github.com/GoogleCloudPlatform/android-docs-samples/tree/master/speech/Speech" target="_blank" rel="noopener">Google Cloud Speech API</a><br />
+</li>
+<li>Token Extraction ---&gt; <a href="https://cloud.google.com/natural-language/docs/reference/rest/v1/Token" target="_blank" rel="noopener">Google Cloud Platform NLP API</a></li>
+<li>Charts ---&gt; <a href="https://github.com/lecho/hellocharts-android" target="_blank" rel="noopener">hellocharts</a></li>
+</ul>
+<h4 id="features">🌟 Features</h4>
+<h5 id="home-screen">Home screen</h5>
+<ul>
+<li>The Home screen allows users to view their previously saved talks.<br />
+</li>
+<li>The user may also create a new talk from the Home screen. To do so, they tap the &quot;Create A New Talk&quot; button on the bottom of the screen.<br />
+</li>
+<li>After tapping &quot;Create and Start&quot;, the app will bring the users to the recording screen, where they can record and save a new talk.<br />
+</li>
+<li>When a user taps on a talk from the Home screen, they navigate to a transcript of their most recent practice and a list of the jargon words they used during that practice. They may also opt to re-practice the talk by tapping the &quot;Practice Again&quot; button. If they tap this button, the app will bring them to the Recording screen.</li>
+<li>Users can also navigate to the Progress Tracker from the Home screen by tapping the hamburger menu in the upper-left corner.</li>
+</ul>
+<h5 id="recording-screen">Recording Screen</h5>
+<ul>
+<li>The Recording screen allows users to record a new talk and view a transcript of that talk.<br />
+</li>
+<li>To begin recording, users tap the &quot;Talk&quot; button at the bottom-right hand corner of the screen.<br />
+</li>
+<li>The user may choose to set a time length for their practice by scrolling to the desired value under the appropriate unit of measurement [hours, minutes, and/or seconds].<br />
+</li>
+<li>Once they have indicated the time length, they may tap &quot;Set&quot; to set the time and begin practicing.</li>
+<li>ProTalk transcribes the user’s practice word-for-word (i.e., from speech to text) as they rehearse it.<br />
+</li>
+<li>Once the user has finished practicing, they may tap the &quot;Stop&quot; button at the bottom of the screen to turn off the microphone. They will, then, be prompted to &quot;Extract Jargon&quot; at the top-right of the screen.</li>
+</ul>
+<h5 id="jargon-extraction-screen">Jargon Extraction screen</h5>
+<ul>
+<li>Once the user taps &quot;Extract Jargon&quot;, all jargon words used during the practice will be highlighted yellow.<br />
+</li>
+<li>The jargon words will also be listed below the transcript.<br />
+</li>
+<li>The user may tap jargon words to view recommendations for replacing them: when the user taps a jargon word that they have used more than twice in their practice, the app will recommend that they describe the word after the first time they use it; If they use a jargon word two times or less, the app will recommend that they use another word or describe the jargon word in simpler words.<br />
+</li>
+<li>If ProTalk recognizes a common term as jargon, the user may tap &quot;This is not jargon&quot;, and the app will remove the word from the talk’s jargon list and the word will no longer be highlighted in the talk’s transcript.<br />
+</li>
+<li>Once the user has finished reviewing the transcript of their practice, they may tap &quot;Save This Talk&quot;, and the transcript and listed jargon words will be accessible from the Home screen.</li>
+</ul>
+<h5 id="progress-tracker-screen">Progress Tracker screen</h5>
+<ul>
+<li>The user may view their progress — measured as a decrease in the number of jargon words used for each talk — by navigating to the Progress Tracking screen from the Home screen.<br />
+</li>
+<li>The user may select the talk for which they wish to view their progress.<br />
+</li>
+<li>The app will show the user a graph of their progress over time, with the number of jargon words used per practice attempt on the y-axis and the date and time of the practice on the x-axis.<br />
+</li>
+<li>Progress is represented by a downward trend in the graph, representing a decreased use of jargon words over time</li>
+</ul>
+<h4 id="note">📌 Note</h4>
+<p>This is a team collaborated work. Huge thanks to my teammates - <a href="https://www.linkedin.com/in/yuting-rebecca-zhang-87ba0b179" target="_blank" rel="noopener">Yuting Zhang</a> and <a href="https://www.linkedin.com/in/cath-virelli-a09727a7/" target="_blank" rel="noopener">Cath Virelli</a></p>
+]]></content>
+      <categories>
+        <category>Application</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>Android</tag>
+        <tag>Google Firebase</tag>
+        <tag>GCP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Second Buy</title>
+    <url>/2019/12/15/Second-Buy/</url>
+    <content><![CDATA[<h4 id="screenshots">🌟 Screenshots</h4>
+<p><img data-src="/images/sc/sc_index.jpg" /></p>
+<a id="more"></a>
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Index
+</p>
+<img data-src="/images/sc/sc_profile.jpg" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Profile
+</p>
+<img data-src="/images/sc/sc_sell.jpg" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Sell / Edit
+</p>
+<img data-src="/images/sc/sc_detail.jpg" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Detail
+</p>
+<img data-src="/images/sc/sc_comment.jpg" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Comment / Reply
+</p>
+<img data-src="/images/sc/sc_notification.png" />
+<p style="text-align: center; border-bottom: 1px solid #ddd;">
+Notification
+</p>
+<h4 id="built-with">🌟 Built with</h4>
+<ul>
+<li>JavaScript<br />
+</li>
+<li>HTML &amp; CSS<br />
+</li>
+<li>Node.js<br />
+</li>
+<li>Express<br />
+</li>
+<li>MongoDB<br />
+</li>
+<li>Heroku</li>
+</ul>
+<h4 id="components">🌟 Components</h4>
+<ul>
+<li>Database ---&gt; <a href="https://www.mongodb.com/" target="_blank" rel="noopener">MongoDB</a><br />
+</li>
+<li>Deployment ---&gt; <a href="https://www.heroku.com/platform" target="_blank" rel="noopener">Heroku</a></li>
+</ul>
+<h4 id="features">🌟 Features</h4>
+<p>There are many things a user can do in each page:</p>
+<h5 id="authentication">Authentication</h5>
+<ul>
+<li>Login / Sign-up / Logout</li>
+</ul>
+<h5 id="index-page">Index Page</h5>
+<ul>
+<li>Browse postings of second-hand books on sale published by other users<br />
+</li>
+<li>Search the sale information of specified second-hand books in the search bar<br />
+</li>
+<li>Check brief information of one's profile on the side</li>
+</ul>
+<h5 id="users-profile-page">User's Profile Page</h5>
+<ul>
+<li>Edit username and contact information<br />
+</li>
+<li>Check the number of the user's own books on sale and the number of the user's own books sold<br />
+</li>
+<li>Browse brief information of the user's own postings<br />
+</li>
+<li>Check other people's profile but only in the guest mode (editing functions are hidden)</li>
+</ul>
+<h5 id="sell-book-page-also-edit-book-information-page">Sell Book Page (also Edit Book information Page)</h5>
+<ul>
+<li>Create a new posting by filling the book's information and uploading the book's picture<br />
+</li>
+<li>Edit the user's own published postings<br />
+</li>
+<li>Tag the book with 'on sale' or 'sold'</li>
+</ul>
+<h5 id="book-detail-page">Book Detail Page</h5>
+<ul>
+<li>Check the owner of a book and other detailed information<br />
+</li>
+<li>Claim the book by clicking &quot;I want this&quot; to send a notification to the book's owner<br />
+</li>
+<li>Comment and reply under the book's postings</li>
+</ul>
+<h5 id="notification-page">Notification Page</h5>
+<p>Receive notifications if:</p>
+<ul>
+<li>some users want to buy the user's books<br />
+</li>
+<li>some users commented under the user's postings<br />
+</li>
+<li>some users replied to the user's comments under postings</li>
+</ul>
+<h4 id="note">📌 Note</h4>
+<ul>
+<li>Information of books in the example were randomly selected from <a href="https://search.library.utoronto.ca/index" target="_blank" rel="noopener">U of T library</a><br />
+</li>
+<li>Background image (and alt image in the 'upload the picture of the book' area) was from Google Image<br />
+</li>
+<li>Modified from my course project. Thanks to teammates <a href="https://github.com/AlexChum" target="_blank" rel="noopener">Alex</a>, <a href="https://github.com/ritadi" target="_blank" rel="noopener">Rita</a>, <a href="https://github.com/glebka100500" target="_blank" rel="noopener">Hlib</a> and our instructor <a href="https://github.com/mark-kazakevich" target="_blank" rel="noopener">Mark</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Website</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>Express.js</tag>
+        <tag>HTML</tag>
+        <tag>CSS</tag>
+        <tag>Node.js</tag>
+        <tag>MongoDB</tag>
+        <tag>Heroku</tag>
       </tags>
   </entry>
   <entry>
@@ -1655,262 +1911,6 @@ MovieExec(name, address, cert#, netWorth) <figure class="highlight sql"><table><
       </tags>
   </entry>
   <entry>
-    <title>ProTalk</title>
-    <url>/2019/05/02/ProTalk/</url>
-    <content><![CDATA[<h4 id="screenshots">🌟 Screenshots</h4>
-<p><img data-src="/images/prt/prt_home.png" style="width:40.0%" /></p>
-<a id="more"></a>
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Home - browse the listing of practice
-</p>
-<img data-src="/images/prt/prt_history_detail.jpg" style="width:40.0%" />
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-History - browse the detail of one practice history
-</p>
-<img data-src="/images/prt/prt_create_new_talk.png" style="width:40.0%" />
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Create a New Practice
-</p>
-<img data-src="/images/prt/prt_practice1.png" style="width:40.0%" />
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Practice - enter the practice page
-</p>
-<img data-src="/images/prt/prt_practice2.png" style="width:40.0%" />
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Practice - set the timer
-</p>
-<img data-src="/images/prt/prt_practice3.jpg" style="width:40.0%" />
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Practice - start practicing; the timer counts down; speech-to-text works
-</p>
-<img data-src="/images/prt/prt_practice4.jpg" style="width:40.0%" />
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Practice - after pressing the stop button, the &quot;EXTRACT JARGON&quot; button appears
-</p>
-<img data-src="/images/prt/prt_jargons.jpg" style="width:40.0%" />
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Practice Result - show jargon in this speech
-</p>
-<img data-src="/images/prt/prt_jargons_tip1.png" style="width:40.0%" />
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Practice Result - click jargon words in highlighting to get tips
-</p>
-<img data-src="/images/prt/prt_jargons_tip2.png" style="width:40.0%" />
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Practice Result - jargon words in different positions could get different tips
-</p>
-<img data-src="/images/prt/prt_sidebar.png" style="width:40.0%" />
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Side Bar
-</p>
-<img data-src="/images/prt/prt_chart_listing.png" style="width:40.0%" />
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-History - browse the listing of practice progress
-</p>
-<img data-src="/images/prt/prt_progress_chart.png" style="width:40.0%" />
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Progress Chart - for one practice
-</p>
-<h4 id="built-with">🌟 Built with</h4>
-<ul>
-<li>Java<br />
-</li>
-<li>Android Studio<br />
-</li>
-<li>Google Firebase<br />
-</li>
-<li>Google Cloud Platform</li>
-</ul>
-<h4 id="components">🌟 Components</h4>
-<ul>
-<li>Database ---&gt; <a href="https://firebase.google.com/" target="_blank" rel="noopener">Google Firebase</a><br />
-</li>
-<li>Speech-to-Test ---&gt; <a href="https://github.com/GoogleCloudPlatform/android-docs-samples/tree/master/speech/Speech" target="_blank" rel="noopener">Google Cloud Speech API</a><br />
-</li>
-<li>Token Extraction ---&gt; <a href="https://cloud.google.com/natural-language/docs/reference/rest/v1/Token" target="_blank" rel="noopener">Google Cloud Platform NLP API</a></li>
-<li>Charts ---&gt; <a href="https://github.com/lecho/hellocharts-android" target="_blank" rel="noopener">hellocharts</a></li>
-</ul>
-<h4 id="features">🌟 Features</h4>
-<h5 id="home-screen">Home screen</h5>
-<ul>
-<li>The Home screen allows users to view their previously saved talks.<br />
-</li>
-<li>The user may also create a new talk from the Home screen. To do so, they tap the &quot;Create A New Talk&quot; button on the bottom of the screen.<br />
-</li>
-<li>After tapping &quot;Create and Start&quot;, the app will bring the users to the recording screen, where they can record and save a new talk.<br />
-</li>
-<li>When a user taps on a talk from the Home screen, they navigate to a transcript of their most recent practice and a list of the jargon words they used during that practice. They may also opt to re-practice the talk by tapping the &quot;Practice Again&quot; button. If they tap this button, the app will bring them to the Recording screen.</li>
-<li>Users can also navigate to the Progress Tracker from the Home screen by tapping the hamburger menu in the upper-left corner.</li>
-</ul>
-<h5 id="recording-screen">Recording Screen</h5>
-<ul>
-<li>The Recording screen allows users to record a new talk and view a transcript of that talk.<br />
-</li>
-<li>To begin recording, users tap the &quot;Talk&quot; button at the bottom-right hand corner of the screen.<br />
-</li>
-<li>The user may choose to set a time length for their practice by scrolling to the desired value under the appropriate unit of measurement [hours, minutes, and/or seconds].<br />
-</li>
-<li>Once they have indicated the time length, they may tap &quot;Set&quot; to set the time and begin practicing.</li>
-<li>ProTalk transcribes the user’s practice word-for-word (i.e., from speech to text) as they rehearse it.<br />
-</li>
-<li>Once the user has finished practicing, they may tap the &quot;Stop&quot; button at the bottom of the screen to turn off the microphone. They will, then, be prompted to &quot;Extract Jargon&quot; at the top-right of the screen.</li>
-</ul>
-<h5 id="jargon-extraction-screen">Jargon Extraction screen</h5>
-<ul>
-<li>Once the user taps &quot;Extract Jargon&quot;, all jargon words used during the practice will be highlighted yellow.<br />
-</li>
-<li>The jargon words will also be listed below the transcript.<br />
-</li>
-<li>The user may tap jargon words to view recommendations for replacing them: when the user taps a jargon word that they have used more than twice in their practice, the app will recommend that they describe the word after the first time they use it; If they use a jargon word two times or less, the app will recommend that they use another word or describe the jargon word in simpler words.<br />
-</li>
-<li>If ProTalk recognizes a common term as jargon, the user may tap &quot;This is not jargon&quot;, and the app will remove the word from the talk’s jargon list and the word will no longer be highlighted in the talk’s transcript.<br />
-</li>
-<li>Once the user has finished reviewing the transcript of their practice, they may tap &quot;Save This Talk&quot;, and the transcript and listed jargon words will be accessible from the Home screen.</li>
-</ul>
-<h5 id="progress-tracker-screen">Progress Tracker screen</h5>
-<ul>
-<li>The user may view their progress — measured as a decrease in the number of jargon words used for each talk — by navigating to the Progress Tracking screen from the Home screen.<br />
-</li>
-<li>The user may select the talk for which they wish to view their progress.<br />
-</li>
-<li>The app will show the user a graph of their progress over time, with the number of jargon words used per practice attempt on the y-axis and the date and time of the practice on the x-axis.<br />
-</li>
-<li>Progress is represented by a downward trend in the graph, representing a decreased use of jargon words over time</li>
-</ul>
-<h4 id="note">📌 Note</h4>
-<p>This is a team collaborated work. Huge thanks to my teammates - <a href="https://www.linkedin.com/in/yuting-rebecca-zhang-87ba0b179" target="_blank" rel="noopener">Yuting Zhang</a> and <a href="https://www.linkedin.com/in/cath-virelli-a09727a7/" target="_blank" rel="noopener">Cath Virelli</a></p>
-]]></content>
-      <categories>
-        <category>Application</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>Android</tag>
-        <tag>Google Firebase</tag>
-        <tag>GCP</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Second Buy</title>
-    <url>/2019/12/15/Second-Buy/</url>
-    <content><![CDATA[<h4 id="screenshots">🌟 Screenshots</h4>
-<p><img data-src="/images/sc/sc_index.jpg" /></p>
-<a id="more"></a>
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Index
-</p>
-<img data-src="/images/sc/sc_profile.jpg" />
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Profile
-</p>
-<img data-src="/images/sc/sc_sell.jpg" />
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Sell / Edit
-</p>
-<img data-src="/images/sc/sc_detail.jpg" />
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Detail
-</p>
-<img data-src="/images/sc/sc_comment.jpg" />
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Comment / Reply
-</p>
-<img data-src="/images/sc/sc_notification.png" />
-<p style="text-align: center; border-bottom: 1px solid #ddd;">
-Notification
-</p>
-<h4 id="built-with">🌟 Built with</h4>
-<ul>
-<li>JavaScript<br />
-</li>
-<li>HTML &amp; CSS<br />
-</li>
-<li>Node.js<br />
-</li>
-<li>Express<br />
-</li>
-<li>MongoDB<br />
-</li>
-<li>Heroku</li>
-</ul>
-<h4 id="components">🌟 Components</h4>
-<ul>
-<li>Database ---&gt; <a href="https://www.mongodb.com/" target="_blank" rel="noopener">MongoDB</a><br />
-</li>
-<li>Deployment ---&gt; <a href="https://www.heroku.com/platform" target="_blank" rel="noopener">Heroku</a></li>
-</ul>
-<h4 id="features">🌟 Features</h4>
-<p>There are many things a user can do in each page:</p>
-<h5 id="authentication">Authentication</h5>
-<ul>
-<li>Login / Sign-up / Logout</li>
-</ul>
-<h5 id="index-page">Index Page</h5>
-<ul>
-<li>Browse postings of second-hand books on sale published by other users<br />
-</li>
-<li>Search the sale information of specified second-hand books in the search bar<br />
-</li>
-<li>Check brief information of one's profile on the side</li>
-</ul>
-<h5 id="users-profile-page">User's Profile Page</h5>
-<ul>
-<li>Edit username and contact information<br />
-</li>
-<li>Check the number of the user's own books on sale and the number of the user's own books sold<br />
-</li>
-<li>Browse brief information of the user's own postings<br />
-</li>
-<li>Check other people's profile but only in the guest mode (editing functions are hidden)</li>
-</ul>
-<h5 id="sell-book-page-also-edit-book-information-page">Sell Book Page (also Edit Book information Page)</h5>
-<ul>
-<li>Create a new posting by filling the book's information and uploading the book's picture<br />
-</li>
-<li>Edit the user's own published postings<br />
-</li>
-<li>Tag the book with 'on sale' or 'sold'</li>
-</ul>
-<h5 id="book-detail-page">Book Detail Page</h5>
-<ul>
-<li>Check the owner of a book and other detailed information<br />
-</li>
-<li>Claim the book by clicking &quot;I want this&quot; to send a notification to the book's owner<br />
-</li>
-<li>Comment and reply under the book's postings</li>
-</ul>
-<h5 id="notification-page">Notification Page</h5>
-<p>Receive notifications if:</p>
-<ul>
-<li>some users want to buy the user's books<br />
-</li>
-<li>some users commented under the user's postings<br />
-</li>
-<li>some users replied to the user's comments under postings</li>
-</ul>
-<h4 id="note">📌 Note</h4>
-<ul>
-<li>Information of books in the example were randomly selected from <a href="https://search.library.utoronto.ca/index" target="_blank" rel="noopener">U of T library</a><br />
-</li>
-<li>Background image (and alt image in the 'upload the picture of the book' area) was from Google Image<br />
-</li>
-<li>Modified from my course project. Thanks to teammates <a href="https://github.com/AlexChum" target="_blank" rel="noopener">Alex</a>, <a href="https://github.com/ritadi" target="_blank" rel="noopener">Rita</a>, <a href="https://github.com/glebka100500" target="_blank" rel="noopener">Hlib</a> and our instructor <a href="https://github.com/mark-kazakevich" target="_blank" rel="noopener">Mark</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Website</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
-        <tag>Express.js</tag>
-        <tag>HTML</tag>
-        <tag>CSS</tag>
-        <tag>Node.js</tag>
-        <tag>MongoDB</tag>
-        <tag>Heroku</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Tutorial on DApp - Museum Pass Card Promotions</title>
     <url>/2020/09/09/Tutorial-on-DApp/</url>
     <content><![CDATA[<p>Note: This tutorial follows the logic of <a href="https://www.dappuniversity.com/articles/the-ultimate-ethereum-dapp-tutorial" target="_blank" rel="noopener">The Ultimate Ethereum Dapp Tutorial</a></p>
@@ -2207,6 +2207,8 @@ In Metamask, select <code>Import Account</code>, copy the private key of the fir
 <p>OR <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">rob</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = nums.length;</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>) <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">return</span> Math.max(dp(nums, <span class="number">0</span>, n-<span class="number">2</span>), dp(nums, <span class="number">1</span>, n-<span class="number">1</span>));</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">dp</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> begin, <span class="keyword">int</span> end)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> pre2 = <span class="number">0</span>, pre1 = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = begin; i &lt;= end; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> cur = Math.max(pre1, pre2 + nums[i]);</span><br><span class="line">        pre2 = pre1;</span><br><span class="line">        pre1 = cur;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> pre1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h5 id="maximal-square"><a href="https://leetcode.com/problems/maximal-square/" target="_blank" rel="noopener">221. Maximal Square</a></h5>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maximalSquare</span><span class="params">(<span class="keyword">char</span>[][] matrix)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> m = matrix.length, n = matrix[<span class="number">0</span>].length, max = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span>[][] dp = <span class="keyword">new</span> <span class="keyword">int</span>[m+<span class="number">1</span>][n+<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (matrix[i-<span class="number">1</span>][j-<span class="number">1</span>] == <span class="string">'1'</span>) &#123;</span><br><span class="line">                dp[i][j] = Math.min(dp[i-<span class="number">1</span>][j-<span class="number">1</span>], Math.min(dp[i][j-<span class="number">1</span>], dp[i-<span class="number">1</span>][j])) + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            max = Math.max(max, dp[i][j]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> max*max;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="ugly-number-ii"><a href="https://leetcode.com/problems/ugly-number-ii/" target="_blank" rel="noopener">264. Ugly Number II</a></h5>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">nthUglyNumber</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i2 = <span class="number">0</span>, i3 = <span class="number">0</span>, i5 = <span class="number">0</span>, next2 = <span class="number">2</span>, next3 = <span class="number">3</span>, next5 = <span class="number">5</span>;</span><br><span class="line">    <span class="keyword">int</span>[] dp = <span class="keyword">new</span> <span class="keyword">int</span>[n]; dp[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">        dp[i] = Math.min(Math.min(next2, next3), next5);</span><br><span class="line">        <span class="keyword">if</span> (dp[i] == next2) &#123; next2 = dp[++i2] * <span class="number">2</span>; &#125;</span><br><span class="line">        <span class="keyword">if</span> (dp[i] == next3) &#123; next3 = dp[++i3] * <span class="number">3</span>; &#125;</span><br><span class="line">        <span class="keyword">if</span> (dp[i] == next5) &#123; next5 = dp[++i5] * <span class="number">5</span>; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dp[n - <span class="number">1</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h5 id="perfect-squares"><a href="https://leetcode.com/problems/perfect-squares/" target="_blank" rel="noopener">279. Perfect Squares</a></h5>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">numSquares</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span>[] dp = <span class="keyword">new</span> <span class="keyword">int</span>[n+<span class="number">1</span>];</span><br><span class="line">    Arrays.fill(dp, Integer.MAX_VALUE);</span><br><span class="line">    dp[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j*j &lt;= i; j++) &#123;</span><br><span class="line">            dp[i] = Math.min(dp[i], dp[i-j*j] + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dp[n];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h5 id="longest-increasing-subsequence"><a href="https://leetcode.com/problems/longest-increasing-subsequence/" target="_blank" rel="noopener">300. Longest Increasing Subsequence</a></h5>
@@ -2215,6 +2217,9 @@ In Metamask, select <code>Import Account</code>, copy the private key of the fir
 <h5 id="best-time-to-buy-and-sell-stock-with-cooldown"><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/" target="_blank" rel="noopener">309. Best Time to Buy and Sell Stock with Cooldown</a></h5>
 <p><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/discuss/75928/Share-my-DP-solution-(By-State-Machine-Thinking)" target="_blank" rel="noopener">State Machine Thinking</a><br />
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//O(n) space</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="keyword">int</span>[] prices)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = prices.length;</span><br><span class="line">        <span class="keyword">if</span> (n == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span>[] buy = <span class="keyword">new</span> <span class="keyword">int</span>[n], sell = <span class="keyword">new</span> <span class="keyword">int</span>[n], s1 = <span class="keyword">new</span> <span class="keyword">int</span>[n], s2 = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line">        s1[<span class="number">0</span>] = buy[<span class="number">0</span>] = -prices[<span class="number">0</span>];</span><br><span class="line">        sell[<span class="number">0</span>] = s2[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">            buy[i] = s2[i-<span class="number">1</span>] - prices[i];</span><br><span class="line">            s1[i] = Math.max(buy[i-<span class="number">1</span>], s1[i-<span class="number">1</span>]);</span><br><span class="line">            sell[i] = Math.max(buy[i-<span class="number">1</span>], s1[i-<span class="number">1</span>]) + prices[i];</span><br><span class="line">            s2[i] = Math.max(s2[i-<span class="number">1</span>], sell[i-<span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> Math.max(sell[n-<span class="number">1</span>], s2[n-<span class="number">1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> OR <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//O(1) spacepairs</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="keyword">int</span>[] prices)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = prices.length;</span><br><span class="line">        <span class="keyword">if</span> (n == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> sell = <span class="number">0</span>, s2 = <span class="number">0</span>, s1 = -prices[<span class="number">0</span>], buy = -prices[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> price: prices) &#123;</span><br><span class="line">            <span class="keyword">int</span> pre_buy = buy;</span><br><span class="line">            buy = s2 - price;</span><br><span class="line">            s2 = Math.max(s2, sell);</span><br><span class="line">            sell = Math.max(pre_buy, s1) + price;</span><br><span class="line">            s1 = Math.max(s1, pre_buy);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> Math.max(s2, sell);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="super-ugly-number"><a href="https://leetcode.com/problems/super-ugly-number/" target="_blank" rel="noopener">313. Super Ugly Number</a></h5>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Advanced version of Q.264 Ugly Number</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">nthSuperUglyNumber</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span>[] primes)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span>[] dp = <span class="keyword">new</span> <span class="keyword">int</span>[n]; dp[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span>[] index = <span class="keyword">new</span> <span class="keyword">int</span>[primes.length];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">        dp[i] = Integer.MAX_VALUE;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; primes.length; j++) &#123;</span><br><span class="line">            dp[i] = Math.min(dp[i], primes[j] * dp[index[j]]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; primes.length; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (dp[i] == primes[j] * dp[index[j]]) &#123;</span><br><span class="line">                ++index[j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dp[n - <span class="number">1</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>OR <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Use PriorityQueue, but cost more time in PQ operations</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">nthSuperUglyNumber</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span>[] primes)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span>[] dp = <span class="keyword">new</span> <span class="keyword">int</span>[n]; dp[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span>[] iprimes = <span class="keyword">new</span> <span class="keyword">int</span>[primes.length];</span><br><span class="line">    PriorityQueue &lt;<span class="keyword">int</span>[]&gt; heap = <span class="keyword">new</span> PriorityQueue &lt;<span class="keyword">int</span>[]&gt; ((a, b) -&gt; (a[<span class="number">0</span>] - b[<span class="number">0</span>]));</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; primes.length; i++) &#123;</span><br><span class="line">        heap.offer(<span class="keyword">new</span> <span class="keyword">int</span>[]&#123;primes[i], i&#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">        dp[i] = (heap.peek())[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">while</span> (!heap.isEmpty() &amp;&amp; dp[i] == (heap.peek())[<span class="number">0</span>]) &#123;</span><br><span class="line">            <span class="keyword">int</span> index = (heap.poll())[<span class="number">1</span>];</span><br><span class="line">            <span class="keyword">int</span> factor = primes[index];</span><br><span class="line">            heap.offer(<span class="keyword">new</span> <span class="keyword">int</span>[]&#123;dp[++iprimes[index]] * factor, index&#125;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dp[n - <span class="number">1</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h5 id="coin-change"><a href="https://leetcode.com/problems/coin-change/" target="_blank" rel="noopener">322. Coin Change</a></h5>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">coinChange</span><span class="params">(<span class="keyword">int</span>[] coins, <span class="keyword">int</span> amount)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span>[] dp = <span class="keyword">new</span> <span class="keyword">int</span>[amount+<span class="number">1</span>];</span><br><span class="line">    Arrays.fill(dp, <span class="number">1</span>, amount+<span class="number">1</span>, amount+<span class="number">1</span>);<span class="comment">// (array, from-inclusive, to-exclusive, val)</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> coin: coins) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = coin; i &lt;= amount; i++) &#123;</span><br><span class="line">            dp[i] = Math.min(dp[i], dp[i-coin]+<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dp[amount] == amount+<span class="number">1</span>? -<span class="number">1</span>: dp[amount];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h5 id="integer-break"><a href="https://leetcode.com/problems/integer-break/" target="_blank" rel="noopener">343. Integer Break</a></h5>
@@ -2234,11 +2239,15 @@ In Metamask, select <code>Import Account</code>, copy the private key of the fir
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findTargetSumWays</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> S)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        sum += nums[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (sum &lt; S || sum + S &lt; <span class="number">0</span> || (sum + S) % <span class="number">2</span> != <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> subsetSum(nums, (sum + S)/<span class="number">2</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//similar to Q.416</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">subsetSum</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span>[] dp = <span class="keyword">new</span> <span class="keyword">int</span>[target + <span class="number">1</span>];</span><br><span class="line">    dp[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = target; j &gt;= nums[i]; j--) &#123;</span><br><span class="line">            dp[j] += dp[j - nums[i]];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dp[target];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h5 id="matrix"><a href="https://leetcode.com/problems/01-matrix/" target="_blank" rel="noopener">542. 01 Matrix</a></h5>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[][] updateMatrix(<span class="keyword">int</span>[][] matrix) &#123;</span><br><span class="line">    <span class="keyword">int</span> m = matrix.length, n = matrix[<span class="number">0</span>].length;</span><br><span class="line">    <span class="keyword">int</span>[][] dp = <span class="keyword">new</span> <span class="keyword">int</span>[m][n];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) &#123;</span><br><span class="line">        Arrays.fill(dp[i], Integer.MAX_VALUE-<span class="number">1</span>);<span class="comment">//MAX_VALUE-1: in case dp[i-1][j]+1 overflow</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (matrix[i][j] == <span class="number">0</span>) &#123;</span><br><span class="line">                dp[i][j] = <span class="number">0</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (i &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                    dp[i][j] = Math.min(dp[i-<span class="number">1</span>][j]+<span class="number">1</span>, dp[i][j]);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (j &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                    dp[i][j] = Math.min(dp[i][j-<span class="number">1</span>]+<span class="number">1</span>, dp[i][j]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = m - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = n - <span class="number">1</span>; j &gt;=<span class="number">0</span>; j--) &#123;</span><br><span class="line">            <span class="keyword">if</span> (i &lt; m-<span class="number">1</span>) &#123;</span><br><span class="line">                dp[i][j] = Math.min(dp[i+<span class="number">1</span>][j]+<span class="number">1</span>, dp[i][j]);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (j &lt; n-<span class="number">1</span>) &#123;</span><br><span class="line">                dp[i][j] = Math.min(dp[i][j+<span class="number">1</span>]+<span class="number">1</span>, dp[i][j]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="delete-operation-for-two-strings"><a href="https://leetcode.com/problems/delete-operation-for-two-strings/" target="_blank" rel="noopener">583. Delete Operation for Two Strings</a></h5>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minDistance</span><span class="params">(String word1, String word2)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> m = word1.length(), n = word2.length();</span><br><span class="line">    <span class="keyword">int</span>[][] dp = <span class="keyword">new</span> <span class="keyword">int</span>[m + <span class="number">1</span>][n + <span class="number">1</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j++) &#123;</span><br><span class="line">            dp[i][j] = word1.charAt(i - <span class="number">1</span>) == word2.charAt(j - <span class="number">1</span>)? dp[i - <span class="number">1</span>][j - <span class="number">1</span>] + <span class="number">1</span>: Math.max(dp[i - <span class="number">1</span>][j], dp[i][j - <span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> m + n - <span class="number">2</span> * dp[m][n];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h5 id="maximum-length-of-pair-chain"><a href="https://leetcode.com/problems/maximum-length-of-pair-chain/" target="_blank" rel="noopener">646. Maximum Length of Pair Chain</a></h5>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//dp</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findLongestChain</span><span class="params">(<span class="keyword">int</span>[][] pairs)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span>[] dp = <span class="keyword">new</span> <span class="keyword">int</span>[pairs.length];</span><br><span class="line">    Arrays.fill(dp, <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">int</span> max = <span class="number">1</span>;</span><br><span class="line">    Arrays.sort(pairs, (a, b) -&gt; a[<span class="number">0</span>] - b[<span class="number">0</span>]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; pairs.length; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; i; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (pairs[j][<span class="number">1</span>] &lt; pairs[i][<span class="number">0</span>]) &#123;</span><br><span class="line">                dp[i] = Math.max(dp[j] + <span class="number">1</span>, dp[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        max = Math.max(dp[i], max);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> max;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>OR <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// greedy</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findLongestChain</span><span class="params">(<span class="keyword">int</span>[][] pairs)</span> </span>&#123;</span><br><span class="line">    Arrays.sort(pairs, (a, b) -&gt; a[<span class="number">1</span>] - b[<span class="number">1</span>]);</span><br><span class="line">    <span class="keyword">int</span> num = <span class="number">1</span>, prev = pairs[<span class="number">0</span>][<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; pairs.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (prev &lt; pairs[i][<span class="number">0</span>]) &#123;</span><br><span class="line">            num++;</span><br><span class="line">            prev = pairs[i][<span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> num;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h5 id="keys-keyboard"><a href="https://leetcode.com/problems/2-keys-keyboard/" target="_blank" rel="noopener">650. 2 Keys Keyboard</a></h5>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minSteps</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] dp = <span class="keyword">new</span> <span class="keyword">int</span>[n + <span class="number">1</span>];</span><br><span class="line">        <span class="keyword">int</span> h = (<span class="keyword">int</span>)Math.sqrt(n);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            dp[i] = i;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">2</span>; j &lt;= h; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (i % j == <span class="number">0</span>) &#123;</span><br><span class="line">                    dp[i] = dp[j] + dp[i/j];</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[n];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="best-time-to-buy-and-sell-stock-with-transaction-fee"><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/" target="_blank" rel="noopener">714. Best Time to Buy and Sell Stock with Transaction Fee</a></h5>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// dp[i][0] = Math.max(dp[i-1][0], dp[i-1][1] + prices[i])</span></span><br><span class="line"><span class="comment">// dp[i][1] = Math.max(dp[i-1][1], dp[i-1][0] - prices[i] - fee)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="keyword">int</span>[] prices, <span class="keyword">int</span> fee)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> dp_i0 = <span class="number">0</span>, dp_i1 = Integer.MIN_VALUE;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> price: prices) &#123;</span><br><span class="line">        <span class="keyword">int</span> prev_i0 = dp_i0;</span><br><span class="line">        dp_i0 = Math.max(prev_i0, dp_i1 + price);</span><br><span class="line">        dp_i1 = Math.max(dp_i1, prev_i0 - price - fee);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dp_i0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h5 id="longest-common-subsequence"><a href="https://leetcode.com/problems/longest-common-subsequence/" target="_blank" rel="noopener">1143. Longest Common Subsequence</a></h5>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">longestCommonSubsequence</span><span class="params">(String text1, String text2)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> m = text1.length(), n = text2.length();</span><br><span class="line">    <span class="keyword">int</span>[][] dp = <span class="keyword">new</span> <span class="keyword">int</span>[m+<span class="number">1</span>][n+<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; ++i) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; ++j) &#123;</span><br><span class="line">            <span class="keyword">if</span> (text1.charAt(i-<span class="number">1</span>) == text2.charAt(j-<span class="number">1</span>)) &#123;</span><br><span class="line">                dp[i][j] = dp[i-<span class="number">1</span>][j-<span class="number">1</span>] + <span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                dp[i][j] = Math.max(dp[i-<span class="number">1</span>][j], dp[i][j-<span class="number">1</span>]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dp[m][n];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="divide-conquer">Divide &amp; Conquer</h4>
@@ -2254,6 +2263,8 @@ In Metamask, select <code>Import Account</code>, copy the private key of the fir
 <h5 id="count-primes"><a href="https://leetcode.com/problems/count-primes/" target="_blank" rel="noopener">204. Count Primes</a></h5>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">countPrimes</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">boolean</span>[] notprime = <span class="keyword">new</span> <span class="keyword">boolean</span>[n];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (notprime[i] == <span class="keyword">false</span>) &#123;</span><br><span class="line">                cnt += <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">2</span> * i; j &lt; n; j += i) &#123;</span><br><span class="line">                    notprime[j] = <span class="keyword">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;         </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> cnt;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="digits">Digits</h4>
+<h5 id="excel-sheet-column-title"><a href="https://leetcode.com/problems/excel-sheet-column-title/" target="_blank" rel="noopener">168. Excel Sheet Column Title</a></h5>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">convertToTitle</span><span class="params">(<span class="keyword">int</span> columnNumber)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (columnNumber == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> n = columnNumber - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> convertToTitle(n / <span class="number">26</span>) + (<span class="keyword">char</span>)(n % <span class="number">26</span> + <span class="string">'A'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h5 id="factorial-trailing-zeroes"><a href="https://leetcode.com/problems/factorial-trailing-zeroes/" target="_blank" rel="noopener">172. Factorial Trailing Zeroes</a></h5>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">trailingZeroes</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> n == <span class="number">0</span>? <span class="number">0</span>: n / <span class="number">5</span> + trailingZeroes(n / <span class="number">5</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h5 id="power-of-three"><a href="https://leetcode.com/problems/power-of-three/" target="_blank" rel="noopener">326. Power of Three</a></h5>
@@ -2302,8 +2313,12 @@ In Metamask, select <code>Import Account</code>, copy the private key of the fir
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isValid</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = s.length();</span><br><span class="line">    Deque &lt;Character&gt; stack = <span class="keyword">new</span> LinkedList();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="keyword">char</span> c = s.charAt(i);</span><br><span class="line">        <span class="keyword">if</span> (c == <span class="string">'('</span> || c == <span class="string">'['</span> || c == <span class="string">'&#123;'</span>) &#123;</span><br><span class="line">            stack.offerFirst(c);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (stack.isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> ((c == <span class="string">')'</span> &amp;&amp; stack.peekFirst() == <span class="string">'('</span>) ||</span><br><span class="line">            (c == <span class="string">']'</span> &amp;&amp; stack.peekFirst() == <span class="string">'['</span>) ||</span><br><span class="line">            (c == <span class="string">'&#125;'</span> &amp;&amp; stack.peekFirst() == <span class="string">'&#123;'</span>)) &#123;</span><br><span class="line">            stack.pollFirst();</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> stack.isEmpty();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h5 id="min-stack"><a href="https://leetcode.com/problems/min-stack/" target="_blank" rel="noopener">155. Min Stack</a></h5>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MinStack</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Node</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> min;</span><br><span class="line">        <span class="keyword">int</span> val;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Node</span><span class="params">(<span class="keyword">int</span> min, <span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.min = min;</span><br><span class="line">            <span class="keyword">this</span>.val = val;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    LinkedList&lt;Node&gt; list;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** initialize your data structure here. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MinStack</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.list = <span class="keyword">new</span> LinkedList();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        Node n;</span><br><span class="line">        <span class="keyword">if</span> (list.isEmpty()) &#123;</span><br><span class="line">            n = <span class="keyword">new</span> Node(x, x);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">int</span> min = Math.min(getMin(), x);</span><br><span class="line">            n = <span class="keyword">new</span> Node(min, x);</span><br><span class="line">        &#125;</span><br><span class="line">        list.add(n);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        list.pollLast();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">top</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> list.getLast().val;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getMin</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> list.getLast().min;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Your MinStack object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"> * MinStack obj = new MinStack();</span></span><br><span class="line"><span class="comment"> * obj.push(x);</span></span><br><span class="line"><span class="comment"> * obj.pop();</span></span><br><span class="line"><span class="comment"> * int param_3 = obj.top();</span></span><br><span class="line"><span class="comment"> * int param_4 = obj.getMin();</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<h5 id="implement-stack-using-queues"><a href="https://leetcode.com/problems/implement-stack-using-queues/" target="_blank" rel="noopener">225. Implement Stack using Queues</a></h5>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyStack</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Initialize your data structure here. */</span></span><br><span class="line">    Queue&lt;Integer&gt; q = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Push element x onto stack. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        q.add(x);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; q.size(); i++) q.add(q.remove());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Removes the element on top of the stack and returns that element. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> q.remove();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Get the top element. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">top</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> q.peek();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Returns whether the stack is empty. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">empty</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> q.isEmpty();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Your MyStack object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"> * MyStack obj = new MyStack();</span></span><br><span class="line"><span class="comment"> * obj.push(x);</span></span><br><span class="line"><span class="comment"> * int param_2 = obj.pop();</span></span><br><span class="line"><span class="comment"> * int param_3 = obj.top();</span></span><br><span class="line"><span class="comment"> * boolean param_4 = obj.empty();</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
 <h5 id="implement-queue-using-stacks"><a href="https://leetcode.com/problems/implement-queue-using-stacks/" target="_blank" rel="noopener">232. Implement Queue using Stacks</a></h5>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyQueue</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    Stack &lt;Integer&gt; in;</span><br><span class="line">    Stack &lt;Integer&gt; out;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Initialize your data structure here. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyQueue</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.in = <span class="keyword">new</span> Stack();</span><br><span class="line">        <span class="keyword">this</span>.out = <span class="keyword">new</span> Stack();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Push element x to the back of queue. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        in.push(x);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Removes the element from in front of queue and returns that element. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        in2out();</span><br><span class="line">        <span class="keyword">return</span> out.pop();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Get the front element. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">peek</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        in2out();</span><br><span class="line">        <span class="keyword">return</span> out.peek();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Returns whether the queue is empty. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">empty</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> out.isEmpty() &amp;&amp; in.isEmpty();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">in2out</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (out.isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">while</span> (!in.isEmpty()) &#123;</span><br><span class="line">                <span class="keyword">int</span> x = in.pop();</span><br><span class="line">                out.push(x);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Your MyQueue object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"> * MyQueue obj = new MyQueue();</span></span><br><span class="line"><span class="comment"> * obj.push(x);</span></span><br><span class="line"><span class="comment"> * int param_2 = obj.pop();</span></span><br><span class="line"><span class="comment"> * int param_3 = obj.peek();</span></span><br><span class="line"><span class="comment"> * boolean param_4 = obj.empty();</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<h5 id="next-greater-element-ii"><a href="https://leetcode.com/problems/next-greater-element-ii/" target="_blank" rel="noopener">503. Next Greater Element II</a></h5>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] nextGreaterElements(<span class="keyword">int</span>[] nums) &#123;</span><br><span class="line">    <span class="keyword">int</span>[] res = <span class="keyword">new</span> <span class="keyword">int</span>[nums.length];</span><br><span class="line">    Arrays.fill(res, -<span class="number">1</span>);</span><br><span class="line">    Stack &lt;Integer&gt; s = <span class="keyword">new</span> Stack();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length * <span class="number">2</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> num = nums[i % nums.length];</span><br><span class="line">        <span class="keyword">while</span> (!s.isEmpty() &amp;&amp; num &gt; nums[s.peek()]) &#123;</span><br><span class="line">            res[s.pop()] = num;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (i &lt; nums.length) &#123;</span><br><span class="line">            s.push(i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h5 id="daily-temperatures"><a href="https://leetcode.com/problems/daily-temperatures/" target="_blank" rel="noopener">739. Daily Temperatures</a></h5>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] dailyTemperatures(<span class="keyword">int</span>[] T) &#123;</span><br><span class="line">    <span class="keyword">int</span> n = T.length;</span><br><span class="line">    <span class="keyword">int</span>[] res = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line">    Deque &lt;Integer&gt; stack = <span class="keyword">new</span> ArrayDeque();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="keyword">while</span> (!stack.isEmpty() &amp;&amp; T[stack.peekFirst()] &lt; T[i]) &#123;</span><br><span class="line">            res[stack.peekFirst()] = i - stack.pollFirst();</span><br><span class="line">        &#125;</span><br><span class="line">        stack.offerFirst(i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (!stack.isEmpty()) &#123;</span><br><span class="line">        res[stack.pollFirst()] = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="priority-queue">Priority Queue</h4>
