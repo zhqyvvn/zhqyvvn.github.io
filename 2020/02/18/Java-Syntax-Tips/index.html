@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"zhqyvvn.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":true,"transition":{"menu_item":"flipInX","post_block":"none","post_header":"flipInX","post_body":"none","coll_header":"flipInX","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Summarize Java syntax frequently used and make it convenient for lookup. Suggestions are welcome.   Arrays1type var-name[] &#x3D; new type[size]; OR 1type[] var-name &#x3D; new type[size];  Built-in methodsArra">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java Syntax Tips">
+<meta property="og:url" content="http://zhqyvvn.github.io/2020/02/18/Java-Syntax-Tips/index.html">
+<meta property="og:site_name" content="Tech Sharing">
+<meta property="og:description" content="Summarize Java syntax frequently used and make it convenient for lookup. Suggestions are welcome.   Arrays1type var-name[] &#x3D; new type[size]; OR 1type[] var-name &#x3D; new type[size];  Built-in methodsArra">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-02-19T03:14:57.000Z">
+<meta property="article:modified_time" content="2023-01-27T21:23:53.862Z">
+<meta property="article:author" content="zhqyvvn">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://zhqyvvn.github.io/2020/02/18/Java-Syntax-Tips/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://zhqyvvn.github.io/2020/02/18/Java-Syntax-Tips/","path":"2020/02/18/Java-Syntax-Tips/","title":"Java Syntax Tips"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Java Syntax Tips | Tech Sharing</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162128119-1"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-162128119-1","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+
+  <script async defer data-website-id="" src=""></script>
+
+  <script defer data-domain="" src=""></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Tech Sharing</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Arrays"><span class="nav-text">Arrays</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Built-in-methods"><span class="nav-text">Built-in methods</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Character"><span class="nav-text">Character</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Built-in-methods-1"><span class="nav-text">Built-in methods</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Deque"><span class="nav-text">Deque</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HashMap"><span class="nav-text">HashMap</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Built-in-methods-2"><span class="nav-text">Built-in methods</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Integer"><span class="nav-text">Integer</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#MAX-x2F-MIN"><span class="nav-text">MAX&#x2F;MIN</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Built-in-methods-3"><span class="nav-text">Built-in methods</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Math"><span class="nav-text">Math</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Built-in-methods-4"><span class="nav-text">Built-in methods</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#List"><span class="nav-text">List</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Differences-between-ArrayList-and-LinkedList"><span class="nav-text">Differences between ArrayList and LinkedList:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Built-in-methods-5"><span class="nav-text">Built-in methods</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Long"><span class="nav-text">Long</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Built-in-methods-6"><span class="nav-text">Built-in methods</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Priority-Queue"><span class="nav-text">Priority Queue</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Built-in-methods-7"><span class="nav-text">Built-in methods</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Queue"><span class="nav-text">Queue</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Built-in-methods-8"><span class="nav-text">Built-in methods</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Random"><span class="nav-text">Random</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Built-in-methods-9"><span class="nav-text">Built-in methods</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Set"><span class="nav-text">Set</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SortedMap"><span class="nav-text">SortedMap</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SortedSet"><span class="nav-text">SortedSet</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Built-in-methods-10"><span class="nav-text">Built-in methods</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Stack"><span class="nav-text">Stack</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Built-in-methods-11"><span class="nav-text">Built-in methods</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String"><span class="nav-text">String</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Built-in-methods-12"><span class="nav-text">Built-in methods</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#StringBuilder-x2F-StringBuffer"><span class="nav-text">StringBuilder&#x2F;StringBuffer</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Built-in-methods-13"><span class="nav-text">Built-in methods</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Classic-Problems"><span class="nav-text">Classic Problems</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Backtracking"><span class="nav-text">Backtracking</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Binary-Search-Tree"><span class="nav-text">Binary Search Tree</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Integer-Range"><span class="nav-text">Integer Range</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Palindrome"><span class="nav-text">Palindrome</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Sliding-Window"><span class="nav-text">Sliding Window</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Stock"><span class="nav-text">Stock</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Traversal"><span class="nav-text">Traversal</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Preorder"><span class="nav-text">Preorder</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Inorder"><span class="nav-text">Inorder</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Postorder"><span class="nav-text">Postorder</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Union-Find"><span class="nav-text">Union-Find</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Others"><span class="nav-text">Others</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Reference"><span class="nav-text">Reference</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="zhqyvvn"
+      src="https://avatars0.githubusercontent.com/u/38484412?s=460&v=4">
+  <p class="site-author-name" itemprop="name">zhqyvvn</p>
+  <div class="site-description" itemprop="description">I'm a Java developer wearing glasses coz I don't C#</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zhqyvvn" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zhqyvvn" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:zhqyvvn@gmail.com" title="E-Mail → mailto:zhqyvvn@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="Back to top">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://zhqyvvn.github.io/2020/02/18/Java-Syntax-Tips/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/38484412?s=460&v=4">
+      <meta itemprop="name" content="zhqyvvn">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tech Sharing">
+      <meta itemprop="description" content="I'm a Java developer wearing glasses coz I don't C#">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Java Syntax Tips | Tech Sharing">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Java Syntax Tips
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-02-18 22:14:57" itemprop="dateCreated datePublished" datetime="2020-02-18T22:14:57-05:00">2020-02-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-01-27 16:23:53" itemprop="dateModified" datetime="2023-01-27T16:23:53-05:00">2023-01-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>Summarize Java syntax frequently used and make it convenient for lookup. Suggestions are welcome.  </p>
+<h4 id="Arrays"><a href="#Arrays" class="headerlink" title="Arrays"></a>Arrays</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type <span class="keyword">var</span>-name[] = <span class="keyword">new</span> <span class="title class_">type</span>[size];</span><br></pre></td></tr></table></figure>
+<p>OR</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type[] <span class="keyword">var</span>-name = <span class="keyword">new</span> <span class="title class_">type</span>[size];</span><br></pre></td></tr></table></figure>
+
+<h5 id="Built-in-methods"><a href="#Built-in-methods" class="headerlink" title="Built-in methods"></a>Built-in methods</h5><p><code>Arrays.fill(Object[] array, Object value)</code>,  </p>
+<p><code>Arrays.equals(Object[] array1, Object[] array2)</code>  </p>
+<span id="more"></span>  
+
+<hr>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Arrays.sort(<span class="type">int</span>[] array, <span class="keyword">new</span> <span class="title class_">Comparator</span> &lt;<span class="type">int</span>[]&gt; (...)&#123;...&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>for example,</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Arrays.sort(envelopes, <span class="keyword">new</span> <span class="title class_">Comparator</span>&lt;<span class="type">int</span>[]&gt;()&#123;</span><br><span class="line">           <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">compare</span><span class="params">(<span class="type">int</span>[] nums1, <span class="type">int</span>[] nums2)</span>&#123;</span><br><span class="line">               <span class="keyword">if</span> (nums1[<span class="number">0</span>] == nums2[<span class="number">0</span>])&#123;</span><br><span class="line">                   <span class="keyword">return</span> nums2[<span class="number">1</span>] - nums1[<span class="number">1</span>];</span><br><span class="line">               &#125;</span><br><span class="line">               <span class="keyword">return</span> nums1[<span class="number">0</span>] - nums2[<span class="number">0</span>];</span><br><span class="line">           &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Arrays.sort(array, Collections.reverseOrder());</span><br></pre></td></tr></table></figure>
+<hr>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Arrays.binarySearch(<span class="type">int</span>[] array, <span class="type">int</span> left, <span class="type">int</span> right, <span class="type">int</span> key)</span><br></pre></td></tr></table></figure>
+<p>e.g.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">index</span> <span class="operator">=</span> Arrays.binarySearch(dp, <span class="number">0</span>, len, envelope[<span class="number">1</span>]);</span><br><span class="line"><span class="comment">//index of the search key, if it is contained in the array within the specified range; otherwise, (-(insertion point) - 1). The insertion point is defined as the point at which the key would be inserted into the array</span></span><br><span class="line"><span class="comment">//The return value will be &gt;= 0 if and only if the key is found.</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><code>Array.asList(Object[] array)</code>:</p>
+<p>e.g. convert array to list</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String[] a = <span class="keyword">new</span> <span class="title class_">String</span>[] &#123; <span class="string">&quot;A&quot;</span>, <span class="string">&quot;B&quot;</span>, <span class="string">&quot;C&quot;</span>, <span class="string">&quot;D&quot;</span> &#125;;</span><br><span class="line">List&lt;String&gt; list = Arrays.asList(a);</span><br><span class="line"><span class="comment">//list: [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;]</span></span><br></pre></td></tr></table></figure>
+<p>e.g. convert int[] to Integer list (in Java8)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">List &lt;Integer&gt; list = Arrays.stream(arr).boxed().collect(Collectors.toList());</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><code>Arrays.toString(Object[] array)</code>: return a string representation of the contents of the specified array.<br>e.g. present array in the string format</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>[] array = <span class="keyword">new</span> <span class="title class_">int</span>[]&#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span> &#125;;</span><br><span class="line"><span class="type">String</span> <span class="variable">str</span> <span class="operator">=</span> Arrays.toString(array);</span><br><span class="line"><span class="comment">//str: &quot;[1, 2, 3, 4]&quot;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><code>&lt;Object[] array&gt;.clone()</code>:  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>[] array = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">10</span>];</span><br><span class="line"><span class="type">int</span>[] copy = array.clone();</span><br></pre></td></tr></table></figure>
+<p>OR</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.arraycopy(<span class="type">int</span>[] array, <span class="type">int</span> srcPos, <span class="type">int</span>[] copy, <span class="type">int</span> desPos, <span class="type">int</span> length);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>e.g. get the sum of numbers in int[] array</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> Arrays.stream(A).sum();</span><br></pre></td></tr></table></figure>
+
+<h4 id="Character"><a href="#Character" class="headerlink" title="Character"></a>Character</h4><p>e.g.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">num</span> <span class="operator">=</span> <span class="string">&#x27;b&#x27;</span> - <span class="string">&#x27;a&#x27;</span>;</span><br><span class="line"><span class="type">char</span> <span class="variable">c</span> <span class="operator">=</span> <span class="string">&#x27;c&#x27;</span>;</span><br><span class="line"><span class="type">char</span> <span class="variable">d</span> <span class="operator">=</span> c++;  </span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>e.g. char -&gt; int</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">num</span> <span class="operator">=</span> <span class="string">&#x27;7&#x27;</span> - <span class="string">&#x27;0&#x27;</span></span><br><span class="line"><span class="comment">//num: 7</span></span><br></pre></td></tr></table></figure>
+<p>e.g. int -&gt; char  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> <span class="variable">c</span> <span class="operator">=</span> (<span class="type">char</span>)(<span class="string">&#x27;a&#x27;</span> + <span class="number">1</span>);</span><br><span class="line"><span class="comment">//c: &#x27;b&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="Built-in-methods-1"><a href="#Built-in-methods-1" class="headerlink" title="Built-in methods"></a>Built-in methods</h5><p><code>Character.toLowerCase(char c)</code><br><code>Character.isLetterOrDigit(char c)</code>: returns true if the character is a letter or digit; false otherwise.<br><code>Character.getNumericValue(char c)</code>: returns the int value that the specified Unicode character represents<br><code>Character.isLetter(char c)</code>: returns true if the character is a letter, false otherwise<br><code>Character.isDigit(char c)</code>: returns true if the character is a digit, false otherwise  </p>
+<h4 id="Deque"><a href="#Deque" class="headerlink" title="Deque"></a>Deque</h4><blockquote>
+<p> Deque, which is a “double-ended” queue that supports adding, querying, and removing elements from either end of the queue (the head or the tail).</p>
+</blockquote>
+<p>Deque has versions of the queue methods—offer, poll, and peek—that operate on the first or last element: <code>offerFirst()</code>, <code>pollFirst()</code>, <code>peekFirst()</code>, <code>offerLast()</code>, <code>pollLast()</code>, <code>peek Last()</code>. Note that Deque extends Queue and so is still a type of Queue.  </p>
+<p>Deque is generally better and should serve as a general replacement for Stack. Simply use <code>addFirst()</code> for “push” and <code>pollFirst()</code> for “pop”</p>
+<h4 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h4><p>e.g.  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HashMap &lt;Integer, Double&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>();</span><br></pre></td></tr></table></figure>
+
+<h5 id="Built-in-methods-2"><a href="#Built-in-methods-2" class="headerlink" title="Built-in methods"></a>Built-in methods</h5><p><code>map.keySet()</code>,  </p>
+<p><code>map.values()</code>,  </p>
+<p><code>map.containsKey(Object key)</code>,  </p>
+<p><code>map.get(Object key)</code>,  </p>
+<p><code>map.remove(Object key)</code>  </p>
+<p><code>map.clear()</code>: clear and remove all of the elements or mappings from a specified Map collection  </p>
+<p><code>map.put(Object key, Object value)</code>, <code>map.putIfAbsent(Object key, Object value)</code>:<br>returns the previous value associated with the specified key, or null if there was no mapping for the key.  </p>
+<hr>
+<p>e.g. for loop in map</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (Map.Entry&lt;Integer, Integer&gt; entry: map.entrySet())&#123;</span><br><span class="line">            entry.getValue();</span><br><span class="line">            entry.getKey();</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Integer"><a href="#Integer" class="headerlink" title="Integer"></a>Integer</h4><p>range: -2^{31} ~ 2^{31} - 1</p>
+<h5 id="MAX-x2F-MIN"><a href="#MAX-x2F-MIN" class="headerlink" title="MAX&#x2F;MIN"></a>MAX&#x2F;MIN</h5><p><code>Integer.MAX_VALUE</code>, <code>Integer.MIN_VALUE</code></p>
+<h5 id="Built-in-methods-3"><a href="#Built-in-methods-3" class="headerlink" title="Built-in methods"></a>Built-in methods</h5><p><code>Integer.bitCount(int num)</code>: returns the number of one-bits in the two’s complement binary representation of the specified int value. (number of digits in decimal)<br><code>Integer.parseInt(String s)</code>: Parses the string argument as a signed decimal integer<br><code>Integer.toString(int num)</code>: Returns the string object of the particular Integer value  </p>
+<h4 id="Math"><a href="#Math" class="headerlink" title="Math"></a>Math</h4><h5 id="Built-in-methods-4"><a href="#Built-in-methods-4" class="headerlink" title="Built-in methods"></a>Built-in methods</h5><p><code>Math.pow(double base, double exponent)</code>: Returns double<br><code>Math.sqrt(double num)</code>: Returns the correctly rounded positive square root of a double value.</p>
+<h4 id="List"><a href="#List" class="headerlink" title="List"></a>List</h4><p>e.g.  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ArrayList &lt;Integer&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>();</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LinkedList &lt;Integer&gt; list = <span class="keyword">new</span> <span class="title class_">LinkedList</span>();</span><br></pre></td></tr></table></figure>
+<p>e.g. create ArrayList of ArrayList  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;List&lt;Integer&gt;&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">list.add(<span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;Integer&gt;(sub_arraylist));</span><br></pre></td></tr></table></figure>
+<p>e.g. set -&gt; list  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Set &lt;Integer&gt; set = <span class="keyword">new</span> <span class="title class_">HashSet</span>();</span><br><span class="line">List &lt;Integer&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(set);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h5 id="Differences-between-ArrayList-and-LinkedList"><a href="#Differences-between-ArrayList-and-LinkedList" class="headerlink" title="Differences between ArrayList and LinkedList:"></a><a target="_blank" rel="noopener" href="https://www.javatpoint.com/difference-between-arraylist-and-linkedlist">Differences between ArrayList and LinkedList</a>:</h5><table>
+<thead>
+<tr>
+<th>ArrayList</th>
+<th>LinkedList</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ArrayList internally uses a <strong>dynamic array</strong> to store the elements.</td>
+<td>LinkedList internally uses a <strong>doubly linked list</strong> to store the elements.</td>
+</tr>
+<tr>
+<td>Manipulation with ArrayList is <strong>slow</strong> because it internally uses an array. If any element is removed from the array, all the bits are shifted in memory.</td>
+<td>Manipulation with LinkedList is <strong>faster</strong> than ArrayList because it uses a doubly linked list, so no bit shifting is required in memory.</td>
+</tr>
+<tr>
+<td>An ArrayList class can <strong>act as a list</strong> only because it implements List only.</td>
+<td>LinkedList class can <strong>act as a list and queue</strong> both because it implements List and Deque interfaces.</td>
+</tr>
+<tr>
+<td>ArrayList is <strong>better for storing and accessing</strong> data.</td>
+<td>LinkedList is <strong>better for manipulating</strong> data.</td>
+</tr>
+</tbody></table>
+<hr>
+<h5 id="Built-in-methods-5"><a href="#Built-in-methods-5" class="headerlink" title="Built-in methods"></a>Built-in methods</h5><p><code>list.add(Object e)</code>,  </p>
+<p><code>list.remove(Object e)</code>,  </p>
+<p><code>list.get(int index)</code>,  </p>
+<p><code>list.indexOf(Object e)</code>,    </p>
+<p><code>list.add(int index, Object e)</code>,   </p>
+<p><code>list.set(int index, Object e)</code>,   </p>
+<p><code>list.size()</code>,   </p>
+<p><code>list.contains(Object e)</code>,   </p>
+<p><code>list.isEmpty()</code>  </p>
+<p><code>list.remove(int index)</code>: Returns the element previously at the specified position  </p>
+<p><code>list.clear()</code>: remove all of the elements from the list  </p>
+<p>For LinkedList:  </p>
+<p><code>linkedlist.peek()</code>: returns the head of this list, or null if this list is empty  </p>
+<p><code>linkedlist.pollLast()</code>: Retrieves and removes the last element of this list, or returns null if this list is empty.  </p>
+<p><code>linkedlist.getLast()</code>: Returns the last element in this list.</p>
+<p><code>linkedlist.addFirst()</code>: Inserts the specified element at the beginning of this list.  </p>
+<hr>
+<p><code>list.toArray(T[] a)</code>:  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String[] array = list.toArray(<span class="keyword">new</span> <span class="title class_">String</span>[list.size()]);</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;<span class="type">int</span>[]&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line"><span class="type">int</span>[][] array = list.toArray(<span class="keyword">new</span> <span class="title class_">int</span>[list.size()][<span class="number">2</span>]);</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">LinkedList&lt;Integer&gt; list = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;();</span><br><span class="line"><span class="type">int</span>[] array = list.stream().mapToInt(i -&gt; i).toArray();</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>e.g. print list</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">str</span> <span class="operator">=</span> Arrays.toString(list.toArray());</span><br><span class="line">System.out.println(str);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>e.g. sort list</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Collections.sort(list);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>e.g. convert set to list</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>(set);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>Use <code>binarySearch()</code> to get the count of integers greater than the specified integer</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// list is arraylist, num is the specified integer</span></span><br><span class="line"><span class="type">int</span> <span class="variable">idx</span> <span class="operator">=</span> Collections.binarySearch(list, num);</span><br><span class="line"><span class="keyword">if</span> (idx &gt;= <span class="number">0</span> &amp;&amp; idx &lt; list.size()) &#123;</span><br><span class="line">    sum += list.size() - idx - <span class="number">1</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (idx &lt; <span class="number">0</span> &amp;&amp; -idx - <span class="number">1</span> &lt; list.size()) &#123;</span><br><span class="line">    sum += list.size() - (-idx - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Long"><a href="#Long" class="headerlink" title="Long"></a>Long</h4><h5 id="Built-in-methods-6"><a href="#Built-in-methods-6" class="headerlink" title="Built-in methods"></a>Built-in methods</h5><p>e.g. convert string to long type:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">long</span> <span class="variable">val</span> <span class="operator">=</span> Long.parseLong(<span class="string">&quot;1234&quot;</span>);</span><br><span class="line"><span class="comment">//val: 1234</span></span><br></pre></td></tr></table></figure>
+<p>e.g. cast long to int:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">num</span> <span class="operator">=</span> Math.toIntExact(val);</span><br></pre></td></tr></table></figure>
+<p>OR</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">num</span> <span class="operator">=</span> (<span class="type">int</span>)val;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Priority-Queue"><a href="#Priority-Queue" class="headerlink" title="Priority Queue"></a>Priority Queue</h4><p>e.g.  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PriorityQueue &lt;Integer&gt; heap = <span class="keyword">new</span> <span class="title class_">PriorityQueue</span> &lt;Integer&gt;();</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ListNode[] lists = <span class="keyword">new</span> <span class="title class_">ListNode</span>[]&#123;&lt;ListNode&gt;, &lt;ListNode&gt;, ...&#125;</span><br><span class="line">PriorityQueue &lt;ListNode&gt; heap = <span class="keyword">new</span> <span class="title class_">PriorityQueue</span>&lt;ListNode&gt;(lists.length, (a, b) -&gt; a.val - b.val);</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PriorityQueue &lt;Integer&gt; heap = <span class="keyword">new</span> <span class="title class_">PriorityQueue</span>(Collections.reverseOrder());</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;List&lt;Integer&gt;&gt; nums = <span class="keyword">new</span> <span class="title class_">ArrayList</span>();</span><br><span class="line">PriorityQueue&lt;<span class="type">int</span>[]&gt; heap = <span class="keyword">new</span> <span class="title class_">PriorityQueue</span>(Comparator.comparingInt(o -&gt; nums.get(o[<span class="number">0</span>]).get(o[<span class="number">1</span>])));</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PriorityQueue&lt;Integer&gt; pq =<span class="keyword">new</span> <span class="title class_">PriorityQueue</span>&lt;&gt;((x, y) -&gt; Integer.compare(x, y));</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PriorityQueue &lt;<span class="type">int</span>[]&gt; heap = <span class="keyword">new</span> <span class="title class_">PriorityQueue</span> &lt;<span class="type">int</span>[]&gt; ((a, b) -&gt; (a[<span class="number">0</span>] - b[<span class="number">0</span>]));</span><br></pre></td></tr></table></figure>
+
+<h5 id="Built-in-methods-7"><a href="#Built-in-methods-7" class="headerlink" title="Built-in methods"></a>Built-in methods</h5><p><code>heap.isEmpty()</code><br><code>heap.offer(Object e)</code>&#x2F;<code>heap.add(Object e)</code>: Inserts the specified element into this priority queue.<br><code>heap.poll()</code>: Retrieves and removes the head of this queue, or returns null if this queue is empty.</p>
+<hr>
+<p>e.g. add int[] array to Integer priority queue</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">PriorityQueue &lt;Integer&gt; heap = <span class="keyword">new</span> <span class="title class_">PriorityQueue</span>(Collections.reverseOrder());</span><br><span class="line">List &lt;Integer&gt; list = Arrays.stream(arr).boxed().collect(Collectors.toList());</span><br><span class="line">heap.addAll(list);</span><br></pre></td></tr></table></figure>
+<p>or by for loop adding int to priority queue</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">PriorityQueue&lt;Integer&gt; heap = <span class="keyword">new</span> <span class="title class_">PriorityQueue</span>&lt;Integer&gt;(Collections.reverseOrder());</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> num : arr)&#123;</span><br><span class="line">    heap.offer(num);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Queue"><a href="#Queue" class="headerlink" title="Queue"></a>Queue</h4><p>e.g.  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Queue &lt;Integer&gt; queue = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;Integer&gt;();</span><br></pre></td></tr></table></figure>
+
+<h5 id="Built-in-methods-8"><a href="#Built-in-methods-8" class="headerlink" title="Built-in methods"></a>Built-in methods</h5><p><code>queue.add(Object e)</code>,   </p>
+<p><code>queue.isEmpty()</code>,   </p>
+<p><code>queue.size()</code>  </p>
+<p> <code>queue.poll()</code>: Retrieves and removes the head of this queue, or returns null if this queue is empty.  </p>
+<p> <code>queue.remove()</code>: Retrieves and removes the head of this queue. This method differs from poll only in that it throws an exception if this queue is empty.  </p>
+<p> <code>queue.peek()</code>: Retrieves, but does not remove, the head of this queue, or returns null if this queue is empty.  </p>
+<p> <code>queue.addAll(Queue q)</code>: Appends all of the elements in q to the end of queue.    </p>
+<p> <code>queue.clear()</code>: Removes all of the elements from this queue</p>
+<h4 id="Random"><a href="#Random" class="headerlink" title="Random"></a>Random</h4><p>e.g.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Random</span> <span class="variable">r</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Random</span>();</span><br></pre></td></tr></table></figure>
+
+<h5 id="Built-in-methods-9"><a href="#Built-in-methods-9" class="headerlink" title="Built-in methods"></a>Built-in methods</h5><p><code>Random.nextInt(int n)</code>: get a random number between 0(inclusive) and the number passed in this argument(n), exclusive.</p>
+<h4 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h4><p>e.g.  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HashSet &lt;Integer&gt; set = <span class="keyword">new</span> <span class="title class_">HashSet</span>();</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TreeSet &lt;Integer&gt; set = <span class="keyword">new</span> <span class="title class_">TreeSet</span>();</span><br></pre></td></tr></table></figure>
+<p>e.g. list -&gt; set:  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>();</span><br><span class="line">Set&lt;String&gt; set = <span class="keyword">new</span> <span class="title class_">HashSet</span>(list);</span><br></pre></td></tr></table></figure>
+<p>e.g. loop over set:  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Iterator</span> <span class="variable">value</span> <span class="operator">=</span> set.iterator();</span><br><span class="line"><span class="keyword">while</span> (value.hasNext()) &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">num</span> <span class="operator">=</span> value.next();<span class="comment">//begin from first element in set</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="SortedMap"><a href="#SortedMap" class="headerlink" title="SortedMap"></a>SortedMap</h4><blockquote>
+<p>A SortedMap maintains its key&#x2F;value pairs sorted in a particular order according to the key values</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SortedMap &lt;Integer, Integer&gt; map = <span class="keyword">new</span> <span class="title class_">TreeMap</span>();</span><br></pre></td></tr></table></figure>
+
+<p>It provides the <code>subMap()</code>, <code>headMap()</code>, and <code>tailMap()</code> methods for retrieving sorted map subsets. Like SortedSet, it also provides a <code>comparator()</code> method, which returns an object that determines how the map keys are sorted.</p>
+<h4 id="SortedSet"><a href="#SortedSet" class="headerlink" title="SortedSet"></a>SortedSet</h4><blockquote>
+<p>SortedSet maintains elements in a prescribed order; like a sorted list that can contain no duplicates.</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SortedSet &lt;Integer&gt; set = <span class="keyword">new</span> <span class="title class_">TreeSet</span>();</span><br></pre></td></tr></table></figure>
+<p>Retrieve subsets (which are also sorted) using the <code>subSet()</code>, <code>headSet()</code>, and <code>tailSet()</code> methods.<br>The <code>first()</code>, <code>last()</code>, and <code>comparator()</code> methods provide access to the first element, the last element, and the object used to compare elements</p>
+<h5 id="Built-in-methods-10"><a href="#Built-in-methods-10" class="headerlink" title="Built-in methods"></a>Built-in methods</h5><p><code>set.add(Object e)</code>,   </p>
+<p><code>set.contains(Object e)</code>,   </p>
+<p><code>set.remove(Object e)</code>,   </p>
+<p><code>set.size()</code>  </p>
+<p>For TreeSet - O(logn):  </p>
+<p><code>treeset.floor(Object e)</code>: returns the greatest element less than or equal to e, or null if there is no such element.   </p>
+<p><code>treeset.ceiling(Object e)</code>: returns the least element greater than or equal to e, or null if there is no such element.  </p>
+<p><code>treeset.last()</code>: returns the highest member of the set. If the elements are of string type then they are checked in alphabetical order irrespective of length and if the elements are of integer types then the largest integer is returned. The string of alphabet types is given higher priority.</p>
+<h4 id="Stack"><a href="#Stack" class="headerlink" title="Stack"></a>Stack</h4><p>e.g.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Stack &lt;Integer&gt; stack = <span class="keyword">new</span> <span class="title class_">Stack</span>();</span><br></pre></td></tr></table></figure>
+
+<h5 id="Built-in-methods-11"><a href="#Built-in-methods-11" class="headerlink" title="Built-in methods"></a>Built-in methods</h5><p><code>stack.peek()</code>,  </p>
+<p><code>stack.push(Object e)</code>,  </p>
+<p><code>stack.pop()</code>,  </p>
+<p><code>stack.empty()</code>&#x2F;<code>stack.isEmpty()</code>,</p>
+<p><code>stack.size()</code>,  </p>
+<p><code>stack1.equals(stack2)</code></p>
+<h4 id="String"><a href="#String" class="headerlink" title="String"></a>String</h4><h5 id="Built-in-methods-12"><a href="#Built-in-methods-12" class="headerlink" title="Built-in methods"></a>Built-in methods</h5><p><code>&lt;String&gt;.substring(int start, int end)</code>,   </p>
+<p><code>&lt;String&gt;.startsWith(String prefix)</code>,   </p>
+<p><code>&lt;String&gt;.isEmpty()</code>,   </p>
+<p><code>&lt;String A&gt;.equals(&lt;String B&gt;)</code>,   </p>
+<p><code>&lt;String&gt;.charAt(int index)</code>,   </p>
+<p><code>&lt;String&gt;.toLowerCase()</code>,  </p>
+<p><code>&lt;String1&gt; + &lt;String2&gt;</code>,   </p>
+<p><code>&lt;String&gt;.replace(char old, char new)</code>,   </p>
+<p><code>&lt;String&gt;.indexOf(String str)</code>&#x2F;<code>&lt;String&gt;.indexOf(int char)</code>  </p>
+<p><code>&lt;String&gt;.contains(CharSequence s)</code>: Returns true if and only if this string contains the specified sequence of char values.</p>
+<hr>
+<p><code>&lt;String&gt;.toCharArray()</code>:  </p>
+<p>e.g.  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">str</span> <span class="operator">=</span> <span class="string">&quot;String&quot;</span>;</span><br><span class="line"><span class="type">char</span>[] array= str.toCharArray();</span><br><span class="line"><span class="comment">//array: &#123;&#x27;S&#x27;, &#x27;t&#x27;, &#x27;r&#x27;, &#x27;i&#x27;, &#x27;n&#x27;, &#x27;g&#x27;&#125;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><code>new String(char[] array)</code>,   </p>
+<p><code>new String(char[] array, int start, int length)</code>,  </p>
+<p> <code>String.valueOf(char[] array)</code>  </p>
+<p>e.g. convert char[] array back to String</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">str = <span class="keyword">new</span> <span class="title class_">String</span>(array);</span><br><span class="line"><span class="comment">//str: &quot;String&quot;</span></span><br><span class="line">str = <span class="keyword">new</span> <span class="title class_">String</span>(array, <span class="number">0</span>, <span class="number">3</span>);</span><br><span class="line"><span class="comment">//str: &quot;Str&quot;</span></span><br></pre></td></tr></table></figure>
+<p>OR</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str = String.valueOf(array);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><code>&lt;String A&gt;.compareTo(&lt;String B&gt;)</code>:  </p>
+<p>returns 0 if A equal to B;<br>returns &lt; 0 if A is lexicographically less than B;<br>returns &gt; 0 if A is lexicographically greater than B;  </p>
+<hr>
+<p><code>&lt;String&gt;.split()</code>:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">text</span> <span class="operator">=</span> <span class="string">&quot;we will we will rock you&quot;</span>;</span><br><span class="line">String[] words = text.split(<span class="string">&quot; &quot;</span>);</span><br><span class="line"><span class="comment">//words: &#123;&quot;we&quot;, &quot;will&quot;, &quot;we&quot;, &quot;will&quot;, &quot;rock&quot;, &quot;you&quot;&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="StringBuilder-x2F-StringBuffer"><a href="#StringBuilder-x2F-StringBuffer" class="headerlink" title="StringBuilder&#x2F;StringBuffer"></a>StringBuilder&#x2F;StringBuffer</h4><p>e.g.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">StringBuilder</span> <span class="variable">sb</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>();</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">StringBuffer</span> <span class="variable">sb</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuffer</span>();</span><br></pre></td></tr></table></figure>
+
+<p>create array of StringBuffer:  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">StringBuilder[] rows = <span class="keyword">new</span> <span class="title class_">StringBuilder</span>[numRows];</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; numRows; i++) rows[i] = <span class="keyword">new</span> <span class="title class_">StringBuilder</span>();</span><br></pre></td></tr></table></figure>
+<p>create StringBuilder from String:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;String&quot;</span>;</span><br><span class="line"><span class="type">StringBuilder</span> <span class="variable">sb</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>(s);</span><br><span class="line"><span class="comment">//sb is similar to one deep-copy of s, but in StringBuilder type. They are independent.</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="Built-in-methods-13"><a href="#Built-in-methods-13" class="headerlink" title="Built-in methods"></a>Built-in methods</h5><p><code>sb.append(char c)</code>,   </p>
+<p><code>sb.append(int n)</code>,   </p>
+<p><code>sb.append(String s)</code>,  </p>
+<p><code>sb.insert(int index, String/int/char c)</code>,   </p>
+<p><code>sb.reverse()</code>,   </p>
+<p><code>sb.length()</code>,   </p>
+<p><code>sb.setCharAt(int index, char c)</code>  </p>
+<p><code>sb.toString()</code>: Returns a string representing the data in this sequence.  </p>
+<p><code>sb.setLength(int newlength)</code>: setting newlength to 0 will empty SB  </p>
+<p><code>sb.substring(int start, int end)</code>  </p>
+<p><code>sb.delete(int start, int end)</code>  </p>
+<h4 id="Classic-Problems"><a href="#Classic-Problems" class="headerlink" title="Classic Problems"></a>Classic Problems</h4><h5 id="Backtracking"><a href="#Backtracking" class="headerlink" title="Backtracking"></a>Backtracking</h5><p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/subsets/">leetcode 78. Subsets</a></p>
+<h5 id="Binary-Search-Tree"><a href="#Binary-Search-Tree" class="headerlink" title="Binary Search Tree"></a>Binary Search Tree</h5><p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/validate-binary-search-tree/">leetcode 98. Validate Binary Search Tree</a></p>
+<h5 id="Integer-Range"><a href="#Integer-Range" class="headerlink" title="Integer Range"></a>Integer Range</h5><p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/reverse-integer/">leetcode 7. Reverse Integer</a><br><a target="_blank" rel="noopener" href="https://leetcode.com/problems/add-to-array-form-of-integer/">leetcode 989. Add to Array-Form of Integer</a></p>
+<h5 id="Palindrome"><a href="#Palindrome" class="headerlink" title="Palindrome"></a>Palindrome</h5><p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/palindrome-partitioning/">leetcode 131. Palindrome Partitioning</a><br><a target="_blank" rel="noopener" href="https://leetcode.com/problems/palindrome-partitioning-ii/">leetcode 132. Palindrome Partitioning II</a></p>
+<h5 id="Sliding-Window"><a href="#Sliding-Window" class="headerlink" title="Sliding Window"></a>Sliding Window</h5><p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/minimum-window-substring/">leetcode 76. Minimum Window Substring</a></p>
+<h5 id="Stock"><a href="#Stock" class="headerlink" title="Stock"></a>Stock</h5><p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/discuss/75931/Easiest-JAVA-solution-with-explanations">Detailed Explanation</a><br><a target="_blank" rel="noopener" href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/">leetcode 188. Best Time to Buy and Sell Stock IV</a><br><a target="_blank" rel="noopener" href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/">leetcode 309. Best Time to Buy and Sell Stock with Cooldown</a><br><a target="_blank" rel="noopener" href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/discuss/108870/most-consistent-ways-of-dealing-with-the-series-of-stock-problems">Most consistent ways of dealing with the series of stock problems</a></p>
+<h5 id="Traversal"><a href="#Traversal" class="headerlink" title="Traversal"></a>Traversal</h5><h6 id="Preorder"><a href="#Preorder" class="headerlink" title="Preorder"></a>Preorder</h6><p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/binary-tree-preorder-traversal/">leetcode 144. Binary Tree Preorder Traversal</a><br><a target="_blank" rel="noopener" href="https://leetcode.com/problems/construct-string-from-binary-tree/">leetcode 606. Construct String from Binary Tree</a></p>
+<h6 id="Inorder"><a href="#Inorder" class="headerlink" title="Inorder"></a>Inorder</h6><p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/binary-tree-inorder-traversal/">leetcode 94. Binary Tree Inorder Traversal</a></p>
+<h6 id="Postorder"><a href="#Postorder" class="headerlink" title="Postorder"></a>Postorder</h6><p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/binary-tree-postorder-traversal/">leetcode 145. Binary Tree Postorder Traversal</a></p>
+<h5 id="Union-Find"><a href="#Union-Find" class="headerlink" title="Union-Find"></a>Union-Find</h5><p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/friend-circles/">leetcode 547. Friend Circles</a></p>
+<h5 id="Others"><a href="#Others" class="headerlink" title="Others"></a>Others</h5><p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/total-hamming-distance/">leetcode 477. Total Hamming Distance</a><br><a target="_blank" rel="noopener" href="https://leetcode.com/problems/dungeon-game/">leetcode 174. Dungeon Game</a><br><a target="_blank" rel="noopener" href="https://leetcode.com/problems/x-of-a-kind-in-a-deck-of-cards/">leetcode 914. X of a Kind in a Deck of Cards</a><br><a target="_blank" rel="noopener" href="https://leetcode.com/problems/word-search/">leetcode 79. Word Search</a></p>
+<h4 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h4><p><a target="_blank" rel="noopener" href="https://docs.oracle.com/javase/8/docs/api/">Java Platform SE 8 - Oracle Help Center</a><br><a target="_blank" rel="noopener" href="https://www.oreilly.com/library/view/learning-java-4th/9781449372477/">Learning Java - O’Reilly</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Java/" rel="tag"># Java</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/03/28/Leetcode-in-Java/" rel="prev" title="LeetCode in Java">
+                  <i class="fa fa-chevron-left"></i> LeetCode in Java
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2020/01/12/Magical-Rectangle/" rel="next" title="Magic Rectangle">
+                  Magic Rectangle <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zhqyvvn</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"zhqyvvn","repo":"zhqyvvn.github.io","client_id":"c28a59a6f171f3e27313","client_secret":"a31ffbb812ba7a28cd66045ae2a68e017e9d539f","admin_user":"zhqyvvn","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"9aa9f65ee8ecaf9809016485a33fc3fa"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
