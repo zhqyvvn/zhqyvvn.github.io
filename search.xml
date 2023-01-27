@@ -1,28 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Breakout Ball</title>
-    <url>/2018/07/11/Breakout-Ball/</url>
-    <content><![CDATA[<h4 id="🌟-Game-Video"><a href="#🌟-Game-Video" class="headerlink" title="🌟 Game Video"></a>🌟 Game Video</h4><iframe src="https://drive.google.com/file/d/1vJPSyKD83s_67LJ7Ohe6NiZ4XgdloM7z/preview" width="640" height="480">
-</iframe>
-<p style="text-align: center; border-bottom: 0px solid #ddd;"></p>   
-
-<span id="more"></span>  
-
-<h4 id="🌟-Components"><a href="#🌟-Components" class="headerlink" title="🌟 Components"></a>🌟 Components</h4><ul>
-<li>Built GUI with JFrame &#x2F; JPanel  </li>
-<li>Used KeyListener and ActionListener to detect keyboard inputs (right or left)</li>
-</ul>
-<h4 id="📌-Reference"><a href="#📌-Reference" class="headerlink" title="📌 Reference"></a>📌 Reference</h4><p><a href="https://www.youtube.com/watch?v=K9qMm3JbOH0&list=PLjLATQlrmaYcdV-YRWBj8NDPoAjDaKKri&index=2&t=0s">Reference Link</a>  </p>
-]]></content>
-      <categories>
-        <category>Application</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Java Syntax Tips</title>
     <url>/2020/02/18/Java-Syntax-Tips/</url>
     <content><![CDATA[<p>Summarize Java syntax frequently used and make it convenient for lookup. Suggestions are welcome.  </p>
@@ -367,6 +345,99 @@
       </tags>
   </entry>
   <entry>
+    <title>Art Style Transfer</title>
+    <url>/2018/12/10/Art-Style-Transfer/</url>
+    <content><![CDATA[<h4 id="🌟-Screenshots"><a href="#🌟-Screenshots" class="headerlink" title="🌟 Screenshots"></a>🌟 Screenshots</h4><p><img data-src="/images/ast/ast_home1.png"></p>
+<span id="more"></span>  
+<p style="text-align: center; border-bottom: 1px solid #ddd;"> Home Page </p>  
+
+<p><img data-src="/images/ast/ast_home2.png"></p>
+<p style="text-align: center; border-bottom: 1px solid #ddd;"> Home Page </p>  
+
+<p><img data-src="/images/ast/ast_starry.png"></p>
+<p style="text-align: center; border-bottom: 1px solid #ddd;"> Example: transfer to <i>Starry Night</i> style </p>  
+
+<p><img data-src="/images/ast/ast_wave.png"></p>
+<p style="text-align: center; border-bottom: 1px solid #ddd;"> Example: transfer to <i>The Great Wave off Kanagawa</i> style </p>
+
+<p><img data-src="/images/ast/ast_mosaic.png"></p>
+<p style="text-align: center; border-bottom: 1px solid #ddd;"> Example: transfer to <i>Mosaic</i> style </p>
+
+<p><img data-src="/images/ast/ast_cubist.png"></p>
+<p style="text-align: center; border-bottom: 1px solid #ddd;"> Example: transfer to <i>Cubism</i> style </p>
+
+<p><img data-src="/images/ast/ast_udine.png"></p>
+<p style="text-align: center; border-bottom: 1px solid #ddd;"> Example: transfer to <i>Udnie</i> style </p>
+
+<p><img data-src="/images/ast/ast_feathers.png"></p>
+<p style="text-align: center; border-bottom: 1px solid #ddd;"> Example: transfer to <i>Feathers</i> style </p>
+
+<p><img data-src="/images/ast/ast_scream.png"></p>
+<p style="text-align: center; border-bottom: 1px solid #ddd;"> Example: transfer to <i>The Scream</i> style </p>
+
+<p><img data-src="/images/ast/ast_album.png"></p>
+<p style="text-align: center; border-bottom: 1px solid #ddd;"> Album </p>
+
+<p><img data-src="/images/ast/ast_detail.png"></p>
+<p style="text-align: center; border-bottom: 1px solid #ddd;"> Detail of one processed photo </p>
+
+<h4 id="🌟-Built-with"><a href="#🌟-Built-with" class="headerlink" title="🌟 Built with"></a>🌟 Built with</h4><ul>
+<li>Python  </li>
+<li>Flask  </li>
+<li>Amazon Web Services  </li>
+<li>Tensorflow</li>
+</ul>
+<h4 id="🌟-Components"><a href="#🌟-Components" class="headerlink" title="🌟 Components"></a>🌟 Components</h4><ul>
+<li>Style Transfer —&gt; Tensorflow (<a href="https://github.com/hzy46/fast-neural-style-tensorflow">Fast Neural Style</a>)  </li>
+<li>Database —&gt; <a href="https://aws.amazon.com/dynamodb/">Dynamodb</a>  </li>
+<li>Image Storage —&gt; <a href="https://aws.amazon.com/s3/">S3</a></li>
+</ul>
+<h4 id="🌟-Features"><a href="#🌟-Features" class="headerlink" title="🌟 Features"></a>🌟 Features</h4><p>The user can:</p>
+<ul>
+<li>Login &#x2F; Sign-up &#x2F; Logout</li>
+<li>Choose one of the art styles, upload photos and perform style-transfer to the photos.  </li>
+<li>Save processed photos to the album.  </li>
+<li>Browse all saved processed photos and also their full-resolution versions in the album.  </li>
+<li>Delete one selected photo, or delete all photos at one time in the album.</li>
+</ul>
+<h4 id="📌-Note"><a href="#📌-Note" class="headerlink" title="📌 Note"></a>📌 Note</h4><ul>
+<li>Fast Neural Style models are in reference to <a href="https://github.com/hzy46/fast-neural-style-tensorflow">here</a>  </li>
+<li>All images used for style transfer examples were randomly selected from Google Image</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Website</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>Flask</tag>
+        <tag>AWS</tag>
+        <tag>TensorFlow</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Breakout Ball</title>
+    <url>/2018/07/11/Breakout-Ball/</url>
+    <content><![CDATA[<h4 id="🌟-Game-Video"><a href="#🌟-Game-Video" class="headerlink" title="🌟 Game Video"></a>🌟 Game Video</h4><iframe src="https://drive.google.com/file/d/1vJPSyKD83s_67LJ7Ohe6NiZ4XgdloM7z/preview" width="640" height="480">
+</iframe>
+<p style="text-align: center; border-bottom: 0px solid #ddd;"></p>   
+
+<span id="more"></span>  
+
+<h4 id="🌟-Components"><a href="#🌟-Components" class="headerlink" title="🌟 Components"></a>🌟 Components</h4><ul>
+<li>Built GUI with JFrame &#x2F; JPanel  </li>
+<li>Used KeyListener and ActionListener to detect keyboard inputs (right or left)</li>
+</ul>
+<h4 id="📌-Reference"><a href="#📌-Reference" class="headerlink" title="📌 Reference"></a>📌 Reference</h4><p><a href="https://www.youtube.com/watch?v=K9qMm3JbOH0&list=PLjLATQlrmaYcdV-YRWBj8NDPoAjDaKKri&index=2&t=0s">Reference Link</a>  </p>
+]]></content>
+      <categories>
+        <category>Application</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Fakestagram</title>
     <url>/2019/03/12/Fakestagram/</url>
     <content><![CDATA[<h4 id="🌟-Screenshots"><a href="#🌟-Screenshots" class="headerlink" title="🌟 Screenshots"></a>🌟 Screenshots</h4><img data-src="/images/fks/fks_home.png" width="40%"/>
@@ -467,82 +538,191 @@
         <category>Website</category>
       </categories>
       <tags>
+        <tag>AWS</tag>
         <tag>JavaScript</tag>
         <tag>React.js</tag>
         <tag>Express.js</tag>
         <tag>OpenCV</tag>
-        <tag>AWS</tag>
       </tags>
   </entry>
   <entry>
-    <title>Art Style Transfer</title>
-    <url>/2018/12/10/Art-Style-Transfer/</url>
-    <content><![CDATA[<h4 id="🌟-Screenshots"><a href="#🌟-Screenshots" class="headerlink" title="🌟 Screenshots"></a>🌟 Screenshots</h4><p><img data-src="/images/ast/ast_home1.png"></p>
+    <title>ProTalk</title>
+    <url>/2019/05/02/ProTalk/</url>
+    <content><![CDATA[<h4 id="🌟-Screenshots"><a href="#🌟-Screenshots" class="headerlink" title="🌟 Screenshots"></a>🌟 Screenshots</h4><img data-src="/images/prt/prt_home.png" width="40%"/>
+
 <span id="more"></span>  
-<p style="text-align: center; border-bottom: 1px solid #ddd;"> Home Page </p>  
+<p style="text-align: center; border-bottom: 1px solid #ddd;"> Home - browse the listing of practice </p>  
 
-<p><img data-src="/images/ast/ast_home2.png"></p>
-<p style="text-align: center; border-bottom: 1px solid #ddd;"> Home Page </p>  
+<img data-src="/images/prt/prt_history_detail.jpg" width="40%"/>
+<p style="text-align: center; border-bottom: 1px solid #ddd;"> History - browse the detail of one practice history </p>  
 
-<p><img data-src="/images/ast/ast_starry.png"></p>
-<p style="text-align: center; border-bottom: 1px solid #ddd;"> Example: transfer to <i>Starry Night</i> style </p>  
+<img data-src="/images/prt/prt_create_new_talk.png" width="40%"/>
+<p style="text-align: center; border-bottom: 1px solid #ddd;"> Create a New Practice </p>  
 
-<p><img data-src="/images/ast/ast_wave.png"></p>
-<p style="text-align: center; border-bottom: 1px solid #ddd;"> Example: transfer to <i>The Great Wave off Kanagawa</i> style </p>
+<img data-src="/images/prt/prt_practice1.png" width="40%"/>
+<p style="text-align: center; border-bottom: 1px solid #ddd;"> Practice - enter the practice page </p>  
 
-<p><img data-src="/images/ast/ast_mosaic.png"></p>
-<p style="text-align: center; border-bottom: 1px solid #ddd;"> Example: transfer to <i>Mosaic</i> style </p>
+<img data-src="/images/prt/prt_practice2.png" width="40%"/>
+<p style="text-align: center; border-bottom: 1px solid #ddd;"> Practice - set the timer </p>  
 
-<p><img data-src="/images/ast/ast_cubist.png"></p>
-<p style="text-align: center; border-bottom: 1px solid #ddd;"> Example: transfer to <i>Cubism</i> style </p>
+<img data-src="/images/prt/prt_practice3.jpg" width="40%"/>
+<p style="text-align: center; border-bottom: 1px solid #ddd;"> Practice - start practicing; the timer counts down; speech-to-text works </p>
 
-<p><img data-src="/images/ast/ast_udine.png"></p>
-<p style="text-align: center; border-bottom: 1px solid #ddd;"> Example: transfer to <i>Udnie</i> style </p>
+<img data-src="/images/prt/prt_practice4.jpg" width="40%"/>
+<p style="text-align: center; border-bottom: 1px solid #ddd;"> Practice - after pressing the stop button, the "EXTRACT JARGON" button appears </p>
 
-<p><img data-src="/images/ast/ast_feathers.png"></p>
-<p style="text-align: center; border-bottom: 1px solid #ddd;"> Example: transfer to <i>Feathers</i> style </p>
+<img data-src="/images/prt/prt_jargons.jpg" width="40%"/>
+<p style="text-align: center; border-bottom: 1px solid #ddd;"> Practice Result - show jargon in this speech </p>
 
-<p><img data-src="/images/ast/ast_scream.png"></p>
-<p style="text-align: center; border-bottom: 1px solid #ddd;"> Example: transfer to <i>The Scream</i> style </p>
+<img data-src="/images/prt/prt_jargons_tip1.png" width="40%"/>
+<p style="text-align: center; border-bottom: 1px solid #ddd;"> Practice Result - click jargon words in highlighting to get tips </p>
 
-<p><img data-src="/images/ast/ast_album.png"></p>
-<p style="text-align: center; border-bottom: 1px solid #ddd;"> Album </p>
+<img data-src="/images/prt/prt_jargons_tip2.png" width="40%"/>
+<p style="text-align: center; border-bottom: 1px solid #ddd;"> Practice Result - jargon words in different positions could get different tips </p>
 
-<p><img data-src="/images/ast/ast_detail.png"></p>
-<p style="text-align: center; border-bottom: 1px solid #ddd;"> Detail of one processed photo </p>
+<img data-src="/images/prt/prt_sidebar.png" width="40%"/>
+<p style="text-align: center; border-bottom: 1px solid #ddd;"> Side Bar </p>
+
+<img data-src="/images/prt/prt_chart_listing.png" width="40%"/>
+<p style="text-align: center; border-bottom: 1px solid #ddd;"> History - browse the listing of practice progress </p>
+
+<img data-src="/images/prt/prt_progress_chart.png" width="40%"/>
+<p style="text-align: center; border-bottom: 1px solid #ddd;"> Progress Chart - for one practice</p>
 
 <h4 id="🌟-Built-with"><a href="#🌟-Built-with" class="headerlink" title="🌟 Built with"></a>🌟 Built with</h4><ul>
-<li>Python  </li>
-<li>Flask  </li>
-<li>Amazon Web Services  </li>
-<li>Tensorflow</li>
+<li>Java  </li>
+<li>Android Studio   </li>
+<li>Google Firebase  </li>
+<li>Google Cloud Platform</li>
 </ul>
 <h4 id="🌟-Components"><a href="#🌟-Components" class="headerlink" title="🌟 Components"></a>🌟 Components</h4><ul>
-<li>Style Transfer —&gt; Tensorflow (<a href="https://github.com/hzy46/fast-neural-style-tensorflow">Fast Neural Style</a>)  </li>
-<li>Database —&gt; <a href="https://aws.amazon.com/dynamodb/">Dynamodb</a>  </li>
-<li>Image Storage —&gt; <a href="https://aws.amazon.com/s3/">S3</a></li>
+<li>Database —&gt; <a href="https://firebase.google.com/">Google Firebase</a>  </li>
+<li>Speech-to-Test —&gt; <a href="https://github.com/GoogleCloudPlatform/android-docs-samples/tree/master/speech/Speech">Google Cloud Speech API</a>  </li>
+<li>Token Extraction —&gt; <a href="https://cloud.google.com/natural-language/docs/reference/rest/v1/Token">Google Cloud Platform NLP  API</a></li>
+<li>Charts —&gt; <a href="https://github.com/lecho/hellocharts-android">hellocharts</a></li>
 </ul>
-<h4 id="🌟-Features"><a href="#🌟-Features" class="headerlink" title="🌟 Features"></a>🌟 Features</h4><p>The user can:</p>
-<ul>
+<h4 id="🌟-Features"><a href="#🌟-Features" class="headerlink" title="🌟 Features"></a>🌟 Features</h4><h5 id="Home-screen"><a href="#Home-screen" class="headerlink" title="Home screen"></a>Home screen</h5><ul>
+<li>The Home screen allows users to view their previously saved talks.  </li>
+<li>The user may also create a new talk from the Home screen. To do so, they tap the “Create A New Talk” button on the bottom of the screen.  </li>
+<li>After tapping “Create and Start”, the app will bring the users to the recording screen, where they can record and save a new talk.  </li>
+<li>When a user taps on a talk from the Home screen, they navigate to a transcript of their most recent practice and a list of the jargon words they used during that practice. They may also opt to re-practice the talk by tapping the “Practice Again” button. If they tap this button,<br>the app will bring them to the Recording screen.</li>
+<li>Users can also navigate to the Progress Tracker from the Home screen by tapping the hamburger menu in the upper-left corner.</li>
+</ul>
+<h5 id="Recording-Screen"><a href="#Recording-Screen" class="headerlink" title="Recording Screen"></a>Recording Screen</h5><ul>
+<li>The Recording screen allows users to record a new talk and view a transcript of that talk.  </li>
+<li>To begin recording, users tap the “Talk” button at the bottom-right hand corner of the screen.  </li>
+<li>The user may choose to set a time length for their practice by scrolling to the desired value under the appropriate unit of measurement [hours, minutes, and&#x2F;or seconds].  </li>
+<li>Once they have indicated the time length, they may tap “Set” to set the time and begin practicing.</li>
+<li>ProTalk transcribes the user’s practice word-for-word (i.e., from speech to text) as they rehearse it.  </li>
+<li>Once the user has finished practicing, they may tap the “Stop” button at the bottom of the screen to turn off the microphone. They will, then, be prompted to “Extract Jargon” at the top-right of the screen.</li>
+</ul>
+<h5 id="Jargon-Extraction-screen"><a href="#Jargon-Extraction-screen" class="headerlink" title="Jargon Extraction screen"></a>Jargon Extraction screen</h5><ul>
+<li>Once the user taps “Extract Jargon”, all jargon words used during the practice will be highlighted yellow.  </li>
+<li>The jargon words will also be listed below the transcript.  </li>
+<li>The user may tap jargon words to view recommendations for replacing them: when the user taps a jargon word that they have used more than twice in their practice, the app will recommend that they describe the word after the first time they use it; If they use a jargon word two times or less, the app will recommend that they use another word or describe the jargon word in simpler words.  </li>
+<li>If ProTalk recognizes a common term as jargon, the user may tap “This is not jargon”, and the app will remove the word from the talk’s jargon list and the word will no longer be highlighted in the talk’s transcript.  </li>
+<li>Once the user has finished reviewing the transcript of their practice, they may tap “Save This Talk”, and the transcript and listed jargon words will be accessible from the Home screen.</li>
+</ul>
+<h5 id="Progress-Tracker-screen"><a href="#Progress-Tracker-screen" class="headerlink" title="Progress Tracker screen"></a>Progress Tracker screen</h5><ul>
+<li>The user may view their progress — measured as a decrease in the number of jargon words used for each talk — by navigating to the Progress Tracking screen from the Home screen.  </li>
+<li>The user may select the talk for which they wish to view their progress.  </li>
+<li>The app will show the user a graph of their progress over time, with the number of jargon words used per practice attempt on the y-axis and the date and time of the practice on the x-axis.  </li>
+<li>Progress is represented by a downward trend in the graph, representing a decreased use of jargon words over time</li>
+</ul>
+<h4 id="📌-Note"><a href="#📌-Note" class="headerlink" title="📌 Note"></a>📌 Note</h4><p>This is a team collaborated work. Huge thanks to my  teammates - <a href="https://www.linkedin.com/in/yuting-rebecca-zhang-87ba0b179">Yuting Zhang</a> and <a href="https://www.linkedin.com/in/cath-virelli-a09727a7/">Cath Virelli</a></p>
+]]></content>
+      <categories>
+        <category>Application</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>Android</tag>
+        <tag>Google Firebase</tag>
+        <tag>GCP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Second Buy</title>
+    <url>/2019/12/15/Second-Buy/</url>
+    <content><![CDATA[<h4 id="🌟-Screenshots"><a href="#🌟-Screenshots" class="headerlink" title="🌟 Screenshots"></a>🌟 Screenshots</h4><p><img data-src="/images/sc/sc_index.jpg"></p>
+<span id="more"></span>  
+<p style="text-align: center; border-bottom: 1px solid #ddd;"> Index </p>  
+
+<p><img data-src="/images/sc/sc_profile.jpg"></p>
+<p style="text-align: center; border-bottom: 1px solid #ddd;"> Profile </p>  
+
+<p><img data-src="/images/sc/sc_sell.jpg"></p>
+<p style="text-align: center; border-bottom: 1px solid #ddd;"> Sell / Edit </p>  
+
+<p><img data-src="/images/sc/sc_detail.jpg"></p>
+<p style="text-align: center; border-bottom: 1px solid #ddd;"> Detail </p>  
+
+<p><img data-src="/images/sc/sc_comment.jpg"></p>
+<p style="text-align: center; border-bottom: 1px solid #ddd;"> Comment / Reply </p>  
+
+<p><img data-src="/images/sc/sc_notification.png"></p>
+<p style="text-align: center; border-bottom: 1px solid #ddd;"> Notification </p>  
+
+<h4 id="🌟-Built-with"><a href="#🌟-Built-with" class="headerlink" title="🌟 Built with"></a>🌟 Built with</h4><ul>
+<li>JavaScript  </li>
+<li>HTML &amp; CSS  </li>
+<li>Node.js   </li>
+<li>Express  </li>
+<li>MongoDB  </li>
+<li>Heroku</li>
+</ul>
+<h4 id="🌟-Components"><a href="#🌟-Components" class="headerlink" title="🌟 Components"></a>🌟 Components</h4><ul>
+<li>Database —&gt; <a href="https://www.mongodb.com/">MongoDB</a>  </li>
+<li>Deployment —&gt; <a href="https://www.heroku.com/platform">Heroku</a></li>
+</ul>
+<h4 id="🌟-Features"><a href="#🌟-Features" class="headerlink" title="🌟 Features"></a>🌟 Features</h4><p>There are many things a user can do in each page:</p>
+<h5 id="Authentication"><a href="#Authentication" class="headerlink" title="Authentication"></a>Authentication</h5><ul>
 <li>Login &#x2F; Sign-up &#x2F; Logout</li>
-<li>Choose one of the art styles, upload photos and perform style-transfer to the photos.  </li>
-<li>Save processed photos to the album.  </li>
-<li>Browse all saved processed photos and also their full-resolution versions in the album.  </li>
-<li>Delete one selected photo, or delete all photos at one time in the album.</li>
+</ul>
+<h5 id="Index-Page"><a href="#Index-Page" class="headerlink" title="Index Page"></a>Index Page</h5><ul>
+<li>Browse postings of second-hand books on sale published by other users  </li>
+<li>Search the sale information of specified second-hand books in the search bar   </li>
+<li>Check brief information of one’s profile on the side</li>
+</ul>
+<h5 id="User’s-Profile-Page"><a href="#User’s-Profile-Page" class="headerlink" title="User’s Profile Page"></a>User’s Profile Page</h5><ul>
+<li>Edit username and contact information    </li>
+<li>Check the number of the user’s own books on sale and the number of the user’s own books sold  </li>
+<li>Browse brief information of the user’s own postings   </li>
+<li>Check other people’s profile but only in the guest mode (editing functions are hidden)</li>
+</ul>
+<h5 id="Sell-Book-Page-also-Edit-Book-information-Page"><a href="#Sell-Book-Page-also-Edit-Book-information-Page" class="headerlink" title="Sell Book Page (also Edit Book information Page)"></a>Sell Book Page (also Edit Book information Page)</h5><ul>
+<li>Create a new posting by filling the book’s information and uploading the book’s picture    </li>
+<li>Edit the user’s own published postings   </li>
+<li>Tag the book with ‘on sale’ or ‘sold’</li>
+</ul>
+<h5 id="Book-Detail-Page"><a href="#Book-Detail-Page" class="headerlink" title="Book Detail Page"></a>Book Detail Page</h5><ul>
+<li>Check the owner of a book and other detailed information  </li>
+<li>Claim the book by clicking “I want this” to send a notification to the book’s owner  </li>
+<li>Comment and reply under the book’s postings</li>
+</ul>
+<h5 id="Notification-Page"><a href="#Notification-Page" class="headerlink" title="Notification Page"></a>Notification Page</h5><p>Receive notifications if:</p>
+<ul>
+<li>some users want to buy the user’s books  </li>
+<li>some users commented under the user’s postings  </li>
+<li>some users replied to the user’s comments under postings</li>
 </ul>
 <h4 id="📌-Note"><a href="#📌-Note" class="headerlink" title="📌 Note"></a>📌 Note</h4><ul>
-<li>Fast Neural Style models are in reference to <a href="https://github.com/hzy46/fast-neural-style-tensorflow">here</a>  </li>
-<li>All images used for style transfer examples were randomly selected from Google Image</li>
+<li>Information of books in the example were randomly selected from <a href="https://search.library.utoronto.ca/index">U of T library</a>    </li>
+<li>Background image (and alt image in the ‘upload the picture of the book’ area) was from Google Image  </li>
+<li>Modified from my course project. Thanks to teammates <a href="https://github.com/AlexChum">Alex</a>, <a href="https://github.com/ritadi">Rita</a>, <a href="https://github.com/glebka100500">Hlib</a> and our instructor <a href="https://github.com/mark-kazakevich">Mark</a></li>
 </ul>
 ]]></content>
       <categories>
         <category>Website</category>
       </categories>
       <tags>
-        <tag>AWS</tag>
-        <tag>Python</tag>
-        <tag>Flask</tag>
-        <tag>TensorFlow</tag>
+        <tag>JavaScript</tag>
+        <tag>Express.js</tag>
+        <tag>HTML</tag>
+        <tag>CSS</tag>
+        <tag>Node.js</tag>
+        <tag>MongoDB</tag>
+        <tag>Heroku</tag>
       </tags>
   </entry>
   <entry>
@@ -1500,186 +1680,6 @@ The value of each of these components is set to the special null value, <code>NU
       <tags>
         <tag>Relational Algebra</tag>
         <tag>SQL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ProTalk</title>
-    <url>/2019/05/02/ProTalk/</url>
-    <content><![CDATA[<h4 id="🌟-Screenshots"><a href="#🌟-Screenshots" class="headerlink" title="🌟 Screenshots"></a>🌟 Screenshots</h4><img data-src="/images/prt/prt_home.png" width="40%"/>
-
-<span id="more"></span>  
-<p style="text-align: center; border-bottom: 1px solid #ddd;"> Home - browse the listing of practice </p>  
-
-<img data-src="/images/prt/prt_history_detail.jpg" width="40%"/>
-<p style="text-align: center; border-bottom: 1px solid #ddd;"> History - browse the detail of one practice history </p>  
-
-<img data-src="/images/prt/prt_create_new_talk.png" width="40%"/>
-<p style="text-align: center; border-bottom: 1px solid #ddd;"> Create a New Practice </p>  
-
-<img data-src="/images/prt/prt_practice1.png" width="40%"/>
-<p style="text-align: center; border-bottom: 1px solid #ddd;"> Practice - enter the practice page </p>  
-
-<img data-src="/images/prt/prt_practice2.png" width="40%"/>
-<p style="text-align: center; border-bottom: 1px solid #ddd;"> Practice - set the timer </p>  
-
-<img data-src="/images/prt/prt_practice3.jpg" width="40%"/>
-<p style="text-align: center; border-bottom: 1px solid #ddd;"> Practice - start practicing; the timer counts down; speech-to-text works </p>
-
-<img data-src="/images/prt/prt_practice4.jpg" width="40%"/>
-<p style="text-align: center; border-bottom: 1px solid #ddd;"> Practice - after pressing the stop button, the "EXTRACT JARGON" button appears </p>
-
-<img data-src="/images/prt/prt_jargons.jpg" width="40%"/>
-<p style="text-align: center; border-bottom: 1px solid #ddd;"> Practice Result - show jargon in this speech </p>
-
-<img data-src="/images/prt/prt_jargons_tip1.png" width="40%"/>
-<p style="text-align: center; border-bottom: 1px solid #ddd;"> Practice Result - click jargon words in highlighting to get tips </p>
-
-<img data-src="/images/prt/prt_jargons_tip2.png" width="40%"/>
-<p style="text-align: center; border-bottom: 1px solid #ddd;"> Practice Result - jargon words in different positions could get different tips </p>
-
-<img data-src="/images/prt/prt_sidebar.png" width="40%"/>
-<p style="text-align: center; border-bottom: 1px solid #ddd;"> Side Bar </p>
-
-<img data-src="/images/prt/prt_chart_listing.png" width="40%"/>
-<p style="text-align: center; border-bottom: 1px solid #ddd;"> History - browse the listing of practice progress </p>
-
-<img data-src="/images/prt/prt_progress_chart.png" width="40%"/>
-<p style="text-align: center; border-bottom: 1px solid #ddd;"> Progress Chart - for one practice</p>
-
-<h4 id="🌟-Built-with"><a href="#🌟-Built-with" class="headerlink" title="🌟 Built with"></a>🌟 Built with</h4><ul>
-<li>Java  </li>
-<li>Android Studio   </li>
-<li>Google Firebase  </li>
-<li>Google Cloud Platform</li>
-</ul>
-<h4 id="🌟-Components"><a href="#🌟-Components" class="headerlink" title="🌟 Components"></a>🌟 Components</h4><ul>
-<li>Database —&gt; <a href="https://firebase.google.com/">Google Firebase</a>  </li>
-<li>Speech-to-Test —&gt; <a href="https://github.com/GoogleCloudPlatform/android-docs-samples/tree/master/speech/Speech">Google Cloud Speech API</a>  </li>
-<li>Token Extraction —&gt; <a href="https://cloud.google.com/natural-language/docs/reference/rest/v1/Token">Google Cloud Platform NLP  API</a></li>
-<li>Charts —&gt; <a href="https://github.com/lecho/hellocharts-android">hellocharts</a></li>
-</ul>
-<h4 id="🌟-Features"><a href="#🌟-Features" class="headerlink" title="🌟 Features"></a>🌟 Features</h4><h5 id="Home-screen"><a href="#Home-screen" class="headerlink" title="Home screen"></a>Home screen</h5><ul>
-<li>The Home screen allows users to view their previously saved talks.  </li>
-<li>The user may also create a new talk from the Home screen. To do so, they tap the “Create A New Talk” button on the bottom of the screen.  </li>
-<li>After tapping “Create and Start”, the app will bring the users to the recording screen, where they can record and save a new talk.  </li>
-<li>When a user taps on a talk from the Home screen, they navigate to a transcript of their most recent practice and a list of the jargon words they used during that practice. They may also opt to re-practice the talk by tapping the “Practice Again” button. If they tap this button,<br>the app will bring them to the Recording screen.</li>
-<li>Users can also navigate to the Progress Tracker from the Home screen by tapping the hamburger menu in the upper-left corner.</li>
-</ul>
-<h5 id="Recording-Screen"><a href="#Recording-Screen" class="headerlink" title="Recording Screen"></a>Recording Screen</h5><ul>
-<li>The Recording screen allows users to record a new talk and view a transcript of that talk.  </li>
-<li>To begin recording, users tap the “Talk” button at the bottom-right hand corner of the screen.  </li>
-<li>The user may choose to set a time length for their practice by scrolling to the desired value under the appropriate unit of measurement [hours, minutes, and&#x2F;or seconds].  </li>
-<li>Once they have indicated the time length, they may tap “Set” to set the time and begin practicing.</li>
-<li>ProTalk transcribes the user’s practice word-for-word (i.e., from speech to text) as they rehearse it.  </li>
-<li>Once the user has finished practicing, they may tap the “Stop” button at the bottom of the screen to turn off the microphone. They will, then, be prompted to “Extract Jargon” at the top-right of the screen.</li>
-</ul>
-<h5 id="Jargon-Extraction-screen"><a href="#Jargon-Extraction-screen" class="headerlink" title="Jargon Extraction screen"></a>Jargon Extraction screen</h5><ul>
-<li>Once the user taps “Extract Jargon”, all jargon words used during the practice will be highlighted yellow.  </li>
-<li>The jargon words will also be listed below the transcript.  </li>
-<li>The user may tap jargon words to view recommendations for replacing them: when the user taps a jargon word that they have used more than twice in their practice, the app will recommend that they describe the word after the first time they use it; If they use a jargon word two times or less, the app will recommend that they use another word or describe the jargon word in simpler words.  </li>
-<li>If ProTalk recognizes a common term as jargon, the user may tap “This is not jargon”, and the app will remove the word from the talk’s jargon list and the word will no longer be highlighted in the talk’s transcript.  </li>
-<li>Once the user has finished reviewing the transcript of their practice, they may tap “Save This Talk”, and the transcript and listed jargon words will be accessible from the Home screen.</li>
-</ul>
-<h5 id="Progress-Tracker-screen"><a href="#Progress-Tracker-screen" class="headerlink" title="Progress Tracker screen"></a>Progress Tracker screen</h5><ul>
-<li>The user may view their progress — measured as a decrease in the number of jargon words used for each talk — by navigating to the Progress Tracking screen from the Home screen.  </li>
-<li>The user may select the talk for which they wish to view their progress.  </li>
-<li>The app will show the user a graph of their progress over time, with the number of jargon words used per practice attempt on the y-axis and the date and time of the practice on the x-axis.  </li>
-<li>Progress is represented by a downward trend in the graph, representing a decreased use of jargon words over time</li>
-</ul>
-<h4 id="📌-Note"><a href="#📌-Note" class="headerlink" title="📌 Note"></a>📌 Note</h4><p>This is a team collaborated work. Huge thanks to my  teammates - <a href="https://www.linkedin.com/in/yuting-rebecca-zhang-87ba0b179">Yuting Zhang</a> and <a href="https://www.linkedin.com/in/cath-virelli-a09727a7/">Cath Virelli</a></p>
-]]></content>
-      <categories>
-        <category>Application</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>Android</tag>
-        <tag>Google Firebase</tag>
-        <tag>GCP</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Second Buy</title>
-    <url>/2019/12/15/Second-Buy/</url>
-    <content><![CDATA[<h4 id="🌟-Screenshots"><a href="#🌟-Screenshots" class="headerlink" title="🌟 Screenshots"></a>🌟 Screenshots</h4><p><img data-src="/images/sc/sc_index.jpg"></p>
-<span id="more"></span>  
-<p style="text-align: center; border-bottom: 1px solid #ddd;"> Index </p>  
-
-<p><img data-src="/images/sc/sc_profile.jpg"></p>
-<p style="text-align: center; border-bottom: 1px solid #ddd;"> Profile </p>  
-
-<p><img data-src="/images/sc/sc_sell.jpg"></p>
-<p style="text-align: center; border-bottom: 1px solid #ddd;"> Sell / Edit </p>  
-
-<p><img data-src="/images/sc/sc_detail.jpg"></p>
-<p style="text-align: center; border-bottom: 1px solid #ddd;"> Detail </p>  
-
-<p><img data-src="/images/sc/sc_comment.jpg"></p>
-<p style="text-align: center; border-bottom: 1px solid #ddd;"> Comment / Reply </p>  
-
-<p><img data-src="/images/sc/sc_notification.png"></p>
-<p style="text-align: center; border-bottom: 1px solid #ddd;"> Notification </p>  
-
-<h4 id="🌟-Built-with"><a href="#🌟-Built-with" class="headerlink" title="🌟 Built with"></a>🌟 Built with</h4><ul>
-<li>JavaScript  </li>
-<li>HTML &amp; CSS  </li>
-<li>Node.js   </li>
-<li>Express  </li>
-<li>MongoDB  </li>
-<li>Heroku</li>
-</ul>
-<h4 id="🌟-Components"><a href="#🌟-Components" class="headerlink" title="🌟 Components"></a>🌟 Components</h4><ul>
-<li>Database —&gt; <a href="https://www.mongodb.com/">MongoDB</a>  </li>
-<li>Deployment —&gt; <a href="https://www.heroku.com/platform">Heroku</a></li>
-</ul>
-<h4 id="🌟-Features"><a href="#🌟-Features" class="headerlink" title="🌟 Features"></a>🌟 Features</h4><p>There are many things a user can do in each page:</p>
-<h5 id="Authentication"><a href="#Authentication" class="headerlink" title="Authentication"></a>Authentication</h5><ul>
-<li>Login &#x2F; Sign-up &#x2F; Logout</li>
-</ul>
-<h5 id="Index-Page"><a href="#Index-Page" class="headerlink" title="Index Page"></a>Index Page</h5><ul>
-<li>Browse postings of second-hand books on sale published by other users  </li>
-<li>Search the sale information of specified second-hand books in the search bar   </li>
-<li>Check brief information of one’s profile on the side</li>
-</ul>
-<h5 id="User’s-Profile-Page"><a href="#User’s-Profile-Page" class="headerlink" title="User’s Profile Page"></a>User’s Profile Page</h5><ul>
-<li>Edit username and contact information    </li>
-<li>Check the number of the user’s own books on sale and the number of the user’s own books sold  </li>
-<li>Browse brief information of the user’s own postings   </li>
-<li>Check other people’s profile but only in the guest mode (editing functions are hidden)</li>
-</ul>
-<h5 id="Sell-Book-Page-also-Edit-Book-information-Page"><a href="#Sell-Book-Page-also-Edit-Book-information-Page" class="headerlink" title="Sell Book Page (also Edit Book information Page)"></a>Sell Book Page (also Edit Book information Page)</h5><ul>
-<li>Create a new posting by filling the book’s information and uploading the book’s picture    </li>
-<li>Edit the user’s own published postings   </li>
-<li>Tag the book with ‘on sale’ or ‘sold’</li>
-</ul>
-<h5 id="Book-Detail-Page"><a href="#Book-Detail-Page" class="headerlink" title="Book Detail Page"></a>Book Detail Page</h5><ul>
-<li>Check the owner of a book and other detailed information  </li>
-<li>Claim the book by clicking “I want this” to send a notification to the book’s owner  </li>
-<li>Comment and reply under the book’s postings</li>
-</ul>
-<h5 id="Notification-Page"><a href="#Notification-Page" class="headerlink" title="Notification Page"></a>Notification Page</h5><p>Receive notifications if:</p>
-<ul>
-<li>some users want to buy the user’s books  </li>
-<li>some users commented under the user’s postings  </li>
-<li>some users replied to the user’s comments under postings</li>
-</ul>
-<h4 id="📌-Note"><a href="#📌-Note" class="headerlink" title="📌 Note"></a>📌 Note</h4><ul>
-<li>Information of books in the example were randomly selected from <a href="https://search.library.utoronto.ca/index">U of T library</a>    </li>
-<li>Background image (and alt image in the ‘upload the picture of the book’ area) was from Google Image  </li>
-<li>Modified from my course project. Thanks to teammates <a href="https://github.com/AlexChum">Alex</a>, <a href="https://github.com/ritadi">Rita</a>, <a href="https://github.com/glebka100500">Hlib</a> and our instructor <a href="https://github.com/mark-kazakevich">Mark</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Website</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
-        <tag>Express.js</tag>
-        <tag>HTML</tag>
-        <tag>CSS</tag>
-        <tag>Node.js</tag>
-        <tag>MongoDB</tag>
-        <tag>Heroku</tag>
       </tags>
   </entry>
   <entry>
