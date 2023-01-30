@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"zhqyvvn.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":15,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":true,"transition":{"menu_item":"flipInX","post_block":"none","post_header":"flipInX","post_body":"none","coll_header":"flipInX","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Reading notes of Database Systems-The Complete Book (2nd edition) Chapter 6 - Constraints and Triggers1. Keys and Foreign Key1.1. Declaring Foreign-Key ConstraintsDefine an attribute or attributes to">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Reading Notes of Database Systems (4)">
+<meta property="og:url" content="http://zhqyvvn.github.io/2019/09/07/Notes-of-Database-4/index.html">
+<meta property="og:site_name" content="Tech Knowledge Sharing">
+<meta property="og:description" content="Reading notes of Database Systems-The Complete Book (2nd edition) Chapter 6 - Constraints and Triggers1. Keys and Foreign Key1.1. Declaring Foreign-Key ConstraintsDefine an attribute or attributes to">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-09-07T21:21:39.000Z">
+<meta property="article:modified_time" content="2023-01-30T03:04:02.503Z">
+<meta property="article:author" content="zhqyvvn">
+<meta property="article:tag" content="Relational Algebra">
+<meta property="article:tag" content="SQL">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://zhqyvvn.github.io/2019/09/07/Notes-of-Database-4/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://zhqyvvn.github.io/2019/09/07/Notes-of-Database-4/","path":"2019/09/07/Notes-of-Database-4/","title":"Reading Notes of Database Systems (4)"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Reading Notes of Database Systems (4) | Tech Knowledge Sharing</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162128119-1"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-162128119-1","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+
+  <script async defer data-website-id="" src=""></script>
+
+  <script defer data-domain="" src=""></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Tech Knowledge Sharing</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-posts"><a href="/archives/" rel="section"><i class="fa fa-book fa-fw"></i>posts</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-folder fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Chapter-6-Constraints-and-Triggers"><span class="nav-text">Chapter 6 - Constraints and Triggers</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Keys-and-Foreign-Key"><span class="nav-text">1. Keys and Foreign Key</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-Declaring-Foreign-Key-Constraints"><span class="nav-text">1.1. Declaring Foreign-Key Constraints</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-Maintaining-Referential-Integrity"><span class="nav-text">1.2. Maintaining Referential Integrity</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-Deferred-Checking-of-Constraints"><span class="nav-text">1.3. Deferred Checking of Constraints</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Constraints-on-Attributes-and-Tuples"><span class="nav-text">2. Constraints on Attributes and Tuples</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-Not-Null-Constraints"><span class="nav-text">2.1. Not-Null Constraints</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-Attribute-Based-CHECK-Constraints"><span class="nav-text">2.2. Attribute-Based CHECK Constraints</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-Tuple-Based-CHECK-Constraints"><span class="nav-text">2.3. Tuple-Based CHECK Constraints</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-Comparison-of-Tuple-and-Attribute-Based-Constraints"><span class="nav-text">2.4. Comparison of Tuple- and Attribute-Based Constraints</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Modification-of-Constraints"><span class="nav-text">3. Modification of Constraints</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-Giving-Names-to-Constraints"><span class="nav-text">3.1. Giving Names to Constraints</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-Altering-Constraints-on-Tables"><span class="nav-text">3.2. Altering Constraints on Tables</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Assertions"><span class="nav-text">4. Assertions</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-Creating-Assertions"><span class="nav-text">4.1. Creating Assertions</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-Using-Assertions"><span class="nav-text">4.2. Using Assertions</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-Triggers"><span class="nav-text">5. Triggers</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-1-Triggers-in-SQL"><span class="nav-text">5.1. Triggers in SQL</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-2-The-Options-for-Trigger-Design"><span class="nav-text">5.2. The Options for Trigger Design</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reference"><span class="nav-text">Reference</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="zhqyvvn"
+      src="https://avatars0.githubusercontent.com/u/38484412?s=460&v=4">
+  <p class="site-author-name" itemprop="name">zhqyvvn</p>
+  <div class="site-description" itemprop="description">I'm a Java developer wearing glasses ...coz I don't C#</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zhqyvvn" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zhqyvvn" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:zhqyvvn@gmail.com" title="E-Mail → mailto:zhqyvvn@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="Back to top">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://zhqyvvn.github.io/2019/09/07/Notes-of-Database-4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/38484412?s=460&v=4">
+      <meta itemprop="name" content="zhqyvvn">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tech Knowledge Sharing">
+      <meta itemprop="description" content="I'm a Java developer wearing glasses ...coz I don't C#">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Reading Notes of Database Systems (4) | Tech Knowledge Sharing">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Reading Notes of Database Systems (4)
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2019-09-07 17:21:39" itemprop="dateCreated datePublished" datetime="2019-09-07T17:21:39-04:00">2019-09-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-01-29 22:04:02" itemprop="dateModified" datetime="2023-01-29T22:04:02-05:00">2023-01-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Studying-Notes/" itemprop="url" rel="index"><span itemprop="name">Studying Notes</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Studying-Notes/Database-Systems/" itemprop="url" rel="index"><span itemprop="name">Database Systems</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>Reading notes of <em>Database Systems-The Complete Book (2nd edition)</em></p>
+<h3 id="Chapter-6-Constraints-and-Triggers"><a href="#Chapter-6-Constraints-and-Triggers" class="headerlink" title="Chapter 6 - Constraints and Triggers"></a>Chapter 6 - Constraints and Triggers</h3><h3 id="1-Keys-and-Foreign-Key"><a href="#1-Keys-and-Foreign-Key" class="headerlink" title="1. Keys and Foreign Key"></a>1. Keys and Foreign Key</h3><h4 id="1-1-Declaring-Foreign-Key-Constraints"><a href="#1-1-Declaring-Foreign-Key-Constraints" class="headerlink" title="1.1. Declaring Foreign-Key Constraints"></a>1.1. Declaring Foreign-Key Constraints</h4><p>Define an attribute or attributes to be a key for a relation with the keywords <code>PRIMARY KEY</code> or <code>UNIQUE</code>.  </p>
+<span id="more"></span>
+<p>“foreign-key constraints,” assert that a value appearing in one relation must also appear in the primary-key component(s) of another relation.  </p>
+<p><code>REFERENCES &lt;table&gt;(&lt;attribute&gt;)</code><br><code>FOREIGN KEY (&lt;attributes&gt;) REFERENCES &lt;table&gt;(&lt;attributes&gt;)</code>  </p>
+<p>Studio(name, address, presC#)<br>MovieExec(name, address, cert#, netWorth)<br>Studio’s primary key is name and has a foreign key presC# that references cert# of relation MovieExec.<br>cert# in MovieExec must be a key of that relation.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- declare presC# directly to reference cert# as follows</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> Studio (</span><br><span class="line">    name <span class="type">CHAR</span>(<span class="number">30</span>) <span class="keyword">PRIMARY</span> KEY,</span><br><span class="line">    address <span class="type">VARCHAR</span>(<span class="number">255</span>),</span><br><span class="line">    presC# <span class="type">INT</span> <span class="keyword">REFERENCES</span> MovieExec(cert#)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>Or</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> Studio (</span><br><span class="line">    name <span class="type">CHAR</span>(<span class="number">30</span>) <span class="keyword">PRIMARY</span> KEY,</span><br><span class="line">    address <span class="type">VARCHAR</span>(<span class="number">255</span>),</span><br><span class="line">    presC# <span class="type">INT</span>,</span><br><span class="line">    <span class="keyword">FOREIGN</span> KEY (presC#) <span class="keyword">REFERENCES</span> MovieExec(cert#)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-2-Maintaining-Referential-Integrity"><a href="#1-2-Maintaining-Referential-Integrity" class="headerlink" title="1.2. Maintaining Referential Integrity"></a>1.2. Maintaining Referential Integrity</h4><ul>
+<li>The Default Policy</li>
+<li>The Cascade Policy</li>
+<li>The Set-Null Policy</li>
+</ul>
+<p>Studio(name, address, presC#)<br>MovieExec(name, address, cert#, netWorth)</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> Studio (</span><br><span class="line">    name <span class="type">CHAR</span>(<span class="number">30</span>) <span class="keyword">PRIMARY</span> KEY,</span><br><span class="line">    address <span class="type">VARCHAR</span>(<span class="number">255</span>),</span><br><span class="line">    presC# <span class="type">INT</span> <span class="keyword">REFERENCES</span> MovieExec(cert#)</span><br><span class="line">        <span class="keyword">ON</span> <span class="keyword">DELETE</span> <span class="keyword">SET</span> <span class="keyword">NULL</span></span><br><span class="line">        <span class="keyword">ON</span> <span class="keyword">UPDATE</span> CASCADE</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-3-Deferred-Checking-of-Constraints"><a href="#1-3-Deferred-Checking-of-Constraints" class="headerlink" title="1.3. Deferred Checking of Constraints"></a>1.3. Deferred Checking of Constraints</h4><p><code>DEFERRABLE</code> and <code>NOT DEFERRABLE</code><br><code>INITIALLY DEFERRED</code> and <code>INITIALLY IMMEDIATE</code></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> Studio (</span><br><span class="line">    name <span class="type">CHAR</span>(<span class="number">30</span>) <span class="keyword">PRIMARY</span> KEY,</span><br><span class="line">    address <span class="type">VARCHAR</span>(<span class="number">255</span>),</span><br><span class="line">    presC# <span class="type">INT</span> <span class="keyword">UNIQUE</span></span><br><span class="line">        <span class="keyword">REFERENCES</span> MovieExec(cert#)</span><br><span class="line">        DEFERRABLE INITIALLY DEFERRED</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- If a constraint has a name, say MyConstraint, then we can change a deferrable constraint from immediate to deferred by the SQL statement, and we can reverse the process by replacing DEFERRED to IMMEDIATE.</span></span><br><span class="line"><span class="keyword">SET</span> <span class="keyword">CONSTRAINT</span> MyConstraint DEFERRED;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-Constraints-on-Attributes-and-Tuples"><a href="#2-Constraints-on-Attributes-and-Tuples" class="headerlink" title="2. Constraints on Attributes and Tuples"></a>2. Constraints on Attributes and Tuples</h3><h4 id="2-1-Not-Null-Constraints"><a href="#2-1-Not-Null-Constraints" class="headerlink" title="2.1. Not-Null Constraints"></a>2.1. Not-Null Constraints</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> Studio (</span><br><span class="line">    name <span class="type">CHAR</span>(<span class="number">30</span>) <span class="keyword">PRIMARY</span> KEY,</span><br><span class="line">    address <span class="type">VARCHAR</span>(<span class="number">255</span>),</span><br><span class="line">    presC# <span class="type">INT</span> <span class="keyword">REFERENCES</span> MovieExec(cert#) <span class="keyword">NOT</span> <span class="keyword">NULL</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-2-Attribute-Based-CHECK-Constraints"><a href="#2-2-Attribute-Based-CHECK-Constraints" class="headerlink" title="2.2. Attribute-Based CHECK Constraints"></a>2.2. Attribute-Based CHECK Constraints</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- require that certificate numbers be at least six digits.</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> Studio (</span><br><span class="line">    name <span class="type">CHAR</span>(<span class="number">30</span>) <span class="keyword">PRIMARY</span> KEY,</span><br><span class="line">    address <span class="type">VARCHAR</span>(<span class="number">255</span>),</span><br><span class="line">    presC# <span class="type">INT</span> <span class="keyword">REFERENCES</span> MovieExec(cert#)</span><br><span class="line">                <span class="keyword">CHECK</span> (presC# <span class="operator">&gt;=</span> <span class="number">100000</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p>MovieStar(name, address, gender, birthdate)</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> MovieStar (</span><br><span class="line">    name <span class="type">CHAR</span>(<span class="number">30</span>),</span><br><span class="line">    address <span class="type">VARCHAR</span>(<span class="number">255</span>),</span><br><span class="line">    gender <span class="type">CHAR</span>(<span class="number">1</span>) <span class="keyword">CHECK</span> (gender <span class="keyword">IN</span> (<span class="string">&#x27;F&#x27;</span>, <span class="string">&#x27;M&#x27;</span>)),</span><br><span class="line">    birthdate <span class="type">DATE</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-3-Tuple-Based-CHECK-Constraints"><a href="#2-3-Tuple-Based-CHECK-Constraints" class="headerlink" title="2.3. Tuple-Based CHECK Constraints"></a>2.3. Tuple-Based CHECK Constraints</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> MovieStar (</span><br><span class="line">    name <span class="type">CHAR</span>(<span class="number">30</span>) <span class="keyword">PRIMARY</span> KEY,</span><br><span class="line">    address <span class="type">VARCHAR</span>(<span class="number">255</span>),</span><br><span class="line">    gender <span class="type">CHAR</span>(<span class="number">1</span>),</span><br><span class="line">    birthdate <span class="type">DATE</span>,</span><br><span class="line">    <span class="keyword">CHECK</span> (gender <span class="operator">=</span> ’F’ <span class="keyword">OR</span> name <span class="keyword">NOT</span> <span class="keyword">LIKE</span> ’Ms.<span class="operator">%</span>’)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-4-Comparison-of-Tuple-and-Attribute-Based-Constraints"><a href="#2-4-Comparison-of-Tuple-and-Attribute-Based-Constraints" class="headerlink" title="2.4. Comparison of Tuple- and Attribute-Based Constraints"></a>2.4. Comparison of Tuple- and Attribute-Based Constraints</h4><blockquote>
+<p>If a constraint on a tuple involves more than one attribute of that tuple, then it must be written as a tuple-based constraint. However, if the constraint involves only one attribute of the tuple, then it can be written as either a tuple- or attribute-based constraint.</p>
+</blockquote>
+<h3 id="3-Modification-of-Constraints"><a href="#3-Modification-of-Constraints" class="headerlink" title="3. Modification of Constraints"></a>3. Modification of Constraints</h3><h4 id="3-1-Giving-Names-to-Constraints"><a href="#3-1-Giving-Names-to-Constraints" class="headerlink" title="3.1. Giving Names to Constraints"></a>3.1. Giving Names to Constraints</h4><blockquote>
+<p>In order to modify or delete an existing constraint, it is necessary that the constraint have a name. To do so, we precede the constraint by the keyword <strong>CONSTRAINT</strong> and a name for the constraint.</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- write a line to name the constraint that says attribute name is a primary key</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> MovieStar (</span><br><span class="line">    name <span class="type">CHAR</span>(<span class="number">30</span>) <span class="keyword">CONSTRAINT</span> NameIsKey <span class="keyword">PRIMARY</span> KEY,</span><br><span class="line">    address <span class="type">VARCHAR</span>(<span class="number">255</span>),</span><br><span class="line">    gender <span class="type">CHAR</span>(<span class="number">1</span>),</span><br><span class="line">    birthdate <span class="type">DATE</span>,</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- name the attribute-based CHECK constraint</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> MovieStar (</span><br><span class="line">    name <span class="type">CHAR</span>(<span class="number">30</span>),</span><br><span class="line">    address <span class="type">VARCHAR</span>(<span class="number">255</span>),</span><br><span class="line">    gender <span class="type">CHAR</span>(<span class="number">1</span>) <span class="keyword">CONSTRAINT</span> NoAndro</span><br><span class="line">                   <span class="keyword">CHECK</span> (gender <span class="keyword">IN</span> (’F’, ’M’)),</span><br><span class="line">    birthdate <span class="type">DATE</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- rewriting of the tuple-based CHECK constraint to give that constraint a name</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> MovieStar (</span><br><span class="line">    name <span class="type">CHAR</span>(<span class="number">30</span>) <span class="keyword">PRIMARY</span> KEY,</span><br><span class="line">    address <span class="type">VARCHAR</span>(<span class="number">255</span>),</span><br><span class="line">    gender <span class="type">CHAR</span>(<span class="number">1</span>),</span><br><span class="line">    birthdate <span class="type">DATE</span>,</span><br><span class="line">    <span class="keyword">CONSTRAINT</span> RightTitle</span><br><span class="line">        <span class="keyword">CHECK</span> (gender <span class="operator">=</span> ’F’ <span class="keyword">OR</span> name <span class="keyword">NOT</span> <span class="keyword">LIKE</span> ’Ms.<span class="operator">%</span>’);</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-2-Altering-Constraints-on-Tables"><a href="#3-2-Altering-Constraints-on-Tables" class="headerlink" title="3.2. Altering Constraints on Tables"></a>3.2. Altering Constraints on Tables</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- drop the constraints</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> MovieStar <span class="keyword">DROP</span> <span class="keyword">CONSTRAINT</span> NameIsKey;</span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> MovieStar <span class="keyword">DROP</span> <span class="keyword">CONSTRAINT</span> NoAndro;</span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> MovieStar <span class="keyword">DROP</span> <span class="keyword">CONSTRAINT</span> RightTitle;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- add these constraints</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> MovieStar <span class="keyword">ADD</span> <span class="keyword">CONSTRAINT</span> NameIsKey</span><br><span class="line">    <span class="keyword">PRIMARY</span> KEY (name);</span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> MovieStar <span class="keyword">ADD</span> <span class="keyword">CONSTRAINT</span> NoAndro</span><br><span class="line">    <span class="keyword">CHECK</span> (gender <span class="keyword">IN</span> (’F’, ’M’));</span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> MovieStar <span class="keyword">ADD</span> <span class="keyword">CONSTRAINT</span> RightTitle</span><br><span class="line">    <span class="keyword">CHECK</span> (gender <span class="operator">=</span> ’F’ <span class="keyword">OR</span> name <span class="keyword">NOT</span> <span class="keyword">LIKE</span> ’Ms.<span class="operator">%</span>’);</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-Assertions"><a href="#4-Assertions" class="headerlink" title="4. Assertions"></a>4. Assertions</h3><p>• An assertion is a boolean-valued SQL expression that must be true at all times.<br>• A trigger is a series of actions that are associated with certain events, such as insertions into a particular relation, and that are performed whenever these events arise.</p>
+<h4 id="4-1-Creating-Assertions"><a href="#4-1-Creating-Assertions" class="headerlink" title="4.1. Creating Assertions"></a>4.1. Creating Assertions</h4><p><code>CREATE ASSERTION &lt;assertion-name&gt; CHECK (&lt;condition&gt;)</code></p>
+<h4 id="4-2-Using-Assertions"><a href="#4-2-Using-Assertions" class="headerlink" title="4.2. Using Assertions"></a>4.2. Using Assertions</h4><blockquote>
+<p>Any attributes referred to in the condition must be introduced in the assertion, typically by mentioning their relation in a select-from-where expression.</p>
+</blockquote>
+<p>MovieExec(name, address, cert#, netWorth)<br>Studio(name, address, presC#)</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- require that no one can become the president of a studio unless their net worth is at least $10,000,000</span></span><br><span class="line"><span class="keyword">CREATE</span> ASSERTION RichPres <span class="keyword">CHECK</span></span><br><span class="line">    (<span class="keyword">NOT</span> <span class="keyword">EXISTS</span></span><br><span class="line">        (<span class="keyword">SELECT</span> Studio.name</span><br><span class="line">        <span class="keyword">FROM</span> Studio, MovieExec</span><br><span class="line">        <span class="keyword">WHERE</span> presC# <span class="operator">=</span> cert# <span class="keyword">AND</span> netWorth <span class="operator">&lt;</span> <span class="number">10000000</span></span><br><span class="line">        )</span><br><span class="line">    );</span><br></pre></td></tr></table></figure>
+
+<p>Movies(title, year, length, genre, studioName, producerC#)</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- the total length of all movies by a given studio shall not exceed 10,000 minutes.</span></span><br><span class="line"><span class="keyword">CREATE</span> ASSERTION SumLength <span class="keyword">CHECK</span> (<span class="number">10000</span> <span class="operator">&gt;=</span> <span class="keyword">ALL</span></span><br><span class="line">    (<span class="keyword">SELECT</span> <span class="built_in">SUM</span>(length) <span class="keyword">FROM</span> Movies <span class="keyword">GROUP</span> <span class="keyword">BY</span> studioName)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- drop an assertion</span></span><br><span class="line"><span class="keyword">DROP</span> ASSERTION <span class="operator">&lt;</span>assertion name<span class="operator">&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="5-Triggers"><a href="#5-Triggers" class="headerlink" title="5. Triggers"></a>5. Triggers</h3><h4 id="5-1-Triggers-in-SQL"><a href="#5-1-Triggers-in-SQL" class="headerlink" title="5.1. Triggers in SQL"></a>5.1. Triggers in SQL</h4><p>MovieExec(name, address, cert#, netWorth)</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- The effect of this trigger is to foil any attempt to lower the net worth of a movie executive</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TRIGGER</span> NetWorthTrigger</span><br><span class="line">AFTER <span class="keyword">UPDATE</span> <span class="keyword">OF</span> netWorth <span class="keyword">ON</span> MovieExec</span><br><span class="line"><span class="keyword">REFERENCING</span></span><br><span class="line">    <span class="keyword">OLD</span> <span class="type">ROW</span> <span class="keyword">AS</span> OldTuple,</span><br><span class="line">    <span class="keyword">NEW</span> <span class="type">ROW</span> <span class="keyword">AS</span> NewTuple</span><br><span class="line"><span class="keyword">FOR</span> <span class="keyword">EACH</span> <span class="type">ROW</span> <span class="comment">-- this trigger is executed once for each updated tuple</span></span><br><span class="line"><span class="keyword">WHEN</span> (OldTuple.netWorth <span class="operator">&gt;</span> NewTuple.netWorth)</span><br><span class="line">    <span class="keyword">UPDATE</span> MovieExec</span><br><span class="line">    <span class="keyword">SET</span> netWorth <span class="operator">=</span> OldTuple.netWorth</span><br><span class="line">    <span class="keyword">WHERE</span> cert# <span class="operator">=</span> NewTuple.cert#;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Besides <em>UPDATE</em>, other possible triggering events are <em>INSERT</em> and <em>DELETE</em>. The <em>OF netWorth</em> clause is optional for <em>UPDATE</em> events, and if present defines the event to be only an update of the attribute(s) listed after the keyword <em>OF</em>. An <em>OF</em> clause is not permitted for <em>INSERT</em> or <em>DELETE</em> events; these events make sense for entire tuples only.</p>
+</blockquote>
+<blockquote>
+<p>If the triggering event is an insertion, then we may use a <em>NEW ROW AS</em> clause to give a name for the inserted tuple, and <em>OLD ROW AS</em> is disallowed. Conversely, on a deletion <em>OLD ROW AS</em> is used to name the deleted tuple and <em>NEW ROW AS</em> is disallowed</p>
+</blockquote>
+<blockquote>
+<p>If we update an entire table with a SQL update statement, a statement-level update trigger would execute only once, while a row-level trigger would execute once for each tuple to which an update was applied.</p>
+</blockquote>
+<h4 id="5-2-The-Options-for-Trigger-Design"><a href="#5-2-The-Options-for-Trigger-Design" class="headerlink" title="5.2. The Options for Trigger Design"></a>5.2. The Options for Trigger Design</h4><p>MovieExec(name, address, cert#, netWorth)</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- prevent the average net worth of movie executives from dropping below $500,000. show the trigger for the update event.</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TRIGGER</span> AvgNetWorthTrigger</span><br><span class="line">AFTER <span class="keyword">UPDATE</span> <span class="keyword">OF</span> netWorth <span class="keyword">ON</span> MovieExec</span><br><span class="line"><span class="keyword">REFERENCING</span></span><br><span class="line">    <span class="keyword">OLD</span> <span class="keyword">TABLE</span> <span class="keyword">AS</span> OldStuff,</span><br><span class="line">    <span class="keyword">NEW</span> <span class="keyword">TABLE</span> <span class="keyword">AS</span> NewStuff</span><br><span class="line"><span class="keyword">FOR</span> <span class="keyword">EACH</span> STATEMENT <span class="comment">-- this trigger is executed once for a statement, regardless of how many tuples are modified</span></span><br><span class="line"><span class="keyword">WHEN</span> (<span class="number">500000</span> <span class="operator">&gt;</span> (<span class="keyword">SELECT</span> <span class="built_in">AVG</span>(netWorth) <span class="keyword">FROM</span> MovieExec)) <span class="comment">-- This condition is satisfied if the average net worth after the update is less than $500,000.</span></span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line">    <span class="keyword">DELETE</span> <span class="keyword">FROM</span> MovieExec</span><br><span class="line">    <span class="keyword">WHERE</span> (name, address, cert#, netWorth) <span class="keyword">IN</span> NewStuff; <span class="comment">-- remove all the new tuples</span></span><br><span class="line">    <span class="keyword">INSERT</span> <span class="keyword">INTO</span> MovieExec</span><br><span class="line">        (<span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> OldStuff); <span class="comment">-- restore the old relation MovieExec</span></span><br><span class="line"><span class="keyword">END</span>;</span><br></pre></td></tr></table></figure>
+
+<p>Movies(title, year, length, genre, studioName, producerC#)</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TRIGGER</span> FixYearTrigger</span><br><span class="line">BEFORE <span class="keyword">INSERT</span> <span class="keyword">ON</span> Movies</span><br><span class="line"><span class="keyword">REFERENCING</span> <span class="comment">-- define names for both the new row being inserted and a table consisting of only that row</span></span><br><span class="line">    <span class="keyword">NEW</span> <span class="type">ROW</span> <span class="keyword">AS</span> NewRow</span><br><span class="line">    <span class="keyword">NEW</span> <span class="keyword">TABLE</span> <span class="keyword">AS</span> NewStuff</span><br><span class="line"><span class="keyword">FOR</span> <span class="keyword">EACH</span> <span class="type">ROW</span> <span class="comment">-- the trigger executes once for each inserted tuple</span></span><br><span class="line"><span class="keyword">WHEN</span> NewRow.year <span class="keyword">IS</span> <span class="keyword">NULL</span></span><br><span class="line"><span class="keyword">UPDATE</span> NewStuff <span class="keyword">SET</span> <span class="keyword">year</span> <span class="operator">=</span> <span class="number">1915</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><p>Database Systems-The Complete Book(2nd ed, 2014, Pearson)</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Relational-Algebra/" rel="tag"># Relational Algebra</a>
+              <a href="/tags/SQL/" rel="tag"># SQL</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2019/10/06/Notes-of-Database-5/" rel="prev" title="Reading Notes of Database Systems (5)">
+                  <i class="fa fa-chevron-left"></i> Reading Notes of Database Systems (5)
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2019/07/28/Notes-of-Database-3/" rel="next" title="Reading Notes of Database Systems (3)">
+                  Reading Notes of Database Systems (3) <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zhqyvvn</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"zhqyvvn","repo":"zhqyvvn.github.io","client_id":"c28a59a6f171f3e27313","client_secret":"a31ffbb812ba7a28cd66045ae2a68e017e9d539f","admin_user":"zhqyvvn","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"e19f41a1ac4448fdac2a5750135f3586"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

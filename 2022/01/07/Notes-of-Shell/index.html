@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"zhqyvvn.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":15,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":true,"transition":{"menu_item":"flipInX","post_block":"none","post_header":"flipInX","post_body":"none","coll_header":"flipInX","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="command &gt;file runs command but with its standard output redirected into the file filecmd1 | cmd2 runs both commands, with the standard output of cmd1 connected into the pipe, and the standard input">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Studying Notes of Shell">
+<meta property="og:url" content="http://zhqyvvn.github.io/2022/01/07/Notes-of-Shell/index.html">
+<meta property="og:site_name" content="Tech Knowledge Sharing">
+<meta property="og:description" content="command &gt;file runs command but with its standard output redirected into the file filecmd1 | cmd2 runs both commands, with the standard output of cmd1 connected into the pipe, and the standard input">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-01-08T00:12:51.000Z">
+<meta property="article:modified_time" content="2023-01-30T03:13:28.593Z">
+<meta property="article:author" content="zhqyvvn">
+<meta property="article:tag" content="Shell">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://zhqyvvn.github.io/2022/01/07/Notes-of-Shell/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://zhqyvvn.github.io/2022/01/07/Notes-of-Shell/","path":"2022/01/07/Notes-of-Shell/","title":"Studying Notes of Shell"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Studying Notes of Shell | Tech Knowledge Sharing</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162128119-1"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-162128119-1","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+
+  <script async defer data-website-id="" src=""></script>
+
+  <script defer data-domain="" src=""></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Tech Knowledge Sharing</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-posts"><a href="/archives/" rel="section"><i class="fa fa-book fa-fw"></i>posts</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-folder fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#case"><span class="nav-text">case</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cat"><span class="nav-text">cat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cp"><span class="nav-text">cp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#comm"><span class="nav-text">comm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#find"><span class="nav-text">find</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#echo"><span class="nav-text">echo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#for"><span class="nav-text">for</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gcc"><span class="nav-text">gcc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#grep"><span class="nav-text">grep</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#if"><span class="nav-text">if</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#kill"><span class="nav-text">kill</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ls"><span class="nav-text">ls</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mv"><span class="nav-text">mv</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pwd"><span class="nav-text">pwd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#read"><span class="nav-text">read</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rm"><span class="nav-text">rm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sed"><span class="nav-text">sed</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sort"><span class="nav-text">sort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tail"><span class="nav-text">tail</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#test"><span class="nav-text">test</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tr"><span class="nav-text">tr</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#uniq"><span class="nav-text">uniq</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#variables"><span class="nav-text">variables</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wc"><span class="nav-text">wc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#while"><span class="nav-text">while</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#xargs"><span class="nav-text">xargs</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="zhqyvvn"
+      src="https://avatars0.githubusercontent.com/u/38484412?s=460&v=4">
+  <p class="site-author-name" itemprop="name">zhqyvvn</p>
+  <div class="site-description" itemprop="description">I'm a Java developer wearing glasses ...coz I don't C#</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zhqyvvn" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zhqyvvn" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:zhqyvvn@gmail.com" title="E-Mail → mailto:zhqyvvn@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="Back to top">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://zhqyvvn.github.io/2022/01/07/Notes-of-Shell/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/38484412?s=460&v=4">
+      <meta itemprop="name" content="zhqyvvn">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tech Knowledge Sharing">
+      <meta itemprop="description" content="I'm a Java developer wearing glasses ...coz I don't C#">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Studying Notes of Shell | Tech Knowledge Sharing">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Studying Notes of Shell
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-01-07 19:12:51" itemprop="dateCreated datePublished" datetime="2022-01-07T19:12:51-05:00">2022-01-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-01-29 22:13:28" itemprop="dateModified" datetime="2023-01-29T22:13:28-05:00">2023-01-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Studying-Notes/" itemprop="url" rel="index"><span itemprop="name">Studying Notes</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Studying-Notes/Shell/" itemprop="url" rel="index"><span itemprop="name">Shell</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><code>command &gt;file</code> runs <code>command</code> but with its standard output redirected into the file <code>file</code><br><code>cmd1 | cmd2</code> runs both commands, with the standard output of <code>cmd1</code> connected into the <code>pipe</code>, and the standard input of <code>cmd2</code> connected so as to come out of the <code>pipe</code>.</p>
+<span id="more"></span> 
+<h3 id="case"><a href="#case" class="headerlink" title="case"></a>case</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#t4</span></span><br><span class="line"><span class="keyword">for</span> i</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="keyword">case</span> <span class="variable">$i</span> <span class="keyword">in</span></span><br><span class="line">        hello*)</span><br><span class="line">            <span class="built_in">echo</span> Nice to meet you!</span><br><span class="line">            ;;</span><br><span class="line">        goodbye)</span><br><span class="line">            <span class="built_in">echo</span> Thanks <span class="keyword">for</span> visiting!</span><br><span class="line">            ;;</span><br><span class="line">        *)</span><br><span class="line">            <span class="built_in">echo</span> well, <span class="variable">$i</span> to you too!</span><br><span class="line">            ;;</span><br><span class="line">    <span class="keyword">esac</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="comment">#$ sh t4 hellooo</span></span><br><span class="line"><span class="comment"># Nice to meet you!</span></span><br><span class="line"><span class="comment">#$ sh t4 bye</span></span><br><span class="line"><span class="comment"># well, bye to you too!</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="cat"><a href="#cat" class="headerlink" title="cat"></a>cat</h3><figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cat</span> hello.c <span class="comment">#display codes line by line</span></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cat</span> hello &gt; newhello <span class="comment">#redirect output of hello to new hello</span></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="comment">#−n to number the lines, −s to eliminate multiple blank lines.</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="cp"><a href="#cp" class="headerlink" title="cp"></a>cp</h3><figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cp</span> hello bloop/nothello <span class="comment">#copy hello to bloop/nothello</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="comm"><a href="#comm" class="headerlink" title="comm"></a>comm</h3><figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">comm</span> file1.txt file2.txt <span class="comment">#1st col:lines unique in 1st file; 2st col:lines unique in 2nd file; 3rd column:lines in common</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="find"><a href="#find" class="headerlink" title="find"></a>find</h3><figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">find mydir -name file.txt -<span class="built_in">print</span> <span class="comment">#find a file by name in a directory tree</span></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">find mydir/file.txt</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">find mydir -mtime -30 -<span class="built_in">exec</span> <span class="built_in">ls</span> -ld <span class="string">&#x27;&#123;&#125;&#x27;</span> <span class="string">&#x27;;&#x27;</span> <span class="comment">#Find files which are modified within the last 30 days, and execute the &quot;ls −l&quot; command on them. But they might be directories, so we need the &quot;−d&quot; option to ls as well.</span></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">find mydir -<span class="built_in">type</span> f -mtime -30 -<span class="built_in">exec</span> <span class="built_in">ls</span> -ld <span class="string">&#x27;&#123;&#125;&#x27;</span> <span class="string">&#x27;;&#x27;</span> <span class="comment">#only finding plain files (e.g. excluding directories) (so the &quot;−d&quot; option to ls is no longer important, but doesn&#x27;t hurt either)</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="echo"><a href="#echo" class="headerlink" title="echo"></a>echo</h3><figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">echo</span> hello &gt; newhello <span class="comment">#&quot;hello&quot; as plaintext in newhello, or rewrite newhello with &quot;hello&quot;</span></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">echo</span> -n <span class="string">&#x27;Please enter repeat count: &#x27;</span> <span class="comment">#−n means not to output the terminating newline.</span></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">echo</span> foo; <span class="built_in">echo</span> bar; <span class="built_in">echo</span> baz &gt;fbb <span class="comment">#Only &quot;echo baz&quot; is redirected.It&#x27;s an operator precedence issue (precedence of &quot;;&quot; versus &quot;&gt;&quot;).</span></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">(<span class="built_in">echo</span> foo; <span class="built_in">echo</span> bar; <span class="built_in">echo</span> baz) &gt;fbb <span class="comment">#The shell implements parentheses to change the precedence</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="for"><a href="#for" class="headerlink" title="for"></a>for</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> hello goodbye</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="variable">$i</span>, world</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="comment">#hello, world</span></span><br><span class="line"><span class="comment">#goodbye,world</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> `<span class="built_in">seq</span> 1 4`</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="variable">$i</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="comment"># 1 ... 4</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> `<span class="built_in">seq</span> 1 100`</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="built_in">sum</span>=`<span class="built_in">expr</span> <span class="variable">$sum</span> + <span class="variable">$i</span>`</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="comment">#sum: 5050</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="gcc"><a href="#gcc" class="headerlink" title="gcc"></a>gcc</h3><figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">gcc hello.c <span class="comment">#compile c codes</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="grep"><a href="#grep" class="headerlink" title="grep"></a>grep</h3><figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">grep H composers <span class="comment">#outputs lines which match &#x27;Q&#x27; in composers</span></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">who</span> | grep ajr <span class="comment">#outputs lines which match `ajr` in log of `who`</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="if"><a href="#if" class="headerlink" title="if"></a>if</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="built_in">test</span> 5 -lt 2</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> 5 less than 2</span><br><span class="line"><span class="keyword">else</span> <span class="comment">#or elif</span></span><br><span class="line">    <span class="built_in">echo</span> 2 less than 5</span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="kill"><a href="#kill" class="headerlink" title="kill"></a>kill</h3><figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">kill</span> -STOP [pid]</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">kill</span> -CONT [pid]</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">kill</span> -INT [pid]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h3><figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">ls</span> -a <span class="comment">#check files begin with &#x27;.&#x27;</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="mv"><a href="#mv" class="headerlink" title="mv"></a>mv</h3><figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">mv</span> bloop/nothello bloop/yeshello <span class="comment">#move bloop/nothello to bloop/yeshello</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="pwd"><a href="#pwd" class="headerlink" title="pwd"></a>pwd</h3><figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">pwd</span> <span class="comment">#get current absolute path</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="read"><a href="#read" class="headerlink" title="read"></a>read</h3><figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">read</span> x y</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">foo bar baz <span class="comment">#random inputs</span></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">echo</span> <span class="variable">$x</span> <span class="comment">#-&gt; foo</span></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">echo</span> <span class="variable">$y</span> <span class="comment">#-&gt; bar baz</span></span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">read</span> x y</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">foo <span class="comment">#random inputs</span></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">echo</span> <span class="variable">$x</span> <span class="comment">#-&gt; foo</span></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">echo</span> <span class="variable">$y</span> <span class="comment">#-&gt; (empty)</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="rm"><a href="#rm" class="headerlink" title="rm"></a>rm</h3><figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">\<span class="built_in">rm</span> -r x <span class="comment">#\ -&gt; bypass alias: alias rm=&#x27;rm -i&#x27;. -i -&gt; interactive</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="sed"><a href="#sed" class="headerlink" title="sed"></a>sed</h3><figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cat</span> composers | sed s/ee/EEE/ g <span class="comment">#replace &quot;ee&quot; by &quot;EEE&quot;. sed - stream editor(line by line). g - global (if not, only 1st)</span></span>  </span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cat</span> composers | sed <span class="string">&#x27;s/\(.*\) \(.*\)/\2, \1/&#x27;</span> | <span class="built_in">sort</span> <span class="comment">#&quot;A B&quot; -&gt; &quot;B, A&quot;</span></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">sed <span class="string">&#x27;s/Fred[a-z]*/Wilma/g&#x27;</span> people <span class="comment">#&quot;[a-z]*&quot; above means &quot;any number of lower-case letters&quot;, whereas in the glob notation it would mean one lower-case letter followed by anything.</span></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">sed 5d people <span class="comment">#delete the 5th line in &quot;people&quot; file</span></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">sed /pattern/d people <span class="comment">#/pattern/d will remove lines matching the pattern.</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="sort"><a href="#sort" class="headerlink" title="sort"></a>sort</h3><figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cat</span> composers | <span class="built_in">sort</span> <span class="comment">#sort by 1st letter</span></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cat</span> composers | <span class="built_in">sort</span> -k2 -f <span class="comment">#-k2 sort by 2nd field. -f case insensitive. −n does a numeric sort (12 after 2)</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="tail"><a href="#tail" class="headerlink" title="tail"></a>tail</h3><figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">tail</span> -40 /var/log/messages <span class="comment">#head or tail-the first or last n lines of a file (n=10 by default). Here n=40</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="test"><a href="#test" class="headerlink" title="test"></a>test</h3><figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">x=5</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">test</span> <span class="variable">$x</span> -lt 3</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">echo</span> $? <span class="comment">#-&gt; 1 (fail)</span></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">test</span> 3 -lt <span class="variable">$x</span></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">echo</span> $? <span class="comment">#-&gt; 0 (succeed)</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="tr"><a href="#tr" class="headerlink" title="tr"></a>tr</h3><figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">tr</span> A-Z a-z <span class="comment">#tr-character-level substitution. convert from lower case to upper case</span></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">tr</span> -cs a-zA-Z0-9 <span class="string">&#x27;\012&#x27;</span> &lt;file <span class="comment">#replace all the characters except a-zA-Z0-9 to &#x27;\012&#x27; and squeeze. -c a-zA-Z0-9 -&gt; all the characters except a-zA-Z0-9. -s &#x27;\012&#x27; -&gt; Repeated continuous &#x27;\012&#x27; should be squeezed to a single &#x27;\012&#x27;</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="uniq"><a href="#uniq" class="headerlink" title="uniq"></a>uniq</h3><figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">tr</span> -cs a-zA-Z0-9 <span class="string">&#x27;\012&#x27;</span> &lt;file | <span class="built_in">tr</span> A-Z a-z | <span class="built_in">sort</span> | <span class="built_in">uniq</span> -c | <span class="built_in">sort</span> -n <span class="comment">#uniq -&gt; Collapse adjacent identical lines. Used in the example to give us a word-frequency count in a document</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="variables"><a href="#variables" class="headerlink" title="variables"></a>variables</h3><figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">i=4 <span class="comment">#if spaces between, like &quot;i = 4&quot; -&gt; &quot;i: Command not found&quot;</span></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">echo</span> <span class="variable">$i</span> <span class="comment">#echo 4</span></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cat</span> <span class="variable">$i</span> <span class="comment">#-&gt; &quot;cat: 4: No such file or directory&quot;</span></span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">i=i+1</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">echo</span> <span class="variable">$i</span> <span class="comment">#-&gt; i+1 (Here, i+1 is string &quot;i+1&quot;)</span></span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">i=4</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">i=<span class="variable">$i</span>+1</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">echo</span> <span class="variable">$i</span> <span class="comment">#-&gt; 4+1 (Here, 4+1 is string &quot;4+1&quot;)</span></span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">expr</span> 4 + 1 <span class="comment">#-&gt; 5</span></span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">i=`<span class="built_in">expr</span> 4 + 1`</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">echo</span> <span class="variable">$i</span> <span class="comment">#-&gt; 5</span></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">i = `<span class="built_in">expr</span> <span class="variable">$i</span> + 1`</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">echo</span> <span class="variable">$i</span> <span class="comment">#-&gt; 6</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="wc"><a href="#wc" class="headerlink" title="wc"></a>wc</h3><figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">wc</span> -l hello.c <span class="comment">#show number of lines of codes</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="while"><a href="#while" class="headerlink" title="while"></a>while</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">i=0</span><br><span class="line"><span class="keyword">while</span> <span class="built_in">test</span> <span class="variable">$i</span> -lt 10</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    i=`<span class="built_in">expr</span> <span class="variable">$i</span> + 1`</span><br><span class="line">    <span class="built_in">echo</span> <span class="variable">$i</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="comment">#1 ... 10</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="xargs"><a href="#xargs" class="headerlink" title="xargs"></a>xargs</h3><figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">fakelpq | <span class="built_in">cut</span> -f1 | xargs fakelprm <span class="comment">#get 1st column of text fakelpq, and pass as arguments of fakelprm (one time per line)</span></span></span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Shell/" rel="tag"># Shell</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/02/19/Notes-of-Software-Testing/" rel="prev" title="Studying Notes of Software Testing">
+                  <i class="fa fa-chevron-left"></i> Studying Notes of Software Testing
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/12/18/Leetcode-15-Graph/" rel="next" title="Leetcode Solutions (15): Graph">
+                  Leetcode Solutions (15): Graph <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zhqyvvn</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"zhqyvvn","repo":"zhqyvvn.github.io","client_id":"c28a59a6f171f3e27313","client_secret":"a31ffbb812ba7a28cd66045ae2a68e017e9d539f","admin_user":"zhqyvvn","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"890607a015071d4d7b2cf620a8f6cc8a"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
