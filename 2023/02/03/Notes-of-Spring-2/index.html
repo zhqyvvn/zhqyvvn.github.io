@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"zhqyvvn.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":15,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":true,"transition":{"menu_item":"flipInX","post_block":"none","post_header":"flipInX","post_body":"none","coll_header":"flipInX","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="1. Mapping Requests in SpringIn order to provide a response to a request, the server maps the request to an endpoint. In Spring, the class is marked as a controller and each of its methods is associat">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Studying Notes of Spring (2) - Spring Controllers">
+<meta property="og:url" content="http://zhqyvvn.github.io/2023/02/03/Notes-of-Spring-2/index.html">
+<meta property="og:site_name" content="Tech Knowledge Sharing">
+<meta property="og:description" content="1. Mapping Requests in SpringIn order to provide a response to a request, the server maps the request to an endpoint. In Spring, the class is marked as a controller and each of its methods is associat">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-02-04T04:44:12.000Z">
+<meta property="article:modified_time" content="2023-02-04T05:15:51.944Z">
+<meta property="article:author" content="zhqyvvn">
+<meta property="article:tag" content="Spring">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://zhqyvvn.github.io/2023/02/03/Notes-of-Spring-2/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://zhqyvvn.github.io/2023/02/03/Notes-of-Spring-2/","path":"2023/02/03/Notes-of-Spring-2/","title":"Studying Notes of Spring (2) - Spring Controllers"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Studying Notes of Spring (2) - Spring Controllers | Tech Knowledge Sharing</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162128119-1"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-162128119-1","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+
+  <script async defer data-website-id="" src=""></script>
+
+  <script defer data-domain="" src=""></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Tech Knowledge Sharing</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-posts"><a href="/archives/" rel="section"><i class="fa fa-book fa-fw"></i>posts</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-folder fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Mapping-Requests-in-Spring"><span class="nav-text">1. Mapping Requests in Spring</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Defining-Base-Paths"><span class="nav-text">2. Defining Base Paths</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Using-HTTP-Method-Annotations"><span class="nav-text">3. Using HTTP Method Annotations</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Using-Query-Parameters"><span class="nav-text">4. Using Query Parameters</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-Using-Template-Path-Variables"><span class="nav-text">5. Using Template Path Variables</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-Deserializing-into-Objects"><span class="nav-text">6. Deserializing into Objects</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-HTTP-Status-Code"><span class="nav-text">7. HTTP Status Code</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-Fine-Tuning-Responses-with-ResponseStatus"><span class="nav-text">8. Fine Tuning Responses with @ResponseStatus</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-Exception-Handling-in-Spring"><span class="nav-text">9. Exception Handling in Spring</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Summary"><span class="nav-text">Summary</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Source"><span class="nav-text">Source</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="zhqyvvn"
+      src="https://avatars0.githubusercontent.com/u/38484412?s=460&v=4">
+  <p class="site-author-name" itemprop="name">zhqyvvn</p>
+  <div class="site-description" itemprop="description">I'm a Java developer wearing glasses ...coz I don't C#</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">36</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">26</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zhqyvvn" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zhqyvvn" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:zhqyvvn@gmail.com" title="E-Mail → mailto:zhqyvvn@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="Back to top">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://zhqyvvn.github.io/2023/02/03/Notes-of-Spring-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/38484412?s=460&v=4">
+      <meta itemprop="name" content="zhqyvvn">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tech Knowledge Sharing">
+      <meta itemprop="description" content="I'm a Java developer wearing glasses ...coz I don't C#">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Studying Notes of Spring (2) - Spring Controllers | Tech Knowledge Sharing">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Studying Notes of Spring (2) - Spring Controllers
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2023-02-03 23:44:12" itemprop="dateCreated datePublished" datetime="2023-02-03T23:44:12-05:00">2023-02-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-02-04 00:15:51" itemprop="dateModified" datetime="2023-02-04T00:15:51-05:00">2023-02-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Studying-Notes/" itemprop="url" rel="index"><span itemprop="name">Studying Notes</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Studying-Notes/Spring/" itemprop="url" rel="index"><span itemprop="name">Spring</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h3 id="1-Mapping-Requests-in-Spring"><a href="#1-Mapping-Requests-in-Spring" class="headerlink" title="1. Mapping Requests in Spring"></a>1. Mapping Requests in Spring</h3><p>In order to provide a response to a request, the server maps the request to an endpoint. In Spring, the class is marked as a controller and each of its methods is associated with an endpoint. The method is called to formulate a response to each request. This is facilitated by two important annotations:</p>
+<span id="more"></span>
+<ul>
+<li>The <code>@RestController</code> annotation is used to declare a <em>class</em> as a controller that can provide application-specific types of data as part of an HTTP response</li>
+<li>The <code>@RequestMapping</code> annotation is used to wire request types and endpoints to specific class <em>methods</em>.</li>
+</ul>
+<p>The <code>@RestController</code> annotation should be added to each class that will handle responses to HTTP requests. The <code>@RestController</code> combines the functionality of two separate annotations, <code>@Controller</code> and <code>@ResponseBody</code>:</p>
+<ul>
+<li><code>@Controller</code> is used to make a <em>class</em> identifiable to Spring as a component of the web application.</li>
+<li><code>@ResponseBody</code> tells Spring to convert the return values of a controller’s methods to <code>JSON</code> and <em>bind</em> that <code>JSON</code> to the HTTP response body. Since almost every major programming language offers some type of <code>JSON</code> (JavaScript Object Notation) support, we can easily take an object created in Spring and translate it to <code>JSON</code> which can be easily parsed in the HTML and displayed on the page.</li>
+</ul>
+<p><code>@RequestMapping</code> accepts several arguments. The first, and perhaps most important, is the path. The path argument is used to determine where requests are mapped. For example, if a user makes a request to get a “book” resource, the server will send the request to a method with the annotation <code>@RequestMapping(path = &quot;/book&quot;)</code> and that method would provide the response.</p>
+<p>The <code>@RequestMapping</code> annotation also accepts several other arguments including <em>method</em>, <em>params</em>, and <em>consumes</em>:</p>
+<ul>
+<li><code>method</code>: allows the developer to specify which HTTP method should be used when accessing the controller method. The most common are <code>RequestMethod.GET</code>, <code>...POST</code>, <code>...PUT</code>, and <code>...DELETE</code>. Since this is an optional argument, if we do not specify an HTTP method it will be defaulted to <code>GET</code>.</li>
+<li><code>params</code>: filters requests based on given parameters.</li>
+<li><code>consumes</code>: used to specify which media type can be consumed; some common media types are <code>&quot;text/plain&quot;</code>, <code>&quot;application/JSON&quot;</code>, etc.<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">VirtualLibrary</span>&#123;</span><br><span class="line"> </span><br><span class="line">  <span class="meta">@RequestMapping(&quot;/books/all&quot;, RequestMethod.GET)</span></span><br><span class="line">  <span class="keyword">public</span> Book <span class="title function_">getAllBooks</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> getBook();</span><br><span class="line">  &#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="2-Defining-Base-Paths"><a href="#2-Defining-Base-Paths" class="headerlink" title="2. Defining Base Paths"></a>2. Defining Base Paths</h3><p>When the <code>@RequestMapping</code> data annotation is used at the class level, the specified path argument will become the base path. For example, a class with the data annotation <code>@RequestMapping(&quot;/books&quot;)</code> will map all appropriate requests to this class, and in this case, <code>“/books”</code> becomes the base path. In the example shown below, <code>“/books”</code> is now the base path and the <code>getBookThumbnails</code> method is associated with the endpoint <code>“/books/thumbnails”</code>:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/books&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">VirtualLibrary</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="meta">@RequestMapping(value = &quot;/thumbnails&quot;, method = RequestMethod.GET)</span></span><br><span class="line">  <span class="keyword">public</span> String[] getBookThumbnails() &#123;</span><br><span class="line">    <span class="comment">//returns thumbnails for all available titles</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Note: When specifying a selection from the <code>RequestMethod</code> enum, be sure to import the annotation using:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">org.springframework.web.bind.annotation.RequestMethod</span><br></pre></td></tr></table></figure>
+
+<p>Parameters of <code>@RequestMapping</code> can be removed if it is the endpoint of the GET request to the base path:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/superHeroes&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SuperHeroController</span> &#123;</span><br><span class="line">    ...</span><br><span class="line">    <span class="meta">@RequestMapping</span></span><br><span class="line">    <span class="keyword">public</span> Iterable&lt;SuperHero&gt; <span class="title function_">getSuperHeros</span><span class="params">()</span> &#123;</span><br><span class="line">        Iterable&lt;SuperHero&gt; superHeroes = superHeroRepository.findAll();</span><br><span class="line">        <span class="keyword">return</span> superHeroes;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-Using-HTTP-Method-Annotations"><a href="#3-Using-HTTP-Method-Annotations" class="headerlink" title="3. Using HTTP Method Annotations"></a>3. Using HTTP Method Annotations</h3><p>In addition to using the method argument of the <code>@RequestMapping</code> annotation, Spring also offers several annotations which can be used to map to common request types. These annotations perform the same function as <code>@RequestMapping</code>. As shown in the example below, using the path and method argument of the <code>@RequestMapping</code> annotation is equivalent to just passing in a path to one of the HTTP method annotations. The four common HTTP methods we use to interact with resources are <code>GET</code>, <code>POST</code>, <code>PUT</code>, and <code>DELETE</code>:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping(&quot;/about&quot;, method = RequestMethod.GET)</span></span><br></pre></td></tr></table></figure>
+<p>…is equivalent to…</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@GetMapping(&quot;/about&quot;)</span></span><br></pre></td></tr></table></figure>
+<p>See below for a table of helper methods and the requests to which they map.</p>
+<table>
+<thead>
+<tr>
+<th>HTTP Method Annotation</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>@GetMapping</td>
+<td>Used to specify GET requests to retrieve resources</td>
+</tr>
+<tr>
+<td>@PostMapping</td>
+<td>Used to specify POST requests to create new resources</td>
+</tr>
+<tr>
+<td>@PutMapping</td>
+<td>Used to specify PUT requests to update existing resources</td>
+</tr>
+<tr>
+<td>@DeleteMapping</td>
+<td>Used to specify DELETE requests to remove specific resources</td>
+</tr>
+</tbody></table>
+<p>Parameters of <code>@GetMapping</code> can be removed if it is the endpoint of the GET request to the base path:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/superHeroes&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SuperHeroController</span> &#123;</span><br><span class="line">    ...</span><br><span class="line">    <span class="meta">@GetMapping()</span></span><br><span class="line">    <span class="keyword">public</span> Iterable&lt;SuperHero&gt; <span class="title function_">getSuperHeros</span><span class="params">()</span> &#123;</span><br><span class="line">        Iterable&lt;SuperHero&gt; superHeroes = superHeroRepository.findAll();</span><br><span class="line">    <span class="keyword">return</span> superHeroes;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-Using-Query-Parameters"><a href="#4-Using-Query-Parameters" class="headerlink" title="4. Using Query Parameters"></a>4. Using Query Parameters</h3><p>When users need to pass data to the server, the term we use to describe the process is called binding. When the user submits their request, we need a way to bind their entry to the endpoint that will provide the response. </p>
+<p><code>@RequestParam</code> is an annotation that can be used at the <em>method</em> parameter level. It allows us to parse query parameters and capture those parameters as method arguments. We also have the option of defining a default value for the method argument in case a value is not received from the client.</p>
+<p>In this example, let’s say the user submits their request for a book with 2 authors and a publishing year of 1995.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">libraryapp.com/book?author_count=2&amp;published_year=1995</span><br></pre></td></tr></table></figure>
+<p>The <code>author_count</code> and <code>published_year</code> values would map to the method parameters as follows:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@GetMapping(&quot;/book&quot;)</span></span><br><span class="line"><span class="keyword">public</span> Book <span class="title function_">isBookAvailable</span><span class="params">(<span class="meta">@RequestParam</span> <span class="type">int</span> author_count, <span class="meta">@RequestParam</span> <span class="type">int</span> published_year)</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> books.find(author_count, published_year);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-Using-Template-Path-Variables"><a href="#5-Using-Template-Path-Variables" class="headerlink" title="5. Using Template Path Variables"></a>5. Using Template Path Variables</h3><p><code>@PathVariable</code> maps template variables in the request URI directly to a method’s parameters. For example, we could define a template path:</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">/books/</span>&#123;id&#125;</span><br></pre></td></tr></table></figure>
+<p>and use the URI</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">localhost</span>:<span class="number">4001</span>/books/<span class="number">28937</span></span><br></pre></td></tr></table></figure>
+<p>to pass the path variable “28937” to a method’s id parameter. On the server side, we would have an endpoint that looks up books by ID as follows:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@GetMapping(&quot;/&#123;id&#125;&quot;)</span></span><br><span class="line"><span class="keyword">public</span> Book <span class="title function_">isBookAvailable</span><span class="params">(<span class="meta">@PathVariable</span> <span class="type">int</span> id)</span>  &#123;</span><br><span class="line">  <span class="keyword">return</span> book.findByID(id);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>@RequestParam</code> captures the id included in the URI <code>/books?id=28937</code>, and <code>@PathVariable</code> captures the id included in the URI <code>/books/28937</code> as long as the path includes the <code>&#123;id&#125;</code> variable in <code>books/&#123;id&#125;</code>.</p>
+<h3 id="6-Deserializing-into-Objects"><a href="#6-Deserializing-into-Objects" class="headerlink" title="6. Deserializing into Objects"></a>6. Deserializing into Objects</h3><p>We can use the <code>@RequestBody</code> annotation on the parameters of a method. When used, this annotation allows Spring to automatically deserialize the HTTP request body into a Java object which can be bound to the method and further processed. The objects can be created by matching attributes with values in JSON.</p>
+<p>For example, we can rewrite the previous book example with <code>@RequestBody</code> if we define a <code>Book</code> object:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Book</span> &#123;</span><br><span class="line">  <span class="keyword">public</span> <span class="type">int</span> authorCount;</span><br><span class="line">  <span class="keyword">public</span> <span class="type">int</span> publishedYear;</span><br><span class="line">  <span class="comment">//and constructor with these two variables</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>The new controller will have a single <code>Book</code> parameter instead of separate <code>authorCount</code> and <code>publishedYear</code> parameters:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@GetMapping(&quot;/book&quot;)</span></span><br><span class="line"><span class="keyword">public</span> Book <span class="title function_">isBookAvailable</span><span class="params">(<span class="meta">@RequestBody</span> Book book)</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> book.find(book.authorCount, book.publishedYear);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>It also works for a POST request like this:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -X POST -d <span class="string">&quot;&#123;\&quot;authorCount\&quot;: \&quot;2\&quot;, \&quot;publishedYear\&quot;: \&quot;1995\&quot;&#125;&quot;</span> localhost:4001/book/addNew -H <span class="string">&quot;Content-Type: application/json&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="7-HTTP-Status-Code"><a href="#7-HTTP-Status-Code" class="headerlink" title="7. HTTP Status Code"></a>7. HTTP Status Code</h3><p>The Spring framework uses an HttpStatus enumeration (enum) to represent different HTTP status codes. </p>
+<p>The actual constants in the <code>HttpStatus</code> enum loosely match the status code name, e.g. a <code>201 Created code</code> corresponds to <code>HttpStatus.CREATED</code> and a <code>400 Bad Request code</code> corresponds to <code>HttpStatus.BAD_REQUEST</code>. </p>
+<h3 id="8-Fine-Tuning-Responses-with-ResponseStatus"><a href="#8-Fine-Tuning-Responses-with-ResponseStatus" class="headerlink" title="8. Fine Tuning Responses with @ResponseStatus"></a>8. Fine Tuning Responses with <code>@ResponseStatus</code></h3><p>The <code>@ResponseStatus</code> annotation can be applied to methods to help with fine-tuning HTTP responses. The annotation accepts parameters for the status <code>code</code> and <code>reason</code>.</p>
+<p>This can be used to customize messages in both failure and success responses. Consider the scenario when an admin adds a new book to the collection. When they enter all of the required information and click submit, we can use <code>@ResponseStatus</code> to return an HTTP status showing the request was successful and a reason indicating the entry was created:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@PutMapping(path=&quot;/book&quot;)</span></span><br><span class="line"><span class="meta">@ResponseStatus(code = HttpStatus.CREATED, reason = &quot;Book was successfully added&quot;)</span></span><br><span class="line"><span class="keyword">public</span> string <span class="title function_">addNewBook</span><span class="params">(<span class="meta">@RequestParam</span> string title)</span> &#123;</span><br><span class="line"> ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>When used for class:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ResponseStatus(value = HttpStatus.BAD_REQUEST, reason = &quot;Bad Request. Please try again.&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">InvalidEntryException</span> <span class="keyword">extends</span> <span class="title class_">RuntimeException</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">InvalidEntryException</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@GetMapping(&quot;/testException&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testInvalidEntryException</span><span class="params">()</span> &#123;</span><br><span class="line">  <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">InvalidEntryException</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="9-Exception-Handling-in-Spring"><a href="#9-Exception-Handling-in-Spring" class="headerlink" title="9. Exception Handling in Spring"></a>9. Exception Handling in Spring</h3><p>If an error is encountered, we can use <code>ResponseStatusException</code> to exert even more control over the exception handling process.</p>
+<p><code>ResponseStatusException</code> accepts up to 3 arguments:</p>
+<ul>
+<li><code>HttpStatus code</code></li>
+<li><code>String reason</code></li>
+<li><code>Throwable cause</code></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@GetMapping(&quot;/&#123;id&#125;&quot;)</span></span><br><span class="line"><span class="keyword">public</span> Book <span class="title function_">isBookAvailable</span><span class="params">(<span class="meta">@PathVariable</span> string id)</span> </span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">if</span> (id.isNumeric()) &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">id_int</span> <span class="operator">=</span> Integer.parseInt(id)</span><br><span class="line">    <span class="keyword">return</span> book.findByID(id_int)</span><br><span class="line">  &#125; </span><br><span class="line">  <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">ResponseStatusException</span>(HttpStatus.BAD_REQUEST, <span class="string">&quot;The ID contained a non-numerical value.&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Both the <code>ResponseStatusException</code> class and <code>@ResponseStatus</code> annotation can be used to specify an HTTP status code. <code>ResponseStatusException</code> is used to create specific responses dynamically, while a <code>@ResponseStatus</code> determines the status code for any response returned by the method.</p>
+<h3 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h3><p>With the annotations, we can now:</p>
+<ul>
+<li>Map HTTP requests to controllers and methods (<code>@RestController</code> and <code>@RequestMapping</code>)</li>
+<li>Specify a path attribute to become a base path (<code>@RequestMapping</code> at the class level)</li>
+<li>Declare request types using HTTP method annotations (<code>@GetMapping</code>, <code>@PostMapping</code>, <code>@PutMapping</code>, and <code>@DeleteMapping</code>)</li>
+<li>Access request parameters in a method (<code>@RequestParam</code>)</li>
+<li>Bind data using template variables (<code>@PathVariable</code>)</li>
+<li>Fine-tune the status code returned by a method (<code>@ResponseStatus</code>)</li>
+</ul>
+<p>All of these annotations and <code>ResponseStatusException</code> are imported from the <code>org.springframework.web.bind.annotation</code> package.</p>
+<h3 id="Source"><a href="#Source" class="headerlink" title="Source"></a>Source</h3><p><a target="_blank" rel="noopener" href="https://www.codecademy.com/learn/learn-spring">Learn Spring</a><br><a target="_blank" rel="noopener" href="https://www.codecademy.com/learn/learn-spring/modules/spring-controllers/cheatsheet">Spring Controllers</a><br><a target="_blank" rel="noopener" href="https://github.com/spring-projects/spring-framework/blob/main/spring-web/src/main/java/org/springframework/http/HttpStatus.java">The list of HttpStatus values</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Spring/" rel="tag"># Spring</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/02/02/Notes-of-Spring-1/" rel="next" title="Studying Notes of Spring (1) - How Spring works">
+                  Studying Notes of Spring (1) - How Spring works <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zhqyvvn</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"zhqyvvn","repo":"zhqyvvn.github.io","client_id":"c28a59a6f171f3e27313","client_secret":"a31ffbb812ba7a28cd66045ae2a68e017e9d539f","admin_user":"zhqyvvn","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"e1393fbc587e3ad8dff303a284b8b3bf"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
