@@ -18,17 +18,17 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"zhqyvvn.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":15,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":true,"transition":{"menu_item":"flipInX","post_block":"none","post_header":"flipInX","post_body":"none","coll_header":"flipInX","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"zhqyvvn.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":15,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":true,"transition":{"menu_item":"flipInX","post_block":"none","post_header":"flipInX","post_body":"none","coll_header":"flipInX","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="1. Mapping Requests in SpringIn order to provide a response to a request, the server maps the request to an endpoint. In Spring, the class is marked as a controller and each of its methods is associat">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Studying Notes of Spring (2) - Spring Controllers">
+<meta property="og:title" content="Study Notes of Spring (2) - Spring Controllers">
 <meta property="og:url" content="http://zhqyvvn.github.io/2023/02/03/Notes-of-Spring-2/index.html">
 <meta property="og:site_name" content="Tech Knowledge Sharing">
 <meta property="og:description" content="1. Mapping Requests in SpringIn order to provide a response to a request, the server maps the request to an endpoint. In Spring, the class is marked as a controller and each of its methods is associat">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-02-04T04:44:12.000Z">
-<meta property="article:modified_time" content="2023-02-04T05:15:51.944Z">
+<meta property="article:modified_time" content="2023-02-06T03:57:04.578Z">
 <meta property="article:author" content="zhqyvvn">
 <meta property="article:tag" content="Spring">
 <meta name="twitter:card" content="summary">
@@ -38,10 +38,10 @@
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://zhqyvvn.github.io/2023/02/03/Notes-of-Spring-2/","path":"2023/02/03/Notes-of-Spring-2/","title":"Studying Notes of Spring (2) - Spring Controllers"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://zhqyvvn.github.io/2023/02/03/Notes-of-Spring-2/","path":"2023/02/03/Notes-of-Spring-2/","title":"Study Notes of Spring (2) - Spring Controllers"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Studying Notes of Spring (2) - Spring Controllers | Tech Knowledge Sharing</title>
+<title>Study Notes of Spring (2) - Spring Controllers | Tech Knowledge Sharing</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162128119-1"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-162128119-1","only_pageview":false}</script>
@@ -145,7 +145,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Mapping-Requests-in-Spring"><span class="nav-text">1. Mapping Requests in Spring</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Defining-Base-Paths"><span class="nav-text">2. Defining Base Paths</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Using-HTTP-Method-Annotations"><span class="nav-text">3. Using HTTP Method Annotations</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Using-Query-Parameters"><span class="nav-text">4. Using Query Parameters</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-Using-Template-Path-Variables"><span class="nav-text">5. Using Template Path Variables</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-Deserializing-into-Objects"><span class="nav-text">6. Deserializing into Objects</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-HTTP-Status-Code"><span class="nav-text">7. HTTP Status Code</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-Fine-Tuning-Responses-with-ResponseStatus"><span class="nav-text">8. Fine Tuning Responses with @ResponseStatus</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-Exception-Handling-in-Spring"><span class="nav-text">9. Exception Handling in Spring</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Summary"><span class="nav-text">Summary</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Source"><span class="nav-text">Source</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Mapping-Requests-in-Spring"><span class="nav-text">1. Mapping Requests in Spring</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Defining-Base-Paths"><span class="nav-text">2. Defining Base Paths</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Using-HTTP-Method-Annotations"><span class="nav-text">3. Using HTTP Method Annotations</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Using-Query-Parameters"><span class="nav-text">4. Using Query Parameters</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-Using-Template-Path-Variables"><span class="nav-text">5. Using Template Path Variables</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-Deserializing-into-Objects"><span class="nav-text">6. Deserializing into Objects</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-HTTP-Status-Code"><span class="nav-text">7. HTTP Status Code</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-Fine-Tuning-Responses-with-ResponseStatus"><span class="nav-text">8. Fine Tuning Responses with @ResponseStatus</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-Exception-Handling-in-Spring"><span class="nav-text">9. Exception Handling in Spring</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Summary"><span class="nav-text">Summary</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Articles"><span class="nav-text">Articles</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Source"><span class="nav-text">Source</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -160,7 +160,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">36</span>
+          <span class="site-state-item-count">40</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -223,12 +223,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Studying Notes of Spring (2) - Spring Controllers | Tech Knowledge Sharing">
+      <meta itemprop="name" content="Study Notes of Spring (2) - Spring Controllers | Tech Knowledge Sharing">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Studying Notes of Spring (2) - Spring Controllers
+          Study Notes of Spring (2) - Spring Controllers
         </h1>
 
         <div class="post-meta-container">
@@ -246,7 +246,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-02-04 00:15:51" itemprop="dateModified" datetime="2023-02-04T00:15:51-05:00">2023-02-04</time>
+      <time title="Modified: 2023-02-05 22:57:04" itemprop="dateModified" datetime="2023-02-05T22:57:04-05:00">2023-02-05</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -254,11 +254,11 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Studying-Notes/" itemprop="url" rel="index"><span itemprop="name">Studying Notes</span></a>
+          <a href="/categories/Study-Notes/" itemprop="url" rel="index"><span itemprop="name">Study Notes</span></a>
         </span>
           , 
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Studying-Notes/Spring/" itemprop="url" rel="index"><span itemprop="name">Spring</span></a>
+          <a href="/categories/Study-Notes/Spring/" itemprop="url" rel="index"><span itemprop="name">Spring</span></a>
         </span>
     </span>
 
@@ -283,7 +283,7 @@
 <span id="more"></span>
 <ul>
 <li>The <code>@RestController</code> annotation is used to declare a <em>class</em> as a controller that can provide application-specific types of data as part of an HTTP response</li>
-<li>The <code>@RequestMapping</code> annotation is used to wire request types and endpoints to specific class <em>methods</em>.</li>
+<li>The <code>@RequestMapping</code> annotation is used to wire request types and endpoints to specific class <em>methods</em>. (<code>@RequestMapping</code> is a <em>class</em> level and <em>method</em> level annotation that maps HTTP requests to methods.)</li>
 </ul>
 <p>The <code>@RestController</code> annotation should be added to each class that will handle responses to HTTP requests. The <code>@RestController</code> combines the functionality of two separate annotations, <code>@Controller</code> and <code>@ResponseBody</code>:</p>
 <ul>
@@ -354,7 +354,7 @@
 <p><code>@RequestParam</code> captures the id included in the URI <code>/books?id=28937</code>, and <code>@PathVariable</code> captures the id included in the URI <code>/books/28937</code> as long as the path includes the <code>&#123;id&#125;</code> variable in <code>books/&#123;id&#125;</code>.</p>
 <h3 id="6-Deserializing-into-Objects"><a href="#6-Deserializing-into-Objects" class="headerlink" title="6. Deserializing into Objects"></a>6. Deserializing into Objects</h3><p>We can use the <code>@RequestBody</code> annotation on the parameters of a method. When used, this annotation allows Spring to automatically deserialize the HTTP request body into a Java object which can be bound to the method and further processed. The objects can be created by matching attributes with values in JSON.</p>
 <p>For example, we can rewrite the previous book example with <code>@RequestBody</code> if we define a <code>Book</code> object:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Book</span> &#123;</span><br><span class="line">  <span class="keyword">public</span> <span class="type">int</span> authorCount;</span><br><span class="line">  <span class="keyword">public</span> <span class="type">int</span> publishedYear;</span><br><span class="line">  <span class="comment">//and constructor with these two variables</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Book</span> &#123;</span><br><span class="line">  <span class="keyword">public</span> <span class="type">int</span> authorCount;</span><br><span class="line">  <span class="keyword">public</span> <span class="type">int</span> publishedYear;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>The new controller will have a single <code>Book</code> parameter instead of separate <code>authorCount</code> and <code>publishedYear</code> parameters:</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@GetMapping(&quot;/book&quot;)</span></span><br><span class="line"><span class="keyword">public</span> Book <span class="title function_">isBookAvailable</span><span class="params">(<span class="meta">@RequestBody</span> Book book)</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> book.find(book.authorCount, book.publishedYear);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -366,7 +366,7 @@
 <h3 id="8-Fine-Tuning-Responses-with-ResponseStatus"><a href="#8-Fine-Tuning-Responses-with-ResponseStatus" class="headerlink" title="8. Fine Tuning Responses with @ResponseStatus"></a>8. Fine Tuning Responses with <code>@ResponseStatus</code></h3><p>The <code>@ResponseStatus</code> annotation can be applied to methods to help with fine-tuning HTTP responses. The annotation accepts parameters for the status <code>code</code> and <code>reason</code>.</p>
 <p>This can be used to customize messages in both failure and success responses. Consider the scenario when an admin adds a new book to the collection. When they enter all of the required information and click submit, we can use <code>@ResponseStatus</code> to return an HTTP status showing the request was successful and a reason indicating the entry was created:</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@PutMapping(path=&quot;/book&quot;)</span></span><br><span class="line"><span class="meta">@ResponseStatus(code = HttpStatus.CREATED, reason = &quot;Book was successfully added&quot;)</span></span><br><span class="line"><span class="keyword">public</span> string <span class="title function_">addNewBook</span><span class="params">(<span class="meta">@RequestParam</span> string title)</span> &#123;</span><br><span class="line"> ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>When used for class:</p>
+<p>When used for an exception class:</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ResponseStatus(value = HttpStatus.BAD_REQUEST, reason = &quot;Bad Request. Please try again.&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">InvalidEntryException</span> <span class="keyword">extends</span> <span class="title class_">RuntimeException</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">InvalidEntryException</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@GetMapping(&quot;/testException&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testInvalidEntryException</span><span class="params">()</span> &#123;</span><br><span class="line">  <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">InvalidEntryException</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -389,7 +389,8 @@
 <li>Fine-tune the status code returned by a method (<code>@ResponseStatus</code>)</li>
 </ul>
 <p>All of these annotations and <code>ResponseStatusException</code> are imported from the <code>org.springframework.web.bind.annotation</code> package.</p>
-<h3 id="Source"><a href="#Source" class="headerlink" title="Source"></a>Source</h3><p><a target="_blank" rel="noopener" href="https://www.codecademy.com/learn/learn-spring">Learn Spring</a><br><a target="_blank" rel="noopener" href="https://www.codecademy.com/learn/learn-spring/modules/spring-controllers/cheatsheet">Spring Controllers</a><br><a target="_blank" rel="noopener" href="https://github.com/spring-projects/spring-framework/blob/main/spring-web/src/main/java/org/springframework/http/HttpStatus.java">The list of HttpStatus values</a></p>
+<h3 id="Articles"><a href="#Articles" class="headerlink" title="Articles"></a>Articles</h3><p><a target="_blank" rel="noopener" href="https://www.codecademy.com/learn/learn-spring/modules/spring-controllers/cheatsheet">Spring Controllers</a><br><a target="_blank" rel="noopener" href="https://github.com/spring-projects/spring-framework/blob/main/spring-web/src/main/java/org/springframework/http/HttpStatus.java">The list of HttpStatus values</a></p>
+<h3 id="Source"><a href="#Source" class="headerlink" title="Source"></a>Source</h3><p><a target="_blank" rel="noopener" href="https://www.codecademy.com/learn/learn-spring">Learn Spring</a></p>
 
     </div>
 
@@ -406,10 +407,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
+                <a href="/2023/02/04/Notes-of-Spring-3/" rel="prev" title="Study Notes of Spring (3) - Spring Bean">
+                  <i class="fa fa-chevron-left"></i> Study Notes of Spring (3) - Spring Bean
+                </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2023/02/02/Notes-of-Spring-1/" rel="next" title="Studying Notes of Spring (1) - How Spring works">
-                  Studying Notes of Spring (1) - How Spring works <i class="fa fa-chevron-right"></i>
+                <a href="/2023/02/02/Notes-of-Spring-1/" rel="next" title="Study Notes of Spring (1) - How Spring works">
+                  Study Notes of Spring (1) - How Spring works <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>

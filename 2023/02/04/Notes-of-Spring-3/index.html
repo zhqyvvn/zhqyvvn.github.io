@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"zhqyvvn.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":15,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":true,"transition":{"menu_item":"flipInX","post_block":"none","post_header":"flipInX","post_body":"none","coll_header":"flipInX","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="The Spring framework defines a Spring bean as an object managed by the Spring Inversion of Control (IoC) container. 1. BeansWithout the Spring Beans feature, instantiating an object from a class requi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Study Notes of Spring (3) - Spring Bean">
+<meta property="og:url" content="http://zhqyvvn.github.io/2023/02/04/Notes-of-Spring-3/index.html">
+<meta property="og:site_name" content="Tech Knowledge Sharing">
+<meta property="og:description" content="The Spring framework defines a Spring bean as an object managed by the Spring Inversion of Control (IoC) container. 1. BeansWithout the Spring Beans feature, instantiating an object from a class requi">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-02-04T20:58:09.000Z">
+<meta property="article:modified_time" content="2023-02-06T01:55:17.895Z">
+<meta property="article:author" content="zhqyvvn">
+<meta property="article:tag" content="Spring">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://zhqyvvn.github.io/2023/02/04/Notes-of-Spring-3/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://zhqyvvn.github.io/2023/02/04/Notes-of-Spring-3/","path":"2023/02/04/Notes-of-Spring-3/","title":"Study Notes of Spring (3) - Spring Bean"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Study Notes of Spring (3) - Spring Bean | Tech Knowledge Sharing</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162128119-1"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-162128119-1","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+
+  <script async defer data-website-id="" src=""></script>
+
+  <script defer data-domain="" src=""></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Tech Knowledge Sharing</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-posts"><a href="/archives/" rel="section"><i class="fa fa-book fa-fw"></i>posts</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-folder fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Beans"><span class="nav-text">1. Beans</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Load-Beans"><span class="nav-text">2. Load Beans</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-BeanDefinition-and-IoC"><span class="nav-text">3. BeanDefinition and IoC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Inject-Dependency-without-Annotation"><span class="nav-text">4. Inject Dependency without Annotation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-Summary"><span class="nav-text">5. Summary</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Source"><span class="nav-text">Source</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="zhqyvvn"
+      src="https://avatars0.githubusercontent.com/u/38484412?s=460&v=4">
+  <p class="site-author-name" itemprop="name">zhqyvvn</p>
+  <div class="site-description" itemprop="description">I'm a Java developer wearing glasses ...coz I don't C#</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">26</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zhqyvvn" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zhqyvvn" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:zhqyvvn@gmail.com" title="E-Mail → mailto:zhqyvvn@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="Back to top">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://zhqyvvn.github.io/2023/02/04/Notes-of-Spring-3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/38484412?s=460&v=4">
+      <meta itemprop="name" content="zhqyvvn">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tech Knowledge Sharing">
+      <meta itemprop="description" content="I'm a Java developer wearing glasses ...coz I don't C#">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Study Notes of Spring (3) - Spring Bean | Tech Knowledge Sharing">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Study Notes of Spring (3) - Spring Bean
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2023-02-04 15:58:09" itemprop="dateCreated datePublished" datetime="2023-02-04T15:58:09-05:00">2023-02-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-02-05 20:55:17" itemprop="dateModified" datetime="2023-02-05T20:55:17-05:00">2023-02-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Study-Notes/" itemprop="url" rel="index"><span itemprop="name">Study Notes</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Study-Notes/Spring/" itemprop="url" rel="index"><span itemprop="name">Spring</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>The Spring framework defines a <em>Spring bean</em> as an object managed by the Spring <a target="_blank" rel="noopener" href="https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/beans.html">Inversion of Control (IoC) container</a>.</p>
+<h3 id="1-Beans"><a href="#1-Beans" class="headerlink" title="1. Beans"></a>1. Beans</h3><p>Without the <em>Spring Beans</em> feature, instantiating an <em>object</em> from a <em>class</em> requires the use of the <code>new</code> keyword:</p>
+<span id="more"></span>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">RaceTrack</span> &#123;</span><br><span class="line">  <span class="keyword">private</span> String location;</span><br><span class="line">  <span class="keyword">private</span> <span class="type">int</span> miles;</span><br><span class="line">  <span class="keyword">private</span> String trackType;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Driver</span> &#123;</span><br><span class="line">  <span class="keyword">private</span> String name;</span><br><span class="line">  <span class="keyword">private</span> String team;</span><br><span class="line">  <span class="keyword">private</span> <span class="type">int</span> yearsExperience;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">RaceRound</span> &#123;</span><br><span class="line">  <span class="keyword">private</span> String startTime;</span><br><span class="line">  <span class="keyword">private</span> <span class="type">RaceTrack</span> <span class="variable">currentRaceTrack</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">RaceTrack</span>();</span><br><span class="line">  <span class="keyword">private</span> <span class="type">Driver</span> <span class="variable">currentDriver</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Driver</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Any changes to those <code>RaceTrack</code> and <code>Driver</code> classes would require additional changes in the <code>RaceRound</code> class.</p>
+<p>Below instantiates the nested objects with <em>Spring beans</em>. Mark <code>RaceTrack</code> and <code>Driver</code> classes as <em>Spring beans</em> using the <code>@Component</code> annotation:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">RaceTrack</span> &#123;</span><br><span class="line">  <span class="keyword">private</span> String location;</span><br><span class="line">  <span class="keyword">private</span> <span class="type">int</span> miles;</span><br><span class="line">  <span class="keyword">private</span> String trackType;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Driver</span> &#123;</span><br><span class="line">  <span class="keyword">private</span> String name;</span><br><span class="line">  <span class="keyword">private</span> String team;</span><br><span class="line">  <span class="keyword">private</span> <span class="type">int</span> yearsExperience;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Remove the actual instantiation code from <code>RaceRound</code>, instead using the <code>@Autowired</code> annotation:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">RaceRound</span> &#123;</span><br><span class="line">  <span class="keyword">private</span> String startTime;</span><br><span class="line">  <span class="meta">@Autowired</span></span><br><span class="line">  <span class="keyword">private</span> RaceTrack currentRaceTrack;</span><br><span class="line">  <span class="meta">@Autowired</span></span><br><span class="line">  <span class="keyword">private</span> Driver currentDriver;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>The dependent classes <code>RaceTrack</code> and <code>Driver</code> are <em>Spring beans</em>, which allows the <em>IoC container</em> to manage them, i.e. instantiate them and inject them into our <code>RaceRound</code> class.</p>
+<p>We didn’t have to edit the existing code in <code>RaceTrack</code> and <code>Driver</code> classes to turn them into <em>Spring beans</em>. All we had to add was the <code>@Component</code> annotation. </p>
+<p>Note: <code>@Component</code> and <code>@Autowired</code> are just two of many annotations for working with <em>Spring beans</em> and the <em>IoC container</em>. </p>
+<h3 id="2-Load-Beans"><a href="#2-Load-Beans" class="headerlink" title="2. Load Beans"></a>2. Load Beans</h3><p>The fully-automatic annotations approach is facilitated using three annotations:</p>
+<ul>
+<li><code>@Configuration</code>, which notifies the framework that <em>beans</em> may be created via the <em>annotated class</em>.</li>
+<li><code>@ComponentScan</code>, which tells the framework to scan our code for components such as <em>classes</em>, <em>controllers</em>, <em>services</em>, etc.</li>
+<li><code>@EnableAutoConfiguration</code>, which tells the <em>container</em> to auto-create <em>beans</em> from the found components.</li>
+</ul>
+<p>These three significant annotations have been wrapped up into one - The <code>@SpringBootApplication</code> annotation is a compilation of <code>@Configuration</code>, <code>@ComponentScan</code>, and <code>@EnableAutoConfiguration</code>. When we apply the <code>@SpringBootApplication</code> annotation to the class containing the <em>main method</em>, our application runs with all of this built-in functionality. Therefore, when our application starts up, the <em>container</em> scans our code for components from which <em>beans</em> should be instantiated.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">RecipeApplication</span> &#123;</span><br><span class="line"> </span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">    SpringApplication.run(RecipeApplication.class, args);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-BeanDefinition-and-IoC"><a href="#3-BeanDefinition-and-IoC" class="headerlink" title="3. BeanDefinition and IoC"></a>3. <code>BeanDefinition</code> and IoC</h3><p>The Spring framework represents <em>beans</em> as a <code>BeanDefinition</code> object. The <code>BeanDefinition</code> object has several properties including <code>class</code> and <code>properties</code>.</p>
+<ol>
+<li><p>When the container instantiates a <em>bean</em> from a class, it populates the <em>class</em> property of that bean with the fully qualified name:<br><code>RaceRound</code> -&gt; <code>com.package.RacingGame.RaceRound</code><br>The <code>class</code> property is Spring’s way of representing the bean’s underlying Java type so it knows what to instantiate.</p>
+</li>
+<li><p>The <code>properties</code> property of the <em>bean</em> is populated from the properties of a class.<br>If the class has built-in types such as <code>int</code> or <code>string</code>, the <em>container</em> converts them into the same type of property for the <em>bean</em>.<br>If the class has a custom type, such as <code>RaceTrack</code> or <code>Driver</code>, there are <em>dependencies</em> and the <em>container</em> has to create <code>BeanDefinition</code> object for each of these types.</p>
+</li>
+</ol>
+<p>When a class encapsulates other objects, the referenced objects become a <em>dependency</em> for the outer class. The container instantiates <em>beans</em> for the referenced objects before the outer classes. This process is known as <em>dependency injection</em>. The outer class no longer has to instantiate dependencies by themselves. The control of dependencies has been inverted back to the <em>container</em>, and this why it is called an <strong>Inversion of Control (IoC) container</strong>.</p>
+<h3 id="4-Inject-Dependency-without-Annotation"><a href="#4-Inject-Dependency-without-Annotation" class="headerlink" title="4. Inject Dependency without Annotation"></a>4. Inject Dependency without Annotation</h3><p>Dependencies injected via the constructor:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">CoffeeController</span> &#123;</span><br><span class="line"> </span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">final</span> CoffeeRepository coffeeRepository;</span><br><span class="line"> </span><br><span class="line">  <span class="keyword">public</span> <span class="title function_">CoffeeController</span><span class="params">(CoffeeRepository coffeeRepo)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.coffeeRepository = coffeeRepo;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>This shows that there are many ways that the <em>IoC container</em> can use <em>Spring beans</em> in an application.</p>
+<h3 id="5-Summary"><a href="#5-Summary" class="headerlink" title="5. Summary"></a>5. Summary</h3><p><em>Spring beans</em> are objects managed by the <em>IoC container</em>.</p>
+<p>When we run our Spring application, the framework searches our code and creates <em>beans</em> from any components it has found.</p>
+<p>Part of the <em>bean</em> creation process involves ensuring any nested <em>beans</em> are available for use.</p>
+<h3 id="Source"><a href="#Source" class="headerlink" title="Source"></a>Source</h3><p><a target="_blank" rel="noopener" href="https://www.codecademy.com/learn/learn-spring">Learn Spring</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Spring/" rel="tag"># Spring</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/02/04/Notes-of-Spring-4/" rel="prev" title="Study Notes of Spring (4) - Spring Boot">
+                  <i class="fa fa-chevron-left"></i> Study Notes of Spring (4) - Spring Boot
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/02/03/Notes-of-Spring-2/" rel="next" title="Study Notes of Spring (2) - Spring Controllers">
+                  Study Notes of Spring (2) - Spring Controllers <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zhqyvvn</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"zhqyvvn","repo":"zhqyvvn.github.io","client_id":"c28a59a6f171f3e27313","client_secret":"a31ffbb812ba7a28cd66045ae2a68e017e9d539f","admin_user":"zhqyvvn","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"e33a11e6a45391ade05a4ca0d159396f"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

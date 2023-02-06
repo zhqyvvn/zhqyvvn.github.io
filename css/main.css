@@ -1589,7 +1589,7 @@ pre code {
 }
 @media (min-width: 992px) {
   .post-body {
-    text-align: justify;
+    text-align: start;
   }
 }
 @media (max-width: 991px) {
@@ -2489,7 +2489,7 @@ hr {
   transition: all 0.2s ease-in-out;
 }
 .links-of-author a::before {
-  background: #001134;
+  background: #2f52ff;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);

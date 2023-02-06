@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"zhqyvvn.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":15,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":true,"transition":{"menu_item":"flipInX","post_block":"none","post_header":"flipInX","post_body":"none","coll_header":"flipInX","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="1. SettingsAdd the spring-boot-starter-data-jpa dependency in pom.xml: 1234&lt;dependency&gt;  &lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;  &lt;artifactId&gt;spring-boot-starter-data-jpa&amp;l">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Study Notes of Spring (6) - CRUD with JPA">
+<meta property="og:url" content="http://zhqyvvn.github.io/2023/02/05/Notes-of-Spring-6/index.html">
+<meta property="og:site_name" content="Tech Knowledge Sharing">
+<meta property="og:description" content="1. SettingsAdd the spring-boot-starter-data-jpa dependency in pom.xml: 1234&lt;dependency&gt;  &lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;  &lt;artifactId&gt;spring-boot-starter-data-jpa&amp;l">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-02-05T23:19:53.000Z">
+<meta property="article:modified_time" content="2023-02-06T03:56:29.745Z">
+<meta property="article:author" content="zhqyvvn">
+<meta property="article:tag" content="Spring">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://zhqyvvn.github.io/2023/02/05/Notes-of-Spring-6/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://zhqyvvn.github.io/2023/02/05/Notes-of-Spring-6/","path":"2023/02/05/Notes-of-Spring-6/","title":"Study Notes of Spring (6) - CRUD with JPA"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Study Notes of Spring (6) - CRUD with JPA | Tech Knowledge Sharing</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162128119-1"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-162128119-1","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+
+  <script async defer data-website-id="" src=""></script>
+
+  <script defer data-domain="" src=""></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Tech Knowledge Sharing</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-posts"><a href="/archives/" rel="section"><i class="fa fa-book fa-fw"></i>posts</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-folder fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Settings"><span class="nav-text">1. Settings</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Model"><span class="nav-text">2. Model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Repository"><span class="nav-text">3. Repository</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Connect-the-Repository-to-a-Controller"><span class="nav-text">4. Connect the Repository to a Controller</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-Make-Queries"><span class="nav-text">5. Make Queries</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#GET"><span class="nav-text">GET</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#POST"><span class="nav-text">POST</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PUT"><span class="nav-text">PUT</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DELETE"><span class="nav-text">DELETE</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-Custom-Queries"><span class="nav-text">6. Custom Queries</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Articles"><span class="nav-text">Articles</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Source"><span class="nav-text">Source</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="zhqyvvn"
+      src="https://avatars0.githubusercontent.com/u/38484412?s=460&v=4">
+  <p class="site-author-name" itemprop="name">zhqyvvn</p>
+  <div class="site-description" itemprop="description">I'm a Java developer wearing glasses ...coz I don't C#</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">26</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zhqyvvn" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zhqyvvn" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:zhqyvvn@gmail.com" title="E-Mail → mailto:zhqyvvn@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="Back to top">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://zhqyvvn.github.io/2023/02/05/Notes-of-Spring-6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/38484412?s=460&v=4">
+      <meta itemprop="name" content="zhqyvvn">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tech Knowledge Sharing">
+      <meta itemprop="description" content="I'm a Java developer wearing glasses ...coz I don't C#">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Study Notes of Spring (6) - CRUD with JPA | Tech Knowledge Sharing">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Study Notes of Spring (6) - CRUD with JPA
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2023-02-05 18:19:53 / Modified: 22:56:29" itemprop="dateCreated datePublished" datetime="2023-02-05T18:19:53-05:00">2023-02-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Study-Notes/" itemprop="url" rel="index"><span itemprop="name">Study Notes</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Study-Notes/Spring/" itemprop="url" rel="index"><span itemprop="name">Spring</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h3 id="1-Settings"><a href="#1-Settings" class="headerlink" title="1. Settings"></a>1. Settings</h3><p>Add the <code>spring-boot-starter-data-jpa</code> dependency in <code>pom.xml</code>:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-data-jpa<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<p>To use the embedded <code>H2</code> database, add the dependency to <code>pom.xml</code>:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.h2database<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>h2<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">scope</span>&gt;</span>runtime<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>To connect the embedded <code>H2</code> database with the application, add the correct properties to the <code>application.properties</code>:</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring.datasource.url</span>=<span class="string">jdbc:h2:~/plants.db</span></span><br><span class="line"><span class="attr">spring.datasource.driverClassName</span>=<span class="string">org.h2.Driver</span></span><br></pre></td></tr></table></figure>
+<p>This will tell Spring: where the database is stored, what library it should use to “translate” the Java objects into SQL queries that <code>H2</code> can understand.</p>
+<h3 id="2-Model"><a href="#2-Model" class="headerlink" title="2. Model"></a>2. Model</h3><p>Spring Data JPA is an abstraction layer that allows developers to interact with objects in code rather than SQL queries. </p>
+<p>These objects, are referred to as <em>models</em> (or <em>entities</em>). </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> javax.persistence.Entity;</span><br><span class="line"><span class="keyword">import</span> javax.persistence.GeneratedValue;</span><br><span class="line"><span class="keyword">import</span> javax.persistence.Id;</span><br><span class="line"><span class="keyword">import</span> javax.persistence.Column;</span><br><span class="line"><span class="keyword">import</span> javax.persistence.Table;</span><br><span class="line"> </span><br><span class="line"><span class="meta">@Entity</span></span><br><span class="line"><span class="meta">@Table(name=&quot;PEOPLE&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Person</span> &#123;</span><br><span class="line"> </span><br><span class="line">    <span class="meta">@Id</span></span><br><span class="line">    <span class="meta">@GeneratedValue</span></span><br><span class="line">    <span class="keyword">private</span> Integer id;</span><br><span class="line"> </span><br><span class="line">    <span class="meta">@Column(name=&quot;NAME&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"> </span><br><span class="line">    <span class="meta">@Column(name=&quot;AGE&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> Integer age;</span><br><span class="line"> </span><br><span class="line">    <span class="meta">@Column(name=&quot;EYE_COLOR&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String eyeColor;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>A model corresponds to a database table, and a field in a model corresponds to a column in that table. </p>
+<p>The annotations come from the JPA library, which comes along with the <code>spring-boot-starter-data-jpa</code> dependency:</p>
+<ul>
+<li><code>@Entity</code>: tells ORM that this model will be used to represent a <em>table</em> or <em>relation</em> in the database</li>
+<li><code>@Table</code>: tells ORM the table name in the underlying database that this model corresponds to. </li>
+<li><code>@Id</code>: tells ORM that this field (<code>id</code>) will be used to uniquely identify a single entry in the table.</li>
+<li><code>@GeneratedValue</code>: tells ORM that this field should be “auto-generated” by the database, to guarantee that the ID will always be unique.</li>
+<li><code>@Column</code>: tells ORM the column in the underlying table that the annotated field corresponds to.</li>
+</ul>
+<p>Spring Data JPA sends instructions to the <code>Hibernate</code> ORM to execute the correct SQL statements.</p>
+<p>We additionally need to add <code>getter</code> and <code>setter</code> methods for every field to ensure that the ORM can access and modify fields in the model as required:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Column(name=&quot;AGE&quot;)</span></span><br><span class="line"><span class="keyword">private</span> Integer age;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> Integer <span class="title function_">getAge</span><span class="params">()</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">this</span>.age;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setAge</span><span class="params">(Integer age)</span> &#123;</span><br><span class="line">  <span class="built_in">this</span>.age = age;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-Repository"><a href="#3-Repository" class="headerlink" title="3. Repository"></a>3. Repository</h3><p>A repository is a data access and manipulation layer that wraps around the data model. </p>
+<p>Spring Data JPA uses repositories to enable the interaction between the model and the database, and it comes with the <code>CrudRepository</code> repository interface that gives developers full <em>CRUD</em> functionality for the model: </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.data.repository.CrudRepository;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">import</span> com.codecademy.people.entities.Person;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// creating an extension of the CrudRepository that can manage our Person model</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">PersonRepository</span> <span class="keyword">extends</span> <span class="title class_">CrudRepository</span>&lt;Person, Integer&gt; &#123;</span><br><span class="line">  <span class="comment">// no method declarations are required! </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>In this example, the new interface extends the <code>CrudRepository</code> interface, and parameterize it with the <code>Person</code> model and the type of its ID field, <code>Integer</code>.</p>
+<p>The first type parameter is used to ensure that the <code>PersonRepository</code> knows it is responsible for managing instances of the <code>Person</code> object. The second type parameter is used to tell the repository the type of the ID field, which enables methods like <code>.findById</code>.</p>
+<p>Some methods that the <code>CrudRepository</code> interface offers us to enable CRUD functionality are:</p>
+<ul>
+<li><code>.findById(Integer id)</code>: query the database to find an instance of the model by its ID field</li>
+<li><code>.findAll()</code>: retrieve ALL the entries in the database for a given model</li>
+<li><code>.save(Object p)</code>: create AND modify instances of the model in the database</li>
+<li><code>.delete(Object p)</code>: delete instances of the model from the database</li>
+</ul>
+<h3 id="4-Connect-the-Repository-to-a-Controller"><a href="#4-Connect-the-Repository-to-a-Controller" class="headerlink" title="4. Connect the Repository to a Controller"></a>4. Connect the Repository to a Controller</h3><p>A <code>RestController</code> is used as the layer of the application that takes requests from the user and accordingly sends commands to the repository or data access layer to accomplish what task the user requested in their <code>REST</code> call.</p>
+<p>Since the extension of the <code>CrudRepository</code> will be used in the “Spring context,” it is implicitly a bean.</p>
+<p>The repository must be a dependency of the controller, and we can make the <em>repository bean</em> available to the controller class using dependency injection:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RestController;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">import</span> com.codecademy.people.repositories.PersonRepository;</span><br><span class="line"> </span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">PersonController</span> &#123;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">final</span> PersonRepository personRepository;</span><br><span class="line"> </span><br><span class="line">  <span class="keyword">public</span> <span class="title function_">PersonController</span><span class="params">(<span class="keyword">final</span> PersonRepository personRepository)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.personRepository = personRepository;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// ... all REST endpoint mappings</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>In this example, to make the <code>PersonRepository</code> available to the <code>PersonController</code> as a dependency:</p>
+<ol>
+<li>Import the <code>PersonRepository</code> from the correct package</li>
+<li>Add the <code>PersonRepository</code> as a field in the <code>PersonController</code> class</li>
+<li>Assign the field with <code>PersonRepository</code> in the constructor</li>
+</ol>
+<h3 id="5-Make-Queries"><a href="#5-Make-Queries" class="headerlink" title="5. Make Queries"></a>5. Make Queries</h3><h4 id="GET"><a href="#GET" class="headerlink" title="GET"></a>GET</h4><p>A <code>GET</code> request triggers repository methods like <code>.findAll()</code> or <code>.findById(Integer id)</code>:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@GetMapping(&quot;/people&quot;)</span></span><br><span class="line"><span class="keyword">public</span> Iterable&lt;Person&gt; <span class="title function_">getAllPeople</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.personRepository.findAll();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>.findAll()</code> method offered by the <code>CrudRepository</code> returns an <code>Iterable</code>, with a type parameter <code>Person</code>.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@GetMapping(&quot;/people/&#123;id&#125;&quot;)</span></span><br><span class="line"><span class="keyword">public</span> Optional&lt;Person&gt; <span class="title function_">getPersonById</span><span class="params">(<span class="meta">@PathVariable(&quot;id&quot;)</span> Integer id)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.personRepository.findById(id);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>.findById(Integer id)</code> returns an <code>Optional&lt;Person&gt;</code>. In case a user may pass an ID that does not exist in the database, the <code>Optional</code> type from Java will allow the response to return <code>null</code> in the response body.</p>
+<h4 id="POST"><a href="#POST" class="headerlink" title="POST"></a>POST</h4><p>A <code>POST</code> request is used to create new information in the database. In <code>CrudRepository</code>, the <code>.save()</code> method accepts the model as a parameter, and uses the column annotations as its basis when using the ORM to create the underlying SQL <code>INSERT</code> statement.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@PostMapping(&quot;/people&quot;)</span></span><br><span class="line"><span class="keyword">public</span> Person <span class="title function_">createNewPerson</span><span class="params">(<span class="meta">@RequestBody</span> Person person)</span> &#123;</span><br><span class="line">  <span class="type">Person</span> <span class="variable">newPerson</span> <span class="operator">=</span> <span class="built_in">this</span>.personRepository.save(person);</span><br><span class="line">  <span class="keyword">return</span> newPerson;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>In this example, the end user of the API would pass in a <code>Person</code> using the body of their <code>POST</code> request. </p>
+<p>The <code>.save</code> method returns a <code>Person</code> and it will have an <code>id</code> field, generated by means of the <code>@GeneratedValue</code> annotation from the model definition.</p>
+<h4 id="PUT"><a href="#PUT" class="headerlink" title="PUT"></a>PUT</h4><p>The <code>.save</code> method from the <code>CrudRepository</code> interface can also be used for updating existing entries.</p>
+<p>A common flow is to fetch an entry from the database by its ID, set new attribute value of the entry, and then call <code>.save</code> to save the entry:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@PutMapping(&quot;/people/&#123;id&#125;&quot;)</span></span><br><span class="line"><span class="keyword">public</span> Person <span class="title function_">updatePerson</span><span class="params">(<span class="meta">@PathVariable(&quot;id&quot;)</span> Integer id, <span class="meta">@RequestBody</span> Person p)</span> &#123;</span><br><span class="line">  Optional&lt;Person&gt; personToUpdateOptional = <span class="built_in">this</span>.personRepository.findById(id);</span><br><span class="line">  <span class="keyword">if</span> (!personToUpdateOptional.isPresent()) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// Since isPresent() was true, we can .get() the Person object out of the Optional</span></span><br><span class="line">  <span class="type">Person</span> <span class="variable">personToUpdate</span> <span class="operator">=</span> personToUpdateOptional.get();</span><br><span class="line">  <span class="keyword">if</span> (p.getName() != <span class="literal">null</span>) &#123;</span><br><span class="line">    personToUpdate.setName(p.getName());</span><br><span class="line">  &#125;</span><br><span class="line">  ...</span><br><span class="line">  <span class="type">Person</span> <span class="variable">updatedPerson</span> <span class="operator">=</span> <span class="built_in">this</span>.personRepository.save(personToUpdate);</span><br><span class="line">  <span class="keyword">return</span> updatedPerson;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>The <code>Person</code> object passed in the request body does not need to have ALL the fields that a <code>Person</code> has. When Spring Boot converts the request body to a Person object, it sets any fields that are missing to <code>null</code>. </p>
+<p>Update a field of the target database entry ONLY IF the corresponding field in the request body object was not <code>null</code>.</p>
+<h4 id="DELETE"><a href="#DELETE" class="headerlink" title="DELETE"></a>DELETE</h4><p>The <code>CrudRepository</code> offers a <code>delete</code> method that accepts the instance of the model:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@DeleteMapping(&quot;/people/&#123;id&#125;&quot;)</span></span><br><span class="line"><span class="keyword">public</span> Person <span class="title function_">deletePerson</span><span class="params">(<span class="meta">@PathVariable(&quot;id&quot;)</span> Integer id)</span> &#123;</span><br><span class="line">  Optional&lt;Person&gt; personToDeleteOptional = <span class="built_in">this</span>.personRepository.findById(id);</span><br><span class="line">  <span class="keyword">if</span> (!personToDeleteOptional.isPresent()) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="type">Person</span> <span class="variable">personToDelete</span> <span class="operator">=</span> personToDeleteOptional.get();</span><br><span class="line">  <span class="built_in">this</span>.personRepository.delete(personToDelete);</span><br><span class="line">  <span class="keyword">return</span> personToDelete;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>The <code>.delete</code> method does not return anything.</p>
+<p><code>pipe</code> the output of <code>curl</code> into <code>json_pp</code> to make it easier to read:</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl localhost:<span class="number">4001</span>/plants <span class="string">| json_pp</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="6-Custom-Queries"><a href="#6-Custom-Queries" class="headerlink" title="6. Custom Queries"></a>6. Custom Queries</h3><p>Custom filter queries can be added as methods to the interface extension of the <code>CrudRepository</code> with properly formatted name, and they don’t need to be implemented.</p>
+<p>The rules for the method names are detailed in the <a target="_blank" rel="noopener" href="https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods.query-creation">Spring documentation</a>.</p>
+<p>For example, to query people with a certain eye color:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">PersonRepository</span> <span class="keyword">extends</span> <span class="title class_">CrudRepository</span>&lt;Person, Integer&gt; &#123;</span><br><span class="line">  <span class="comment">// this declaration is all we need:</span></span><br><span class="line">  List&lt;Person&gt; <span class="title function_">findByEyeColor</span><span class="params">(String eyeColor)</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Based on the method name (<code>findByEyeColor</code>), Spring Data JPA will automatically generate the “implementation” of the method when the application is compiled. </p>
+<p>To use the newly defined <code>findByEyeColor</code> method, we could implement a new <code>GET /people/search</code> endpoint in the <code>PersonController</code>:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@GetMapping(&quot;/people/search&quot;)</span></span><br><span class="line"><span class="keyword">public</span> List&lt;Person&gt; <span class="title function_">searchPeople</span><span class="params">(</span></span><br><span class="line"><span class="params">  <span class="meta">@RequestParam(name = &quot;eyeColor&quot;, required = false)</span> String eyeColor)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (eyeColor != <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>.personRepository.findByEyeColor(eyeColor)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>A request to this endpoint would look like:</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl localhost:<span class="number">4001</span><span class="regexp">/people/</span>search?eyeColor=brown</span><br></pre></td></tr></table></figure>
+
+<p>Notice the <code>required = false</code> inside the <code>@RequestParam</code> annotation, it allows us to optionally add more query parameters if the user would like to search by a different field value instead. </p>
+<p>For example, add another method to the <code>PersonRepository</code> interface:</p>
+<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">List</span><span class="operator">&lt;</span><span class="variable">Person</span><span class="operator">&gt;</span> <span class="variable">findByAgeLessThan</span><span class="punctuation">(</span><span class="built_in">Integer</span> <span class="variable">age</span><span class="punctuation">)</span><span class="operator">;</span></span><br></pre></td></tr></table></figure>
+<p>and update the <code>searchPeople</code> method accordingly:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@GetMapping(&quot;/people/search&quot;)</span></span><br><span class="line"><span class="keyword">public</span> List&lt;Person&gt; <span class="title function_">searchPeople</span><span class="params">(</span></span><br><span class="line"><span class="params">  <span class="meta">@RequestParam(name = &quot;eyeColor&quot;, required = false)</span> String eyeColor,</span></span><br><span class="line"><span class="params">  <span class="meta">@RequestParam(name = &quot;maxAge&quot;, required = false)</span> Integer maxAge)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (eyeColor != <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>.personRepository.findByEyeColor(eyeColor)</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (maxAge != <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>.personRepository.findByAgeLessThan(maxAge);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Example using <code>And</code> queries:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Person&gt; <span class="title function_">findByEyeColorAndAgeLessThan</span><span class="params">(String eyeColor, Integer age)</span>;</span><br></pre></td></tr></table></figure>
+<p>The updated <code>searchPeople</code> method would look like:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@GetMapping(&quot;/people/search&quot;)</span></span><br><span class="line"><span class="keyword">public</span> List&lt;Person&gt; <span class="title function_">searchPeople</span><span class="params">(</span></span><br><span class="line"><span class="params">  <span class="meta">@RequestParam(name = &quot;eyeColor&quot;, required = false)</span> String eyeColor,</span></span><br><span class="line"><span class="params">  <span class="meta">@RequestParam(name = &quot;maxAge&quot;, required = false)</span> Integer maxAge)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (eyeColor != <span class="literal">null</span> &amp;&amp; maxAge != <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>.personRepository.findByEyeColorAndAgeLessThan(eyeColor, maxAge);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (eyeColor != <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>.personRepository.findByEyeColor(eyeColor);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (maxAge != <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>.personRepository.findByAgeLessThan(maxAge);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>The naming of the method declarations is extremely important. The rules for the method names are detailed in the <a target="_blank" rel="noopener" href="https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods.query-creation">Spring documentation</a>.</p>
+<h3 id="Articles"><a href="#Articles" class="headerlink" title="Articles"></a>Articles</h3><p><a target="_blank" rel="noopener" href="https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods.query-creation">Spring documentation</a><br><a target="_blank" rel="noopener" href="https://docs.oracle.com/javaee/7/api/javax/persistence/package-summary.html">Annotation Types Summary</a><br><a target="_blank" rel="noopener" href="https://www.baeldung.com/spring-boot-h2-database">Spring Boot With H2 Database</a></p>
+<h3 id="Source"><a href="#Source" class="headerlink" title="Source"></a>Source</h3><p><a target="_blank" rel="noopener" href="https://www.codecademy.com/learn/learn-spring">Learn Spring</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Spring/" rel="tag"># Spring</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/02/05/Notes-of-Spring-5/" rel="next" title="Study Notes of Spring (5) - Spring Data JPA">
+                  Study Notes of Spring (5) - Spring Data JPA <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zhqyvvn</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"zhqyvvn","repo":"zhqyvvn.github.io","client_id":"c28a59a6f171f3e27313","client_secret":"a31ffbb812ba7a28cd66045ae2a68e017e9d539f","admin_user":"zhqyvvn","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"ceb55cc2c060d2153ac353f81cc39585"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
