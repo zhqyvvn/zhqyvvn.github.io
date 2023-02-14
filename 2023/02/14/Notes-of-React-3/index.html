@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"zhqyvvn.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":15,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":true,"transition":{"menu_item":"flipInX","post_block":"none","post_header":"flipInX","post_body":"none","coll_header":"flipInX","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="A component is a small, reusable chunk of code that is responsible for one job. That job is often to render some HTML. We can use a JavaScript class to define a new React component. We can also define">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Study Notes of React (3) - Class Component">
+<meta property="og:url" content="http://zhqyvvn.github.io/2023/02/14/Notes-of-React-3/index.html">
+<meta property="og:site_name" content="Tech Knowledge Sharing">
+<meta property="og:description" content="A component is a small, reusable chunk of code that is responsible for one job. That job is often to render some HTML. We can use a JavaScript class to define a new React component. We can also define">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-02-14T15:43:07.000Z">
+<meta property="article:modified_time" content="2023-02-14T18:14:09.773Z">
+<meta property="article:author" content="zhqyvvn">
+<meta property="article:tag" content="React">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://zhqyvvn.github.io/2023/02/14/Notes-of-React-3/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://zhqyvvn.github.io/2023/02/14/Notes-of-React-3/","path":"2023/02/14/Notes-of-React-3/","title":"Study Notes of React (3) - Class Component"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Study Notes of React (3) - Class Component | Tech Knowledge Sharing</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162128119-1"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-162128119-1","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+
+  <script async defer data-website-id="" src=""></script>
+
+  <script defer data-domain="" src=""></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Tech Knowledge Sharing</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-posts"><a href="/archives/" rel="section"><i class="fa fa-book fa-fw"></i>posts</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-folder fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Class-Component"><span class="nav-text">1. Class Component</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-react-vs-react-dom"><span class="nav-text">2. react vs react-dom</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Render-Function"><span class="nav-text">3. Render Function</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-Multiline-JSX"><span class="nav-text">3.1 Multiline JSX</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-Variable-Attribute"><span class="nav-text">3.2 Variable Attribute</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-Contain-Logic"><span class="nav-text">3.3 Contain Logic</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-4-Conditional"><span class="nav-text">3.4 Conditional</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-This-in-Component"><span class="nav-text">4. This in Component</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-Event-Listener-in-a-Component"><span class="nav-text">5. Event Listener in a Component</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-Component-Instance"><span class="nav-text">6. Component Instance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Source"><span class="nav-text">Source</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="zhqyvvn"
+      src="https://avatars0.githubusercontent.com/u/38484412?s=460&v=4">
+  <p class="site-author-name" itemprop="name">zhqyvvn</p>
+  <div class="site-description" itemprop="description">I'm a Java developer wearing glasses ...coz I don't C#</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">42</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zhqyvvn" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zhqyvvn" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:zhqyvvn@gmail.com" title="E-Mail → mailto:zhqyvvn@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="Back to top">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://zhqyvvn.github.io/2023/02/14/Notes-of-React-3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/38484412?s=460&v=4">
+      <meta itemprop="name" content="zhqyvvn">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tech Knowledge Sharing">
+      <meta itemprop="description" content="I'm a Java developer wearing glasses ...coz I don't C#">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Study Notes of React (3) - Class Component | Tech Knowledge Sharing">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Study Notes of React (3) - Class Component
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2023-02-14 10:43:07 / Modified: 13:14:09" itemprop="dateCreated datePublished" datetime="2023-02-14T10:43:07-05:00">2023-02-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Study-Notes/" itemprop="url" rel="index"><span itemprop="name">Study Notes</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Study-Notes/React/" itemprop="url" rel="index"><span itemprop="name">React</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>A component is a small, reusable chunk of code that is responsible for one job. That job is often to render some HTML.</p>
+<p>We can use a JavaScript class to define a new React component. We can also define components with JavaScript functions.</p>
+<span id="more"></span>
+<p>All class components will have some methods and properties in common. Rather than rewriting those same properties over and over again every time, we extend the <code>Component</code> class from the React library.</p>
+<p><code>React.Component</code> is a JavaScript class. To create our own component class, we must subclass <code>React.Component</code>.</p>
+<h3 id="1-Class-Component"><a href="#1-Class-Component" class="headerlink" title="1. Class Component"></a>1. Class Component</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">ReactDOM</span> <span class="keyword">from</span> <span class="string">&#x27;react-dom&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyComponentClass</span> <span class="keyword">extends</span> <span class="title class_ inherited__">React.Component</span> &#123;</span><br><span class="line">    <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello world<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">ReactDOM</span>.<span class="title function_">render</span>(</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">MyComponentClass</span> /&gt;</span></span>, </span><br><span class="line">    <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;app&#x27;</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>On line 1, <code>import React from &#39;react&#39;</code> creates a JavaScript object. This object contains properties that are needed to make <code>React</code> work, such as <code>React.createElement()</code> and <code>React.Component</code>.</p>
+</li>
+<li><p>On line 2, <code>import ReactDOM from &#39;react-dom&#39;</code> creates another JavaScript object. This object contains methods that help <code>React</code> interact with the <code>DOM</code>, such as <code>ReactDOM.render()</code>.</p>
+</li>
+<li><p>On line 4, by subclassing <code>React.Component</code>, we create a new component class. <strong>This is not a component</strong>. A component class is more like a factory that produces components. When we start making components, each one will come from a component class.</p>
+</li>
+<li><p>Whenever we create a component class, we need to give that component class a name. That name should be written in <strong>UpperCamelCase</strong>. In this case, the name is <code>MyComponentClass</code>.</p>
+</li>
+</ul>
+<h3 id="2-react-vs-react-dom"><a href="#2-react-vs-react-dom" class="headerlink" title="2. react vs react-dom"></a>2. <code>react</code> vs <code>react-dom</code></h3><p>The methods imported from <code>&#39;react-dom&#39;</code> are meant for interacting with the <code>DOM</code>. For example, <code>ReactDOM.render()</code>.</p>
+<p>The methods imported from <code>&#39;react&#39;</code> don’t deal with the <code>DOM</code> at all. They don’t engage directly with anything that isn’t part of <code>React</code>.</p>
+<p>The <code>DOM</code> is used in <code>React</code> applications, but it isn’t part of <code>React</code>. After all, the <code>DOM</code> is also used in countless non-React applications. Methods imported from <code>&#39;react&#39;</code> are only for pure <code>React</code> purposes, such as creating components or writing <code>JSX</code> elements.</p>
+<h3 id="3-Render-Function"><a href="#3-Render-Function" class="headerlink" title="3. Render Function"></a>3. <code>Render</code> Function</h3><p>A component class is like a factory that builds components. It builds these components by consulting a set of instructions</p>
+<p>There is one property that we have to include in instructions: a <code>render</code> method.</p>
+<p>A <code>render</code> method is a property whose name is <code>render</code>, and whose value is a function.</p>
+<p>A <code>render</code> method must contain a <code>return</code> statement. Usually, this <code>return</code> statement returns a JSX expression:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">ComponentFactory</span> <span class="keyword">extends</span> <span class="title class_ inherited__">React.Component</span> &#123;</span><br><span class="line">  <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello world<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-1-Multiline-JSX"><a href="#3-1-Multiline-JSX" class="headerlink" title="3.1 Multiline JSX"></a>3.1 Multiline JSX</h4><p>The <code>return</code> statement needs parentheses to wrap multiline JSX expression.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">QuoteMaker</span> <span class="keyword">extends</span> <span class="title class_ inherited__">React.Component</span> &#123;</span><br><span class="line">  <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="language-xml"><span class="tag">&lt;<span class="name">blockquote</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">p</span>&gt;</span> ... <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">cite</span>&gt;</span> ... <span class="tag">&lt;/<span class="name">cite</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">blockquote</span>&gt;</span></span></span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-2-Variable-Attribute"><a href="#3-2-Variable-Attribute" class="headerlink" title="3.2 Variable Attribute"></a>3.2 Variable Attribute</h4><p>We can inject the curly-brace JavaScript into JSX inside of the <code>render</code> function:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> redPanda = &#123;</span><br><span class="line">  <span class="attr">src</span>: <span class="string">&#x27;https://...&#x27;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">RedPanda</span> <span class="keyword">extends</span> <span class="title class_ inherited__">React.Component</span> &#123;</span><br><span class="line">  <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&#123;redPanda.src&#125;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-3-Contain-Logic"><a href="#3-3-Contain-Logic" class="headerlink" title="3.3 Contain Logic"></a>3.3 Contain Logic</h4><p>A <code>render()</code> function can also be a fine place to put simple calculations that need to happen right before a component renders:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Random</span> <span class="keyword">extends</span> <span class="title class_ inherited__">React.Component</span> &#123;</span><br><span class="line">  <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// First, some logic that must happen</span></span><br><span class="line">    <span class="comment">// before rendering:</span></span><br><span class="line">    <span class="keyword">const</span> n = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">10</span> + <span class="number">1</span>);</span><br><span class="line">    <span class="comment">// Next, a return statement</span></span><br><span class="line">    <span class="comment">// using that logic:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>The number is &#123;n&#125;!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>The line with the <code>const n</code> declaration should not be part of the class declaration, and it will cause a syntax error. It should occur in a method like <code>render()</code>:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Random</span> <span class="keyword">extends</span> <span class="title class_ inherited__">React.Component</span> &#123;</span><br><span class="line">  <span class="comment">// This should be in the render function:</span></span><br><span class="line">  <span class="keyword">const</span> n = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">10</span> + <span class="number">1</span>);</span><br><span class="line"> </span><br><span class="line">  <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>The number is &#123;n&#125;!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-4-Conditional"><a href="#3-4-Conditional" class="headerlink" title="3.4 Conditional"></a>3.4 Conditional</h4><p>To use conditional inside of the <code>render</code> function, put the <code>if</code> statement before the <code>return</code> statement:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">TodaysPlan</span> <span class="keyword">extends</span> <span class="title class_ inherited__">React.Component</span> &#123;</span><br><span class="line">  <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> task;</span><br><span class="line">    <span class="keyword">if</span> (!condition) &#123;</span><br><span class="line">      task = <span class="string">&#x27;...&#x27;</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      task = <span class="string">&#x27;...&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>...<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-This-in-Component"><a href="#4-This-in-Component" class="headerlink" title="4. This in Component"></a>4. <code>This</code> in Component</h3><p><code>this</code> refers to the object on which <code>this</code>‘s enclosing method is called.<br>In most cases, <code>this</code> refers to an instance of the component class.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">IceCreamGuy</span> <span class="keyword">extends</span> <span class="title class_ inherited__">React.Component</span> &#123;</span><br><span class="line">  <span class="keyword">get</span> <span class="title function_">food</span>() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;ice cream&#x27;</span>;</span><br><span class="line">  &#125;</span><br><span class="line"> </span><br><span class="line">  <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>I like &#123;this.food&#125;.<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Notice it calls <code>this.food</code> instead of <code>this.food()</code>, since <code>.food</code> is a getter method. The getter method is marked with <code>get</code> in its declaration.</p>
+<h3 id="5-Event-Listener-in-a-Component"><a href="#5-Event-Listener-in-a-Component" class="headerlink" title="5. Event Listener in a Component"></a>5. Event Listener in a Component</h3><p>In React, define event handlers as methods on a component class:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyClass</span> <span class="keyword">extends</span> <span class="title class_ inherited__">React.Component</span> &#123;</span><br><span class="line">  <span class="title function_">myFunc</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="title function_">alert</span>(<span class="string">&#x27;...&#x27;</span>);</span><br><span class="line">  &#125;</span><br><span class="line"> </span><br><span class="line">  <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">onHover</span>=<span class="string">&#123;this.myFunc&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Notice that the component class has two methods: <code>.myFunc()</code> and <code>.render()</code>. <code>.myFunc()</code> is being used as an event handler. <code>.myFunc()</code> will be called any time that a user hovers over the rendered <code>&lt;div&gt;&lt;/div&gt;</code>.</p>
+<h3 id="6-Component-Instance"><a href="#6-Component-Instance" class="headerlink" title="6. Component Instance"></a>6. Component Instance</h3><p>To make a React component, we write a JSX element, and give it the same name as the component class:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="title class_">MyComponentClass</span> /&gt;</span><br></pre></td></tr></table></figure>
+
+<p>JSX elements can be either HTML-like, or <em>component instances</em>. JSX uses <em>capitalization</em> to distinguish between the two. That is the React-specific reason why component class names must begin with capital letters. </p>
+<p>Whenever we make a component, that component inherits all of the methods of its component class. <code>MyComponentClass</code> has one method: <code>MyComponentClass.render()</code>. Therefore, <code>&lt;MyComponentClass /&gt;</code> also has a method named <code>render</code>.</p>
+<p>We could make different <MyComponentClass /> instances, and each one would inherit this same exact <code>render</code> method.</p>
+<p>In order to render a component, that component needs to have the <code>render</code> method. To call a component’s <code>render</code> method, we pass that component to <code>ReactDOM.render()</code>:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">ReactDOM</span>.<span class="title function_">render</span>(</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">MyComponentClass</span> /&gt;</span></span>,</span><br><span class="line">    <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;app&#x27;</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p><code>ReactDOM.render()</code> will tell <code>&lt;MyComponentClass /&gt;</code> to call its render method. <code>&lt;MyComponentClass /&gt;</code> will call its render method, which will return the JSX element <code>&lt;h1&gt;Hello world&lt;/h1&gt;</code>. <code>ReactDOM.render()</code> will then take that resulting JSX element, and add it to the virtual DOM. This will make “<code>Hello world</code>” appear on the screen.</p>
+<h3 id="Source"><a href="#Source" class="headerlink" title="Source"></a>Source</h3><p><a target="_blank" rel="noopener" href="https://www.codecademy.com/learn/react-101">Learn React</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/React/" rel="tag"># React</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/02/05/Notes-of-Spring-6/" rel="next" title="Study Notes of Spring (6) - CRUD with JPA">
+                  Study Notes of Spring (6) - CRUD with JPA <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zhqyvvn</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"zhqyvvn","repo":"zhqyvvn.github.io","client_id":"c28a59a6f171f3e27313","client_secret":"a31ffbb812ba7a28cd66045ae2a68e017e9d539f","admin_user":"zhqyvvn","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"78d02f317b0fa69de6db172a841c62bf"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
