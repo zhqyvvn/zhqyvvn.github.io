@@ -28,7 +28,7 @@
 <meta property="og:description" content="A component is a small, reusable chunk of code that is responsible for one job. That job is often to render some HTML. We can use a JavaScript class to define a new React component. We can also define">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-02-14T15:43:07.000Z">
-<meta property="article:modified_time" content="2023-02-14T18:14:09.773Z">
+<meta property="article:modified_time" content="2023-02-15T16:09:24.456Z">
 <meta property="article:author" content="zhqyvvn">
 <meta property="article:tag" content="React">
 <meta name="twitter:card" content="summary">
@@ -160,7 +160,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">42</span>
+          <span class="site-state-item-count">43</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -238,9 +238,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2023-02-14 10:43:07 / Modified: 13:14:09" itemprop="dateCreated datePublished" datetime="2023-02-14T10:43:07-05:00">2023-02-14</time>
+      <time title="Created: 2023-02-14 10:43:07" itemprop="dateCreated datePublished" datetime="2023-02-14T10:43:07-05:00">2023-02-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-02-15 11:09:24" itemprop="dateModified" datetime="2023-02-15T11:09:24-05:00">2023-02-15</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -325,7 +331,7 @@
 
 <p>JSX elements can be either HTML-like, or <em>component instances</em>. JSX uses <em>capitalization</em> to distinguish between the two. That is the React-specific reason why component class names must begin with capital letters. </p>
 <p>Whenever we make a component, that component inherits all of the methods of its component class. <code>MyComponentClass</code> has one method: <code>MyComponentClass.render()</code>. Therefore, <code>&lt;MyComponentClass /&gt;</code> also has a method named <code>render</code>.</p>
-<p>We could make different <MyComponentClass /> instances, and each one would inherit this same exact <code>render</code> method.</p>
+<p>We could make different <code>&lt;MyComponentClass /&gt;</code> instances, and each one would inherit this same exact <code>render</code> method.</p>
 <p>In order to render a component, that component needs to have the <code>render</code> method. To call a component’s <code>render</code> method, we pass that component to <code>ReactDOM.render()</code>:</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">ReactDOM</span>.<span class="title function_">render</span>(</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">MyComponentClass</span> /&gt;</span></span>,</span><br><span class="line">    <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;app&#x27;</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
 
@@ -347,6 +353,9 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
+                <a href="/2023/02/15/Notes-of-React-4/" rel="prev" title="Study Notes of React (4) - React Configs">
+                  <i class="fa fa-chevron-left"></i> Study Notes of React (4) - React Configs
+                </a>
             </div>
             <div class="post-nav-item">
                 <a href="/2023/02/05/Notes-of-Spring-6/" rel="next" title="Study Notes of Spring (6) - CRUD with JPA">
