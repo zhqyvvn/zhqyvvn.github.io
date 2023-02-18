@@ -1092,7 +1092,7 @@ pre code {
 }
 .sidebar-inner {
   color: #999;
-  padding: 15px 10px;
+  padding: 18px 10px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -1386,7 +1386,7 @@ pre code {
   width: 100%;
 }
 .with-love {
-  color: #808080;
+  color: #555;
   display: inline-block;
   margin: 0 5px;
   animation: icon-animate 1.33s ease-in-out infinite;
@@ -2489,7 +2489,7 @@ hr {
   transition: all 0.2s ease-in-out;
 }
 .links-of-author a::before {
-  background: #0e74ff;
+  background: #fff9f6;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
