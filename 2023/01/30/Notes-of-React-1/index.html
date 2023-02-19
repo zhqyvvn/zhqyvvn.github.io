@@ -28,7 +28,7 @@
 <meta property="og:description" content="JSX is a syntax extension for JavaScript. It was written to be used with React. JSX code looks a lot like HTML. If a JavaScript file contains JSX code, then that file will have to be compiled. That me">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-01-30T16:56:46.000Z">
-<meta property="article:modified_time" content="2023-02-06T01:55:17.898Z">
+<meta property="article:modified_time" content="2023-02-19T19:47:17.076Z">
 <meta property="article:author" content="zhqyvvn">
 <meta property="article:tag" content="React">
 <meta name="twitter:card" content="summary">
@@ -145,7 +145,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-JSX-Elements"><span class="nav-text">1. JSX Elements</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-JSX-Elements-And-Their-Surroundings"><span class="nav-text">2. JSX Elements And Their Surroundings</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Attributes-In-JSX"><span class="nav-text">3. Attributes In JSX</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Nested-JSX"><span class="nav-text">4. Nested JSX</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-JSX-Outer-Elements"><span class="nav-text">5. JSX Outer Elements</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-Rendering-JSX"><span class="nav-text">6. Rendering JSX</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-The-Virtual-DOM"><span class="nav-text">7. The Virtual DOM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Nice-Articles"><span class="nav-text">Nice Articles</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Source"><span class="nav-text">Source</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-JSX-Elements"><span class="nav-text">1. JSX Elements</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-JSX-Elements-And-Their-Surroundings"><span class="nav-text">2. JSX Elements And Their Surroundings</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Attributes-In-JSX"><span class="nav-text">3. Attributes In JSX</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Nested-JSX"><span class="nav-text">4. Nested JSX</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-JSX-Outer-Elements"><span class="nav-text">5. JSX Outer Elements</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-Rendering-JSX"><span class="nav-text">6. Rendering JSX</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-The-Virtual-DOM"><span class="nav-text">7. The Virtual DOM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Nice-Articles"><span class="nav-text">Nice Articles</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Course"><span class="nav-text">Course</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -246,7 +246,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-02-05 20:55:17" itemprop="dateModified" datetime="2023-02-05T20:55:17-05:00">2023-02-05</time>
+      <time title="Modified: 2023-02-19 14:47:17" itemprop="dateModified" datetime="2023-02-19T14:47:17-05:00">2023-02-19</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -345,7 +345,7 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> hello = <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello world<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// This will add &quot;Hello world&quot; to the screen:</span></span><br><span class="line"></span><br><span class="line"><span class="title class_">ReactDOM</span>.<span class="title function_">render</span>(hello, <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;app&#x27;</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// This won&#x27;t do anything at all:</span></span><br><span class="line"></span><br><span class="line"><span class="title class_">ReactDOM</span>.<span class="title function_">render</span>(hello, <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;app&#x27;</span>));</span><br></pre></td></tr></table></figure>
 <p>Only updating the necessary DOM elements is a large part of what makes React so successful.</p>
 <h3 id="Nice-Articles"><a href="#Nice-Articles" class="headerlink" title="Nice Articles"></a>Nice Articles</h3><p><a target="_blank" rel="noopener" href="https://www.codecademy.com/article/react-virtual-dom">React: The Virtual DOM</a><br><a target="_blank" rel="noopener" href="https://reactkungfu.com/2015/10/the-difference-between-virtual-dom-and-dom/">The difference between Virtual DOM and DOM</a></p>
-<h3 id="Source"><a href="#Source" class="headerlink" title="Source"></a>Source</h3><p><a target="_blank" rel="noopener" href="https://www.codecademy.com/learn/react-101">Learn React</a></p>
+<h3 id="Course"><a href="#Course" class="headerlink" title="Course"></a>Course</h3><p><a target="_blank" rel="noopener" href="https://www.codecademy.com/learn/react-101">Learn React</a></p>
 
     </div>
 

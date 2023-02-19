@@ -28,7 +28,7 @@
 <meta property="og:description" content="A component is a small, reusable chunk of code that is responsible for one job. That job is often to render some HTML. We can use a JavaScript class to define a new React component. We can also define">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-02-14T15:43:07.000Z">
-<meta property="article:modified_time" content="2023-02-15T16:09:24.456Z">
+<meta property="article:modified_time" content="2023-02-19T19:47:18.134Z">
 <meta property="article:author" content="zhqyvvn">
 <meta property="article:tag" content="React">
 <meta name="twitter:card" content="summary">
@@ -145,7 +145,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Class-Component"><span class="nav-text">1. Class Component</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-react-vs-react-dom"><span class="nav-text">2. react vs react-dom</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Render-Function"><span class="nav-text">3. Render Function</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-Multiline-JSX"><span class="nav-text">3.1 Multiline JSX</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-Variable-Attribute"><span class="nav-text">3.2 Variable Attribute</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-Contain-Logic"><span class="nav-text">3.3 Contain Logic</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-4-Conditional"><span class="nav-text">3.4 Conditional</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-This-in-Component"><span class="nav-text">4. This in Component</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-Event-Listener-in-a-Component"><span class="nav-text">5. Event Listener in a Component</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-Component-Instance"><span class="nav-text">6. Component Instance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Source"><span class="nav-text">Source</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Class-Component"><span class="nav-text">1. Class Component</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-react-vs-react-dom"><span class="nav-text">2. react vs react-dom</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Render-Function"><span class="nav-text">3. Render Function</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-Multiline-JSX"><span class="nav-text">3.1 Multiline JSX</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-Variable-Attribute"><span class="nav-text">3.2 Variable Attribute</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-Contain-Logic"><span class="nav-text">3.3 Contain Logic</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-4-Conditional"><span class="nav-text">3.4 Conditional</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-This-in-Component"><span class="nav-text">4. This in Component</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-Event-Listener-in-a-Component"><span class="nav-text">5. Event Listener in a Component</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-Component-Instance"><span class="nav-text">6. Component Instance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Course"><span class="nav-text">Course</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -246,7 +246,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-02-15 11:09:24" itemprop="dateModified" datetime="2023-02-15T11:09:24-05:00">2023-02-15</time>
+      <time title="Modified: 2023-02-19 14:47:18" itemprop="dateModified" datetime="2023-02-19T14:47:18-05:00">2023-02-19</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -336,7 +336,7 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">ReactDOM</span>.<span class="title function_">render</span>(</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">MyComponentClass</span> /&gt;</span></span>,</span><br><span class="line">    <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;app&#x27;</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
 
 <p><code>ReactDOM.render()</code> will tell <code>&lt;MyComponentClass /&gt;</code> to call its render method. <code>&lt;MyComponentClass /&gt;</code> will call its render method, which will return the JSX element <code>&lt;h1&gt;Hello world&lt;/h1&gt;</code>. <code>ReactDOM.render()</code> will then take that resulting JSX element, and add it to the virtual DOM. This will make “<code>Hello world</code>” appear on the screen.</p>
-<h3 id="Source"><a href="#Source" class="headerlink" title="Source"></a>Source</h3><p><a target="_blank" rel="noopener" href="https://www.codecademy.com/learn/react-101">Learn React</a></p>
+<h3 id="Course"><a href="#Course" class="headerlink" title="Course"></a>Course</h3><p><a target="_blank" rel="noopener" href="https://www.codecademy.com/learn/react-101">Learn React</a></p>
 
     </div>
 

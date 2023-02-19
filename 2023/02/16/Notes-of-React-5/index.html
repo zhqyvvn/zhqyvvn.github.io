@@ -28,7 +28,7 @@
 <meta property="og:description" content="1. Import Component from a FileIn React.js, every JavaScript file in the application is invisible to each other by default. To use a variable that’s declared in a different file, we have to import the">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-02-16T18:43:41.000Z">
-<meta property="article:modified_time" content="2023-02-16T19:41:42.368Z">
+<meta property="article:modified_time" content="2023-02-19T19:47:18.919Z">
 <meta property="article:author" content="zhqyvvn">
 <meta property="article:tag" content="React">
 <meta name="twitter:card" content="summary">
@@ -145,7 +145,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Import-Component-from-a-File"><span class="nav-text">1. Import Component from a File</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Export"><span class="nav-text">2. Export</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Component-in-render-Function"><span class="nav-text">3. Component in render Function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Source"><span class="nav-text">Source</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Import-Component-from-a-File"><span class="nav-text">1. Import Component from a File</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Export"><span class="nav-text">2. Export</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Component-in-render-Function"><span class="nav-text">3. Component in render Function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Course"><span class="nav-text">Course</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -238,9 +238,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2023-02-16 13:43:41 / Modified: 14:41:42" itemprop="dateCreated datePublished" datetime="2023-02-16T13:43:41-05:00">2023-02-16</time>
+      <time title="Created: 2023-02-16 13:43:41" itemprop="dateCreated datePublished" datetime="2023-02-16T13:43:41-05:00">2023-02-16</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-02-19 14:47:18" itemprop="dateModified" datetime="2023-02-19T14:47:18-05:00">2023-02-19</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -307,7 +313,7 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">A</span> <span class="keyword">extends</span> <span class="title class_ inherited__">React.Component</span> &#123;</span><br><span class="line">  <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Whooaa!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">class</span> <span class="title class_">B</span> <span class="keyword">extends</span> <span class="title class_ inherited__">React.Component</span> &#123;</span><br><span class="line">  <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">A</span> /&gt;</span></span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>In above, <code>B</code>‘s render method returns an instance of the <code>A</code> component class, or <code>B</code> renders an <code>&lt;A /&gt;</code>.</p>
 <p>By nesting components inside of other components, we can build complex architectures. This relationship is the fundamental relationship of <code>React.js</code>.</p>
-<h3 id="Source"><a href="#Source" class="headerlink" title="Source"></a>Source</h3><p><a target="_blank" rel="noopener" href="https://www.codecademy.com/learn/react-101">Learn React</a></p>
+<h3 id="Course"><a href="#Course" class="headerlink" title="Course"></a>Course</h3><p><a target="_blank" rel="noopener" href="https://www.codecademy.com/learn/react-101">Learn React</a></p>
 
     </div>
 
