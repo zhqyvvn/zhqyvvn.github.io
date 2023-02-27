@@ -20,28 +20,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"zhqyvvn.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":true,"transition":{"menu_item":"flipInX","post_block":"none","post_header":"flipInX","post_body":"none","coll_header":"flipInX","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="1. Spring Data JPA and JDBCSpring Data JPA wraps around an implementation of the JPA to make it a seamless process to integrate a database into the Spring Boot Application. JPA stands for Java Persist">
+    <meta name="description" content="1. Stateless Functional ComponentsIn React, components can also be defined as JavaScript functions — Function Components, which is different from Class Components.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Study Notes of Spring (5) - Spring Data JPA">
-<meta property="og:url" content="http://zhqyvvn.github.io/2023/02/05/Notes-of-Spring-5/index.html">
+<meta property="og:title" content="Study Notes of React (9) - Function Components">
+<meta property="og:url" content="http://zhqyvvn.github.io/2023/02/27/Notes-of-React-9/index.html">
 <meta property="og:site_name" content="Tech Knowledge Sharing">
-<meta property="og:description" content="1. Spring Data JPA and JDBCSpring Data JPA wraps around an implementation of the JPA to make it a seamless process to integrate a database into the Spring Boot Application. JPA stands for Java Persist">
+<meta property="og:description" content="1. Stateless Functional ComponentsIn React, components can also be defined as JavaScript functions — Function Components, which is different from Class Components.">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-02-05T05:01:10.000Z">
-<meta property="article:modified_time" content="2023-02-19T19:47:24.532Z">
+<meta property="article:published_time" content="2023-02-27T21:26:11.957Z">
+<meta property="article:modified_time" content="2023-02-27T21:45:30.149Z">
 <meta property="article:author" content="zhqyvvn">
-<meta property="article:tag" content="Spring">
+<meta property="article:tag" content="React">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://zhqyvvn.github.io/2023/02/05/Notes-of-Spring-5/">
+<link rel="canonical" href="http://zhqyvvn.github.io/2023/02/27/Notes-of-React-9/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://zhqyvvn.github.io/2023/02/05/Notes-of-Spring-5/","path":"2023/02/05/Notes-of-Spring-5/","title":"Study Notes of Spring (5) - Spring Data JPA"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://zhqyvvn.github.io/2023/02/27/Notes-of-React-9/","path":"2023/02/27/Notes-of-React-9/","title":"Study Notes of React (9) - Function Components"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Study Notes of Spring (5) - Spring Data JPA | Tech Knowledge Sharing</title>
+<title>Study Notes of React (9) - Function Components | Tech Knowledge Sharing</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162128119-1"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-162128119-1","only_pageview":false}</script>
@@ -145,7 +145,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Spring-Data-JPA-and-JDBC"><span class="nav-text">1. Spring Data JPA and JDBC</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Hibernate-an-ORM"><span class="nav-text">Hibernate, an ORM</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Database-Types"><span class="nav-text">2. Database Types</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#H2-a-Database-Type"><span class="nav-text">H2, a Database Type</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Conclusion"><span class="nav-text">3. Conclusion</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Course"><span class="nav-text">Course</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Stateless-Functional-Components"><span class="nav-text">1. Stateless Functional Components</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Function-Components-and-Props"><span class="nav-text">2. Function Components and Props</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Course"><span class="nav-text">Course</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -210,7 +210,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://zhqyvvn.github.io/2023/02/05/Notes-of-Spring-5/">
+    <link itemprop="mainEntityOfPage" href="http://zhqyvvn.github.io/2023/02/27/Notes-of-React-9/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/38484412?s=460&v=4">
@@ -223,12 +223,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Study Notes of Spring (5) - Spring Data JPA | Tech Knowledge Sharing">
+      <meta itemprop="name" content="Study Notes of React (9) - Function Components | Tech Knowledge Sharing">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Study Notes of Spring (5) - Spring Data JPA
+          Study Notes of React (9) - Function Components
         </h1>
 
         <div class="post-meta-container">
@@ -238,15 +238,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
+      
 
-      <time title="Created: 2023-02-05 00:01:10" itemprop="dateCreated datePublished" datetime="2023-02-05T00:01:10-05:00">2023-02-05</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-02-19 14:47:24" itemprop="dateModified" datetime="2023-02-19T14:47:24-05:00">2023-02-19</time>
+      <time title="Created: 2023-02-27 16:26:11 / Modified: 16:45:30" itemprop="dateCreated datePublished" datetime="2023-02-27T16:26:11-05:00">2023-02-27</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -258,7 +252,7 @@
         </span>
           , 
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Study-Notes/Spring/" itemprop="url" rel="index"><span itemprop="name">Spring</span></a>
+          <a href="/categories/Study-Notes/React/" itemprop="url" rel="index"><span itemprop="name">React</span></a>
         </span>
     </span>
 
@@ -279,40 +273,20 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h3 id="1-Spring-Data-JPA-and-JDBC"><a href="#1-Spring-Data-JPA-and-JDBC" class="headerlink" title="1. Spring Data JPA and JDBC"></a>1. Spring Data JPA and JDBC</h3><p><code>Spring Data JPA</code> wraps around an implementation of the <code>JPA</code> to make it a seamless process to integrate a database into the Spring Boot Application.</p>
-<p><code>JPA</code> stands for <em>Java Persistence API</em>, which is the underlying standard used to translate objects from Java into queries that can be sent directly to the underlying database.</p>
+        <h3 id="1-Stateless-Functional-Components"><a href="#1-Stateless-Functional-Components" class="headerlink" title="1. Stateless Functional Components"></a>1. Stateless Functional Components</h3><p>In React, components can also be defined as JavaScript functions — <strong>Function Components</strong>, which is different from Class Components.</p>
 <span id="more"></span>
-<p><code>JPA</code> does this by wrapping around another standard, <code>JDBC</code> (Java Database Connectivity). This is the layer that sends raw database queries to the underlying database.</p>
-<p><code>JPA</code> is a standard that can be implemented by an <code>ORM</code> (object-relational mapping). </p>
-<p>Application developers implements the required interactions with objects and the <code>ORM</code> maps them into database queries against the underlying database relations.</p>
-<p>For example, instead of defining a database table in SQL:</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> plants (</span><br><span class="line">  name <span class="type">varchar</span>,</span><br><span class="line">  type <span class="type">varchar</span>,</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-<p>we can define a Java class:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Plant</span> &#123;</span><br><span class="line">  <span class="keyword">private</span> string name;</span><br><span class="line">  <span class="keyword">private</span> string type;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>Instead of writing SQL queries:</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> name</span><br><span class="line"><span class="keyword">FROM</span> plants</span><br><span class="line"><span class="keyword">WHERE</span> name<span class="operator">=</span><span class="string">&#x27;ficus&#x27;</span>;</span><br></pre></td></tr></table></figure>
-<p>we can use Java methods:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Plant</span> <span class="variable">ficusName</span> <span class="operator">=</span> plantRepository.findByName(<span class="string">&#x27;ficus&#x27;</span>).name;</span><br></pre></td></tr></table></figure>
+<p><code>MyComponentClass</code> class component:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyComponentClass</span> <span class="keyword">extends</span> <span class="title class_ inherited__">React.Component</span> &#123;</span><br><span class="line">  <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello world<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h4 id="Hibernate-an-ORM"><a href="#Hibernate-an-ORM" class="headerlink" title="Hibernate, an ORM"></a>Hibernate, an ORM</h4><p>The <code>ORM</code> most commonly used with Spring Data JPA is called <code>Hibernate</code>, and it comes packaged along with Spring Data JPA as part of the dependency, <code>spring-boot-starter-data-jpa</code>.</p>
-<h3 id="2-Database-Types"><a href="#2-Database-Types" class="headerlink" title="2. Database Types"></a>2. Database Types</h3><p>Spring Data JPA supports many different kinds of databases right out of the box, such as MySQL and PostgreSQL. </p>
-<p>If the underlying database technology changes, the application developer would update the configuration to point to the new database, and the code may remain the same.</p>
-<p>As long as appropriate <code>JDBC</code> drivers exist for a given database, implementations of the <code>JPA</code> will be able to translate Java objects to the right SQL queries.</p>
-<h4 id="H2-a-Database-Type"><a href="#H2-a-Database-Type" class="headerlink" title="H2, a Database Type"></a>H2, a Database Type</h4><p><code>H2</code> is a relational database written in Java. It can run on the same kind of infrastructure as the application and can run entirely <em>in-memory</em>. </p>
-<p><em>Infrastructure</em> is the generic term for the machines that applications and databases run on.</p>
-<p>To connect to an embedded <code>H2</code> database using Spring Data JPA, update the <code>application.properties</code>:</p>
-<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring.datasource.url</span>=<span class="string">jdbc:h2:~/plants.db</span></span><br><span class="line"><span class="attr">spring.datasource.driverClassName</span>=<span class="string">org.h2.Driver</span></span><br></pre></td></tr></table></figure>
-<p>This example adds a <code>plants.db</code> database, which might be used by a botanist to track their inventory.</p>
-<h3 id="3-Conclusion"><a href="#3-Conclusion" class="headerlink" title="3. Conclusion"></a>3. Conclusion</h3><p>Spring Data JPA simplifies the setup and querying of a database.</p>
-<ul>
-<li>Spring Data JPA is available in the <code>spring-boot-starter-data-jpa</code> dependency.</li>
-<li>Spring Data JPA is an implementation of the <code>Java Persistence API</code>, or <code>JPA</code>.</li>
-<li>The object-relational mapping tool, or <code>ORM</code>, provided by Spring Data JPA is called <code>Hibernate</code>. It provides Java methods that can be translated into SQL queries:<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Plant</span> <span class="variable">ficusName</span> <span class="operator">=</span> plantRepository.findByName(<span class="string">&#x27;ficus&#x27;</span>).name;</span><br></pre></td></tr></table></figure></li>
-<li>The standard that defines the relationship between Java code and SQL queries is called Java Database Connectivity, or <code>JDBC</code>.</li>
-<li>There are many different databases that Spring Data JPA can work with. <code>H2</code> is one of those. It differs from the other databases in that it can run in-memory, meaning that developers don’t have to set up and connect to a separate database to get their app working.</li>
-<li>The database type is specified in <code>application.properties</code></li>
-</ul>
-<h3 id="Course"><a href="#Course" class="headerlink" title="Course"></a>Course</h3><p><a target="_blank" rel="noopener" href="https://www.codecademy.com/learn/learn-spring">Learn Spring</a></p>
+<p><code>MyComponentClass</code> function component:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">MyComponentClass</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello world<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>The function component should return the same JSX that was originally returned by the <code>render()</code> method. <code>render()&#123;&#125;</code> is removed in the function component.</p>
+<h3 id="2-Function-Components-and-Props"><a href="#2-Function-Components-and-Props" class="headerlink" title="2. Function Components and Props"></a>2. Function Components and Props</h3><p>To access <code>props</code>, function component needs a parameter named <code>props</code>.</p>
+<p>Within the function body, access properties of <code>props</code> using <code>props.propertyName</code>, without <code>this</code> keyword.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">ReactDOM</span> <span class="keyword">from</span> <span class="string">&#x27;react-dom&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">NewFriend</span> = (<span class="params">props</span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">      <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&#123;props.src&#125;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">ReactDOM</span>.<span class="title function_">render</span>(</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">NewFriend</span> <span class="attr">src</span>=<span class="string">&quot;https://...&quot;</span> /&gt;</span></span>, <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;app&#x27;</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h3 id="Course"><a href="#Course" class="headerlink" title="Course"></a>Course</h3><p><a target="_blank" rel="noopener" href="https://www.codecademy.com/learn/react-101">Learn React</a></p>
 
     </div>
 
@@ -322,20 +296,17 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Spring/" rel="tag"># Spring</a>
+              <a href="/tags/React/" rel="tag"># React</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2023/02/05/Notes-of-Spring-6/" rel="prev" title="Study Notes of Spring (6) - CRUD with JPA">
-                  <i class="fa fa-chevron-left"></i> Study Notes of Spring (6) - CRUD with JPA
-                </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2023/02/04/Notes-of-Spring-4/" rel="next" title="Study Notes of Spring (4) - Spring Boot">
-                  Study Notes of Spring (4) - Spring Boot <i class="fa fa-chevron-right"></i>
+                <a href="/2023/02/18/Notes-of-React-8/" rel="next" title="Study Notes of React (8) - Lifecycle Methods">
+                  Study Notes of React (8) - Lifecycle Methods <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -430,7 +401,7 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"zhqyvvn","repo":"zhqyvvn.github.io","client_id":"c28a59a6f171f3e27313","client_secret":"a31ffbb812ba7a28cd66045ae2a68e017e9d539f","admin_user":"zhqyvvn","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"51b9d41492452a40fe3ee99915e4d012"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"zhqyvvn","repo":"zhqyvvn.github.io","client_id":"c28a59a6f171f3e27313","client_secret":"a31ffbb812ba7a28cd66045ae2a68e017e9d539f","admin_user":"zhqyvvn","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"29585a49c6559948afea1739632d5aa3"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 
 </body>
