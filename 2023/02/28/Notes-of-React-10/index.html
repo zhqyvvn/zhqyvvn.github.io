@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"zhqyvvn.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":true,"transition":{"menu_item":"flipInX","post_block":"none","post_header":"flipInX","post_body":"none","coll_header":"flipInX","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="React Hooks are functions that manage the internal state of components and handle post-rendering side effects directly from the function components.  Hooks don’t work inside classes.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Study Notes of React (10) - The State Hook">
+<meta property="og:url" content="http://zhqyvvn.github.io/2023/02/28/Notes-of-React-10/index.html">
+<meta property="og:site_name" content="Tech Knowledge Sharing">
+<meta property="og:description" content="React Hooks are functions that manage the internal state of components and handle post-rendering side effects directly from the function components.  Hooks don’t work inside classes.">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-02-28T15:44:02.678Z">
+<meta property="article:modified_time" content="2023-02-28T17:51:20.395Z">
+<meta property="article:author" content="zhqyvvn">
+<meta property="article:tag" content="React">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://zhqyvvn.github.io/2023/02/28/Notes-of-React-10/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://zhqyvvn.github.io/2023/02/28/Notes-of-React-10/","path":"2023/02/28/Notes-of-React-10/","title":"Study Notes of React (10) - The State Hook"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Study Notes of React (10) - The State Hook | Tech Knowledge Sharing</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162128119-1"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-162128119-1","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+
+  <script async defer data-website-id="" src=""></script>
+
+  <script defer data-domain="" src=""></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Tech Knowledge Sharing</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-posts"><a href="/archives/" rel="section"><i class="fa fa-book fa-fw"></i>posts</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-folder fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Update-Function-Component-State"><span class="nav-text">1. Update Function Component State</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Initialize-State"><span class="nav-text">2. Initialize State</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Use-State-Setter-Outside-of-JSX"><span class="nav-text">3. Use State Setter Outside of JSX</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Set-From-Previous-State"><span class="nav-text">4. Set From Previous State</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-Arrays-in-State"><span class="nav-text">5. Arrays in State</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-Objects-in-State"><span class="nav-text">6. Objects in State</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-Separate-Hooks-for-Separate-States"><span class="nav-text">7. Separate Hooks for Separate States</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Course"><span class="nav-text">Course</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="zhqyvvn"
+      src="https://avatars0.githubusercontent.com/u/38484412?s=460&v=4">
+  <p class="site-author-name" itemprop="name">zhqyvvn</p>
+  <div class="site-description" itemprop="description">I'm a Java developer wearing glasses ...coz I don't C#</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">49</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zhqyvvn" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zhqyvvn" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:zhqyvvn@gmail.com" title="E-Mail → mailto:zhqyvvn@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="Back to top">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://zhqyvvn.github.io/2023/02/28/Notes-of-React-10/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/38484412?s=460&v=4">
+      <meta itemprop="name" content="zhqyvvn">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tech Knowledge Sharing">
+      <meta itemprop="description" content="I'm a Java developer wearing glasses ...coz I don't C#">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Study Notes of React (10) - The State Hook | Tech Knowledge Sharing">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Study Notes of React (10) - The State Hook
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2023-02-28 10:44:02 / Modified: 12:51:20" itemprop="dateCreated datePublished" datetime="2023-02-28T10:44:02-05:00">2023-02-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Study-Notes/" itemprop="url" rel="index"><span itemprop="name">Study Notes</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Study-Notes/React/" itemprop="url" rel="index"><span itemprop="name">React</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>React Hooks are functions that manage the internal state of components and handle post-rendering side effects directly from the function components. </p>
+<p>Hooks don’t work inside classes. </p>
+<span id="more"></span>
+<p>Function components and React Hooks do not replace class components. They are completely optional.</p>
+<blockquote>
+<p>Hooks let us “hook into” state and lifecycle features directly from the function components.</p>
+</blockquote>
+<p>React offers a number of built-in Hooks. A few of these include <code>useState()</code>, <code>useEffect()</code>,<code> useContext()</code>, <code>useReducer()</code>, and <code>useRef()</code>. See <a target="_blank" rel="noopener" href="https://reactjs.org/docs/hooks-reference.html">the full list in the docs</a>.</p>
+<h3 id="1-Update-Function-Component-State"><a href="#1-Update-Function-Component-State" class="headerlink" title="1. Update Function Component State"></a>1. Update Function Component State</h3><p>The most common Hook used for building React components is the State Hook.</p>
+<p>The State Hook is a named export from the React library. We can import it like this:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span>, &#123; useState &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p><code>useState()</code> is a JavaScript function defined in the React library. When we call this function, it returns an array with two values:</p>
+<ul>
+<li><em>current state</em> - the current value of this state</li>
+<li><em>state setter</em> - a function that we can use to update the value of this state</li>
+</ul>
+<p>As React returns these two values in an array, we can assign them to local variables, naming them whatever we like. For example:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> [toggle, setToggle] = <span class="title function_">useState</span>();</span><br></pre></td></tr></table></figure>
+
+<p>An example of a function component using the State Hook:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span>, &#123; useState &#125; <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Toggle</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> [toggle, setToggle] = <span class="title function_">useState</span>();</span><br><span class="line"> </span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">p</span>&gt;</span>The toggle is &#123;toggle&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> setToggle(&quot;On&quot;)&#125;&gt;On<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> setToggle(&quot;Off&quot;)&#125;&gt;Off<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Notice the state setter function <code>setToggle()</code> is called by the <code>onClick</code> event listeners. </p>
+<p><code>setToggle()</code> is called with the new state value as an argument, to update the value of <code>toggle</code> and re-render the component with the new value.</p>
+<p>With the State Hook, state is updated by calling a state setter function, which is different from “binding functions to class instances, working with constructors, or dealing with the <code>this</code> keyword” in the class components.</p>
+<p>Calling the state setter signals to React that the component needs to re-render, so the whole function defining the component is called again. </p>
+<p><code>useState()</code> allows React to keep track of the current value of state from one render to the next.</p>
+<h3 id="2-Initialize-State"><a href="#2-Initialize-State" class="headerlink" title="2. Initialize State"></a>2. Initialize State</h3><p>To initialize the state with a value, we can pass the initial value as an argument to the <code>useState()</code> function call.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> [isLoading, setIsLoading] = <span class="title function_">useState</span>(<span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
+<p>There are three ways in which this code affects our component:</p>
+<ol>
+<li>During the first render, the <em>initial state argument</em> is used.</li>
+<li>When the state setter is called, React ignores the initial state argument and uses the new value.</li>
+<li>When the component re-renders for any other reason, React continues to use the same value from the previous render.</li>
+</ol>
+<p>If we don’t pass an initial value when calling <code>useState()</code>, then the current value of the state during the first render will be <code>undefined</code>. </p>
+<p>If we don’t have the value needed during the first render, we can explicitly pass <code>null</code> instead of just passively leaving the value as <code>undefined</code>.</p>
+<h3 id="3-Use-State-Setter-Outside-of-JSX"><a href="#3-Use-State-Setter-Outside-of-JSX" class="headerlink" title="3. Use State Setter Outside of JSX"></a>3. Use State Setter Outside of JSX</h3><p>Here is an example of managing the changing value of a string as a user types into a text input field:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span>, &#123; useState &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> <span class="title function_">EmailTextInput</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> [email, setEmail] = <span class="title function_">useState</span>(<span class="string">&#x27;&#x27;</span>);</span><br><span class="line">  <span class="keyword">const</span> <span class="title function_">handleChange</span> = (<span class="params">event</span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> updatedEmail = event.<span class="property">target</span>.<span class="property">value</span>;</span><br><span class="line">    <span class="title function_">setEmail</span>(updatedEmail);</span><br><span class="line">  &#125;</span><br><span class="line"> </span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">input</span> <span class="attr">value</span>=<span class="string">&#123;email&#125;</span> <span class="attr">onChange</span>=<span class="string">&#123;handleChange&#125;</span> /&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>The square brackets on the left side of the assignment operator signal <a target="_blank" rel="noopener" href="https://www.codecademy.com/content-items/92a5f93c6dbc6794d83e00383fc3af68">array destructuring</a>.</p>
+<p>It’s convention to name this variable using the current state variable (for example, <code>email</code>) with <code>set</code> prepended.</p>
+<p>The JSX <code>input</code> tag has an event listener called <code>onChange</code>. This event listener calls an event handler each time the user types something in this element.</p>
+<p>In the example above, the event handler is defined inside of the definition for the function component, but outside of the JSX. </p>
+<p>We can simplify this:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">handleChange</span> = (<span class="params">event</span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> newEmail = event.<span class="property">target</span>.<span class="property">value</span>;</span><br><span class="line">  <span class="title function_">setEmail</span>(newEmail);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>To this:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">handleChange</span> = (<span class="params">event</span>) =&gt; <span class="title function_">setEmail</span>(event.<span class="property">target</span>.<span class="property">value</span>);</span><br></pre></td></tr></table></figure>
+<p>Or even, use <a target="_blank" rel="noopener" href="https://www.codecademy.com/content-items/92a5f93c6dbc6794d83e00383fc3af68">object destructuring</a> to write this:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">handleChange</span> = (<span class="params">&#123;target&#125;</span>) =&gt; <span class="title function_">setEmail</span>(target.<span class="property">value</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-Set-From-Previous-State"><a href="#4-Set-From-Previous-State" class="headerlink" title="4. Set From Previous State"></a>4. Set From Previous State</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> <span class="title function_">Counter</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> [count, setCount] = <span class="title function_">useState</span>(<span class="number">0</span>);</span><br><span class="line"> </span><br><span class="line">  <span class="keyword">const</span> <span class="title function_">increment</span> = (<span class="params"></span>) =&gt; <span class="title function_">setCount</span>(<span class="function"><span class="params">prevCount</span> =&gt;</span> prevCount + <span class="number">1</span>);</span><br><span class="line"> </span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">p</span>&gt;</span>Wow, you&#x27;ve clicked that button: &#123;count&#125; times<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;increment&#125;</span>&gt;</span>Click here!<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>In this example, when the button is pressed, the <code>increment()</code> event handler is called.</p>
+<p>Because the next value of <code>count</code> depends on the previous value of <code>count</code>, we pass a callback function as the argument for <code>setCount()</code> instead of a value.</p>
+<p>The callback function takes the previous count as an argument, and returns the next value of count (in this case <code>prevCount + 1</code>). </p>
+<p>Use the callback method instead of <code>setCount(count + 1)</code> - <a target="_blank" rel="noopener" href="https://reactjs.org/docs/react-component.html#setstate">Docs</a></p>
+<h3 id="5-Arrays-in-State"><a href="#5-Arrays-in-State" class="headerlink" title="5. Arrays in State"></a>5. Arrays in State</h3><p>Outside of the function component:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> options = [<span class="string">&quot;Bell Pepper&quot;</span>, <span class="string">&quot;Sausage&quot;</span>, <span class="string">&quot;Pepperoni&quot;</span>, <span class="string">&quot;Pineapple&quot;</span>];</span><br></pre></td></tr></table></figure>
+<p>Define <em>static data</em> models outside of the function components since they don’t need to be recreated each time the component re-renders.</p>
+<p>Inside the function component:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> [selected, setSelected] = <span class="title function_">useState</span>([]);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">toggleTopping</span> = (<span class="params">&#123;target&#125;</span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> clickedTopping = target.<span class="property">value</span>;</span><br><span class="line">  <span class="title function_">setSelected</span>(<span class="function">(<span class="params">prev</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (prev.<span class="title function_">includes</span>(clickedTopping)) &#123;</span><br><span class="line">      <span class="keyword">return</span> prev.<span class="title function_">filter</span>(<span class="function"><span class="params">t</span> =&gt;</span> t !== clickedTopping);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> [clickedTopping, ...prev];</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> (</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    &#123;options.map(option =&gt; (</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">value</span>=<span class="string">&#123;option&#125;</span> <span class="attr">onClick</span>=<span class="string">&#123;toggleTopping&#125;</span> <span class="attr">key</span>=<span class="string">&#123;option&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        ...</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    ))&#125;</span></span><br><span class="line"><span class="language-xml">    ...</span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>The selected array contains <em>dynamic data</em>.</p>
+<p>When updating an array in state, the previous array is replaced with a brand new array. Any information we want to save from the previous array needs to be explicitly copied over to the new array. That’s why we use the <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax">spread syntax</a> <code>...prev</code>.</p>
+<h3 id="6-Objects-in-State"><a href="#6-Objects-in-State" class="headerlink" title="6. Objects in State"></a>6. Objects in State</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> <span class="title function_">Login</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> [formState, setFormState] = <span class="title function_">useState</span>(&#123;&#125;);</span><br><span class="line"> </span><br><span class="line">  <span class="keyword">const</span> <span class="title function_">handleChange</span> = (<span class="params">&#123; target &#125;</span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; name, value &#125; = target;</span><br><span class="line">    <span class="title function_">setFormState</span>(<span class="function">(<span class="params">prev</span>) =&gt;</span> (&#123;</span><br><span class="line">      ...prev,</span><br><span class="line">      [name]: value</span><br><span class="line">    &#125;));</span><br><span class="line">  &#125;;</span><br><span class="line"> </span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">form</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">input</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">value</span>=<span class="string">&#123;formState.firstName&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">onChange</span>=<span class="string">&#123;handleChange&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">name</span>=<span class="string">&quot;firstName&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">type</span>=<span class="string">&quot;text&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">      /&gt;</span></span></span><br><span class="line"><span class="language-xml">      ...</span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>The event handler can be used across multiple inputs by using the <code>input</code> tag’s <code>name</code> attribute to identify which <code>input</code> the change event came from. </p>
+<p>We use object destructuring to unpack the <code>name</code> and <code>value</code> properties from the <code>target</code> object.</p>
+<p>when updating the state with <code>setFormState()</code> inside a function component, we do not modify the same object. We must copy over the values from the previous object when setting the next value of state. </p>
+<p>Inside of the state setter callback function, we wrap the curly brackets in parentheses: </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">setFormState</span>(<span class="function">(<span class="params">prev</span>) =&gt;</span> (&#123;</span><br><span class="line">  ...prev,</span><br><span class="line">  [name]: value</span><br><span class="line">&#125;));</span><br></pre></td></tr></table></figure>
+<p>This tells JavaScript that the curly brackets refer to a new object to be returned. </p>
+<p>The value of the property key <code>name</code> is overwritten. </p>
+<p>The square brackets around the <code>name</code> is <a target="_blank" rel="noopener" href="http://eloquentcode.com/computed-property-names-in-javascript">Computed Property Name</a>, which allows us to use the string stored by the <code>name</code> variable as a property key.</p>
+<h3 id="7-Separate-Hooks-for-Separate-States"><a href="#7-Separate-Hooks-for-Separate-States" class="headerlink" title="7. Separate Hooks for Separate States"></a>7. Separate Hooks for Separate States</h3><p>Separate data that changes separately into different state variables.</p>
+<p>It’s better to split state into multiple state variables based on which values tend to change together.</p>
+<p>For example, the original code may look like this:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> [state, setState] = <span class="title function_">useState</span>(&#123;</span><br><span class="line">  <span class="attr">currentGrade</span>: <span class="string">&#x27;B&#x27;</span>,</span><br><span class="line">  <span class="attr">classmates</span>: [<span class="string">&#x27;Hasan&#x27;</span>, <span class="string">&#x27;Sam&#x27;</span>, <span class="string">&#x27;Emma&#x27;</span>],</span><br><span class="line">  <span class="attr">classDetails</span>: &#123;<span class="attr">topic</span>: <span class="string">&#x27;Math&#x27;</span>, <span class="attr">teacher</span>: <span class="string">&#x27;Ms. Barry&#x27;</span>, <span class="attr">room</span>: <span class="number">201</span>&#125;;</span><br><span class="line">  ...</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>It’s better to rewrite the previous code as:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> [currentGrade, setGrade] = <span class="title function_">useState</span>(<span class="string">&#x27;B&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> [classmates, setClassmates] = <span class="title function_">useState</span>([<span class="string">&#x27;Hasan&#x27;</span>, <span class="string">&#x27;Sam&#x27;</span>, <span class="string">&#x27;Emma&#x27;</span>]);</span><br><span class="line"><span class="keyword">const</span> [classDetails, setClassDetails] = <span class="title function_">useState</span>(&#123;<span class="attr">topic</span>: <span class="string">&#x27;Math&#x27;</span>, <span class="attr">teacher</span>: <span class="string">&#x27;Ms. Barry&#x27;</span>, <span class="attr">room</span>: <span class="number">201</span>&#125;);</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<p>Another example of using multiple State Hooks for managing separate data - check <a target="_blank" rel="noopener" href="https://reactjs.org/docs/hooks-state.html#tip-using-multiple-state-variables">here</a>.</p>
+<h3 id="Course"><a href="#Course" class="headerlink" title="Course"></a>Course</h3><p><a target="_blank" rel="noopener" href="https://www.codecademy.com/learn/react-101">Learn React</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/React/" rel="tag"># React</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/02/27/Notes-of-React-9/" rel="next" title="Study Notes of React (9) - Function Components">
+                  Study Notes of React (9) - Function Components <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zhqyvvn</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"zhqyvvn","repo":"zhqyvvn.github.io","client_id":"c28a59a6f171f3e27313","client_secret":"a31ffbb812ba7a28cd66045ae2a68e017e9d539f","admin_user":"zhqyvvn","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"1a71cf0f75d87fe3c0b91973621ca1e7"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
