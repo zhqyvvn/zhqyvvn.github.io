@@ -18,17 +18,17 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"zhqyvvn.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":true,"transition":{"menu_item":"flipInX","post_block":"none","post_header":"flipInX","post_body":"none","coll_header":"flipInX","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"zhqyvvn.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12,"width":320},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":true,"transition":{"menu_item":"flipInX","post_block":"none","post_header":"flipInX","post_body":"none","coll_header":"flipInX","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="The Spring framework defines a Spring bean as an object managed by the Spring Inversion of Control (IoC) container. 1. BeansWithout the Spring Beans feature, instantiating an object from a class requi">
+    <meta name="description" content="The Spring framework defines a Spring bean as an object managed by the Spring Inversion of Control (IoC) container.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Study Notes of Spring (3) - Spring Bean">
 <meta property="og:url" content="http://zhqyvvn.github.io/2023/02/04/Notes-of-Spring-3/index.html">
 <meta property="og:site_name" content="Tech Knowledge Sharing">
-<meta property="og:description" content="The Spring framework defines a Spring bean as an object managed by the Spring Inversion of Control (IoC) container. 1. BeansWithout the Spring Beans feature, instantiating an object from a class requi">
+<meta property="og:description" content="The Spring framework defines a Spring bean as an object managed by the Spring Inversion of Control (IoC) container.">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-02-04T20:58:09.000Z">
-<meta property="article:modified_time" content="2023-02-27T21:54:44.320Z">
+<meta property="article:modified_time" content="2023-03-15T01:35:42.181Z">
 <meta property="article:author" content="zhqyvvn">
 <meta property="article:tag" content="Spring">
 <meta name="twitter:card" content="summary">
@@ -82,6 +82,7 @@
       <p class="site-title">Tech Knowledge Sharing</p>
       <i class="logo-line"></i>
     </a>
+      <p class="site-subtitle" itemprop="description">zhqyvvn's tech blog</p>
   </div>
 
   <div class="site-nav-right">
@@ -154,13 +155,13 @@
     <img class="site-author-image" itemprop="image" alt="zhqyvvn"
       src="https://avatars0.githubusercontent.com/u/38484412?s=460&v=4">
   <p class="site-author-name" itemprop="name">zhqyvvn</p>
-  <div class="site-description" itemprop="description">I'm a Java developer wearing glasses ...coz I don't C#</div>
+  <div class="site-description" itemprop="description">"Software and cathedrals are much the same - first we build them, then we pray."</div>
 </div>
 <div class="site-state-wrap animated">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">50</span>
+          <span class="site-state-item-count">51</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -194,6 +195,8 @@
     </div>
 
     
+        <div class="pjax">
+        </div>
   </aside>
 
 
@@ -219,7 +222,7 @@
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Tech Knowledge Sharing">
-      <meta itemprop="description" content="I'm a Java developer wearing glasses ...coz I don't C#">
+      <meta itemprop="description" content=""Software and cathedrals are much the same - first we build them, then we pray."">
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
@@ -246,7 +249,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-02-27 16:54:44" itemprop="dateModified" datetime="2023-02-27T16:54:44-05:00">2023-02-27</time>
+      <time title="Modified: 2023-03-14 21:35:42" itemprop="dateModified" datetime="2023-03-14T21:35:42-04:00">2023-03-14</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -270,6 +273,13 @@
       <span class="post-meta-item-text">Views: </span>
       <span id="busuanzi_value_page_pv"></span>
     </span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>675</span>
+    </span>
 </div>
 
         </div>
@@ -280,8 +290,8 @@
     
     <div class="post-body" itemprop="articleBody">
         <p>The Spring framework defines a <em>Spring bean</em> as an object managed by the Spring <a target="_blank" rel="noopener" href="https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/beans.html">Inversion of Control (IoC) container</a>.</p>
-<h3 id="1-Beans"><a href="#1-Beans" class="headerlink" title="1. Beans"></a>1. Beans</h3><p>Without the <em>Spring Beans</em> feature, instantiating an <em>object</em> from a <em>class</em> requires the use of the <code>new</code> keyword:</p>
 <span id="more"></span>
+<h3 id="1-Beans"><a href="#1-Beans" class="headerlink" title="1. Beans"></a>1. Beans</h3><p>Without the <em>Spring Beans</em> feature, instantiating an <em>object</em> from a <em>class</em> requires the use of the <code>new</code> keyword:</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">RaceTrack</span> &#123;</span><br><span class="line">  <span class="keyword">private</span> String location;</span><br><span class="line">  <span class="keyword">private</span> <span class="type">int</span> miles;</span><br><span class="line">  <span class="keyword">private</span> String trackType;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Driver</span> &#123;</span><br><span class="line">  <span class="keyword">private</span> String name;</span><br><span class="line">  <span class="keyword">private</span> String team;</span><br><span class="line">  <span class="keyword">private</span> <span class="type">int</span> yearsExperience;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">RaceRound</span> &#123;</span><br><span class="line">  <span class="keyword">private</span> String startTime;</span><br><span class="line">  <span class="keyword">private</span> <span class="type">RaceTrack</span> <span class="variable">currentRaceTrack</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">RaceTrack</span>();</span><br><span class="line">  <span class="keyword">private</span> <span class="type">Driver</span> <span class="variable">currentDriver</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Driver</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>Any changes to those <code>RaceTrack</code> and <code>Driver</code> classes would require additional changes in the <code>RaceRound</code> class.</p>
@@ -325,7 +335,7 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Spring/" rel="tag"># Spring</a>
+              <a href="/tags/Spring/" rel="tag"><i class="fa fa-tag"></i> Spring</a>
           </div>
 
         
@@ -367,6 +377,22 @@
   </span>
   <span class="author" itemprop="copyrightHolder">zhqyvvn</span>
 </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>Word count total: </span>
+    <span title="Word count total">54k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>Reading time total &asymp;</span>
+    <span title="Reading time total">4:31</span>
+  </span>
+</div>
 <div class="busuanzi-count">
     <span class="post-meta-item" id="busuanzi_container_site_uv">
       <span class="post-meta-item-icon">
@@ -385,19 +411,13 @@
       </span>
     </span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a>
   </div>
 
     </div>
   </footer>
 
   
-  <div class="toggle sidebar-toggle" role="button">
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-  </div>
-  <div class="sidebar-dimmer"></div>
   <div class="reading-progress-bar"></div>
 
 <noscript>
@@ -409,7 +429,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
-<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
 <script src="/js/third-party/search/local-search.js"></script>
