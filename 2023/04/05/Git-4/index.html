@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"zhqyvvn.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12,"width":320},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":true,"transition":{"menu_item":"flipInX","post_block":"none","post_header":"flipInX","post_body":"none","coll_header":"flipInX","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="This post includes git branch operations such as branch, checkout, diff, merge, reset, stash, remote, push, fetch, prune.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git (4) - Branches">
+<meta property="og:url" content="http://zhqyvvn.github.io/2023/04/05/Git-4/index.html">
+<meta property="og:site_name" content="Tech Knowledge Sharing">
+<meta property="og:description" content="This post includes git branch operations such as branch, checkout, diff, merge, reset, stash, remote, push, fetch, prune.">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-04-05T22:32:58.207Z">
+<meta property="article:modified_time" content="2023-04-07T06:13:13.014Z">
+<meta property="article:author" content="zhqyvvn">
+<meta property="article:tag" content="Git">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://zhqyvvn.github.io/2023/04/05/Git-4/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://zhqyvvn.github.io/2023/04/05/Git-4/","path":"2023/04/05/Git-4/","title":"Git (4) - Branches"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Git (4) - Branches | Tech Knowledge Sharing</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162128119-1"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-162128119-1","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+
+  <script async defer data-website-id="" src=""></script>
+
+  <script defer data-domain="" src=""></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Tech Knowledge Sharing</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">zhqyvvn's tech blog</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-posts"><a href="/archives/" rel="section"><i class="fa fa-book fa-fw"></i>posts</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-folder fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Show-Branches"><span class="nav-text">1. Show Branches</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Create-and-Switch-Branches"><span class="nav-text">2. Create and Switch Branches</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Compare-Branches"><span class="nav-text">3. Compare Branches</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Rename-Branches"><span class="nav-text">4. Rename Branches</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-Delete-Branches"><span class="nav-text">5. Delete Branches</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-Merge-Branches"><span class="nav-text">6. Merge Branches</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-Stash-Changes"><span class="nav-text">7. Stash Changes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-Remote-Branches"><span class="nav-text">8. Remote Branches</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-Prune-Stale-Branches"><span class="nav-text">9. Prune Stale Branches</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="zhqyvvn"
+      src="https://avatars0.githubusercontent.com/u/38484412?s=460&v=4">
+  <p class="site-author-name" itemprop="name">zhqyvvn</p>
+  <div class="site-description" itemprop="description">"Software and cathedrals are much the same - first we build them, then we pray."</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">59</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">28</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zhqyvvn" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zhqyvvn" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:zhqyvvn@gmail.com" title="E-Mail → mailto:zhqyvvn@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="Back to top">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+        <div class="pjax">
+        <div class="sidebar-inner sidebar-post-related">
+          <div class="animated">
+              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
+    Related Posts
+  </div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/2023/04/05/Git-3/" rel="bookmark">
+        <time class="popular-posts-time">2023-04-05</time>
+        <br>
+      Git (3) - Commits
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/2023/04/04/Git-2/" rel="bookmark">
+        <time class="popular-posts-time">2023-04-04</time>
+        <br>
+      Git (2) - Edit Files
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/2023/03/28/Git-1/" rel="bookmark">
+        <time class="popular-posts-time">2023-03-28</time>
+        <br>
+      Git (1) - Tree Object and Log
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/2020/10/15/Leetcode-4-Algorithm-Sort/" rel="bookmark">
+        <time class="popular-posts-time">2020-10-15</time>
+        <br>
+      Leetcode Solutions (4): Algorithm - Sort
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/2021/09/05/Leetcode-13-Data-Structure-LinkedList/" rel="bookmark">
+        <time class="popular-posts-time">2021-09-05</time>
+        <br>
+      Leetcode Solutions (13): Data Structure - LinkedList
+      </a>
+    </li>
+  </ul>
+
+          </div>
+        </div>
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://zhqyvvn.github.io/2023/04/05/Git-4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/38484412?s=460&v=4">
+      <meta itemprop="name" content="zhqyvvn">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tech Knowledge Sharing">
+      <meta itemprop="description" content=""Software and cathedrals are much the same - first we build them, then we pray."">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Git (4) - Branches | Tech Knowledge Sharing">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Git (4) - Branches
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2023-04-05 18:32:58" itemprop="dateCreated datePublished" datetime="2023-04-05T18:32:58-04:00">2023-04-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-04-07 02:13:13" itemprop="dateModified" datetime="2023-04-07T02:13:13-04:00">2023-04-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Git/" itemprop="url" rel="index"><span itemprop="name">Git</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>1.1k</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>This post includes <code>git</code> branch operations such as <code>branch</code>, <code>checkout</code>, <code>diff</code>, <code>merge</code>, <code>reset</code>, <code>stash</code>, <code>remote</code>, <code>push</code>, <code>fetch</code>, <code>prune</code>.</p>
+<span id="more"></span>
+<h3 id="1-Show-Branches"><a href="#1-Show-Branches" class="headerlink" title="1. Show Branches"></a>1. Show Branches</h3><p>Show a list of branches:</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git branch</span></span><br></pre></td></tr></table></figure>
+<p>The current branch is marked with a <code>*</code> sign and in color green.</p>
+<p>Can also check the current <code>HEAD</code> is in which branch by:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> .git/HEAD</span><br></pre></td></tr></table></figure>
+
+<p>Check branches in the current repository:</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -la .git<span class="regexp">/refs/</span>heads</span><br></pre></td></tr></table></figure>
+
+<p>Get the hash of the latest commit of a specific branch:</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat .git<span class="regexp">/refs/</span>heads/&lt;branch-name&gt;</span><br></pre></td></tr></table></figure>
+
+<p>Get instructions of <code>branch</code> commands:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">help</span> branch</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-Create-and-Switch-Branches"><a href="#2-Create-and-Switch-Branches" class="headerlink" title="2. Create and Switch Branches"></a>2. Create and Switch Branches</h3><p>Create a new branch:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch <span class="tag">&lt;<span class="name">branch-name</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>Switch to a branch:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout <span class="tag">&lt;<span class="name">branch-name</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>Create a new branch named <code>&lt;new-branch&gt;</code>, start it at <code>&lt;start-point&gt;</code>, and check the resulting branch out:</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b &lt;<span class="built_in">new</span>-branch&gt; &lt;<span class="keyword">start</span>-<span class="type">point</span>&gt;</span><br></pre></td></tr></table></figure>
+<p><code>&lt;start-point&gt;</code> could be either a local branch or a remote branch.</p>
+<h3 id="3-Compare-Branches"><a href="#3-Compare-Branches" class="headerlink" title="3. Compare Branches"></a>3. Compare Branches</h3><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git diff &lt;branch-<span class="type">name</span>-<span class="built_in">old</span>&gt; &lt;branch-<span class="type">name</span>-<span class="built_in">new</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-Rename-Branches"><a href="#4-Rename-Branches" class="headerlink" title="4. Rename Branches"></a>4. Rename Branches</h3><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -m [&lt;<span class="built_in">old</span>-branch-<span class="type">name</span>&gt;] &lt;<span class="built_in">new</span>-branch-<span class="type">name</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>The <code>&lt;old-branch-name&gt;</code> is optional if it is renaming the current branch.<br>Don’t change the branch name while others are using it.</p>
+<h3 id="5-Delete-Branches"><a href="#5-Delete-Branches" class="headerlink" title="5. Delete Branches"></a>5. Delete Branches</h3><p>Deletion should be on another branch, which is different from the branch to be deleted.</p>
+<p>Delete branch, if that branch was not fully merged into its upstream branch, the deletion will be refused:</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d &lt;branch-<span class="built_in">to</span>-<span class="built_in">delete</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<p>Force the deletion if that branch has commits and not merged into its upstream branch:</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -D &lt;branch-<span class="built_in">to</span>-<span class="built_in">delete</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-Merge-Branches"><a href="#6-Merge-Branches" class="headerlink" title="6. Merge Branches"></a>6. Merge Branches</h3><p>Inside the branch that receives the merge from other branches:</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">merge</span> &lt;branch-<span class="built_in">to</span>-<span class="built_in">merge</span>-<span class="keyword">in</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<p>A <em>fast forward merge</em> can extend the master branch.</p>
+<p>Show conflicts in details during the merge:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git diff --color-words <span class="tag">&lt;<span class="name">branch-receive-merge</span>&gt;</span>..<span class="tag">&lt;<span class="name">branch-to-merge-in</span>&gt;</span> [<span class="tag">&lt;<span class="name">filename</span>&gt;</span>]</span><br></pre></td></tr></table></figure>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">show</span> --<span class="built_in">color</span>-words</span><br></pre></td></tr></table></figure>
+
+<p>Rollback to the state before the merge:</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">merge</span> <span class="comment">--abort</span></span><br></pre></td></tr></table></figure>
+
+<p>After fixing merge, to mark the resolution:</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">add</span> .</span><br></pre></td></tr></table></figure>
+<p>to continue merging and open the text editor to comment:</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git commit</span></span><br></pre></td></tr></table></figure>
+<p>then save and close the comment file.</p>
+<p>Rollback to the commit before the merge commit:</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">reset</span> <span class="comment">--hard &lt;tree-ish&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>List branches which merged&#x2F;not merged into a branch, a remote branch, or a commit (<code>HEAD</code> if not specified):</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch --merged|--<span class="keyword">no</span>-merged [<span class="symbol">&lt;branch&gt;</span>|<span class="symbol">&lt;remote&gt;</span>/<span class="symbol">&lt;branch&gt;</span>|<span class="symbol">&lt;tree-ish&gt;</span>]</span><br></pre></td></tr></table></figure>
+
+<p>Show remote branches that merged into the current branch:</p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -r <span class="comment">--merged</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="7-Stash-Changes"><a href="#7-Stash-Changes" class="headerlink" title="7. Stash Changes"></a>7. Stash Changes</h3><p>Before switching to another branch, to save changes of the working tree temporarily in the <code>stash</code>:</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash <span class="keyword">save</span> <span class="string">&quot;comments&quot;</span> [-<span class="keyword">u</span> | --<span class="keyword">include</span>-untracked]</span><br></pre></td></tr></table></figure>
+<p>By default, <code>stash</code> doesn’t save untracked files. <code>-u</code> or <code>--include-untracked</code> tells <code>stash</code> to also save untracked files.</p>
+<p>List the <code>stash</code> entries that we currently have. Each <code>stash</code> entry is listed with its name (e.g. <code>stash@&#123;0&#125;</code> is the latest entry, <code>stash@&#123;1&#125;</code> is the one before, etc.):</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git stash list</span></span><br></pre></td></tr></table></figure>
+
+<p>View the first entry in the <code>stash</code> list in the patch form:</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash show -p <span class="symbol">stash@</span>&#123;<span class="number">0</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Retrieve from the <code>stash</code>:</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash <span class="keyword">pop</span> <span class="symbol">&lt;stash&gt;</span></span><br></pre></td></tr></table></figure>
+<p><code>&lt;stash&gt;</code> is a reference of the form <code>stash@&#123;&lt;revision&gt;&#125;</code>. When no <code>&lt;stash&gt;</code> is given, the latest stash is assumed (that is, <code>stash@&#123;0&#125;</code>).</p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash<span class="built_in"> apply</span> <span class="language-xml"><span class="tag">&lt;<span class="name">stash</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p><code>apply</code> is like <code>pop</code>, but it does not remove the state from the stash list. </p>
+<p>Remove a single <code>stash</code> entry from the list of <code>stash</code> entries:</p>
+<figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash <span class="keyword">drop</span> <span class="variable">&lt;stash&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>Remove all the <code>stash</code> entries:</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash clear</span><br></pre></td></tr></table></figure>
+
+<h3 id="8-Remote-Branches"><a href="#8-Remote-Branches" class="headerlink" title="8. Remote Branches"></a>8. Remote Branches</h3><p>Add a remote named <code>&lt;name&gt;</code> for the repository at <code>&lt;URL&gt;</code>:</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote <span class="built_in">add</span> <span class="symbol">&lt;name&gt;</span> <span class="symbol">&lt;URL&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>Show the URL binded to the current remote:</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git remote -v</span></span><br></pre></td></tr></table></figure>
+
+<p>Show a list of existing remotes:</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git remote</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -la .git<span class="regexp">/refs/</span>remotes</span><br></pre></td></tr></table></figure>
+
+<p>Show the remote configurations:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> .git/config</span><br></pre></td></tr></table></figure>
+
+<p>Remove the remote named <code>&lt;name&gt;</code>:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote rm <span class="tag">&lt;<span class="name">name</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>Push a local branch to the remote and create its remote branch:</p>
+<figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">push</span> -u &lt;remote-repository-name&gt; &lt;branch-to-<span class="built_in">push</span>&gt;</span><br></pre></td></tr></table></figure>
+<p><code>-u</code>: Add <code>upstream</code> reference, add make the local branch tracks the remote branch.<br><code>upstream</code>: <code>&lt;remote-name&gt;/&lt;remote-branch-name&gt;</code></p>
+<p>Set up <code>&lt;upstream&gt;</code> to be the upstream branch of <code>&lt;branch-name&gt;</code>:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -u <span class="tag">&lt;<span class="name">upstream</span>&gt;</span> [<span class="tag">&lt;<span class="name">branch-name</span>&gt;</span>]</span><br></pre></td></tr></table></figure>
+<p>If no <code>&lt;branch-name&gt;</code> is specified, then it defaults to the current branch.</p>
+<p>Remove the upstream information for <code>&lt;branch-name&gt;</code>:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch <span class="attr">--unset-upstream</span> <span class="selector-attr">[&lt;branch-name&gt;]</span></span><br></pre></td></tr></table></figure>
+<p>If no branch is specified it defaults to the current branch.</p>
+<p>Create a local branch named <code>&lt;branch-name&gt;</code> to download from a remote branch:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch <span class="tag">&lt;<span class="name">branch-name</span>&gt;</span> <span class="tag">&lt;<span class="name">upstream</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>The remote branch is set to the local branch’s <code>upstream</code> by default. The local branch then tracks the remote branch.<br>This works in the similar way but switches to the created local branch:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b <span class="tag">&lt;<span class="name">branch</span>&gt;</span> --track <span class="tag">&lt;<span class="name">remote</span>&gt;</span>/<span class="tag">&lt;<span class="name">branch</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>List the remote-tracking branches:</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -r <span class="string">| --remotes</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ls</span> -<span class="keyword">la</span> .git/refs/remotes/<span class="symbol">&lt;remote-name&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>List both remote-tracking branches and local branches:</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -<span class="keyword">a</span> | <span class="comment">--all</span></span><br></pre></td></tr></table></figure>
+
+<p>Show the tree-ish of the latest commit of a remote branch:</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat .git<span class="regexp">/refs/</span>remotes<span class="regexp">/&lt;remote-name&gt;/</span>&lt;remote-branch-name&gt;</span><br></pre></td></tr></table></figure>
+
+<p>Delete the branch in the remote repository but the local version still exists:</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push &lt;remote&gt; <span class="symbol">:&lt;branch&gt;</span></span><br></pre></td></tr></table></figure>
+<p>The above pushes an “empty” to replace the remote branch. The more general form is:</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push &lt;remote&gt; &lt;local-branch&gt;<span class="symbol">:&lt;remote-branch&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>This also deletes a remote branch:</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push <span class="symbol">&lt;remote&gt;</span> --<span class="keyword">delete</span> <span class="symbol">&lt;branch&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push <span class="tag">&lt;<span class="name">remote</span>&gt;</span> -d <span class="tag">&lt;<span class="name">branch</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>Force a <code>push</code> to a remote repo:</p>
+<figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">push</span> -f</span><br></pre></td></tr></table></figure>
+<p>If the commit is behind other commits, this command forces to remove its subsequent commits in the remote repo, and they become orphaned. </p>
+<p>Fetch branches from the remote repository to the local repository:</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git fetch</span></span><br></pre></td></tr></table></figure>
+<p>It updates the remote-tracking branches under <code>refs/remotes/&lt;remote&gt;/</code> and doesn’t merge with local branches under <code>refs/heads</code> - it doesn’t change the working directory.</p>
+<p><code>git pull</code> does a <code>git fetch</code> followed by a <code>git merge</code>.</p>
+<h3 id="9-Prune-Stale-Branches"><a href="#9-Prune-Stale-Branches" class="headerlink" title="9. Prune Stale Branches"></a>9. Prune Stale Branches</h3><p>There are three level of branches:</p>
+<ol>
+<li>Branches on the remote repository. (<code>git push -d</code> to delete one)</li>
+<li>Local snapshots of the remote branches. (also called remote-tracking branches)</li>
+<li>Local branches, tracking the remote branches. (<code>git branch -d</code> to delete one)</li>
+</ol>
+<p>The tracking branch will be automatically deleted when its remote branch was deleted in the same local repository, but if the remote repo was deleted in a different repo, then we need to delete stale remote-tracking branches.</p>
+<p>Prune stale branches by using <code>remote</code>:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote prune <span class="tag">&lt;<span class="name">remote</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>To see what it will do before we delete branches:</p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote prune &lt;remote&gt; <span class="comment">--dry-run</span></span><br></pre></td></tr></table></figure>
+
+<p>Fetch and prune at the same time (prune, then fetch):</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">fetch</span> <span class="comment">--prune</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git fetch -<span class="selector-tag">p</span></span><br></pre></td></tr></table></figure>
+
+<p>Set global configurations to always prune before fetch (downside: the user may not get ready for the prune):</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global fetch.prune <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p><code>git prune</code> isn’t the same thing. This prunes all unreachable objects (branches, tags, …).</p>
+<p><code>git gc</code> is part of the garbage collection. </p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Git/" rel="tag"><i class="fa fa-tag"></i> Git</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/04/05/Git-3/" rel="next" title="Git (3) - Commits">
+                  Git (3) - Commits <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zhqyvvn</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>Word count total: </span>
+    <span title="Word count total">58k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>Reading time total &asymp;</span>
+    <span title="Reading time total">4:50</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"zhqyvvn","repo":"zhqyvvn.github.io","client_id":"c28a59a6f171f3e27313","client_secret":"a31ffbb812ba7a28cd66045ae2a68e017e9d539f","admin_user":"zhqyvvn","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"49a6257faf21fa74a4d2816fa24b1db5"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

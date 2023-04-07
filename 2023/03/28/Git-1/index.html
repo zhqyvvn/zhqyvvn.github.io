@@ -20,15 +20,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"zhqyvvn.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12,"width":320},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":true,"transition":{"menu_item":"flipInX","post_block":"none","post_header":"flipInX","post_body":"none","coll_header":"flipInX","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="This post includes basic git operations such as log, diff, rm, add, commit, mv, show, checkout, reset, revert, clean.">
+    <meta name="description" content="This post includes git operations ls-tree and log.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Git (1) - Basics">
+<meta property="og:title" content="Git (1) - Tree Object and Log">
 <meta property="og:url" content="http://zhqyvvn.github.io/2023/03/28/Git-1/index.html">
 <meta property="og:site_name" content="Tech Knowledge Sharing">
-<meta property="og:description" content="This post includes basic git operations such as log, diff, rm, add, commit, mv, show, checkout, reset, revert, clean.">
+<meta property="og:description" content="This post includes git operations ls-tree and log.">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-03-28T20:20:53.270Z">
-<meta property="article:modified_time" content="2023-04-02T21:35:41.992Z">
+<meta property="article:modified_time" content="2023-04-05T22:44:05.911Z">
 <meta property="article:author" content="zhqyvvn">
 <meta property="article:tag" content="Git">
 <meta name="twitter:card" content="summary">
@@ -38,10 +38,10 @@
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://zhqyvvn.github.io/2023/03/28/Git-1/","path":"2023/03/28/Git-1/","title":"Git (1) - Basics"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://zhqyvvn.github.io/2023/03/28/Git-1/","path":"2023/03/28/Git-1/","title":"Git (1) - Tree Object and Log"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Git (1) - Basics | Tech Knowledge Sharing</title>
+<title>Git (1) - Tree Object and Log | Tech Knowledge Sharing</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162128119-1"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-162128119-1","only_pageview":false}</script>
@@ -146,7 +146,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Show-Logs"><span class="nav-text">1. Show Logs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Compare-Files"><span class="nav-text">2. Compare Files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Delete-Files"><span class="nav-text">3. Delete Files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Move-and-Rename-Files"><span class="nav-text">4. Move and Rename Files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-Shortcuts-of-add-and-commit"><span class="nav-text">5. Shortcuts of add and commit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-Show-Commit-Content"><span class="nav-text">6. Show Commit Content</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-Discard-Changes"><span class="nav-text">7. Discard Changes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-Modify-Comments"><span class="nav-text">8. Modify Comments</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-Retrieve-Previous-Versions"><span class="nav-text">9. Retrieve Previous Versions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-Remove-Untracked-Files"><span class="nav-text">10. Remove Untracked Files</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-List-the-Contents-of-a-Tree-Object"><span class="nav-text">1. List the Contents of a Tree Object</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Show-Logs"><span class="nav-text">2. Show Logs</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -161,7 +161,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">56</span>
+          <span class="site-state-item-count">59</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -203,24 +203,38 @@
   </div>
   <ul class="popular-posts">
     <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/2023/02/15/Notes-of-React-4/" rel="bookmark">
-        <time class="popular-posts-time">2023-02-15</time>
+      <a class="popular-posts-link" href="/2023/04/05/Git-3/" rel="bookmark">
+        <time class="popular-posts-time">2023-04-05</time>
         <br>
-      Study Notes of React (4) - React Configs
+      Git (3) - Commits
       </a>
     </li>
     <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/2020/01/15/Project-Fakestagram/" rel="bookmark">
-        <time class="popular-posts-time">2020-01-15</time>
+      <a class="popular-posts-link" href="/2023/04/04/Git-2/" rel="bookmark">
+        <time class="popular-posts-time">2023-04-04</time>
         <br>
-      Build an App on Android - Fakestagram
+      Git (2) - Edit Files
       </a>
     </li>
     <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/2020/01/18/Project-Second-Buy/" rel="bookmark">
-        <time class="popular-posts-time">2020-01-18</time>
+      <a class="popular-posts-link" href="/2023/04/05/Git-4/" rel="bookmark">
+        <time class="popular-posts-time">2023-04-05</time>
         <br>
-      Build a Website with Node.js - Second Buy
+      Git (4) - Branches
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/2022/01/07/Notes-of-Shell/" rel="bookmark">
+        <time class="popular-posts-time">2022-01-07</time>
+        <br>
+      Study Notes of Shell
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/2022/02/19/Notes-of-Software-Testing-1/" rel="bookmark">
+        <time class="popular-posts-time">2022-02-19</time>
+        <br>
+      Study Notes of Software Testing (1)
       </a>
     </li>
   </ul>
@@ -257,12 +271,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Git (1) - Basics | Tech Knowledge Sharing">
+      <meta itemprop="name" content="Git (1) - Tree Object and Log | Tech Knowledge Sharing">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Git (1) - Basics
+          Git (1) - Tree Object and Log
         </h1>
 
         <div class="post-meta-container">
@@ -280,7 +294,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-04-02 17:35:41" itemprop="dateModified" datetime="2023-04-02T17:35:41-04:00">2023-04-02</time>
+      <time title="Modified: 2023-04-05 18:44:05" itemprop="dateModified" datetime="2023-04-05T18:44:05-04:00">2023-04-05</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -305,7 +319,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Word count in article: </span>
-      <span>746</span>
+      <span>305</span>
     </span>
 </div>
 
@@ -316,9 +330,16 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>This post includes basic <code>git</code> operations such as <code>log</code>, <code>diff</code>, <code>rm</code>, <code>add</code>, <code>commit</code>, <code>mv</code>, <code>show</code>, <code>checkout</code>, <code>reset</code>, <code>revert</code>, <code>clean</code>.</p>
+        <p>This post includes <code>git</code> operations <code>ls-tree</code> and <code>log</code>.</p>
 <span id="more"></span>
-<h3 id="1-Show-Logs"><a href="#1-Show-Logs" class="headerlink" title="1. Show Logs"></a>1. Show Logs</h3><p>Display information about log:</p>
+<h3 id="1-List-the-Contents-of-a-Tree-Object"><a href="#1-List-the-Contents-of-a-Tree-Object" class="headerlink" title="1. List the Contents of a Tree Object"></a>1. List the Contents of a Tree Object</h3><figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git ls-<span class="built_in">tree</span> &lt;<span class="built_in">tree</span>-ish&gt;</span><br></pre></td></tr></table></figure>
+
+<p>List the content of the <code>HEAD</code> object:</p>
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git ls-<span class="built_in">tree</span> HEAD</span><br></pre></td></tr></table></figure>
+
+<p>List all files inside the <code>asserts</code> directory in the <code>HEAD</code> object:</p>
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git ls-<span class="built_in">tree</span> HEAD asserts/</span><br></pre></td></tr></table></figure>
+<h3 id="2-Show-Logs"><a href="#2-Show-Logs" class="headerlink" title="2. Show Logs"></a>2. Show Logs</h3><p>Display information about log:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">help</span> <span class="built_in">log</span></span><br></pre></td></tr></table></figure>
 <p>Limit the number of commits to output:</p>
 <figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span> -<span class="number">3</span></span><br></pre></td></tr></table></figure>
@@ -347,69 +368,12 @@
 <p>Instead of showing the full 40-byte hexadecimal commit object name, show a prefix that names the object uniquely, and show the commits in online format <code>&lt;hash&gt; &lt;title-line&gt;</code></p>
 <figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span> <span class="comment">--oneline</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="2-Compare-Files"><a href="#2-Compare-Files" class="headerlink" title="2. Compare Files"></a>2. Compare Files</h3><p>Compare files in the working directory with files in the staging area (exclude the new files in the working directory that are not in the staging area):</p>
-<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git diff</span></span><br></pre></td></tr></table></figure>
-<p>Compare files in the staging area with the repository:</p>
-<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git diff <span class="comment">--staged</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git diff <span class="comment">--cached</span></span><br></pre></td></tr></table></figure>
-<p>Only show words that are different:</p>
-<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">diff</span> --<span class="built_in">color</span>-words</span><br></pre></td></tr></table></figure>
-<p>To squeeze or expand the blank lines in the result of <code>git diff</code>, type <code>-s</code>.</p>
-<p>Compare content of two commits:</p>
-<figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git diff &lt;<span class="built_in">first</span> <span class="number">7</span> digits in <span class="built_in">hash</span>&gt; &lt;<span class="built_in">first</span> <span class="number">7</span> digits in <span class="built_in">hash</span>&gt; [--color-words]</span><br></pre></td></tr></table></figure>
-<p>Instead of hash, we can also use <code>HEAD</code> to refer to the latest commit, and <code>HEAD^</code> to refer to the last commit before the latest commit.</p>
-<h3 id="3-Delete-Files"><a href="#3-Delete-Files" class="headerlink" title="3. Delete Files"></a>3. Delete Files</h3><p>Steps to delete files and commit the deletion:</p>
-<ol>
-<li>Delete manually in the working directory</li>
-<li>Delete in the staging area<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm <span class="tag">&lt;<span class="name">filename</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li>Commit the deletion to the repository<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git</span> commit -m <span class="string">&quot;comments&quot;</span></span><br></pre></td></tr></table></figure></li>
-</ol>
-<p>or</p>
-<ol>
-<li>Delete in both working directory and the staging area<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm <span class="tag">&lt;<span class="name">filename</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li>Commit the deletion to the repository<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git</span> commit -m <span class="string">&quot;comments&quot;</span></span><br></pre></td></tr></table></figure></li>
-</ol>
-<p>Delete files only in the staging area:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">rm</span> --cached &lt;filename or <span class="built_in">dir</span>&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-Move-and-Rename-Files"><a href="#4-Move-and-Rename-Files" class="headerlink" title="4. Move and Rename Files"></a>4. Move and Rename Files</h3><p>Add files in the staging area:</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">add</span> &lt;filename&gt;</span><br></pre></td></tr></table></figure>
-<p>Remove files in the staging area:</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm <span class="tag">&lt;<span class="name">filename</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>Rename or move files in the staging area:</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git mv <span class="tag">&lt;<span class="name">filename_origin</span>&gt;</span> <span class="tag">&lt;<span class="name">filename_rename</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="5-Shortcuts-of-add-and-commit"><a href="#5-Shortcuts-of-add-and-commit" class="headerlink" title="5. Shortcuts of add and commit"></a>5. Shortcuts of <code>add</code> and <code>commit</code></h3><p>Stages and commits all changes of the tracked files. Does not include untracked files:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -<span class="selector-tag">a</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">commit</span> <span class="comment">--all</span></span><br></pre></td></tr></table></figure>
-<p>It will automatically open an editable file <code>COMMENT_EDITING</code> to add comments.</p>
-<p>To add comments directly in the shortcut:</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git</span> commit -am <span class="string">&quot;comments&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="6-Show-Commit-Content"><a href="#6-Show-Commit-Content" class="headerlink" title="6. Show Commit Content"></a>6. Show Commit Content</h3><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">show</span> &lt;<span class="built_in">first</span> <span class="number">7</span> digits <span class="keyword">in</span> hash&gt; [--<span class="built_in">color</span>-words]</span><br></pre></td></tr></table></figure>
-<p>Press <code>F</code> to the next page; press <code>B</code> to the previous page.</p>
-<h3 id="7-Discard-Changes"><a href="#7-Discard-Changes" class="headerlink" title="7. Discard Changes"></a>7. Discard Changes</h3><p>To discard changes in working directory:</p>
-<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout <span class="comment">-- &lt;filename&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout <span class="comment">-- .</span></span><br></pre></td></tr></table></figure>
-
-<p>To unstage from the staging index (it will not change the working tree):</p>
-<figure class="highlight sas"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">reset</span> HEAD &lt;<span class="keyword">file</span>&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="8-Modify-Comments"><a href="#8-Modify-Comments" class="headerlink" title="8. Modify Comments"></a>8. Modify Comments</h3><p>Pull the last commit back to the staging index and merge with the current staging index, and commit together with a new comment:</p>
-<figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">git</span> <span class="string">commit</span> <span class="built_in">--amend</span> -<span class="string">m</span> <span class="string">&quot;new comment&quot;</span></span><br></pre></td></tr></table></figure>
-<p>If the current staging index is empty, the above command will modify the last commit’s comment. </p>
-<h3 id="9-Retrieve-Previous-Versions"><a href="#9-Retrieve-Previous-Versions" class="headerlink" title="9. Retrieve Previous Versions"></a>9. Retrieve Previous Versions</h3><p>Retrieve the previous version and changes the working tree and the staging index:</p>
-<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout &lt;<span class="keyword">the</span> <span class="keyword">first</span> <span class="number">7</span> digits <span class="keyword">of</span> <span class="keyword">the</span> commit hashcode&gt; <span class="comment">-- &lt;filename&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout &lt;<span class="keyword">the</span> <span class="keyword">first</span> <span class="number">7</span> digits <span class="keyword">of</span> <span class="keyword">the</span> commit hashcode&gt;</span><br></pre></td></tr></table></figure>
-<p>If checkout with unstaging content in the working tree, the git will show this error “<code>Please commit your changes or stash them before you switch branches.</code>“</p>
-<p>Undo the specific commit’s content:</p>
-<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git revert &lt;<span class="keyword">the</span> <span class="keyword">first</span> <span class="number">7</span> digits <span class="keyword">of</span> <span class="keyword">the</span> commit hashcode&gt;</span><br></pre></td></tr></table></figure>
-<p>For the content of its next commits, it will not affect the content that is not in the same directories of this commit.</p>
-<h3 id="10-Remove-Untracked-Files"><a href="#10-Remove-Untracked-Files" class="headerlink" title="10. Remove Untracked Files"></a>10. Remove Untracked Files</h3><p>Display the untracked files in the working tree to be deleted (neither in the repo nor the staging index):</p>
-<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clean</span> -<span class="built_in">n</span> </span><br></pre></td></tr></table></figure>
-
-<p>Delete the untracked files in the working tree:</p>
-<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git clean -f</span></span><br></pre></td></tr></table></figure>
+<p>Show logs in different formats:</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span> --<span class="keyword">format</span>=&lt;<span class="keyword">format</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>The option for <code>&lt;format&gt;</code> includes <code>oneline</code>, <code>short</code>, <code>medium</code>, <code>full</code>, <code>fuller</code>, <code>email</code>, <code>raw</code>.</p>
+<p>Draw a text-based graphical representation of the commit history on the left hand side of the output:</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span> <span class="comment">--graph</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">git log</span> <span class="literal">--</span><span class="comment">graph</span> <span class="literal">--</span><span class="comment">all</span> <span class="literal">--</span><span class="comment">oneline</span> <span class="literal">--</span><span class="comment">decorate</span></span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -425,6 +389,9 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
+                <a href="/2023/04/04/Git-2/" rel="prev" title="Git (2) - Edit Files">
+                  <i class="fa fa-chevron-left"></i> Git (2) - Edit Files
+                </a>
             </div>
             <div class="post-nav-item">
                 <a href="/2023/03/16/Notes-of-React-16/" rel="next" title="Study Notes of React (16) - Input of the React Form">
@@ -463,14 +430,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>Word count total: </span>
-    <span title="Word count total">57k</span>
+    <span title="Word count total">58k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>Reading time total &asymp;</span>
-    <span title="Reading time total">4:43</span>
+    <span title="Reading time total">4:50</span>
   </span>
 </div>
 <div class="busuanzi-count">
