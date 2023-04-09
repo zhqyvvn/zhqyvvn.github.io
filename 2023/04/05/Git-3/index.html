@@ -28,7 +28,7 @@
 <meta property="og:description" content="This post includes git operations commit, show, diff, checkout, revert, reset.">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-04-05T22:28:22.369Z">
-<meta property="article:modified_time" content="2023-04-06T13:10:00.217Z">
+<meta property="article:modified_time" content="2023-04-07T06:20:12.007Z">
 <meta property="article:author" content="zhqyvvn">
 <meta property="article:tag" content="Git">
 <meta name="twitter:card" content="summary">
@@ -146,7 +146,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Shortcuts-of-add-and-commit"><span class="nav-text">1. Shortcuts of add and commit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Show-Commit-Content"><span class="nav-text">2. Show Commit Content</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Compare-Commits"><span class="nav-text">3. Compare Commits</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Modify-Comments"><span class="nav-text">4. Modify Comments</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-Switch-to-the-Previous-Versions"><span class="nav-text">5. Switch to the Previous Versions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-Reset-Commits"><span class="nav-text">6. Reset Commits</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1-Soft-Reset"><span class="nav-text">6.1. Soft Reset</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2-Mixed-Reset"><span class="nav-text">6.2. Mixed Reset</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-3-Hard-Reset"><span class="nav-text">6.3. Hard Reset</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-Discard-Changes"><span class="nav-text">7. Discard Changes</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Shortcuts-of-add-and-commit"><span class="nav-text">1. Shortcuts of add and commit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Show-Commit-Content"><span class="nav-text">2. Show Commit Content</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Compare-Commits"><span class="nav-text">3. Compare Commits</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Modify-Comments"><span class="nav-text">4. Modify Comments</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-Switch-to-the-Previous-Versions"><span class="nav-text">5. Switch to the Previous Versions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-Reset-Commits"><span class="nav-text">6. Reset Commits</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#6-1-Soft-Reset"><span class="nav-text">6.1. Soft Reset</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-2-Mixed-Reset"><span class="nav-text">6.2. Mixed Reset</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-3-Hard-Reset"><span class="nav-text">6.3. Hard Reset</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-Discard-Changes"><span class="nav-text">7. Discard Changes</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -161,7 +161,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">59</span>
+          <span class="site-state-item-count">60</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -224,17 +224,17 @@
       </a>
     </li>
     <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/2023/04/09/Git-5/" rel="bookmark">
+        <time class="popular-posts-time">2023-04-09</time>
+        <br>
+      Git (5) - Tags
+      </a>
+    </li>
+    <li class="popular-posts-item">
       <a class="popular-posts-link" href="/2019/10/06/Notes-of-Database-5/" rel="bookmark">
         <time class="popular-posts-time">2019-10-06</time>
         <br>
       Reading Notes of Database Systems (5)
-      </a>
-    </li>
-    <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/2020/01/18/Project-Second-Buy/" rel="bookmark">
-        <time class="popular-posts-time">2020-01-18</time>
-        <br>
-      Build a Website with Node.js - Second Buy
       </a>
     </li>
   </ul>
@@ -294,7 +294,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-04-06 09:10:00" itemprop="dateModified" datetime="2023-04-06T09:10:00-04:00">2023-04-06</time>
+      <time title="Modified: 2023-04-07 02:20:12" itemprop="dateModified" datetime="2023-04-07T02:20:12-04:00">2023-04-07</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -359,13 +359,13 @@
 <p>Undo the specific commit’s content:</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git revert <span class="tag">&lt;<span class="name">tree-ish</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>For the content of its next commits, it will not affect the content that is not in the same directories of this commit.</p>
-<h3 id="6-Reset-Commits"><a href="#6-Reset-Commits" class="headerlink" title="6. Reset Commits"></a>6. Reset Commits</h3><h3 id="6-1-Soft-Reset"><a href="#6-1-Soft-Reset" class="headerlink" title="6.1. Soft Reset"></a>6.1. Soft Reset</h3><p>Move <code>HEAD</code> pointer.</p>
+<h3 id="6-Reset-Commits"><a href="#6-Reset-Commits" class="headerlink" title="6. Reset Commits"></a>6. Reset Commits</h3><h4 id="6-1-Soft-Reset"><a href="#6-1-Soft-Reset" class="headerlink" title="6.1. Soft Reset"></a>6.1. Soft Reset</h4><p>Move <code>HEAD</code> pointer.</p>
 <figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">reset</span> <span class="comment">--soft &lt;tree-ish&gt;</span></span><br></pre></td></tr></table></figure>
 <p>Retain changes in the staging index and working tree, but delete the commits after <code>&lt;tree-ish&gt;</code>. Content of the deleted commits is retrieved back to the staging index and merged with the current staging index.</p>
-<h3 id="6-2-Mixed-Reset"><a href="#6-2-Mixed-Reset" class="headerlink" title="6.2. Mixed Reset"></a>6.2. Mixed Reset</h3><p>Move the <code>HEAD</code> pointer and reset the staging index:</p>
+<h4 id="6-2-Mixed-Reset"><a href="#6-2-Mixed-Reset" class="headerlink" title="6.2. Mixed Reset"></a>6.2. Mixed Reset</h4><p>Move the <code>HEAD</code> pointer and reset the staging index:</p>
 <figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">reset</span> <span class="comment">--mixed &lt;tree-ish&gt;</span></span><br></pre></td></tr></table></figure>
 <p>Retain changes in the working tree, but empty the staging index and previous commits.</p>
-<h3 id="6-3-Hard-Reset"><a href="#6-3-Hard-Reset" class="headerlink" title="6.3. Hard Reset"></a>6.3. Hard Reset</h3><p>Move the <code>HEAD</code> pointer, reset the staging index and the working tree:</p>
+<h4 id="6-3-Hard-Reset"><a href="#6-3-Hard-Reset" class="headerlink" title="6.3. Hard Reset"></a>6.3. Hard Reset</h4><p>Move the <code>HEAD</code> pointer, reset the staging index and the working tree:</p>
 <figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">reset</span> <span class="comment">--hard &lt;tree-ish&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="7-Discard-Changes"><a href="#7-Discard-Changes" class="headerlink" title="7. Discard Changes"></a>7. Discard Changes</h3><p>To discard changes in the working directory:</p>
@@ -437,7 +437,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span>Reading time total &asymp;</span>
-    <span title="Reading time total">4:50</span>
+    <span title="Reading time total">4:51</span>
   </span>
 </div>
 <div class="busuanzi-count">
